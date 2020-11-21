@@ -20,8 +20,10 @@ class ProfilePageActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        supportActionBar?.hide();
+        supportActionBar?.hide()
         setContentView(R.layout.activity_profile)
+
+        val user = Registry.user1Manager
 
         val nameLabel = findViewById<TextView>(R.id.nameLabel)
         nameLabel.text = "Ana Maria"
@@ -46,18 +48,16 @@ class ProfilePageActivity : AppCompatActivity() {
         val upcomingRecyclerView = findViewById<RecyclerView>(R.id.upcomingRecyclerView)
         upcomingRecyclerView.layoutManager = layoutManager4
 
-        sportsListAdapter = SportsListAdapter(listOf(Sport("Basketball", Level.BEGINNER), Sport("Track and Field", Level.ADVANCED)))
+        sportsListAdapter = SportsListAdapter(user.sports)
         sportsRecyclerView.adapter = sportsListAdapter
 
-        tagsListAdapter = TagsListAdapter(listOf("#ParculMare", "#ProfessionalTenis", "#Politehnica"))
+        tagsListAdapter = TagsListAdapter(user.tags)
         tagsRecyclerView.adapter = tagsListAdapter
 
-        pastListAdapter = ParticipationListAdapter(listOf(Participation(Event("Basketball Match", "Gheorgheni", Date(), R.drawable.basketball_presentation), PaticipationType.VIEWER),
-                Participation(Event("Tennis Match", "Grigorescu", Date(), R.drawable.tennis_presentation), PaticipationType.VIEWER)))
+        pastListAdapter = ParticipationListAdapter(user.participations)
         pastRecyclerView.adapter = pastListAdapter
 
-        upcomingListAdapter = ParticipationListAdapter(listOf(Participation(Event("Basketball Match", "Gheorgheni", Date(), R.drawable.basketball_presentation), PaticipationType.VIEWER),
-                Participation(Event("Tennis Match", "Grigorescu", Date(), R.drawable.tennis_presentation), PaticipationType.VIEWER)))
+        upcomingListAdapter = ParticipationListAdapter(user.participations)
         upcomingRecyclerView.adapter = upcomingListAdapter
     }
 }

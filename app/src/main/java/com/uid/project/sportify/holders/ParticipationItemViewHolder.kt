@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.uid.project.sportify.R
@@ -27,13 +26,13 @@ class ParticipationItemViewHolder(inflater: LayoutInflater, private var parent: 
     }
 
     fun bind(participation: Participation) {
-        whole?.background = ResourcesCompat.getDrawable(parent.resources, participation.event.image, null)
-        eventName?.text = participation.event.name
+        whole?.background = ResourcesCompat.getDrawable(parent.resources, participation.activity.image, null)
+        eventName?.text = participation.activity.name
         participationType?.text =  participation.type.toString()
 
         val pattern = "EEE, dd LLL"
         val simpleDateFormat = SimpleDateFormat(pattern)
-        val dateAux = simpleDateFormat.format(participation.event.date)
+        val dateAux = simpleDateFormat.format(participation.activity.date)
 
         date?.text =  dateAux.toString()
     }
