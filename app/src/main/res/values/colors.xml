@@ -7,4 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="dark_tone_sportify">#241332</color>
+    <color name="purple_sportify">#8A56AC</color>
+    <color name="pink_sportify">#D47FA6</color>
 </resources>
