@@ -28,12 +28,12 @@ class ParticipationItemViewHolder(inflater: LayoutInflater, private var parent: 
     fun bind(participation: Participation) {
         whole?.background = ResourcesCompat.getDrawable(parent.resources, participation.activity.image, null)
         eventName?.text = participation.activity.name
-        participationType?.text =  participation.type.toString()
+        participationType?.text = participation.type.toString()
 
         val pattern = "EEE, dd LLL"
         val simpleDateFormat = SimpleDateFormat(pattern)
         val dateAux = simpleDateFormat.format(participation.activity.date)
 
-        date?.text =  dateAux.toString()
+        date?.text = dateAux.toString()
     }
 }

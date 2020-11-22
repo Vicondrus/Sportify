@@ -1,7 +1,7 @@
 package com.uid.project.sportify.models
 
 enum class Level(val level: Int) {
-    VIEWER(0),
+    FAN(0),
     BEGINNER(1),
     INTERMEDIATE(2),
     ADVANCED(3),

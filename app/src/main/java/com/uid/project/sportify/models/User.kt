@@ -7,7 +7,8 @@ class User(val name: String,
            val password: String,
            val location: String,
            val birthdate: Date,
-           val sports: List<Sport>,
-           val tags: List<String>,
-           val participations: List<Participation>
+           val sports: MutableList<Sport>,
+           val tags: MutableList<String>,
+           val participations: MutableList<Participation>,
+           val profilePictureId: Int
 )

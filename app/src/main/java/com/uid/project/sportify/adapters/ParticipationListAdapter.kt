@@ -3,11 +3,8 @@ package com.uid.project.sportify.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.uid.project.sportify.R
 import com.uid.project.sportify.holders.ParticipationItemViewHolder
-import com.uid.project.sportify.holders.SimpleItemViewHolder
 import com.uid.project.sportify.models.Participation
-import com.uid.project.sportify.models.Sport
 
 class ParticipationListAdapter(private val dataSet: List<Participation>) : RecyclerView.Adapter<ParticipationItemViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ParticipationItemViewHolder {

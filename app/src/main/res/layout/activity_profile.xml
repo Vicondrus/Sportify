@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -61,22 +60,22 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
         android:layout_marginTop="8dp"
-        tools:text="Ana Maria"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/primaryToolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/primaryToolbar"
+        tools:text="Ana Maria" />
 
     <TextView
         android:id="@+id/locationLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="5dp"
-        tools:text="Grigorescu"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/nameLabel"
-        app:layout_constraintTop_toBottomOf="@+id/nameLabel" />
+        app:layout_constraintTop_toBottomOf="@+id/nameLabel"
+        tools:text="Grigorescu" />
 
     <ScrollView
         android:id="@+id/scrollView3"
@@ -119,10 +118,12 @@
                 app:layout_constraintTop_toBottomOf="@+id/customizeButton" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/sportsRecyclerView"
+                android:id="@+id/customizeSportsRecyclerView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
                 android:paddingHorizontal="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -140,12 +141,14 @@
                 android:textSize="24sp"
                 android:textStyle="normal|bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/sportsRecyclerView" />
+                app:layout_constraintTop_toBottomOf="@+id/customizeSportsRecyclerView" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/tagsRecyclerView"
+                android:id="@+id/customizeTagsRecyclerView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
                 android:paddingHorizontal="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -163,7 +166,7 @@
                 android:textSize="24sp"
                 android:textStyle="normal|bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tagsRecyclerView" />
+                app:layout_constraintTop_toBottomOf="@+id/customizeTagsRecyclerView" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/upcomingRecyclerView"

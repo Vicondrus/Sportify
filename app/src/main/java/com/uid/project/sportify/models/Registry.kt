@@ -1,6 +1,8 @@
 package com.uid.project.sportify.models
 
 import com.uid.project.sportify.R
+import java.time.LocalDate
+import java.time.ZoneId
 import java.util.*
 
 class Registry private constructor() {
@@ -10,13 +12,16 @@ class Registry private constructor() {
 
         val user1Manager: User
             get() {
-                if (user1 == null){
+                if (user1 == null) {
                     user1 = User("Ana Maria", "ana.maria@yahoo.com",
-                    "password", "Grigorescu", Date(1999, 6, 1),
-                            listOf(Sport("Basketball", Level.BEGINNER), Sport("Track and Field", Level.ADVANCED)),
-                            listOf("#ParculMare", "#ProfessionalTenis", "#Politehnica"),
-                            listOf(Participation(Activity("Basketball Match", "Gheorgheni", Date(), R.drawable.basketball_presentation), PaticipationType.VIEWER),
-                                    Participation(Activity("Tennis Match", "Grigorescu", Date(), R.drawable.tennis_presentation), PaticipationType.VIEWER))
+                            "password", "Grigorescu", java.util.Date.from(LocalDate.parse("1997-11-06").atStartOfDay()
+                            .atZone(ZoneId.systemDefault())
+                            .toInstant()),
+                            mutableListOf(Sport("Basketball", Level.BEGINNER), Sport("Track and Field", Level.ADVANCED)),
+                        mutableListOf("#ParculMare", "#ProfessionalTenis", "#Politehnica"),
+                        mutableListOf(Participation(Activity("Basketball Match", "Gheorgheni", Date(), R.drawable.basketball_presentation), PaticipationType.VIEWER),
+                                    Participation(Activity("Tennis Match", "Grigorescu", Date(), R.drawable.tennis_presentation), PaticipationType.VIEWER)),
+                            R.drawable.ana_profile_picture
                     )
                 }
 
