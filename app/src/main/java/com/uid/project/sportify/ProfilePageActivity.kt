@@ -28,10 +28,10 @@ class ProfilePageActivity : AppCompatActivity() {
         val user = Registry.user1Manager
 
         val nameLabel = findViewById<TextView>(R.id.nameLabel)
-        nameLabel.text = "Ana Maria"
+        nameLabel.text = user.name
 
         val locationLabel = findViewById<TextView>(R.id.locationLabel)
-        locationLabel.text = "Grigorescu"
+        locationLabel.text = user.location
 
         val profileImage = findViewById<CircleImageView>(R.id.profileImage)
         profileImage.setImageResource(user.profilePictureId)
@@ -87,10 +87,9 @@ class ProfilePageActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        @Override fun onRestart() {
-            super.onRestart();
-            //When BACK BUTTON is pressed, the activity on the stack is restarted
-            //Do what you want on the refresh procedure here
+        @Override
+        fun onRestart() {
+            super.onRestart()
         }
     }
 }

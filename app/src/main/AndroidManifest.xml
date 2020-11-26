@@ -9,9 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Sportify">
+        <activity android:name=".SportsSelectionActivity"></activity>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBmVBp2jlJg9UCB1d3xaOfKFHVpNQHwwSU"/>
+            android:value="AIzaSyBmVBp2jlJg9UCB1d3xaOfKFHVpNQHwwSU" />
+
         <activity android:name=".ProfilePageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
