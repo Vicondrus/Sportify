@@ -7,11 +7,10 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.uid.project.sportify.R
 import com.uid.project.sportify.holders.DeletableItemViewHolder
-import com.uid.project.sportify.models.Registry
 
 class DeletableTagsListAdapter(
-    private val dataSet: MutableList<String>,
-    private val context: Context
+        private val dataSet: MutableList<String>,
+        private val context: Context
 ) : RecyclerView.Adapter<DeletableItemViewHolder>() {
     var listener: ((String) -> Unit)? = null
 
@@ -31,7 +30,7 @@ class DeletableTagsListAdapter(
         }
     }
 
-    fun addToDataSet(item: String){
+    fun addToDataSet(item: String) {
         dataSet.add(item)
     }
 

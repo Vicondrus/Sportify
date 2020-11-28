@@ -7,12 +7,11 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.uid.project.sportify.R
 import com.uid.project.sportify.holders.DeletableItemViewHolder
-import com.uid.project.sportify.models.Registry
 import com.uid.project.sportify.models.Sport
 
 class DeletableSportsListAdapter(
-    private val dataSet: MutableList<Sport>,
-    private val context: Context
+        val dataSet: MutableList<Sport>,
+        private val context: Context
 ) : RecyclerView.Adapter<DeletableItemViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DeletableItemViewHolder {

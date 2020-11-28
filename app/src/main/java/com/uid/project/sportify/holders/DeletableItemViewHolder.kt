@@ -1,5 +1,6 @@
 package com.uid.project.sportify.holders
 
+import android.graphics.drawable.GradientDrawable
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageButton
@@ -10,11 +11,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.uid.project.sportify.R
 
 class DeletableItemViewHolder(
-    inflater: LayoutInflater,
-    private var parent: ViewGroup,
-    private var color: Int
+        inflater: LayoutInflater,
+        private var parent: ViewGroup,
+        private var color: Int
 ) :
-    RecyclerView.ViewHolder(inflater.inflate(R.layout.deletable_list_item, parent, false)) {
+        RecyclerView.ViewHolder(inflater.inflate(R.layout.deletable_list_item, parent, false)) {
     private var title: TextView? = null
     private var background: ConstraintLayout? = null
     var deleteButton: ImageButton? = null
@@ -28,6 +29,9 @@ class DeletableItemViewHolder(
 
     fun bind(text: String) {
         title?.text = text
-        background?.setBackgroundColor(getColor(parent.context, color))
+        val shape = GradientDrawable()
+        shape.cornerRadius = 40f
+        shape.setColor(getColor(parent.context, color))
+        background?.background = shape
     }
 }

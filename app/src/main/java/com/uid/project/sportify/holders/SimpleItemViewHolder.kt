@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.uid.project.sportify.R
 
 class SimpleItemViewHolder(inflater: LayoutInflater, parent: ViewGroup, color: Int) :
-    RecyclerView.ViewHolder(inflater.inflate(R.layout.simple_list_item, parent, false)) {
+        RecyclerView.ViewHolder(inflater.inflate(R.layout.simple_list_item, parent, false)) {
     var title: Button? = null
 
 

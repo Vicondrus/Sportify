@@ -9,17 +9,16 @@ import android.widget.SearchView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.uid.project.sportify.R
-import com.uid.project.sportify.holders.DeletableItemViewHolder
 import com.uid.project.sportify.holders.SimpleItemViewHolder
 import com.uid.project.sportify.models.Registry
 import java.util.*
 import kotlin.collections.ArrayList
 
 class TagsSearchListAdapter(
-    private var dataList: MutableList<String>,
-    private var otherAdapter: DeletableTagsListAdapter,
-    private var searcher: SearchView,
-    private var context: Context
+        private var dataList: MutableList<String>,
+        private var otherAdapter: DeletableTagsListAdapter,
+        private var searcher: SearchView,
+        private var context: Context
 ) : RecyclerView.Adapter<SimpleItemViewHolder>(), Filterable {
 
     var tagsFilterList = ArrayList<String>()
@@ -62,7 +61,7 @@ class TagsSearchListAdapter(
                     resultList.add(charSearch)
                     for (row in dataList) {
                         if (row.toLowerCase(Locale.ROOT)
-                                .contains(charSearch.toLowerCase(Locale.ROOT))
+                                        .contains(charSearch.toLowerCase(Locale.ROOT))
                         ) {
                             resultList.add(row)
                         }

@@ -100,6 +100,7 @@
                 android:backgroundTint="@color/pink_sportify"
                 android:text="Customize"
                 android:textColor="@color/white"
+                app:cornerRadius="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"

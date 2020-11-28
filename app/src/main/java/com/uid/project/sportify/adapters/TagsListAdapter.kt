@@ -7,7 +7,7 @@ import com.uid.project.sportify.R
 import com.uid.project.sportify.holders.SimpleItemViewHolder
 
 class TagsListAdapter(private val dataSet: List<String>) :
-    RecyclerView.Adapter<SimpleItemViewHolder>() {
+        RecyclerView.Adapter<SimpleItemViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SimpleItemViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         return SimpleItemViewHolder(inflater, parent, R.color.dark_tone_sportify)

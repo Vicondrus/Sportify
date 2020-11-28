@@ -4,18 +4,18 @@ import android.content.Context
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.ImageView
 import android.widget.TextView
 import com.uid.project.sportify.R
-import com.uid.project.sportify.models.Activity
 import com.uid.project.sportify.models.Sport
 
-class SportsGridAdapter(private var dataList:List<Sport>, private var activity: Context) : BaseAdapter() {
+class SportsGridAdapter(var dataList: List<Sport>, private var activity: Context) : BaseAdapter() {
     override fun getCount(): Int {
         return dataList.size
     }
 
     override fun getItem(position: Int): Any {
-        return dataList.get(position)
+        return dataList[position]
     }
 
     override fun getItemId(position: Int): Long {
@@ -23,13 +23,22 @@ class SportsGridAdapter(private var dataList:List<Sport>, private var activity: 
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        val view: View = View.inflate(activity, R.layout.sport_selection_grid_item,null)
+        val view: View = View.inflate(activity, R.layout.sport_selection_grid_item, null)
 
-        val title = view.findViewById<TextView>(R.id.sportGridItemTitleTextView) as TextView
+        val title = view.findViewById(R.id.sportGridItemTitleTextView) as TextView
+        title.text = dataList[position].name
 
+        val image = view.findViewById<ImageView>(R.id.sportGridItemImageView)
 
-        title.text= dataList.get(position).toString()+"."
-
+        if (dataList[position].isSelected){
+            if (dataList[position].selectedImage > -1) {
+                image.setImageResource(dataList[position].selectedImage)
+            }
+        }else{
+            if (dataList[position].notSelectedImage > -1) {
+                image.setImageResource(dataList[position].notSelectedImage)
+            }
+        }
 
         return view
     }
