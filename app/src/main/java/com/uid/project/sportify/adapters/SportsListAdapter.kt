@@ -8,7 +8,7 @@ import com.uid.project.sportify.holders.SimpleItemViewHolder
 import com.uid.project.sportify.models.Sport
 
 class SportsListAdapter(private val dataSet: List<Sport>) :
-        RecyclerView.Adapter<SimpleItemViewHolder>() {
+    RecyclerView.Adapter<SimpleItemViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SimpleItemViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         return SimpleItemViewHolder(inflater, parent, R.color.purple_sportify)

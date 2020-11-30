@@ -11,6 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Sportify">
+        <activity android:name=".FriendListActivity" />
+
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBmVBp2jlJg9UCB1d3xaOfKFHVpNQHwwSU" />
@@ -23,9 +26,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".SportsSelectionActivity" />
-        <activity android:name=".LevelPopupActivity"
-            android:theme="@style/Theme.AppCompat.Dialog.Alert"
-            android:parentActivityName=".SportsSelectionActivity"/>
+        <activity
+            android:name=".LevelPopupActivity"
+            android:parentActivityName=".SportsSelectionActivity"
+            android:theme="@style/Theme.AppCompat.Dialog.Alert" />
         <activity
             android:name=".CustomizeProfileActivity"
             android:launchMode="singleTop"

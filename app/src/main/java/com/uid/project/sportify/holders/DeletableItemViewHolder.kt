@@ -11,11 +11,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.uid.project.sportify.R
 
 class DeletableItemViewHolder(
-        inflater: LayoutInflater,
-        private var parent: ViewGroup,
-        private var color: Int
+    inflater: LayoutInflater,
+    private var parent: ViewGroup,
+    private var color: Int
 ) :
-        RecyclerView.ViewHolder(inflater.inflate(R.layout.deletable_list_item, parent, false)) {
+    RecyclerView.ViewHolder(inflater.inflate(R.layout.deletable_list_item, parent, false)) {
     private var title: TextView? = null
     private var background: ConstraintLayout? = null
     var deleteButton: ImageButton? = null

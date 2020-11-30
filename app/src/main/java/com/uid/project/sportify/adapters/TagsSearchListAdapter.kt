@@ -15,10 +15,10 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class TagsSearchListAdapter(
-        private var dataList: MutableList<String>,
-        private var otherAdapter: DeletableTagsListAdapter,
-        private var searcher: SearchView,
-        private var context: Context
+    private var dataList: MutableList<String>,
+    private var otherAdapter: DeletableTagsListAdapter,
+    private var searcher: SearchView,
+    private var context: Context
 ) : RecyclerView.Adapter<SimpleItemViewHolder>(), Filterable {
 
     var tagsFilterList = ArrayList<String>()
@@ -61,7 +61,7 @@ class TagsSearchListAdapter(
                     resultList.add(charSearch)
                     for (row in dataList) {
                         if (row.toLowerCase(Locale.ROOT)
-                                        .contains(charSearch.toLowerCase(Locale.ROOT))
+                                .contains(charSearch.toLowerCase(Locale.ROOT))
                         ) {
                             resultList.add(row)
                         }

@@ -30,11 +30,11 @@ class SportsGridAdapter(var dataList: List<Sport>, private var activity: Context
 
         val image = view.findViewById<ImageView>(R.id.sportGridItemImageView)
 
-        if (dataList[position].isSelected){
+        if (dataList[position].isSelected) {
             if (dataList[position].selectedImage > -1) {
                 image.setImageResource(dataList[position].selectedImage)
             }
-        }else{
+        } else {
             if (dataList[position].notSelectedImage > -1) {
                 image.setImageResource(dataList[position].notSelectedImage)
             }

@@ -11,7 +11,7 @@ import android.widget.SeekBar
 import androidx.appcompat.app.AppCompatActivity
 
 
-class LevelPopupActivity: AppCompatActivity() {
+class LevelPopupActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,13 +25,18 @@ class LevelPopupActivity: AppCompatActivity() {
         button.background = shape
 
         window.setBackgroundDrawable(ColorDrawable(getColor(R.color.dark_tone_sportify)))
-        seekBar.progressDrawable.setColorFilter(getColor(R.color.pink_sportify), PorterDuff.Mode.SRC_IN)
+        seekBar.progressDrawable.setColorFilter(
+            getColor(R.color.pink_sportify),
+            PorterDuff.Mode.SRC_IN
+        )
         seekBar.thumb.setColorFilter(getColor(R.color.pink_sportify), PorterDuff.Mode.SRC_IN)
 
         button.setOnClickListener {
             val intent = Intent()
-            intent.putExtra("sportPosition", this.intent.getIntExtra
-            ("sportPosition", -1))
+            intent.putExtra(
+                "sportPosition", this.intent.getIntExtra
+                    ("sportPosition", -1)
+            )
             intent.putExtra("selectedLevel", seekBar.progress)
             setResult(Activity.RESULT_OK, intent)
             finish()

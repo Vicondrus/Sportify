@@ -11,7 +11,7 @@ import com.uid.project.sportify.models.Participation
 import java.text.SimpleDateFormat
 
 class ParticipationItemViewHolder(inflater: LayoutInflater, private var parent: ViewGroup) :
-        RecyclerView.ViewHolder(inflater.inflate(R.layout.event_list_item, parent, false)) {
+    RecyclerView.ViewHolder(inflater.inflate(R.layout.event_list_item, parent, false)) {
     private var eventName: TextView? = null
     private var participationType: TextView? = null
     private var date: TextView? = null
@@ -27,7 +27,7 @@ class ParticipationItemViewHolder(inflater: LayoutInflater, private var parent: 
 
     fun bind(participation: Participation) {
         whole?.background =
-                ResourcesCompat.getDrawable(parent.resources, participation.activity.image, null)
+            ResourcesCompat.getDrawable(parent.resources, participation.activity.image, null)
         eventName?.text = participation.activity.name
         participationType?.text = participation.type.toString()
 

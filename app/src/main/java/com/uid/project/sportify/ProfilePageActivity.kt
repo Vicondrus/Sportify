@@ -36,29 +36,29 @@ class ProfilePageActivity : AppCompatActivity() {
         val profileImage = findViewById<CircleImageView>(R.id.profileImage)
         if (user.secondaryPictureURI == null) {
             profileImage.setImageResource(user.profilePictureId)
-        }else{
+        } else {
             profileImage.setImageURI(user.secondaryPictureURI)
         }
 
         val layoutManager1 = LinearLayoutManager(
-                this@ProfilePageActivity,
-                LinearLayoutManager.HORIZONTAL,
-                false
+            this@ProfilePageActivity,
+            LinearLayoutManager.HORIZONTAL,
+            false
         )
         val layoutManager2 = LinearLayoutManager(
-                this@ProfilePageActivity,
-                LinearLayoutManager.HORIZONTAL,
-                false
+            this@ProfilePageActivity,
+            LinearLayoutManager.HORIZONTAL,
+            false
         )
         val layoutManager3 = LinearLayoutManager(
-                this@ProfilePageActivity,
-                LinearLayoutManager.HORIZONTAL,
-                false
+            this@ProfilePageActivity,
+            LinearLayoutManager.HORIZONTAL,
+            false
         )
         val layoutManager4 = LinearLayoutManager(
-                this@ProfilePageActivity,
-                LinearLayoutManager.HORIZONTAL,
-                false
+            this@ProfilePageActivity,
+            LinearLayoutManager.HORIZONTAL,
+            false
         )
 
         val sportsRecyclerView = findViewById<RecyclerView>(R.id.customizeSportsRecyclerView)
