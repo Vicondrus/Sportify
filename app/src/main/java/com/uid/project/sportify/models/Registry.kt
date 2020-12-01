@@ -14,7 +14,7 @@ class Registry private constructor() {
             get() {
                 if (user1 == null) {
                     user1 = User("Ana Maria", "ana.maria@yahoo.com",
-                            "password", "Grigorescu", java.util.Date.from(LocalDate.parse("1997-11-06").atStartOfDay()
+                            "password", "Centru", java.util.Date.from(LocalDate.parse("1997-11-06").atStartOfDay()
                             .atZone(ZoneId.systemDefault())
                             .toInstant()),
                             mutableListOf(Sport("Basketball", Level.BEGINNER), Sport("Track and Field", Level.ADVANCED)),
