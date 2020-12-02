@@ -58,6 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="25dp"
                 android:layout_marginBottom="25dp"
+                android:fadingEdge="horizontal|vertical"
                 app:layout_constraintBottom_toBottomOf="@+id/profilePictureImageView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:srcCompat="@android:drawable/ic_menu_edit" />
@@ -193,18 +194,22 @@
                 app:layout_constraintTop_toBottomOf="@+id/customizeProfileLocationLabel"
                 tools:text="Grigorescu" />
 
-            <fragment
+            <fragment xmlns:map="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/customizeProfileMapView"
-                android:name="com.google.android.gms.maps.SupportMapFragment"
+                class="com.huawei.hms.maps.SupportMapFragment"
                 android:layout_width="340dp"
-                android:layout_height="100dp"
+                android:layout_height="150dp"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="40dp"
+                map:cameraTargetLat="46.76667"
+                map:cameraTargetLng="23.6"
+                map:cameraZoom="11"
+                map:mapType="normal"
+                map:uiZoomControls="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/customizeProfileLocationValue"
-                tools:context="com.example.polygons.PolyActivity" />
+                app:layout_constraintTop_toBottomOf="@+id/customizeProfileLocationValue" />
 
             <TextView
                 android:id="@+id/sportsLabel2"
@@ -242,6 +247,7 @@
                 android:layout_marginEnd="70dp"
                 android:layout_marginBottom="100dp"
                 android:text="Button"
+                app:cornerRadius="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -298,6 +304,18 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/customizeProfileTagsSearchView" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                android:onClick="goToMap"
+                android:text="Change location"
+                app:cornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profileBirthdateTextView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

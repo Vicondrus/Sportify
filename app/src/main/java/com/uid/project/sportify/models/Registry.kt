@@ -13,15 +13,37 @@ class Registry private constructor() {
         val user1Manager: User
             get() {
                 if (user1 == null) {
-                    user1 = User("Ana Maria", "ana.maria@yahoo.com",
-                            "password", "Grigorescu", java.util.Date.from(LocalDate.parse("1997-11-06").atStartOfDay()
-                            .atZone(ZoneId.systemDefault())
-                            .toInstant()),
-                            mutableListOf(Sport("Basketball", Level.BEGINNER), Sport("Track and Field", Level.ADVANCED)),
+                    user1 = User(
+                        "Ana Maria", "ana.maria@yahoo.com",
+                        "password", "Centru", java.util.Date.from(
+                            LocalDate.parse("1997-11-06").atStartOfDay()
+                                .atZone(ZoneId.systemDefault())
+                                .toInstant()
+                        ),
+                        mutableListOf(
+                            Sport("Basketball", Level.BEGINNER),
+                            Sport("Track and Field", Level.ADVANCED)
+                        ),
                         mutableListOf("#ParculMare", "#ProfessionalTenis", "#Politehnica"),
-                        mutableListOf(Participation(Activity("Basketball Match", "Gheorgheni", Date(), R.drawable.basketball_presentation), PaticipationType.VIEWER),
-                                    Participation(Activity("Tennis Match", "Grigorescu", Date(), R.drawable.tennis_presentation), PaticipationType.VIEWER)),
-                            R.drawable.ana_profile_picture
+                        mutableListOf(
+                            Participation(
+                                Activity(
+                                    "Basketball Match",
+                                    "Gheorgheni",
+                                    Date(),
+                                    R.drawable.basketball_presentation
+                                ), PaticipationType.VIEWER
+                            ),
+                            Participation(
+                                Activity(
+                                    "Tennis Match",
+                                    "Grigorescu",
+                                    Date(),
+                                    R.drawable.tennis_presentation
+                                ), PaticipationType.VIEWER
+                            )
+                        ),
+                        R.drawable.ana_profile_picture
                     )
                 }
 
