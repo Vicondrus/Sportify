@@ -1,5 +1,6 @@
 package com.uid.project.sportify.models
 
+import java.io.Serializable
 import java.util.*
 
 class User(val name: String,
@@ -11,4 +12,4 @@ class User(val name: String,
            val tags: MutableList<String>,
            val participations: MutableList<Participation>,
            val profilePictureId: Int
-)
+) : Serializable
