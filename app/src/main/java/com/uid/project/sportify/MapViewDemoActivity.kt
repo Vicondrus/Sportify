@@ -25,7 +25,6 @@ import java.sql.Types.NULL
 
 class MapViewDemoActivity : AppCompatActivity(), OnMapReadyCallback {
 
-    //HUAWEI map
     private var hMap: HuaweiMap? = null
 
     private var mMapView: MapView? = null

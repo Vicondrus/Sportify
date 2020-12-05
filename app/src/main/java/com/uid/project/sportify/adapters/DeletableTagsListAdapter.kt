@@ -1,15 +1,17 @@
 package com.uid.project.sportify.adapters
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.uid.project.sportify.R
 import com.uid.project.sportify.holders.DeletableItemViewHolder
-import com.uid.project.sportify.holders.SimpleItemViewHolder
-import com.uid.project.sportify.models.Registry
-import com.uid.project.sportify.models.Sport
 
-class DeletableTagsListAdapter(private val dataSet: MutableList<String>) : RecyclerView.Adapter<DeletableItemViewHolder>() {
+class DeletableTagsListAdapter(
+    private val dataSet: MutableList<String>,
+    private val context: Context
+) : RecyclerView.Adapter<DeletableItemViewHolder>() {
     var listener: ((String) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DeletableItemViewHolder {
@@ -20,10 +22,15 @@ class DeletableTagsListAdapter(private val dataSet: MutableList<String>) : Recyc
     override fun onBindViewHolder(holder: DeletableItemViewHolder, position: Int) {
         val tag: String = dataSet[position]
         holder.bind(tag)
-        holder.deleteButton?.setOnClickListener{
-            Registry.user1Manager.tags.removeAt(position)
+        holder.setClickListener {
+            dataSet.removeAt(position)
             notifyDataSetChanged()
+            Toast.makeText(context, "Tag deleted", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    fun addToDataSet(item: String) {
+        dataSet.add(item)
     }
 
     override fun getItemCount(): Int {

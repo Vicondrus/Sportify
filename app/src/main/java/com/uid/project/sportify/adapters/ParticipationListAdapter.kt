@@ -6,7 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.uid.project.sportify.holders.ParticipationItemViewHolder
 import com.uid.project.sportify.models.Participation
 
-class ParticipationListAdapter(private val dataSet: List<Participation>) : RecyclerView.Adapter<ParticipationItemViewHolder>() {
+class ParticipationListAdapter(private val dataSet: List<Participation>) :
+    RecyclerView.Adapter<ParticipationItemViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ParticipationItemViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         return ParticipationItemViewHolder(inflater, parent)
