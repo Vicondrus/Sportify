@@ -1,4 +1,11 @@
 package com.uid.project.sportify.models
 
-class Sport(val name: String, val level: Level) {
-}
+import java.io.Serializable
+
+class Sport(
+    val name: String,
+    var level: Level,
+    var isSelected: Boolean = false,
+    var selectedImage: Int = -1,
+    var notSelectedImage: Int = -1
+) : Serializable

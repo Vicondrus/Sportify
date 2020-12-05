@@ -45,22 +45,24 @@
 
             <ImageView
                 android:id="@+id/profilePictureImageView"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="510dp"
+                android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ana_profile_picture" />
 
             <ImageButton
-                    android:id="@+id/imageButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="25dp"
-                    android:layout_marginBottom="25dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/profilePictureImageView"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:srcCompat="@android:drawable/ic_menu_edit" android:fadingEdge="horizontal|vertical"/>
+                android:id="@+id/changeProfilePictureImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="25dp"
+                app:layout_constraintBottom_toBottomOf="@+id/profilePictureImageView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@android:drawable/ic_menu_edit"
+                android:fadingEdge="horizontal|vertical"/>
 
             <EditText
                 android:id="@+id/profileNameTextView"
@@ -175,12 +177,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
+                android:text="@string/location_label"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/imageView8"
-                app:layout_constraintTop_toBottomOf="@+id/profileBirthdateTextView"
-                android:text="@string/location_label" />
+                app:layout_constraintTop_toBottomOf="@+id/profileBirthdateTextView" />
 
             <TextView
                 android:id="@+id/customizeProfileLocationValue"
@@ -218,7 +220,7 @@
                 android:layout_margin="30dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="30dp"
-                android:text="Sports"
+                android:text="@string/sports_label"
                 android:textColor="@color/black"
                 android:textSize="24sp"
                 android:textStyle="normal|bold"
@@ -234,23 +236,22 @@
                 android:paddingHorizontal="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/sportsLabel2">
-
-            </androidx.recyclerview.widget.RecyclerView>
+                app:layout_constraintTop_toBottomOf="@+id/sportsLabel2"/>
 
             <Button
-                    android:id="@+id/button2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="70dp"
-                    android:layout_marginTop="40dp"
-                    android:layout_marginEnd="70dp"
-                    android:layout_marginBottom="100dp"
-                    android:text="Button"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/searchTagsRecyclerView" app:cornerRadius="20dp"/>
+                android:id="@+id/customizeProfileSaveButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="70dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="70dp"
+                android:layout_marginBottom="100dp"
+                android:text="@string/save_changes_label"
+                app:cornerRadius="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/searchTagsRecyclerView" />
 
             <TextView
                 android:id="@+id/tagsLabel2"
@@ -259,7 +260,7 @@
                 android:layout_margin="30dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginTop="30dp"
-                android:text="Tags"
+                android:text="@string/tags_label"
                 android:textColor="@color/black"
                 android:textSize="24sp"
                 android:textStyle="normal|bold"
@@ -274,9 +275,7 @@
                 android:paddingHorizontal="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tagsLabel2">
-
-            </androidx.recyclerview.widget.RecyclerView>
+                app:layout_constraintTop_toBottomOf="@+id/tagsLabel2"/>
 
             <SearchView
                 android:id="@+id/customizeProfileTagsSearchView"
@@ -296,9 +295,9 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/searchTagsRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
                 android:paddingHorizontal="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -312,6 +311,18 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     android:onClick="goToMap"
                     android:layout_marginEnd="30dp" app:cornerRadius="20dp"/>
+
+            <ImageButton
+                android:id="@+id/addSportButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="50dp"
+                android:background="@drawable/add_button"
+                android:backgroundTint="@color/cardview_shadow_end_color"
+                app:layout_constraintBottom_toBottomOf="@+id/sportsLabel2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/sportsLabel2"
+                app:srcCompat="@android:drawable/ic_menu_add" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
