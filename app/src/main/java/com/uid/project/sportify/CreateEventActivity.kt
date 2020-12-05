@@ -16,13 +16,16 @@ class CreateEventActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_event)
 
+        supportActionBar?.hide()
+
         val button = findViewById<Button>(R.id.createEventButton)
         button.setOnClickListener {
 
             val eventName = findViewById<EditText>(R.id.eventNameTextView).text.toString()
             val eventImage = R.id.eventImage
             val eventHostName = Registry.user1Manager.name
-            val eventDescription = findViewById<EditText>(R.id.eventDescriptionTextView).text.toString()
+            val eventDescription =
+                findViewById<EditText>(R.id.eventDescriptionTextView).text.toString()
 //            val eventDate= LocalDate.parse(findViewById<EditText>(R.id.eventDateDate).text.toString())
             val eventDate = LocalDate.now()
 //            val eventTime=LocalTime.parse(findViewById<EditText>(R.id.eventTimeTime).text.toString())

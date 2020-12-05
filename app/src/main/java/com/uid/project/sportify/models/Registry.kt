@@ -8,6 +8,7 @@ import java.util.*
 class Registry private constructor() {
 
     companion object {
+
         private var user1: User? = null
 
         val user1Manager: User

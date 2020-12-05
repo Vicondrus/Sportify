@@ -19,9 +19,11 @@ class NewsFeedActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_news_feed)
 
+        supportActionBar?.hide()
+
         val newsFeedRecyclerView = findViewById<RecyclerView>(R.id.newsFeedRecyclerView)
         val layoutManager = LinearLayoutManager(
-                this@NewsFeedActivity,
+            this@NewsFeedActivity,
         )
         newsFeedRecyclerView.layoutManager = layoutManager
         newsFeedPosts = NewsFeedPostList().getNewsFeedPosts()

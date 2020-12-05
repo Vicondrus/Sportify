@@ -6,11 +6,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.uid.project.sportify.R
 import com.uid.project.sportify.models.Message
+import com.uid.project.sportify.models.MessageType
 
 class MessageSentViewHolder(inflater: LayoutInflater, private var parent: ViewGroup) :
         RecyclerView.ViewHolder(inflater.inflate(R.layout.message_item_sent, parent, false)) {
     private var message: TextView? = null
-    private var isSent: Boolean? = null
+    private var type: MessageType? = null
 
     init {
         message = itemView.findViewById(R.id.chatMessageSent) as TextView
@@ -18,7 +19,7 @@ class MessageSentViewHolder(inflater: LayoutInflater, private var parent: ViewGr
 
     fun bind(sentMessage: Message) {
         message?.text = sentMessage.message
-        isSent = sentMessage.isSent
+        type = sentMessage.type
     }
 
 }

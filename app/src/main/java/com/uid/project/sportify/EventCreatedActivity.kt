@@ -12,6 +12,8 @@ class EventCreatedActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_event_created)
 
+        supportActionBar?.hide()
+
         val event = this.intent.getSerializableExtra("event") as Event
 
         val eventNameContainer = findViewById<TextView>(R.id.eventCreatedEventNameTextView)

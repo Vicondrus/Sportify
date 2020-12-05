@@ -15,6 +15,8 @@ class EventPageOrganizerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_event_page_organizer)
 
+        supportActionBar?.hide()
+
         val event = this.intent.getSerializableExtra("event") as Event
 
         val eventName = findViewById<TextView>(R.id.eventPageOrganizerEventName)

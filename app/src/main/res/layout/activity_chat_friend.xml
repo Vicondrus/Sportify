@@ -38,7 +38,7 @@
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/toolbar11"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton5"
+        app:layout_constraintEnd_toStartOf="@+id/audioCallButton"
         app:layout_constraintStart_toEndOf="@+id/imageButton2"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Friend name" />
@@ -55,23 +55,23 @@
         app:srcCompat="@drawable/ic_arrow" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/videoCallButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
         android:backgroundTint="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton5"
+        app:layout_constraintBottom_toBottomOf="@+id/audioCallButton"
         app:layout_constraintEnd_toEndOf="@+id/toolbar10"
-        app:layout_constraintTop_toTopOf="@+id/imageButton5"
+        app:layout_constraintTop_toTopOf="@+id/audioCallButton"
         app:srcCompat="@drawable/ic_video_camera" />
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/audioCallButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/messageFriendNameTextView"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton4"
+        app:layout_constraintEnd_toStartOf="@+id/videoCallButton"
         app:layout_constraintTop_toTopOf="@+id/messageFriendNameTextView"
         app:srcCompat="@drawable/ic_phone_call" />
 

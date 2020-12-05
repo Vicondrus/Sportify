@@ -21,15 +21,18 @@ class ChatMainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat_main)
 
+        supportActionBar?.hide()
+
         val messagesRecyclerView = findViewById<RecyclerView>(R.id.chatMainRecyclerView)
         val layoutManager = LinearLayoutManager(
-                this@ChatMainActivity,
+            this@ChatMainActivity,
         )
 
         chatMessageList = ChatMessageList().getMessages()
 
         messagesRecyclerView.layoutManager = layoutManager
-        chatMessagesAdapter = ChatMessagesAdapter(chatMessageList, this@ChatMainActivity, messageActivityId)
+        chatMessagesAdapter =
+            ChatMessagesAdapter(chatMessageList, this@ChatMainActivity, messageActivityId)
         messagesRecyclerView.adapter = chatMessagesAdapter
     }
 
@@ -51,6 +54,5 @@ class ChatMainActivity : AppCompatActivity() {
                 }
             }
         }
-
     }
 }
