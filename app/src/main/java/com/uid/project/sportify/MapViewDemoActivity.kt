@@ -8,7 +8,6 @@ import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -16,8 +15,9 @@ import androidx.core.app.ActivityCompat
 import com.huawei.hms.maps.HuaweiMap
 import com.huawei.hms.maps.MapView
 import com.huawei.hms.maps.OnMapReadyCallback
-import com.huawei.hms.maps.model.*
-import java.sql.Types.NULL
+import com.huawei.hms.maps.model.LatLng
+import com.huawei.hms.maps.model.Marker
+import com.huawei.hms.maps.model.PolygonOptions
 
 /**
  * map activity entrance class
@@ -31,7 +31,7 @@ class MapViewDemoActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private var selectedLocation: String = ""
 
-    private lateinit var confirmationButton : Button
+    private lateinit var confirmationButton: Button
 
     companion object {
         private const val TAG = "MapViewDemoActivity"
@@ -57,7 +57,7 @@ class MapViewDemoActivity : AppCompatActivity(), OnMapReadyCallback {
         confirmationButton = findViewById<Button>(R.id.confirmationButton)
         confirmationButton.isEnabled = false
 
-        confirmationButton.setOnClickListener{
+        confirmationButton.setOnClickListener {
             intent.putExtra("chosenLocation", selectedLocation)
             setResult(Activity.RESULT_OK, intent)
             finish()
@@ -66,7 +66,7 @@ class MapViewDemoActivity : AppCompatActivity(), OnMapReadyCallback {
 
     }
 
-    fun selectLocation (location: String){
+    fun selectLocation(location: String) {
         selectedLocation = location
         confirmationButton.isEnabled = true
         confirmationButton.setBackgroundColor(Color.parseColor("#8A56AC"))
@@ -77,23 +77,23 @@ class MapViewDemoActivity : AppCompatActivity(), OnMapReadyCallback {
         Log.d(TAG, "onMapReady: ")
         hMap = map
         hMap!!.addPolygon(
-                PolygonOptions()
-                        .clickable(true)
-                        .add(
-                                LatLng(46.7613847, 23.5447311),
-                                LatLng(46.7615023, 23.5464907),
-                                LatLng(46.7655298, 23.5513830),
-                                LatLng(46.7657943, 23.5546875),
-                                LatLng(46.7680284, 23.5593653),
-                                LatLng(46.7676169, 23.5663176),
-                                LatLng(46.7697627, 23.5712528),
-                                LatLng(46.7722317, 23.5817671),
-                                LatLng(46.7740246, 23.5613823),
-                                LatLng(46.7709972, 23.5504818),
-                                LatLng(46.7650006, 23.5418558),
-                                LatLng(46.7650300, 23.5448170),
-                                LatLng(46.7613847, 23.5447311)
-                        ).strokeColor(Color.parseColor("#8A56AC"))
+            PolygonOptions()
+                .clickable(true)
+                .add(
+                    LatLng(46.7613847, 23.5447311),
+                    LatLng(46.7615023, 23.5464907),
+                    LatLng(46.7655298, 23.5513830),
+                    LatLng(46.7657943, 23.5546875),
+                    LatLng(46.7680284, 23.5593653),
+                    LatLng(46.7676169, 23.5663176),
+                    LatLng(46.7697627, 23.5712528),
+                    LatLng(46.7722317, 23.5817671),
+                    LatLng(46.7740246, 23.5613823),
+                    LatLng(46.7709972, 23.5504818),
+                    LatLng(46.7650006, 23.5418558),
+                    LatLng(46.7650300, 23.5448170),
+                    LatLng(46.7613847, 23.5447311)
+                ).strokeColor(Color.parseColor("#8A56AC"))
         ).tag = "Grigorescu"
 
         hMap!!.addPolygon(
@@ -103,7 +103,7 @@ class MapViewDemoActivity : AppCompatActivity(), OnMapReadyCallback {
                     LatLng(46.7740834, 23.5876465),
                     LatLng(46.7697627, 23.5745144),
                     LatLng(46.7677932, 23.5736561),
-                    LatLng( 46.7670584, 23.5743856),
+                    LatLng(46.7670584, 23.5743856),
                     LatLng(46.7675287, 23.5774755),
                     LatLng(46.7659707, 23.5786772),
                     LatLng(46.7637659, 23.5842562),
@@ -120,7 +120,7 @@ class MapViewDemoActivity : AppCompatActivity(), OnMapReadyCallback {
         ).tag = "Centru"
 
         hMap!!.setOnPolygonClickListener { polygon ->
-           Toast.makeText(applicationContext, polygon.tag.toString(), Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, polygon.tag.toString(), Toast.LENGTH_SHORT).show()
             selectLocation(polygon.tag.toString())
         }
     }
@@ -154,7 +154,11 @@ class MapViewDemoActivity : AppCompatActivity(), OnMapReadyCallback {
     private fun hasPermissions(context: Context, vararg permissions: String): Boolean {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             for (permission in permissions) {
-                if (ActivityCompat.checkSelfPermission(context, permission) != PackageManager.PERMISSION_GRANTED) {
+                if (ActivityCompat.checkSelfPermission(
+                        context,
+                        permission
+                    ) != PackageManager.PERMISSION_GRANTED
+                ) {
                     return false
                 }
             }

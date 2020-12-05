@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/chatMessageReadParentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/chatMainToolBarRead"
+        android:layout_width="410dp"
+        android:layout_height="100dp"
+        android:background="@color/white"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/chatPersonImageRead"
+        android:layout_width="59dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="30dp"
+        android:src="@drawable/event_picture"
+        app:civ_border_color="@color/white"
+        app:civ_border_width="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/chatLastMessageRead"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/chatPersonNameRead" />
+
+    <TextView
+        android:id="@+id/chatPersonNameRead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="25dp"
+        android:textColor="@color/dark_grey_sportify"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/chatPersonImageRead"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Person name" />
+
+    <TextView
+        android:id="@+id/chatLastMessageRead"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="30dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/chatPersonNameRead"
+        app:layout_constraintTop_toBottomOf="@+id/chatPersonNameRead"
+        tools:text="Last message" />
+
+    <TextView
+        android:id="@+id/chatTimeRead"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:textColor="@color/grey_sportify"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/chatLastMessageRead"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/chatPersonNameRead"
+        tools:text="Time" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/chatLineToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey_sportify"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chatMainToolBarRead" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

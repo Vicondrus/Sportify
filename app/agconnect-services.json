@@ -1,14 +1,14 @@
 {
-	"client":{
-		"appType":"1",
-		"cp_id":"390040000000040374",
-		"product_id":"736430079244718561",
-		"client_id":"505029442788132032",
-		"client_secret":"898D4150DF60D5A99EC99E1750D655BBDE16124E761A0DE053E4508D94C456F2",
-		"project_id":"736430079244718561",
-		"app_id":"103372121",
-		"api_key":"CgB6e3x9qHae6wqJoaGLlt5nHQPZLKHvnQcPG3AW7m1fpKRbjFQM9rEbjACxomsvysFZErokGnfOjC+0vHnsYGRQ",
-		"package_name":"com.uid.project.sportify"
-	},
-	"configuration_version":"1.0"
+  "client": {
+    "appType": "1",
+    "cp_id": "390040000000040374",
+    "product_id": "736430079244718561",
+    "client_id": "505029442788132032",
+    "client_secret": "898D4150DF60D5A99EC99E1750D655BBDE16124E761A0DE053E4508D94C456F2",
+    "project_id": "736430079244718561",
+    "app_id": "103372121",
+    "api_key": "CgB6e3x9qHae6wqJoaGLlt5nHQPZLKHvnQcPG3AW7m1fpKRbjFQM9rEbjACxomsvysFZErokGnfOjC+0vHnsYGRQ",
+    "package_name": "com.uid.project.sportify"
+  },
+  "configuration_version": "1.0"
 }

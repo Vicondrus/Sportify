@@ -3,6 +3,40 @@
     <string name="profile_label">Profile</string>
     <string name="customize_profile_label">Customize Profile</string>
     <string name="location_label">Location</string>
+
+    <string name="create_event_label">Create new event</string>
+    <string name="create_event_description_label">Find your people and do your thing - together</string>
+    <string name="event_name_label">Event name</string>
+    <string name="event_description_label">Description</string>
+    <string name="event_date_time_label">Date and time</string>
+    <string name="event_nb_of_people_label">Number of people</string>
+    <string name="event_attendance_fee_label">Attendance fee</string>
+    <string name="event_sports_label">Sports</string>
+    <string name="event_requirements_label">Requirements</string>
+    <string name="event_tags_label">Tags</string>
+
+    <string name="continue_label">Continue</string>
+
+    <string name="event_created_label">Event created</string>
+    <string name="tell_friends_label">Tell friends</string>
+    <string name="done_label">Done</string>
+
+    <string name="conversations_label">Conversations</string>
+    <string name="say_something_hint">Say something...</string>
+
+    <string name="hosted_by_you_label">Hosted by you</string>
+    <string name="scan_qr_code_button">Scan QR code</string>
+    <string name="delegate_a_friend_button">Delegate a friend</string>
+    <string name="your_friend_label">Your friend</string>
+    <string name="added_a_new_event_label">added a new event!</string>
+    <string name="details_button_label">Details...</string>
+    <string name="line_label">-</string>
+    <string name="added_photos_label">added photos!</string>
+    <string name="see_all_photos_label">See all photos...</string>
+    <string name="what_to_do_today_label">What to do today?</string>
+    <string name="calling_label">Calling</string>
+    <string name="three_dots_label">...</string>
+
     <string name="sports_label">Sports</string>
     <string name="tags_label">Tags</string>
     <string name="save_changes_label">Save Changes</string>
