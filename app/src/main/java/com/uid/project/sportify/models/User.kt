@@ -1,16 +1,30 @@
 package com.uid.project.sportify.models
 
-import java.io.Serializable
+import android.net.Uri
 import java.util.*
 
 class User(
-    val name: String,
-    val email: String,
-    val password: String,
+    var name: String,
+    var email: String,
+    var password: String,
     var location: String,
-    val birthdate: Date,
-    val sports: MutableList<Sport>,
-    val tags: MutableList<String>,
-    val participations: MutableList<Participation>,
-    val profilePictureId: Int
-) : Serializable
+    var birthdate: Date,
+    var sports: MutableList<Sport>,
+    var tags: MutableList<String>,
+    var participations: MutableList<Participation>,
+    var profilePictureId: Int,
+    var secondaryPictureURI: Uri? = null
+) {
+    constructor(u: User) : this(
+        u.name,
+        u.email,
+        u.password,
+        u.location,
+        u.birthdate,
+        u.sports.toMutableList(),
+        u.tags.toMutableList(),
+        u.participations.toMutableList(),
+        u.profilePictureId,
+        u.secondaryPictureURI
+    )
+}

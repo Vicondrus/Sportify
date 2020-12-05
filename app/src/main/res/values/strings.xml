@@ -37,4 +37,10 @@
     <string name="calling_label">Calling</string>
     <string name="three_dots_label">...</string>
 
+    <string name="sports_label">Sports</string>
+    <string name="tags_label">Tags</string>
+    <string name="save_changes_label">Save Changes</string>
+    <string name="submit_label">Submit</string>
+    <string name="select_sport_label">Select Sport</string>
+    <string name="choose_level_label">Choose your level</string>
 </resources>

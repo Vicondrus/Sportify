@@ -25,7 +25,6 @@ import com.huawei.hms.maps.model.PolygonOptions
 
 class MapViewDemoActivity : AppCompatActivity(), OnMapReadyCallback {
 
-    //HUAWEI map
     private var hMap: HuaweiMap? = null
 
     private var mMapView: MapView? = null
