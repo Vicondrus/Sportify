@@ -29,7 +29,7 @@ class ChatMessageReadViewHolder(private val view: View) :
         personName?.text = message.friend.name
         lastMessage?.text = message.messageList.last().message
         messageTime?.text = message.time
-        personImage?.setImageResource(message.friend.image)
+        personImage?.setImageResource(message.friend.profilePictureId)
         isRead = message.isRead
     }
 }

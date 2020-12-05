@@ -15,7 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Sportify">
-        <activity android:name=".AudioVideoCallActivity"></activity>
+        <activity android:name=".AudioVideoCallActivity" />
         <activity android:name=".ButtonsPageAddActivity" />
 
         <activity android:name=".FriendListActivity" />
@@ -26,15 +26,15 @@
             android:value="AIzaSyBmVBp2jlJg9UCB1d3xaOfKFHVpNQHwwSU" />
 
         <activity android:name=".NewsFeedActivity">
-            android:value="AIzaSyBmVBp2jlJg9UCB1d3xaOfKFHVpNQHwwSU" />
-
-        <activity android:name=".ProfilePageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ProfilePageActivity" />
+
+        <activity android:name=".ProfilePageActivity">
+
+        </activity>
         <activity android:name=".CreateEventActivity" />
         <activity android:name=".EventCreatedActivity" />
         <activity android:name=".ChatMainActivity" />

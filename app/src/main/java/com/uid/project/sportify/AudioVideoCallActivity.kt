@@ -32,7 +32,7 @@ class AudioVideoCallActivity : AppCompatActivity() {
         callingFriendNameTextView.text = friend.name
 
         val callingFriendImageImageView = findViewById<ImageView>(R.id.callingFriendImage)
-        callingFriendImageImageView.setImageResource(friend.image)
+        callingFriendImageImageView.setImageResource(friend.profilePictureId)
 
         val callingHangUpButton = findViewById<ImageButton>(R.id.callingHangUpButton)
         callingHangUpButton.setOnClickListener {
