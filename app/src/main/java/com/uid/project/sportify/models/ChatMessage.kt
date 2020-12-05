@@ -4,7 +4,8 @@ import java.io.Serializable
 
 class ChatMessage(
         val friend: Friend,
-        val time: String,
-        val lastMessage: String,
-        val isRead: Boolean
+        var time: String,
+        var lastMessage: String,
+        var isRead: Boolean,
+        var messageList: List<Message>
 ) : Serializable

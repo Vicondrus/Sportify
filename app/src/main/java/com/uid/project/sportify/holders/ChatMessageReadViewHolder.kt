@@ -9,7 +9,7 @@ import com.uid.project.sportify.R
 import com.uid.project.sportify.models.ChatMessage
 
 class ChatMessageReadViewHolder(private val view: View) :
-        RecyclerView.ViewHolder(view), View.OnClickListener {
+        RecyclerView.ViewHolder(view) {
     private var personName: TextView? = null
     private var lastMessage: TextView? = null
     private var messageTime: TextView? = null
@@ -22,19 +22,14 @@ class ChatMessageReadViewHolder(private val view: View) :
         lastMessage = itemView.findViewById(R.id.chatLastMessageRead) as TextView
         messageTime = itemView.findViewById(R.id.chatTimeRead) as TextView
         personImage = itemView.findViewById(R.id.chatPersonImageRead) as ImageView
-        isRead = true
         mainToolbar = itemView.findViewById(R.id.chatMainToolBarRead) as Toolbar
     }
 
     fun bind(message: ChatMessage) {
         personName?.text = message.friend.name
-        lastMessage?.text = message.lastMessage
+        lastMessage?.text = message.messageList.last().message
         messageTime?.text = message.time
         personImage?.setImageResource(message.friend.image)
         isRead = message.isRead
     }
-
-    override fun onClick(view: View?) {
-    }
-
 }

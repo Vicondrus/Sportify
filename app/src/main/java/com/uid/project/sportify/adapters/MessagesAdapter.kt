@@ -1,7 +1,6 @@
 package com.uid.project.sportify.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.uid.project.sportify.holders.MessageReceivedViewHolder
@@ -14,12 +13,10 @@ class MessagesAdapter(private var dataSet: ArrayList<Message>) : RecyclerView.Ad
     private val MSG_RECEIVED = 2
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val inflater = LayoutInflater.from(parent.context)
-        val view: View
-        return if (viewType === MSG_SENT) { // for call layout
+        return if (viewType == MSG_SENT) {
             val inflater = LayoutInflater.from(parent.context)
             MessageSentViewHolder(inflater, parent)
-        } else { // for email layout
+        } else {
             val inflater = LayoutInflater.from(parent.context)
             MessageReceivedViewHolder(inflater, parent)
         }
@@ -27,7 +24,7 @@ class MessagesAdapter(private var dataSet: ArrayList<Message>) : RecyclerView.Ad
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val message: Message = dataSet[position]
-        if (getItemViewType(position) === MSG_SENT) {
+        if (getItemViewType(position) == MSG_SENT) {
             (holder as MessageSentViewHolder).bind(message)
         } else {
             (holder as MessageReceivedViewHolder).bind(message)
@@ -50,4 +47,10 @@ class MessagesAdapter(private var dataSet: ArrayList<Message>) : RecyclerView.Ad
     fun addMessage(position: Int, message: Message) {
         dataSet.add(position, message)
     }
+
+    fun getMessages(): ArrayList<Message> {
+        return dataSet
+    }
+
+
 }
