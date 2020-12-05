@@ -43,4 +43,10 @@
     <string name="submit_label">Submit</string>
     <string name="select_sport_label">Select Sport</string>
     <string name="choose_level_label">Choose your level</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
 </resources>
