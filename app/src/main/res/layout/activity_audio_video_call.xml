@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/light_grey_sportify"
+    android:backgroundTintMode="src_over"
+    android:foregroundTint="@color/grey_sportify"
+    tools:context=".AudioVideoCallActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar21"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/light_tone_sportify"
+        android:backgroundTintMode="add"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/callingHangUpButton"
+        android:layout_width="74dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="200dp"
+        android:backgroundTint="@color/light_tone_sportify"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_hang_up" />
+
+    <TextView
+        android:id="@+id/callingLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/calling_label"
+        android:textColor="@color/dark_tone_sportify"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/callingFriendImage" />
+
+    <TextView
+        android:id="@+id/callingFriendName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/dark_tone_sportify"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/callingLabelTextView"
+        app:layout_constraintStart_toEndOf="@+id/callingLabelTextView"
+        app:layout_constraintTop_toTopOf="@+id/callingLabelTextView"
+        tools:text="friend name" />
+
+    <TextView
+        android:id="@+id/threeDotsLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/three_dots_label"
+        android:textColor="@color/dark_tone_sportify"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/callingLabelTextView"
+        app:layout_constraintStart_toEndOf="@+id/callingFriendName"
+        app:layout_constraintTop_toTopOf="@+id/callingLabelTextView" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/callingFriendImage"
+        android:layout_width="96dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/event_picture"
+        app:civ_border_width="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@color/light_grey_sportify"
+    android:backgroundTint="@color/light_grey_sportify"
+    android:padding="10dp">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar15"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/newsFriendImage1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/boy_pic_2"
+        app:civ_border_color="@color/white"
+        app:civ_border_width="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar15"
+        app:layout_constraintStart_toStartOf="@+id/toolbar15"
+        app:layout_constraintTop_toTopOf="@+id/toolbar15" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/your_friend_label"
+        android:textColor="@color/dark_grey_sportify"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/newsFriendImage1"
+        app:layout_constraintStart_toEndOf="@+id/newsFriendImage1"
+        app:layout_constraintTop_toTopOf="@+id/newsFriendImage1" />
+
+    <TextView
+        android:id="@+id/newsFriendName1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="@color/dark_grey_sportify"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/textView4"
+        app:layout_constraintStart_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toTopOf="@+id/textView4"
+        tools:text="friend name" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="15dp"
+        android:text="@string/added_a_new_event_label"
+        android:textColor="@color/dark_grey_sportify"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/newsFriendName1"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar15"
+        app:layout_constraintStart_toEndOf="@+id/newsFriendName1"
+        app:layout_constraintTop_toTopOf="@+id/newsFriendName1" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar16"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar15">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="16dp">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/newsEventImage1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/event_picture"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/newsEventName1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:textColor="@color/dark_grey_sportify"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/newsEventImage1"
+                app:layout_constraintTop_toTopOf="@+id/newsEventImage1"
+                tools:text="Event name" />
+
+            <TextView
+                android:id="@+id/newsEventDate1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_grey_sportify"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/newsEventName1"
+                app:layout_constraintTop_toBottomOf="@+id/newsEventName1"
+                tools:text="Event date" />
+
+            <TextView
+                android:id="@+id/newsEventStart1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_grey_sportify"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/newsEventName1"
+                app:layout_constraintTop_toBottomOf="@+id/newsEventDate1"
+                tools:text="Time start" />
+
+            <TextView
+                android:id="@+id/newsEventDescription1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:textColor="@color/dark_grey_sportify"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/newsEventImage1"
+                app:layout_constraintTop_toBottomOf="@+id/newsEventStart1"
+                tools:text="Event description" />
+
+            <TextView
+                android:id="@+id/newsEventLocation1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:textColor="@color/dark_grey_sportify"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView17"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView17"
+                app:layout_constraintTop_toTopOf="@+id/imageView17"
+                tools:text="Event location" />
+
+            <TextView
+                android:id="@+id/newsEventNbOfPeople1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:textColor="@color/dark_grey_sportify"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/newsEventImage1"
+                app:layout_constraintTop_toBottomOf="@+id/newsEventLocation1"
+                tools:text="How many people are going" />
+
+            <Button
+                android:id="@+id/newsEventDetailsBtn1"
+                android:layout_width="101dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/details_button_label"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/newsEventNbOfPeople1" />
+
+            <ImageView
+                android:id="@+id/imageView17"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="@+id/newsEventImage1"
+                app:layout_constraintTop_toBottomOf="@+id/newsEventDescription1"
+                app:srcCompat="@drawable/ic_location_grey" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/line_label"
+                android:textColor="@color/dark_grey_sportify"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/newsEventStart1"
+                app:layout_constraintStart_toEndOf="@+id/newsEventStart1"
+                app:layout_constraintTop_toTopOf="@+id/newsEventStart1" />
+
+            <TextView
+                android:id="@+id/newsEventEnd1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textColor="@color/dark_grey_sportify"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView12"
+                app:layout_constraintEnd_toEndOf="@+id/newsEventLocation1"
+                app:layout_constraintStart_toEndOf="@+id/textView12"
+                app:layout_constraintTop_toTopOf="@+id/textView12"
+                tools:text="Time end" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
