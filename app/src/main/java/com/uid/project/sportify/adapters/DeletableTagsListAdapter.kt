@@ -22,8 +22,7 @@ class DeletableTagsListAdapter(
     override fun onBindViewHolder(holder: DeletableItemViewHolder, position: Int) {
         val tag: String = dataSet[position]
         holder.bind(tag)
-        holder.deleteButton?.setOnClickListener {
-            //Registry.user1Manager.tags.removeAt(position)
+        holder.setClickListener {
             dataSet.removeAt(position)
             notifyDataSetChanged()
             Toast.makeText(context, "Tag deleted", Toast.LENGTH_SHORT).show()

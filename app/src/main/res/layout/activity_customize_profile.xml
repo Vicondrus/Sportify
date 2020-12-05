@@ -236,9 +236,7 @@
                 android:paddingHorizontal="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/sportsLabel2">
-
-            </androidx.recyclerview.widget.RecyclerView>
+                app:layout_constraintTop_toBottomOf="@+id/sportsLabel2"/>
 
             <Button
                 android:id="@+id/customizeProfileSaveButton"
@@ -277,9 +275,7 @@
                 android:paddingHorizontal="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tagsLabel2">
-
-            </androidx.recyclerview.widget.RecyclerView>
+                app:layout_constraintTop_toBottomOf="@+id/tagsLabel2"/>
 
             <SearchView
                 android:id="@+id/customizeProfileTagsSearchView"

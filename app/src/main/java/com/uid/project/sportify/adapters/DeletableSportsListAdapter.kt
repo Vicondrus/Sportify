@@ -22,8 +22,7 @@ class DeletableSportsListAdapter(
     override fun onBindViewHolder(holder: DeletableItemViewHolder, position: Int) {
         val sport: Sport = dataSet[position]
         holder.bind(sport.name + " " + sport.level.toString().toLowerCase().capitalize())
-        holder.deleteButton?.setOnClickListener {
-            //Registry.user1Manager.sports.removeAt(position)
+        holder.setClickListener {
             dataSet.removeAt(position)
             notifyDataSetChanged()
             Toast.makeText(context, "Sport deleted", Toast.LENGTH_SHORT).show()
