@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/purple_sportify"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="2dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        app:cardPreventCornerOverlap="false">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/dark_tone_sportify">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgProfile"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="2dp" />
+
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_toRightOf="@+id/imgProfile"
+                android:text="Name here"
+                android:textColor="@color/white"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgUserSport"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="300dp" />
+
+            <TextView
+                android:id="@+id/txtSportName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="60dp"
+                android:layout_toRightOf="@+id/imgProfile"
+                android:text="Name here"
+                android:textColor="@color/white"/>
+
+            <TextView
+                android:id="@+id/txtSportLevel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="80dp"
+                android:layout_toRightOf="@+id/imgProfile"
+                android:text="Name here"
+                android:textColor="@color/white"/>
+
+            <ImageView
+                android:id="@+id/imgArrow"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="100dp"
+                android:src="@drawable/ic_arrow"
+                />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

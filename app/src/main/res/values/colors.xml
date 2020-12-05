@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="dark_tone_sportify">#241332</color>
+    <color name="blue_sportify">#4f8dcb</color>
+    <color name="purple_sportify">#8A56AC</color>
+    <color name="pink_sportify">#D47FA6</color>
+    <color name="grey_sportify">#9599B3</color>
+</resources>
