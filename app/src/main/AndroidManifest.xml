@@ -31,12 +31,7 @@
             android:name="com.google.android.wearable.standalone"
             android:value="true" />
 
-        <activity android:name=".SearchUserActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".SearchUserActivity" />
         <activity android:name=".AudioVideoCallActivity" />
         <activity android:name=".ButtonsPageAddActivity" />
         <activity android:name=".FriendListActivity" />

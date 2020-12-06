@@ -33,9 +33,8 @@ class NewsFeedActivity : AppCompatActivity() {
 
         val searchButton = findViewById<ImageButton>(R.id.feedSearchButton)
         searchButton.setOnClickListener {
-//            TO DO
-//            val intent = Intent(this, ::class.java)
-//            startActivity(intent)
+            val intent = Intent(this, SearchUserActivity::class.java)
+            startActivity(intent)
         }
 
         val addButton = findViewById<ImageButton>(R.id.feedAddButton)
