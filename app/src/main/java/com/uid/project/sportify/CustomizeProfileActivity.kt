@@ -182,8 +182,7 @@ class CustomizeProfileActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapR
                     .toInstant()
             )
             Registry.user1Manager = user
-            val intent = Intent(this, ProfilePageActivity::class.java)
-            startActivity(intent)
+            finish()
         }
         val addSport = findViewById<ImageButton>(R.id.addSportButton)
         addSport.setOnClickListener {
@@ -275,7 +274,7 @@ class CustomizeProfileActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapR
 
 
     override fun onBackPressed() {
-        startActivity(Intent(this, ProfilePageActivity::class.java))
+        finish()
     }
 
     override fun onActivityResult(
