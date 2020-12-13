@@ -2,6 +2,7 @@ package com.uid.project.sportify
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +12,7 @@ import com.uid.project.sportify.adapters.ParticipationListAdapter
 import com.uid.project.sportify.adapters.SportsListAdapter
 import com.uid.project.sportify.adapters.TagsListAdapter
 import com.uid.project.sportify.models.Registry
+import com.uid.project.sportify.models.User
 import de.hdodenhof.circleimageview.CircleImageView
 
 class ProfilePageActivity : AppCompatActivity() {
@@ -19,13 +21,20 @@ class ProfilePageActivity : AppCompatActivity() {
     private lateinit var tagsListAdapter: TagsListAdapter
     private lateinit var pastListAdapter: ParticipationListAdapter
     private lateinit var upcomingListAdapter: ParticipationListAdapter
+    private val customizeCode = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
         setContentView(R.layout.activity_profile)
 
-        val user = Registry.user1Manager
+        lateinit var user: User
+
+        val selectedUserPosition = intent.getIntExtra("selectedUser", -1)
+
+        if (selectedUserPosition == -1) {
+            user = User(Registry.user1Manager)
+        }
 
         val nameLabel = findViewById<TextView>(R.id.nameLabel)
         nameLabel.text = user.name
@@ -86,14 +95,27 @@ class ProfilePageActivity : AppCompatActivity() {
         upcomingRecyclerView.adapter = upcomingListAdapter
 
         val button = findViewById<Button>(R.id.customizeButton)
-        button.setOnClickListener {
-            val intent = Intent(this, CustomizeProfileActivity::class.java)
-            startActivity(intent)
+
+        if (selectedUserPosition == -1) {
+            button.setOnClickListener {
+                val intent = Intent(this, CustomizeProfileActivity::class.java)
+                startActivityForResult(intent, customizeCode)
+            }
+        }else{
+            button.visibility = View.GONE
         }
 
         @Override
         fun onRestart() {
             super.onRestart()
+        }
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == customizeCode){
+            recreate()
         }
     }
 }

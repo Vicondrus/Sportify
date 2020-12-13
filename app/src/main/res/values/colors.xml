@@ -12,4 +12,5 @@
     <color name="light_tone_sportify">#ECC9F4</color>
     <color name="dark_grey_sportify">#5F6171</color>
     <color name="icon_color_create_event">#FFFFFF</color>
+    <color name="error">#A00618</color>
 </resources>

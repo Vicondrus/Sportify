@@ -57,9 +57,9 @@ class CustomizeProfileActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapR
             .findFragmentById(R.id.customizeProfileMapView) as? SupportMapFragment
         mapFragment?.getMapAsync(this)
 
-        user = User(Registry.user1Manager)
+        user = Registry.user1Manager
 
-        profileImage = findViewById<ImageView>(R.id.profilePictureImageView)
+        profileImage = findViewById(R.id.profilePictureImageView)
         if (user.secondaryPictureURI == null) {
             profileImage.setImageResource(user.profilePictureId)
         } else {

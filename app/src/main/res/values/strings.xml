@@ -49,4 +49,11 @@
     values-round/strings.xml for round devices.
     -->
     <string name="hello_world">Hello Square World!</string>
+    <string name="upcomingEventsLabel">Upcoming Events</string>
+    <string name="pastEventsLabel">Past Events</string>
+    <string name="customizeLabel">Customize</string>
+    <string name="emailLabel">Email</string>
+    <string name="passwordLabel">Password</string>
+    <string name="invalidCredentialsLabel">Invalid Credentials</string>
+    <string name="invalidEmailLabel">Email address not valid</string>
 </resources>
