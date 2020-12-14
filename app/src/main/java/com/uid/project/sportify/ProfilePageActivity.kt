@@ -11,9 +11,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.uid.project.sportify.adapters.ParticipationListAdapter
 import com.uid.project.sportify.adapters.SportsListAdapter
 import com.uid.project.sportify.adapters.TagsListAdapter
+import com.uid.project.sportify.models.Participation
 import com.uid.project.sportify.models.Registry
 import com.uid.project.sportify.models.User
 import de.hdodenhof.circleimageview.CircleImageView
+import java.util.*
 
 class ProfilePageActivity : AppCompatActivity() {
 
@@ -88,10 +90,18 @@ class ProfilePageActivity : AppCompatActivity() {
         tagsListAdapter = TagsListAdapter(user.tags)
         tagsRecyclerView.adapter = tagsListAdapter
 
-        pastListAdapter = ParticipationListAdapter(user.participations)
+        val pastParticipations = user.participations.filter { participation: Participation ->
+            participation.activity.date.before(Date())
+        }.sortedByDescending { participation: Participation -> participation.activity.date }
+
+        val futureParticipations = user.participations.filter { participation: Participation ->
+            participation.activity.date.after(Date())
+        }.sortedBy { participation: Participation -> participation.activity.date }
+
+        pastListAdapter = ParticipationListAdapter(pastParticipations)
         pastRecyclerView.adapter = pastListAdapter
 
-        upcomingListAdapter = ParticipationListAdapter(user.participations)
+        upcomingListAdapter = ParticipationListAdapter(futureParticipations)
         upcomingRecyclerView.adapter = upcomingListAdapter
 
         val button = findViewById<Button>(R.id.customizeButton)
