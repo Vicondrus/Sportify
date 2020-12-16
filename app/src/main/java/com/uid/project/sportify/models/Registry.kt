@@ -1,5 +1,6 @@
 package com.uid.project.sportify.models
 
+import com.huawei.hms.maps.model.LatLng
 import com.uid.project.sportify.R
 import java.time.LocalDate
 import java.time.ZoneId
@@ -14,46 +15,71 @@ class Registry private constructor() {
             get() {
                 if (user1 == null) {
                     user1 = User(
-                        "Ana Maria", "ana.maria@yahoo.com",
-                        "password", "Grigorescu", java.util.Date.from(
+                            "Ana Maria", "ana.maria@yahoo.com",
+                            "password", "Grigorescu", java.util.Date.from(
                             LocalDate.parse("1997-11-06").atStartOfDay()
-                                .atZone(ZoneId.systemDefault())
-                                .toInstant()
-                        ),
-                        mutableListOf(
-                            Sport(
-                                "Aerobics",
-                                Level.BEGINNER,
-                                notSelectedImage = R.drawable.aerobics,
-                                selectedImage = R.drawable.aerobics_selected
+                                    .atZone(ZoneId.systemDefault())
+                                    .toInstant()
+                    ),
+                            mutableListOf(
+                                    Sport(
+                                            "Aerobics",
+                                            Level.BEGINNER,
+                                            notSelectedImage = R.drawable.aerobics,
+                                            selectedImage = R.drawable.aerobics_selected
+                                    ),
+                                    Sport(
+                                            "Basketball",
+                                            Level.EXPERT,
+                                            notSelectedImage = R.drawable.basketball,
+                                            selectedImage = R.drawable.backetball_selected
+                                    ),
                             ),
-                            Sport(
-                                "Basketball",
-                                Level.EXPERT,
-                                notSelectedImage = R.drawable.basketball,
-                                selectedImage = R.drawable.backetball_selected
+                            mutableListOf("#ParculMare", "#ProfessionalTenis", "#Politehnica"),
+                            mutableListOf(
+                                    Participation(
+                                            Activity(
+                                                    "Basketball Match",
+                                                    "Gheorgheni",
+                                                    Date(Date().time - 2 * (1000 * 60 * 60 * 24)),
+                                                    R.drawable.basketball_presentation
+                                            ), PaticipationType.PLAYER
+                                    ),
+                                    Participation(
+                                            Activity(
+                                                    "Tennis Match",
+                                                    "Grigorescu",
+                                                    Date(Date().time + (1000 * 60 * 60 * 24 + 1000 * 60 * 300)),
+                                                    R.drawable.tennis_presentation
+                                            ), PaticipationType.VIEWER
+                                    ),
+                                    Participation(
+                                            Activity(
+                                                    "Tennis Match",
+                                                    "Manastur",
+                                                    Date(Date().time - (1000 * 60 * 60 * 24 + 1000 * 60 * 6543)),
+                                                    R.drawable.tennis_presentation
+                                            ), PaticipationType.VIEWER
+                                    ),
+                                    Participation(
+                                            Activity(
+                                                    "Basketball Match",
+                                                    "Zorilor",
+                                                    Date(Date().time + 3 * (1000 * 60 * 60 * 12)),
+                                                    R.drawable.basketball_presentation
+                                            ), PaticipationType.PLAYER
+                                    ),
+                                    Participation(
+                                            Activity(
+                                                    "Aerobics Class",
+                                                    "Grigorescu",
+                                                    Date(Date().time - 4 * (1000 * 60 * 60 * 12)),
+                                                    R.drawable.aerobics_presentation
+                                            ), PaticipationType.PLAYER
+                                    )
+
                             ),
-                        ),
-                        mutableListOf("#ParculMare", "#ProfessionalTenis", "#Politehnica"),
-                        mutableListOf(
-                            Participation(
-                                Activity(
-                                    "Basketball Match",
-                                    "Gheorgheni",
-                                    Date(),
-                                    R.drawable.basketball_presentation
-                                ), PaticipationType.VIEWER
-                            ),
-                            Participation(
-                                Activity(
-                                    "Tennis Match",
-                                    "Grigorescu",
-                                    Date(),
-                                    R.drawable.tennis_presentation
-                                ), PaticipationType.VIEWER
-                            )
-                        ),
-                        R.drawable.ana_profile_picture
+                            R.drawable.ana_profile_picture
                     )
                 }
 
@@ -65,116 +91,198 @@ class Registry private constructor() {
 
         val setOfTags: MutableSet<String>
             get() = mutableSetOf(
-                "#Rozelor",
-                "#ParculMare",
-                "#Politehnica",
-                "#Babes",
-                "#ProfessionalBasketball",
-                "#ChildFriendly"
+                    "#Rozelor",
+                    "#ParculMare",
+                    "#Politehnica",
+                    "#Babes",
+                    "#ProfessionalBasketball",
+                    "#ChildFriendly"
             )
 
         val setOfAvailableSports: Set<Sport>
             get() = setOf(
-                Sport(
-                    "Aerobics",
-                    Level.FAN,
-                    notSelectedImage = R.drawable.aerobics,
-                    selectedImage = R.drawable.aerobics_selected
-                ),
-                Sport(
-                    "Basketball",
-                    Level.FAN,
-                    notSelectedImage = R.drawable.basketball,
-                    selectedImage = R.drawable.backetball_selected
-                ),
-                Sport(
-                    "Combat",
-                    Level.FAN,
-                    notSelectedImage = R.drawable.combat,
-                    selectedImage = R.drawable.combat_selected
-                ),
-                Sport(
-                    "Dance",
-                    Level.FAN,
-                    notSelectedImage = R.drawable.dance,
-                    selectedImage = R.drawable.dance_selected
-                ),
-                Sport(
-                    "Football",
-                    Level.FAN,
-                    notSelectedImage = R.drawable.football,
-                    selectedImage = R.drawable.football_selected
-                ),
-                Sport(
-                    "Handball",
-                    Level.FAN,
-                    notSelectedImage = R.drawable.handball,
-                    selectedImage = R.drawable.handball_selected
-                ),
-                Sport(
-                    "Karate",
-                    Level.FAN,
-                    notSelectedImage = R.drawable.karate,
-                    selectedImage = R.drawable.karate_selected
-                ),
-                Sport(
-                    "Pilates",
-                    Level.FAN,
-                    notSelectedImage = R.drawable.pilates,
-                    selectedImage = R.drawable.pilates_selected
-                ),
-                Sport(
-                    "Running",
-                    Level.FAN,
-                    notSelectedImage = R.drawable.running,
-                    selectedImage = R.drawable.running_selected
-                ),
-                Sport(
-                    "Cycling",
-                    Level.FAN,
-                    notSelectedImage = R.drawable.spinning,
-                    selectedImage = R.drawable.biking_selected
-                ),
-                Sport(
-                    "Swimming",
-                    Level.FAN,
-                    notSelectedImage = R.drawable.swimming,
-                    selectedImage = R.drawable.swimming_selected
-                ),
-                Sport(
-                    "Tennis",
-                    Level.FAN,
-                    notSelectedImage = R.drawable.tennis,
-                    selectedImage = R.drawable.tennis_selected
-                ),
-                Sport(
-                    "Volleyball",
-                    Level.FAN,
-                    notSelectedImage = R.drawable.volleyball,
-                    selectedImage = R.drawable.volleyball_selected
-                ),
-                Sport(
-                    "Walking",
-                    Level.FAN,
-                    notSelectedImage = R.drawable.walking,
-                    selectedImage = R.drawable.walking_selected
-                ),
-                Sport(
-                    "Yoga",
-                    Level.FAN,
-                    notSelectedImage = R.drawable.yoga,
-                    selectedImage = R.drawable.yoga_selected
-                ),
+                    Sport(
+                            "Aerobics",
+                            Level.FAN,
+                            notSelectedImage = R.drawable.aerobics,
+                            selectedImage = R.drawable.aerobics_selected
+                    ),
+                    Sport(
+                            "Basketball",
+                            Level.FAN,
+                            notSelectedImage = R.drawable.basketball,
+                            selectedImage = R.drawable.backetball_selected
+                    ),
+                    Sport(
+                            "Combat",
+                            Level.FAN,
+                            notSelectedImage = R.drawable.combat,
+                            selectedImage = R.drawable.combat_selected
+                    ),
+                    Sport(
+                            "Dance",
+                            Level.FAN,
+                            notSelectedImage = R.drawable.dance,
+                            selectedImage = R.drawable.dance_selected
+                    ),
+                    Sport(
+                            "Football",
+                            Level.FAN,
+                            notSelectedImage = R.drawable.football,
+                            selectedImage = R.drawable.football_selected
+                    ),
+                    Sport(
+                            "Handball",
+                            Level.FAN,
+                            notSelectedImage = R.drawable.handball,
+                            selectedImage = R.drawable.handball_selected
+                    ),
+                    Sport(
+                            "Karate",
+                            Level.FAN,
+                            notSelectedImage = R.drawable.karate,
+                            selectedImage = R.drawable.karate_selected
+                    ),
+                    Sport(
+                            "Pilates",
+                            Level.FAN,
+                            notSelectedImage = R.drawable.pilates,
+                            selectedImage = R.drawable.pilates_selected
+                    ),
+                    Sport(
+                            "Running",
+                            Level.FAN,
+                            notSelectedImage = R.drawable.running,
+                            selectedImage = R.drawable.running_selected
+                    ),
+                    Sport(
+                            "Cycling",
+                            Level.FAN,
+                            notSelectedImage = R.drawable.spinning,
+                            selectedImage = R.drawable.biking_selected
+                    ),
+                    Sport(
+                            "Swimming",
+                            Level.FAN,
+                            notSelectedImage = R.drawable.swimming,
+                            selectedImage = R.drawable.swimming_selected
+                    ),
+                    Sport(
+                            "Tennis",
+                            Level.FAN,
+                            notSelectedImage = R.drawable.tennis,
+                            selectedImage = R.drawable.tennis_selected
+                    ),
+                    Sport(
+                            "Volleyball",
+                            Level.FAN,
+                            notSelectedImage = R.drawable.volleyball,
+                            selectedImage = R.drawable.volleyball_selected
+                    ),
+                    Sport(
+                            "Walking",
+                            Level.FAN,
+                            notSelectedImage = R.drawable.walking,
+                            selectedImage = R.drawable.walking_selected
+                    ),
+                    Sport(
+                            "Yoga",
+                            Level.FAN,
+                            notSelectedImage = R.drawable.yoga,
+                            selectedImage = R.drawable.yoga_selected
+                    ),
             )
 
         val listOfFriends: MutableList<Friend>
             get() = mutableListOf(
-                Friend("Carina", R.drawable.friend1),
-                Friend("Bianca", R.drawable.friend3),
-                Friend("Stefan", R.drawable.friend2),
-                Friend("Ioana", R.drawable.friend4),
-                Friend("Alex", R.drawable.friend5),
-                Friend("George", R.drawable.friend6)
+                    Friend("Carina", R.drawable.friend1),
+                    Friend("Bianca", R.drawable.friend3),
+                    Friend("Stefan", R.drawable.friend2),
+                    Friend("Ioana", R.drawable.friend4),
+                    Friend("Alex", R.drawable.friend5),
+                    Friend("George", R.drawable.friend6)
+            )
+
+        val listOfNeighborhoods: List<Neighborhood>
+            get() = listOf(
+                    Neighborhood("Grigorescu", mutableListOf(
+                            LatLng(46.7613847, 23.5447311),
+                            LatLng(46.7615023, 23.5464907),
+                            LatLng(46.7655298, 23.5513830),
+                            LatLng(46.7657943, 23.5546875),
+                            LatLng(46.7680284, 23.5593653),
+                            LatLng(46.7676169, 23.5663176),
+                            LatLng(46.7697627, 23.5712528),
+                            LatLng(46.7722317, 23.5817671),
+                            LatLng(46.7740246, 23.5613823),
+                            LatLng(46.7709972, 23.5504818),
+                            LatLng(46.7650006, 23.5418558),
+                            LatLng(46.7650300, 23.5448170),
+                            LatLng(46.7613847, 23.5447311))),
+                    Neighborhood("Centru", mutableListOf(
+                            LatLng(46.7740834, 23.5876465),
+                            LatLng(46.7697627, 23.5745144),
+                            LatLng(46.7677932, 23.5736561),
+                            LatLng(46.7670584, 23.5743856),
+                            LatLng(46.7675287, 23.5774755),
+                            LatLng(46.7659707, 23.5786772),
+                            LatLng(46.7637659, 23.5842562),
+                            LatLng(46.7660295, 23.5859728),
+                            LatLng(46.7663529, 23.5927963),
+                            LatLng(46.7672347, 23.5968304),
+                            LatLng(46.7674111, 23.6000061),
+                            LatLng(46.7715851, 23.6085463),
+                            LatLng(46.7757293, 23.6042118),
+                            LatLng(46.7760820, 23.5942984),
+                            LatLng(46.7740246, 23.5875607),
+                            LatLng(46.7740834, 23.5876465))),
+                    Neighborhood("Manastur", mutableListOf(
+                            LatLng(46.7634132, 23.549495),
+                            LatLng(46.7619727, 23.547821),
+                            LatLng(46.7609731, 23.5425446),
+                            LatLng(46.7503591, 23.5443483),
+                            LatLng(46.7481243, 23.5548272),
+                            LatLng(46.7433309, 23.5585206),
+                            LatLng(46.7498886, 23.5670239),
+                            LatLng(46.7523292, 23.5736376),
+                            LatLng(46.7567101, 23.5721345),
+                            LatLng(46.7606497, 23.5660319),
+                            LatLng(46.7602088, 23.5568414),
+                            LatLng(46.7643245, 23.5513014),
+                            LatLng(46.7639717, 23.5486859))),
+                    Neighborhood("Gheorgheni", mutableListOf(
+                            LatLng(46.7777279, 23.6196324),
+                            LatLng(46.7758469, 23.6118162),
+                            LatLng(46.770086, 23.6065354),
+                            LatLng(46.7676169,23.6001989 ),
+                            LatLng(46.7569747, 23.6194818),
+                            LatLng(46.7618551, 23.6216291),
+                            LatLng(46.7630898, 23.6260549),
+                            LatLng(46.7636778, 23.6325804),
+                            LatLng(46.7736426, 23.6349854),
+                            LatLng(46.772849, 23.6227887),
+                            LatLng(46.7777279, 23.6196324))),
+                    Neighborhood("Zorilor", mutableListOf(
+                            LatLng(46.7561809, 23.5724163),
+                            LatLng(46.7495946, 23.5768827),
+                            LatLng(46.7512412, 23.583024),
+                            LatLng(46.7482125,23.5851284 ),
+                            LatLng(46.7477126, 23.5932452),
+                            LatLng(46.7560633, 23.5972392),
+                            LatLng(46.7594738, 23.5919139),
+                            LatLng(46.7575333, 23.5812632),
+                            LatLng(46.7576804, 23.5752937),
+                            LatLng(46.7561809, 23.5724163))),
+                    Neighborhood("Marasti", mutableListOf(
+                            LatLng(46.7859564, 23.5971155),
+                            LatLng(46.7837818, 23.6367119),
+                            LatLng(46.7822537, 23.6403194),
+                            LatLng(46.7789622, 23.6194475),
+                            LatLng(46.777434, 23.6202206),
+                            LatLng(46.7735544, 23.6061922),
+                            LatLng(46.7767286, 23.6027547),
+                            LatLng(46.7793149, 23.5937658),
+                            LatLng(46.7859564, 23.5971155))),
             )
     }
 }
