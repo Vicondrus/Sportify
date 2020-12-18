@@ -8,79 +8,76 @@
     android:backgroundTint="@color/light_grey_sportify"
     android:padding="10dp">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar17"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dark_tone_sportify"
+        app:cardBackgroundColor="@color/dark_tone_sportify"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="16dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/newsFriendImage2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/girl_pic_2"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/added_photos_label"
+                android:textColor="@color/light_grey_sportify"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/newsFriendImage2"
+                app:layout_constraintStart_toEndOf="@+id/newsFriendName2"
+                app:layout_constraintTop_toTopOf="@+id/newsFriendImage2" />
+
+            <TextView
+                android:id="@+id/newsFriendName2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="friend name"
+                android:textColor="@color/light_grey_sportify"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/newsFriendImage2"
+                app:layout_constraintStart_toEndOf="@+id/newsFriendImage2"
+                app:layout_constraintTop_toTopOf="@+id/newsFriendImage2" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/feed2CardView1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:background="@color/dark_tone_sportify"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/newsFriendImage2"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="10dp"
-        android:src="@drawable/girl_pic_2"
-        app:civ_border_color="@color/white"
-        app:civ_border_width="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar17"
-        app:layout_constraintStart_toStartOf="@+id/toolbar17"
-        app:layout_constraintTop_toTopOf="@+id/toolbar17" />
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:text="@string/your_friend_label"
-        android:textColor="@color/light_grey_sportify"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/newsFriendImage2"
-        app:layout_constraintStart_toEndOf="@+id/newsFriendImage2"
-        app:layout_constraintTop_toTopOf="@+id/newsFriendImage2" />
-
-    <TextView
-        android:id="@+id/newsFriendName2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:text="friend name"
-        android:textColor="@color/light_grey_sportify"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/textView14"
-        app:layout_constraintStart_toEndOf="@+id/textView14"
-        app:layout_constraintTop_toTopOf="@+id/textView14" />
-
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:text="@string/added_photos_label"
-        android:textColor="@color/light_grey_sportify"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/newsFriendName2"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar17"
-        app:layout_constraintStart_toEndOf="@+id/newsFriendName2"
-        app:layout_constraintTop_toTopOf="@+id/newsFriendName2" />
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar18"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="@color/dark_tone_sportify"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
+        app:cardBackgroundColor="@color/dark_tone_sportify"
+        app:cardCornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar17">
+        app:layout_constraintTop_toBottomOf="@+id/cardView5">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -129,6 +126,7 @@
                 android:id="@+id/newsEventImage2"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="15dp"
                 android:src="@drawable/event_picture"
                 app:civ_border_color="@color/white"
@@ -136,58 +134,74 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/newsPhotoToolbar2"
-                android:layout_width="255dp"
-                android:layout_height="203dp"
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
-                android:background="?attr/colorPrimary"
-                android:minHeight="?attr/actionBarSize"
-                android:theme="?attr/actionBarTheme"
+                app:cardCornerRadius="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/newsDescription2" />
+                app:layout_constraintTop_toBottomOf="@+id/newsDescription2">
 
-            <ImageView
-                android:id="@+id/newsCoverImage2"
-                android:layout_width="255dp"
-                android:layout_height="164dp"
-                android:elevation="30dp"
-                android:scaleType="fitXY"
-                app:layout_constraintEnd_toEndOf="@+id/newsPhotoToolbar2"
-                app:layout_constraintStart_toStartOf="@+id/newsPhotoToolbar2"
-                app:layout_constraintTop_toTopOf="@+id/newsPhotoToolbar2"
-                app:srcCompat="@drawable/sport_pic_1" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:layout_editor_absoluteX="16dp">
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar20"
-                android:layout_width="0dp"
-                android:layout_height="39dp"
-                android:background="@color/light_grey_sportify"
-                android:minHeight="?attr/actionBarSize"
-                android:theme="?attr/actionBarTheme"
-                app:layout_constraintBottom_toBottomOf="@+id/newsPhotoToolbar2"
-                app:layout_constraintEnd_toEndOf="@+id/newsPhotoToolbar2"
-                app:layout_constraintStart_toStartOf="@+id/newsPhotoToolbar2" />
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/newsPhotoToolbar2"
+                        android:layout_width="255dp"
+                        android:layout_height="203dp"
+                        android:background="?attr/colorPrimary"
+                        android:minHeight="?attr/actionBarSize"
+                        android:theme="?attr/actionBarTheme"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/newsCoverImage2" />
 
-            <TextView
-                android:id="@+id/textView20"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/see_all_photos_label"
-                android:textColor="@color/dark_tone_sportify"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/newsPhotoToolbar2"
-                app:layout_constraintEnd_toEndOf="@+id/toolbar20"
-                app:layout_constraintStart_toStartOf="@+id/toolbar20"
-                app:layout_constraintTop_toBottomOf="@+id/newsCoverImage2" />
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar20"
+                        android:layout_width="0dp"
+                        android:layout_height="39dp"
+                        android:background="@color/light_grey_sportify"
+                        android:minHeight="?attr/actionBarSize"
+                        android:theme="?attr/actionBarTheme"
+                        app:layout_constraintBottom_toBottomOf="@+id/newsPhotoToolbar2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/newsCoverImage2" />
+
+                    <TextView
+                        android:id="@+id/textView20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/see_all_photos_label"
+                        android:textColor="@color/dark_tone_sportify"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/newsPhotoToolbar2"
+                        app:layout_constraintEnd_toEndOf="@+id/toolbar20"
+                        app:layout_constraintStart_toStartOf="@+id/toolbar20"
+                        app:layout_constraintTop_toTopOf="@+id/toolbar20" />
+
+                    <ImageView
+                        android:id="@+id/newsCoverImage2"
+                        android:layout_width="255dp"
+                        android:layout_height="164dp"
+                        android:scaleType="fitXY"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/sport_pic_1" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.appcompat.widget.Toolbar>
+    </androidx.cardview.widget.CardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

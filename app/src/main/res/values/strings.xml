@@ -34,8 +34,7 @@
     <string name="added_photos_label">added photos!</string>
     <string name="see_all_photos_label">See all photos...</string>
     <string name="what_to_do_today_label">What to do today?</string>
-    <string name="calling_label">Calling</string>
-    <string name="three_dots_label">...</string>
+    <string name="calling_label">Calling...</string>
 
     <string name="sports_label">Sports</string>
     <string name="tags_label">Tags</string>
