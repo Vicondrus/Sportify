@@ -10,7 +10,7 @@ class TagsListAdapter(private val dataSet: List<String>) :
     RecyclerView.Adapter<SimpleItemViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SimpleItemViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        return SimpleItemViewHolder(inflater, parent, R.color.dark_tone_sportify)
+        return SimpleItemViewHolder(inflater, parent, R.color.purple_sportify)
     }
 
     override fun onBindViewHolder(holder: SimpleItemViewHolder, position: Int) {

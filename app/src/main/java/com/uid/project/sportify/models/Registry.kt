@@ -3,8 +3,10 @@ package com.uid.project.sportify.models
 import com.huawei.hms.maps.model.LatLng
 import com.uid.project.sportify.R
 import java.time.LocalDate
+import java.time.LocalTime
 import java.time.ZoneId
 import java.util.*
+import kotlin.collections.ArrayList
 
 class Registry private constructor() {
 
@@ -79,7 +81,7 @@ class Registry private constructor() {
                                     )
 
                             ),
-                            R.drawable.ana_profile_picture
+                        R.drawable.ana_profile_picture
                     )
                 }
 
@@ -89,14 +91,30 @@ class Registry private constructor() {
                 user1 = u
             }
 
+        private var event1: Event? = null
+        var event1Manager: Event
+            get() {
+                if (event1 == null) {
+                    event1 = Event(
+                        "", R.drawable.event_picture, "", "",
+                        LocalDate.MIN, LocalTime.MIN, LocalTime.MAX, 0, 0, "Grigorescu",
+                        ArrayList(), ArrayList(), ArrayList()
+                    )
+                }
+                return event1 as Event
+            }
+            set(e: Event) {
+                event1 = e
+            }
+
         val setOfTags: MutableSet<String>
             get() = mutableSetOf(
-                    "#Rozelor",
-                    "#ParculMare",
-                    "#Politehnica",
-                    "#Babes",
-                    "#ProfessionalBasketball",
-                    "#ChildFriendly"
+                "#Rozelor",
+                "#ParculMare",
+                "#Politehnica",
+                "#Babes",
+                "#ProfessionalBasketball",
+                "#ChildFriendly"
             )
 
         val setOfAvailableSports: Set<Sport>
@@ -274,15 +292,20 @@ class Registry private constructor() {
                             LatLng(46.7576804, 23.5752937),
                             LatLng(46.7561809, 23.5724163))),
                     Neighborhood("Marasti", mutableListOf(
-                            LatLng(46.7859564, 23.5971155),
-                            LatLng(46.7837818, 23.6367119),
-                            LatLng(46.7822537, 23.6403194),
-                            LatLng(46.7789622, 23.6194475),
-                            LatLng(46.777434, 23.6202206),
-                            LatLng(46.7735544, 23.6061922),
-                            LatLng(46.7767286, 23.6027547),
-                            LatLng(46.7793149, 23.5937658),
-                            LatLng(46.7859564, 23.5971155))),
+                        LatLng(46.7859564, 23.5971155),
+                        LatLng(46.7837818, 23.6367119),
+                        LatLng(46.7822537, 23.6403194),
+                        LatLng(46.7789622, 23.6194475),
+                        LatLng(46.777434, 23.6202206),
+                        LatLng(46.7735544, 23.6061922),
+                        LatLng(46.7767286, 23.6027547),
+                        LatLng(46.7793149, 23.5937658),
+                        LatLng(46.7859564, 23.5971155)
+                    )
+                    ),
             )
+
+        val listOfEvents: ArrayList<Event?>
+            get() = arrayListOf(event1)
     }
 }

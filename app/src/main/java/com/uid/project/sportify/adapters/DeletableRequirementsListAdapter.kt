@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.uid.project.sportify.R
 import com.uid.project.sportify.holders.DeletableItemViewHolder
 
-class DeletableTagsListAdapter(
+class DeletableRequirementsListAdapter(
     private val dataSet: MutableList<String>,
     private val context: Context
 ) : RecyclerView.Adapter<DeletableItemViewHolder>() {
@@ -25,7 +25,7 @@ class DeletableTagsListAdapter(
         holder.setClickListener {
             dataSet.removeAt(position)
             notifyDataSetChanged()
-            Toast.makeText(context, "Tag deleted", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Requirement deleted", Toast.LENGTH_SHORT).show()
         }
     }
 

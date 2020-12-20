@@ -55,4 +55,6 @@
     <string name="passwordLabel">Password</string>
     <string name="invalidCredentialsLabel">Invalid Credentials</string>
     <string name="invalidEmailLabel">Email address not valid</string>
+    <string name="dashLabel">-</string>
+    <string name="requirementsHint">Type some requirements...</string>
 </resources>

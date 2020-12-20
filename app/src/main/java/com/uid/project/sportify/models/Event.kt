@@ -5,16 +5,19 @@ import java.time.LocalDate
 import java.time.LocalTime
 
 class Event(
-        val name: String,
-        val image: Int,
-        val host: String,
-        val description: String,
-        val date: LocalDate,
-        val time: LocalTime,
-        val nbOfPeople: Int,
-        val attendanceFee: Int,
-        val location: String,
-        val sports: MutableList<Sport>,
-        val requirements: MutableList<String>,
-        val tags: MutableList<String>,
+        var name: String,
+        var image: Int,
+        var host: String,
+        var description: String,
+        var date: LocalDate,
+        var timeStart: LocalTime,
+        var timeEnd: LocalTime,
+        var nbOfPeople: Int,
+        var attendanceFee: Int,
+        var location: String,
+        val sports: ArrayList<Sport>,
+        val requirements: ArrayList<String>,
+        val tags: ArrayList<String>,
+        val participants: Int = 0,
+        var imageUri: String? = null
 ) : Serializable
