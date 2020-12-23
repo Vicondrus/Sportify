@@ -25,7 +25,7 @@ class NewsFeedPostEventViewHolder(private val view: View) :
 
     init {
         friendName = itemView.findViewById(R.id.newsFriendName1) as TextView
-        friendImage = itemView.findViewById(R.id.placeBookedImg) as ImageView
+        friendImage = itemView.findViewById(R.id.newsFriendImage1) as ImageView
         eventName = itemView.findViewById(R.id.newsEventName1) as TextView
         eventImage = itemView.findViewById(R.id.newsEventImage1) as ImageView
         eventDate = itemView.findViewById(R.id.newsEventDate1) as TextView

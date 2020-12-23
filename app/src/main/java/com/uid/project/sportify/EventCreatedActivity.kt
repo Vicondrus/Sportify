@@ -16,10 +16,10 @@ class EventCreatedActivity : AppCompatActivity() {
 
         val event = this.intent.getSerializableExtra("event") as Event
 
-        val eventNameContainer = findViewById<TextView>(R.id.placeNameTextView)
+        val eventNameContainer = findViewById<TextView>(R.id.eventCreatedEventNameTextView)
         eventNameContainer.text = event.name
 
-        val eventCreatedButton = findViewById<Button>(R.id.btnBookedDone)
+        val eventCreatedButton = findViewById<Button>(R.id.eventCreatedDoneButton)
         eventCreatedButton.setOnClickListener {
             val intent = Intent(this, EventPageOrganizerActivity::class.java)
             intent.putExtra("event", event)

@@ -17,7 +17,7 @@ class PlaceBookedActivity : AppCompatActivity() {
         val eventNameContainer = findViewById<TextView>(R.id.eventCreatedEventNameTextView)
         eventNameContainer.text = event.name*/
 
-        val btnDone = findViewById<Button>(R.id.btnBookedDone)
+        val btnDone = findViewById<Button>(R.id.btnEventCreatedDone)
         btnDone.setOnClickListener {
             val intent = Intent(this, PlacesResultActivity::class.java)
             startActivity(intent)

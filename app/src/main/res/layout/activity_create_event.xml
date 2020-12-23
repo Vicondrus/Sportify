@@ -82,13 +82,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                app:layout_constraintBottom_toBottomOf="@+id/addressTextView"
+                app:layout_constraintBottom_toBottomOf="@+id/eventNameTextView"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/addressTextView"
+                app:layout_constraintTop_toTopOf="@+id/eventNameTextView"
                 app:srcCompat="@drawable/ic_edit" />
 
             <EditText
-                android:id="@+id/addressTextView"
+                android:id="@+id/eventNameTextView"
                 android:layout_width="0dp"
                 android:layout_height="43dp"
                 android:layout_marginStart="15dp"
@@ -106,7 +106,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/emailAddressTextView"
+                android:id="@+id/eventDescriptionTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -119,20 +119,20 @@
                 android:textColor="@color/white"
                 android:textColorHint="@color/grey_sportify"
                 app:layout_constraintStart_toEndOf="@+id/imageView9"
-                app:layout_constraintTop_toBottomOf="@+id/addressTextView" />
+                app:layout_constraintTop_toBottomOf="@+id/eventNameTextView" />
 
             <ImageView
                 android:id="@+id/imageView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                app:layout_constraintBottom_toBottomOf="@+id/emailAddressTextView"
+                app:layout_constraintBottom_toBottomOf="@+id/eventDescriptionTextView"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/emailAddressTextView"
+                app:layout_constraintTop_toTopOf="@+id/eventDescriptionTextView"
                 app:srcCompat="@drawable/ic_description_" />
 
             <EditText
-                android:id="@+id/placeDate"
+                android:id="@+id/eventDateDate"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -145,16 +145,16 @@
                 android:textColorHint="@color/dark_grey_sportify"
                 app:layout_constraintEnd_toEndOf="@+id/toolbar4"
                 app:layout_constraintStart_toEndOf="@+id/imageView10"
-                app:layout_constraintTop_toBottomOf="@+id/emailAddressTextView" />
+                app:layout_constraintTop_toBottomOf="@+id/eventDescriptionTextView" />
 
             <ImageView
                 android:id="@+id/imageView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                app:layout_constraintBottom_toBottomOf="@+id/placeDate"
+                app:layout_constraintBottom_toBottomOf="@+id/eventDateDate"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/placeDate"
+                app:layout_constraintTop_toTopOf="@+id/eventDateDate"
                 app:srcCompat="@drawable/ic_calendar" />
 
             <EditText
@@ -169,20 +169,20 @@
                 android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="@+id/toolbar4"
                 app:layout_constraintStart_toEndOf="@+id/imageView10"
-                app:layout_constraintTop_toBottomOf="@+id/placeDate" />
+                app:layout_constraintTop_toBottomOf="@+id/eventDateDate" />
 
             <ImageView
                 android:id="@+id/imageView11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                app:layout_constraintBottom_toBottomOf="@+id/numberParticipantsTextView"
+                app:layout_constraintBottom_toBottomOf="@+id/eventNbOfPeopleTextView"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/numberParticipantsTextView"
+                app:layout_constraintTop_toTopOf="@+id/eventNbOfPeopleTextView"
                 app:srcCompat="@drawable/ic_user" />
 
             <EditText
-                android:id="@+id/numberParticipantsTextView"
+                android:id="@+id/eventNbOfPeopleTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -223,7 +223,7 @@
                 android:textColorHint="@color/grey_sportify"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView12"
-                app:layout_constraintTop_toBottomOf="@+id/numberParticipantsTextView" />
+                app:layout_constraintTop_toBottomOf="@+id/eventNbOfPeopleTextView" />
 
             <ImageView
                 android:id="@+id/imageView13"
@@ -290,7 +290,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/eventLocationMapView" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/creditCardNumberTxt"
+                android:id="@+id/eventSportsReciclerView"
                 android:layout_width="62dp"
                 android:layout_height="191dp"
                 android:layout_marginHorizontal="20dp"
@@ -322,10 +322,10 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView2"
-                app:layout_constraintTop_toBottomOf="@+id/creditCardNumberTxt" />
+                app:layout_constraintTop_toBottomOf="@+id/eventSportsReciclerView" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/CVCtxt"
+                android:id="@+id/eventRequirementsReciclerView"
                 android:layout_width="62dp"
                 android:layout_height="191dp"
                 android:layout_marginHorizontal="20dp"
@@ -357,7 +357,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView14"
-                app:layout_constraintTop_toBottomOf="@+id/CVCtxt" />
+                app:layout_constraintTop_toBottomOf="@+id/eventRequirementsReciclerView" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/eventTagsReciclerView"
