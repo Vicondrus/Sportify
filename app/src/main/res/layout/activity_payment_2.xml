@@ -5,38 +5,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/grey_sportify"
+
+    android:background="@color/dark_tone_sportify"
+
     android:isScrollContainer="true"
     tools:context=".CreateEventActivity">
-
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar2"
-        android:layout_width="0dp"
-        android:layout_height="85dp"
-        android:background="@color/purple_sportify"
-        android:isScrollContainer="false"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
+    <ImageView
+        android:id="@+id/imgPayment"
+        android:layout_width="481dp"
+        android:layout_height="164dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/eventImage"
-        android:layout_width="59dp"
-        android:layout_height="59dp"
-        android:src="@drawable/event_picture"
-        app:civ_border_color="@color/white"
-        app:civ_border_width="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-        app:layout_constraintHorizontal_bias="0.085"
-        app:layout_constraintStart_toStartOf="@+id/toolbar2"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.481" />
+        android:isScrollContainer="false"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/top"
+        />
+
+
+
+
+    <TextView
+        android:id="@+id/txtPaymentHeader"
+        android:layout_width="244dp"
+        android:layout_height="79dp"
+        android:background="#FFFBFB"
+        android:text="Payment Details"
+        android:textColor="#070707"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imgPayment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.778"
+        app:layout_constraintStart_toStartOf="@+id/imgPayment"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.764" />
 
 
     <TextView
@@ -47,10 +51,10 @@
         android:textColor="@color/white"
         android:textSize="28sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintBottom_toBottomOf="@+id/imgPayment"
+        app:layout_constraintEnd_toEndOf="@+id/imgPayment"
         app:layout_constraintHorizontal_bias="0.569"
-        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintStart_toStartOf="@+id/imgPayment"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.34" />
 
@@ -59,23 +63,81 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar2">
+        app:layout_constraintTop_toBottomOf="@+id/imgPayment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar4"
+
+            <EditText
+                android:id="@+id/nameTxtView"
                 android:layout_width="0dp"
-                android:layout_height="1600dp"
-                android:background="@color/dark_tone_sportify"
-                android:minHeight="?attr/actionBarSize"
-                android:theme="?attr/actionBarTheme"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="132dp"
+                android:layout_marginEnd="30dp"
+                android:backgroundTint="@color/dark_grey_sportify"
+                android:ems="10"
+                android:hint="First Name- Second Name"
+                android:inputType="textPersonName"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/imageView12"
+                app:layout_constraintTop_toBottomOf="@+id/numberParticipantsTextView" />
+
+            <EditText
+                android:id="@+id/CVCtxt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="26dp"
+                android:backgroundTint="@color/dark_grey_sportify"
+                android:ems="10"
+                android:hint="CVC"
+                android:inputType="phone"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/creditCardNumberTxt2" />
+
+            <EditText
+                android:id="@+id/expireDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="40dp"
+                android:backgroundTint="@color/dark_grey_sportify"
+                android:ems="10"
+                android:hint="MM/DD"
+                android:inputType="phone"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/CVCtxt" />
+
+            <EditText
+                android:id="@+id/creditCardNumberTxt2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="212dp"
+                android:backgroundTint="@color/dark_grey_sportify"
+                android:ems="10"
+                android:hint="Credit Card Number"
+                android:inputType="phone"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/phoneNumberTextView" />
 
             <ImageView
                 android:id="@+id/imageView3"
@@ -87,6 +149,7 @@
                 app:layout_constraintTop_toTopOf="@+id/addressTextView"
                 app:srcCompat="@drawable/ic_edit" />
 
+
             <EditText
                 android:id="@+id/addressTextView"
                 android:layout_width="0dp"
@@ -96,10 +159,10 @@
                 android:layout_marginEnd="30dp"
                 android:backgroundTint="@color/dark_grey_sportify"
                 android:ems="10"
-                android:hint="@string/event_name_label"
-                android:inputType="textPersonName"
+                android:hint="Address"
+                android:inputType="textPostalAddress"
                 android:textColor="@color/white"
-                android:textColorHint="@color/grey_sportify"
+                android:textColorHint="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/imageView3"
@@ -114,10 +177,10 @@
                 android:layout_marginEnd="30dp"
                 android:backgroundTint="@color/dark_grey_sportify"
                 android:ems="10"
-                android:hint="@string/event_description_label"
-                android:inputType="textPersonName"
+                android:hint="Email Address"
+                android:inputType="textEmailAddress"
                 android:textColor="@color/white"
-                android:textColorHint="@color/grey_sportify"
+                android:textColorHint="@color/white"
                 app:layout_constraintStart_toEndOf="@+id/imageView9"
                 app:layout_constraintTop_toBottomOf="@+id/addressTextView" />
 
@@ -131,6 +194,7 @@
                 app:layout_constraintTop_toTopOf="@+id/emailAddressTextView"
                 app:srcCompat="@drawable/ic_description_" />
 
+
             <EditText
                 android:id="@+id/placeDate"
                 android:layout_width="0dp"
@@ -140,9 +204,10 @@
                 android:layout_marginEnd="150dp"
                 android:backgroundTint="@color/dark_grey_sportify"
                 android:ems="10"
+                android:hint="Start Date for Booking the Event"
                 android:inputType="date"
                 android:textColor="@color/white"
-                android:textColorHint="@color/dark_grey_sportify"
+                android:textColorHint="@color/white"
                 app:layout_constraintEnd_toEndOf="@+id/toolbar4"
                 app:layout_constraintStart_toEndOf="@+id/imageView10"
                 app:layout_constraintTop_toBottomOf="@+id/emailAddressTextView" />
@@ -165,6 +230,7 @@
                 android:layout_marginEnd="150dp"
                 android:backgroundTint="@color/dark_grey_sportify"
                 android:ems="10"
+                android:hint="End Date for Booking the Event"
                 android:inputType="time"
                 android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="@+id/toolbar4"
@@ -190,50 +256,43 @@
                 android:layout_marginEnd="30dp"
                 android:backgroundTint="@color/dark_grey_sportify"
                 android:ems="10"
-                android:hint="@string/event_nb_of_people_label"
-                android:inputType="textPersonName"
+                android:hint="Number Of Participants"
+                android:inputType="number"
                 android:textColor="@color/white"
-                android:textColorHint="@color/grey_sportify"
+                android:textColorHint="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView11"
                 app:layout_constraintTop_toBottomOf="@+id/eventTimeTime" />
+
 
             <ImageView
                 android:id="@+id/imageView12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                app:layout_constraintBottom_toBottomOf="@+id/eventAttendanceFeeTextView"
+                android:layout_marginStart="28dp"
+                app:layout_constraintBottom_toBottomOf="@+id/phoneNumberTextView"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/eventAttendanceFeeTextView"
-                app:srcCompat="@drawable/ic_credit_card" />
+                app:layout_constraintTop_toTopOf="@+id/phoneNumberTextView"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/ic_phone_call_white" />
 
             <EditText
-                android:id="@+id/eventAttendanceFeeTextView"
+                android:id="@+id/phoneNumberTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="36dp"
                 android:layout_marginEnd="30dp"
                 android:backgroundTint="@color/dark_grey_sportify"
                 android:ems="10"
-                android:hint="@string/event_attendance_fee_label"
-                android:inputType="textPersonName"
+                android:hint="Phone Number"
+                android:inputType="phone"
                 android:textColor="@color/white"
-                android:textColorHint="@color/grey_sportify"
+                android:textColorHint="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@+id/imageView12"
                 app:layout_constraintTop_toBottomOf="@+id/numberParticipantsTextView" />
-
-            <ImageView
-                android:id="@+id/imageView13"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                app:layout_constraintBottom_toBottomOf="@+id/textView6"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView6"
-                app:srcCompat="@drawable/ic_location" />
 
             <TextView
                 android:id="@+id/textView6"
@@ -241,7 +300,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="24dp"
-                android:text="@string/location_label"
+                android:text=""
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -249,20 +308,6 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/imageView13"
                 app:layout_constraintTop_toBottomOf="@+id/eventAttendanceFeeTextView" />
-
-            <fragment
-                android:id="@+id/eventLocationMapView"
-                android:name="com.google.android.gms.maps.SupportMapFragment"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="40dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView6"
-                tools:context="com.example.polygons.PolyActivity" />
 
             <ImageView
                 android:id="@+id/imageView"
@@ -272,41 +317,33 @@
                 app:layout_constraintBottom_toBottomOf="@+id/textView5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textView5"
-                app:srcCompat="@drawable/ic_ball" />
+                app:srcCompat="@drawable/ic_credit_card" />
 
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="178dp"
                 android:layout_marginEnd="30dp"
-                android:text="@string/event_sports_label"
+                android:text="Credit Card Details"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView"
-                app:layout_constraintTop_toBottomOf="@+id/eventLocationMapView" />
+                app:layout_constraintTop_toBottomOf="@+id/phoneNumberTextView" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/creditCardNumberTxt"
-                android:layout_width="62dp"
-                android:layout_height="191dp"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
-                app:layout_constraintBottom_toBottomOf="@+id/textView7"
+                android:layout_marginStart="28dp"
+                app:layout_constraintBottom_toTopOf="@+id/imageView"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textView7"
+                app:layout_constraintVertical_bias="0.837"
                 app:srcCompat="@drawable/ic_checked" />
 
             <TextView
@@ -324,25 +361,17 @@
                 app:layout_constraintStart_toEndOf="@+id/imageView2"
                 app:layout_constraintTop_toBottomOf="@+id/creditCardNumberTxt" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/CVCtxt"
-                android:layout_width="62dp"
-                android:layout_height="191dp"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
             <ImageView
                 android:id="@+id/imageView14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="16dp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView8"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/textView8"
-                app:srcCompat="@drawable/ic_hashtag" />
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ic_credit_card" />
 
             <TextView
                 android:id="@+id/textView8"
@@ -351,7 +380,7 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="30dp"
-                android:text="@string/event_tags_label"
+                android:text=""
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
@@ -380,6 +409,16 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/eventTagsReciclerView" />
+
+            <Button
+                android:id="@+id/btnContinue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="160dp"
+                android:layout_marginBottom="132dp"
+                android:text="Continue"
+                app:layout_constraintBottom_toBottomOf="@+id/eventTagsReciclerView"
+                app:layout_constraintEnd_toEndOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

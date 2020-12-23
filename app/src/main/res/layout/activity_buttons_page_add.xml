@@ -55,11 +55,11 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonsPageCreateEventBtn" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/buttonsPageBookPlaceBtn"
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:backgroundTint="@color/light_tone_sportify"
-        android:text="Button"
+        android:text="@string/book_place_label"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

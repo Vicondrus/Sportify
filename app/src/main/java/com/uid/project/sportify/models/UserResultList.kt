@@ -1,9 +1,9 @@
-package com.uid.project.sportify
+package com.uid.project.sportify.models
 
 
 import com.uid.project.sportify.models.UserResult
 
-class DataSource {
+class UserResultList {
 
     companion object{
 

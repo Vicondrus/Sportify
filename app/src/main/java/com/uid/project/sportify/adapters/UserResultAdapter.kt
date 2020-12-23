@@ -53,8 +53,8 @@ class UserResultAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     ): RecyclerView.ViewHolder(itemView){
 
         val arrow_image= itemView.findViewById<ImageView>(R.id.imgArrow)
-        val user_image = itemView.findViewById<ImageView>(R.id.imgProfile)
-        val user_name= itemView.findViewById<TextView>(R.id.txtName)
+        val user_image = itemView.findViewById<ImageView>(R.id.imgPlace)
+        val user_name= itemView.findViewById<TextView>(R.id.txtPlaceName)
         val user_sport_image=itemView.findViewById<ImageView>(R.id.imgUserSport)
         val user_sport_name=itemView.findViewById<TextView>(R.id.txtSportName)
         val user_sport_level=itemView.findViewById<TextView>(R.id.txtSportLevel)

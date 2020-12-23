@@ -4,6 +4,7 @@
     <string name="customize_profile_label">Customize Profile</string>
     <string name="location_label">Location</string>
 
+    <string name="book_place_label">Book a place</string>
     <string name="create_event_label">Create new event</string>
     <string name="create_event_description_label">Find your people and do your thing - together</string>
     <string name="event_name_label">Event name</string>
@@ -56,4 +57,9 @@
     <string name="passwordLabel">Password</string>
     <string name="invalidCredentialsLabel">Invalid Credentials</string>
     <string name="invalidEmailLabel">Email address not valid</string>
+
+
+    <string name="place_booked_label">Place was succesfully booked</string>
+    <string name="book_place_button">Book place</string>
+    <string name="place_name_label">Place name</string>
 </resources>

@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/newsFriendImage1"
+        android:id="@+id/placeBookedImg"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginStart="10dp"
@@ -40,9 +40,9 @@
         android:text="@string/your_friend_label"
         android:textColor="@color/dark_grey_sportify"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/newsFriendImage1"
-        app:layout_constraintStart_toEndOf="@+id/newsFriendImage1"
-        app:layout_constraintTop_toTopOf="@+id/newsFriendImage1" />
+        app:layout_constraintBottom_toBottomOf="@+id/placeBookedImg"
+        app:layout_constraintStart_toEndOf="@+id/placeBookedImg"
+        app:layout_constraintTop_toTopOf="@+id/placeBookedImg" />
 
     <TextView
         android:id="@+id/newsFriendName1"

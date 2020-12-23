@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/purple_sportify"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="2dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        app:cardPreventCornerOverlap="false">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/dark_tone_sportify">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgPlace"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="34dp" />
+
+            <TextView
+                android:id="@+id/txtPlaceName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="126dp"
+
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_toRightOf="@+id/imgPlace"
+                android:text="Name here"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtDescription"
+                android:layout_width="142dp"
+                android:layout_height="94dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="128dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="59dp"
+                android:layout_marginEnd="133dp"
+                android:layout_marginRight="-4dp"
+                android:layout_marginBottom="36dp"
+                android:layout_toLeftOf="@+id/imageView15"
+                android:layout_toRightOf="@+id/imgPlace"
+                android:text="Description"
+                android:textColor="#FFFFFF"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/txtLocation"
+                android:layout_width="90dp"
+                android:layout_height="10dp"
+                android:layout_below="@+id/txtPlaceName"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="129dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="187dp"
+                android:text="Location"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnBookResult"
+                android:layout_width="168dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="222dp"
+                android:layout_marginEnd="11dp"
+                android:layout_marginBottom="17dp"
+                android:text="@string/book_place_button" />
+
+            <ImageView
+                android:id="@+id/imageView15"
+                android:layout_width="135dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="265dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="61dp"
+                app:srcCompat="@drawable/star_border_24px" />
+
+            <TextView
+                android:id="@+id/txtRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="121dp"
+                android:text="9,8"
+                android:textColor="#FFFFFF" />
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
