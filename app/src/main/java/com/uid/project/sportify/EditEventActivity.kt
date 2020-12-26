@@ -29,7 +29,7 @@ import java.time.LocalTime
 import java.time.format.DateTimeFormatter
 import java.util.*
 
-class CreateEventActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyCallback {
+class EditEventActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyCallback {
 
     private lateinit var mMap: HuaweiMap
     private lateinit var sportsListAdapter: DeletableSportsListAdapter
@@ -45,16 +45,34 @@ class CreateEventActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyC
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_create_event)
+        setContentView(R.layout.activity_edit_event)
 
         supportActionBar?.hide()
 
         event = Registry.event1Manager
 
+        // Set the fields
+
+        findViewById<TextView>(R.id.editEventNameTextView).text = event.name
+        findViewById<TextView>(R.id.editEventDescriptionTextView).text = event.description
+//        eventImage=findViewById<ImageButton>(R.id.editEventImage)
+//        if (event.imageUri == null) {
+//            eventImage.setImageResource(event.image)
+//        } else {
+//            eventImage.setImageURI(Uri.parse(event.imageUri))
+//        }
+        findViewById<TextView>(R.id.editEventDateDate).text = event.date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
+        findViewById<TextView>(R.id.editEventTimeStart).text = event.timeStart.format(DateTimeFormatter.ofPattern("HH:mm"))
+        findViewById<TextView>(R.id.editEventTimeEnd).text = event.timeEnd.format(DateTimeFormatter.ofPattern("HH:mm"))
+        findViewById<TextView>(R.id.editEventNbOfPeopleTextView).text = event.nbOfPeople.toString()
+        findViewById<TextView>(R.id.editEventAttendanceFeeTextView).text = event.attendanceFee.toString()
+        findViewById<TextView>(R.id.editEventLocationLabel).text = event.location.location
+        findViewById<TextView>(R.id.editEventNeighborhoodLabel).text = event.location.neighborhood
+
         /**
          * Date
          */
-        val eventDateTextView = findViewById<EditText>(R.id.eventDateDate)
+        val eventDateTextView = findViewById<EditText>(R.id.editEventDateDate)
         eventDateTextView.inputType = InputType.TYPE_NULL
         eventDateTextView.setOnClickListener {
             val calendar: Calendar = Calendar.getInstance()
@@ -62,13 +80,13 @@ class CreateEventActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyC
             val month = calendar.get(Calendar.MONTH)
             val year = calendar.get(Calendar.YEAR)
             val datePicker = DatePickerDialog(
-                this@CreateEventActivity,
-                DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
-                    eventDateTextView.setText("" + dayOfMonth + "/" + (monthOfYear + 1) + "/" + year)
-                },
-                year,
-                month,
-                day
+                    this@EditEventActivity,
+                    DatePickerDialog.OnDateSetListener { view, year, monthOfYear, dayOfMonth ->
+                        eventDateTextView.setText("" + dayOfMonth + "/" + (monthOfYear + 1) + "/" + year)
+                    },
+                    year,
+                    month,
+                    day
             )
             datePicker.show()
         }
@@ -83,39 +101,39 @@ class CreateEventActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyC
             val hour = calendar.get(Calendar.HOUR_OF_DAY)
             val minute = calendar.get(Calendar.MINUTE)
             val timePicker = TimePickerDialog(
-                this@CreateEventActivity,
-                TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
-                    var hourOfDayString: String = "" + hourOfDay
-                    if (hourOfDay < 10) hourOfDayString = "0" + hourOfDay
-                    var minuteString: String = "" + minute
-                    if (minute == 0) minuteString = "" + minute + "0"
-                    eventTimeStartTextView.setText(hourOfDayString + ":" + minuteString)
-                },
-                hour,
-                minute,
-                true
+                    this@EditEventActivity,
+                    TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
+                        var hourOfDayString: String = "" + hourOfDay
+                        if (hourOfDay < 10) hourOfDayString = "0" + hourOfDay
+                        var minuteString: String = "" + minute
+                        if (minute == 0) minuteString = "" + minute + "0"
+                        eventTimeStartTextView.setText(hourOfDayString + ":" + minuteString)
+                    },
+                    hour,
+                    minute,
+                    true
             )
             timePicker.show()
         }
 
-        val eventTimeEndTextView = findViewById<EditText>(R.id.eventTimeEnd)
+        val eventTimeEndTextView = findViewById<EditText>(R.id.editEventTimeEnd)
         eventTimeEndTextView.inputType = InputType.TYPE_NULL
         eventTimeEndTextView.setOnClickListener {
             val calendar: Calendar = Calendar.getInstance()
             val hour = calendar.get(Calendar.HOUR_OF_DAY)
             val minute = calendar.get(Calendar.MINUTE)
             val timePicker = TimePickerDialog(
-                this@CreateEventActivity,
-                TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
-                    var hourOfDayString: String = "" + hourOfDay
-                    if (hourOfDay < 10) hourOfDayString = "0" + hourOfDay
-                    var minuteString: String = "" + minute
-                    if (minute == 0) minuteString = "" + minute + "0"
-                    eventTimeEndTextView.setText(hourOfDayString + ":" + minuteString)
-                },
-                hour,
-                minute,
-                true
+                    this@EditEventActivity,
+                    TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
+                        var hourOfDayString: String = "" + hourOfDay
+                        if (hourOfDay < 10) hourOfDayString = "0" + hourOfDay
+                        var minuteString: String = "" + minute
+                        if (minute == 0) minuteString = "" + minute + "0"
+                        eventTimeEndTextView.setText(hourOfDayString + ":" + minuteString)
+                    },
+                    hour,
+                    minute,
+                    true
             )
             timePicker.show()
         }
@@ -124,64 +142,64 @@ class CreateEventActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyC
          * Map
          */
         val mapFragment = supportFragmentManager
-            .findFragmentById(R.id.createEventMapView) as? SupportMapFragment
+                .findFragmentById(R.id.editEventMapView) as? SupportMapFragment
         mapFragment?.getMapAsync(this)
 
         /**
          * Sports, Tags, Requirements
          */
         val layoutManagerSports = LinearLayoutManager(
-            this@CreateEventActivity,
-            LinearLayoutManager.HORIZONTAL,
-            false
+                this@EditEventActivity,
+                LinearLayoutManager.HORIZONTAL,
+                false
         )
         val layoutManagerTags = LinearLayoutManager(
-            this@CreateEventActivity,
-            LinearLayoutManager.HORIZONTAL,
-            false
+                this@EditEventActivity,
+                LinearLayoutManager.HORIZONTAL,
+                false
         )
         val layoutManagerTagsSearch = LinearLayoutManager(
-            this@CreateEventActivity,
-            LinearLayoutManager.VERTICAL,
-            false
+                this@EditEventActivity,
+                LinearLayoutManager.VERTICAL,
+                false
         )
         val layoutManagerRequirements = LinearLayoutManager(
-            this@CreateEventActivity,
-            LinearLayoutManager.HORIZONTAL,
-            false
+                this@EditEventActivity,
+                LinearLayoutManager.HORIZONTAL,
+                false
         )
 
-        val sportsRecyclerView = findViewById<RecyclerView>(R.id.createEventSportsRecyclerView)
+        val sportsRecyclerView = findViewById<RecyclerView>(R.id.editEventSportsRecyclerView)
         sportsRecyclerView.layoutManager = layoutManagerSports
-        sportsListAdapter = DeletableSportsListAdapter(event.sports, this@CreateEventActivity)
+        sportsListAdapter = DeletableSportsListAdapter(event.sports, this@EditEventActivity)
         sportsRecyclerView.adapter = sportsListAdapter
 
-        val tagsRecyclerView = findViewById<RecyclerView>(R.id.createEventTagsRecyclerView)
+        val tagsRecyclerView = findViewById<RecyclerView>(R.id.editEventTagsRecyclerView)
         tagsRecyclerView.layoutManager = layoutManagerTags
-        tagsListAdapter = DeletableTagsListAdapter(event.tags, this@CreateEventActivity)
+        tagsListAdapter = DeletableTagsListAdapter(event.tags, this@EditEventActivity)
         tagsRecyclerView.adapter = tagsListAdapter
 
         val requirementsRecyclerView =
-            findViewById<RecyclerView>(R.id.createEventRequirementsRecyclerView)
+                findViewById<RecyclerView>(R.id.editEventRequirementsRecyclerView)
         requirementsRecyclerView.layoutManager = layoutManagerRequirements
         requirementsListAdapter =
-            DeletableRequirementsListAdapter(event.requirements, this@CreateEventActivity)
+                DeletableRequirementsListAdapter(event.requirements, this@EditEventActivity)
         requirementsRecyclerView.adapter = requirementsListAdapter
 
-        val tagsSearchView = findViewById<SearchView>(R.id.createEventTagsSearchView)
+        val tagsSearchView = findViewById<SearchView>(R.id.editEventTagsSearchView)
         val searchTagsRecyclerView =
-            findViewById<RecyclerView>(R.id.createEventSearchTagsRecyclerView)
+                findViewById<RecyclerView>(R.id.editEventSearchTagsRecyclerView)
         searchTagsRecyclerView.layoutManager = layoutManagerTagsSearch
         tagsSearchListAdapter = TagsSearchListAdapter(
-            Registry.setOfTags.toMutableList(),
-            tagsListAdapter,
-            tagsSearchView,
-            this@CreateEventActivity
+                Registry.setOfTags.toMutableList(),
+                tagsListAdapter,
+                tagsSearchView,
+                this@EditEventActivity
         )
         searchTagsRecyclerView.adapter = tagsSearchListAdapter
 
         tagsSearchView.setOnQueryTextListener(object :
-            SearchView.OnQueryTextListener {
+                SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
             }
@@ -193,16 +211,16 @@ class CreateEventActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyC
 
         })
 
-        val addSportButton = findViewById<ImageButton>(R.id.createEventAddSportBtn)
+        val addSportButton = findViewById<ImageButton>(R.id.editEventAddSportBtn)
         addSportButton.setOnClickListener {
             //
             val intent = Intent(this, SportsSelectionActivity::class.java)
             startActivityForResult(intent, sportsSelectionId)
         }
 
-        val addRequirementButton = findViewById<ImageButton>(R.id.createEventAddRequirementButton)
+        val addRequirementButton = findViewById<ImageButton>(R.id.editEventAddRequirementButton)
         addRequirementButton.setOnClickListener {
-            val requirementTextView = findViewById<TextView>(R.id.createEventRequirementTextView)
+            val requirementTextView = findViewById<TextView>(R.id.editEventRequirementTextView)
             if (requirementTextView.text.toString() != "") {
                 requirementsListAdapter.addToDataSet(requirementTextView.text.toString())
                 requirementsListAdapter.notifyDataSetChanged()
@@ -214,50 +232,50 @@ class CreateEventActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyC
         /**
          * Image
          */
-        eventImage = findViewById(R.id.createEventImage)
+        eventImage = findViewById(R.id.editEventImage)
         if (event.imageUri == null) {
             eventImage.setImageResource(event.image)
         } else {
             eventImage.setImageURI(Uri.parse(event.imageUri))
         }
-        val changeEventPictureButton = findViewById<ImageButton>(R.id.createEventImage)
+        val changeEventPictureButton = findViewById<ImageButton>(R.id.editEventImage)
         changeEventPictureButton.setOnClickListener {
             val pickPhoto = Intent(
-                Intent.ACTION_PICK,
-                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI
+                    Intent.ACTION_PICK,
+                    android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI
             )
             startActivityForResult(pickPhoto, pictureSelectionId)
         }
 
 
-        val button = findViewById<Button>(R.id.createEventButton)
+        val button = findViewById<Button>(R.id.confirmEditEventButton)
         button.setOnClickListener {
 
-            event.name = findViewById<EditText>(R.id.eventNameTextView).text.toString()
+            event.name = findViewById<EditText>(R.id.editEventNameTextView).text.toString()
             event.host = Registry.user1Manager.name
             event.description =
-                findViewById<EditText>(R.id.eventDescriptionTextView).text.toString()
+                    findViewById<EditText>(R.id.editEventDescriptionTextView).text.toString()
             event.date = LocalDate.parse(
-                eventDateTextView.text.toString(),
-                DateTimeFormatter.ofPattern("dd/MM/yyyy")
+                    eventDateTextView.text.toString(),
+                    DateTimeFormatter.ofPattern("dd/MM/yyyy")
             )
             event.timeStart = LocalTime.parse(
-                eventTimeStartTextView.text.toString(),
-                DateTimeFormatter.ofPattern("HH:mm")
+                    eventTimeStartTextView.text.toString(),
+                    DateTimeFormatter.ofPattern("HH:mm")
             )
             event.timeEnd = LocalTime.parse(
-                eventTimeEndTextView.text.toString(),
-                DateTimeFormatter.ofPattern("HH:mm")
+                    eventTimeEndTextView.text.toString(),
+                    DateTimeFormatter.ofPattern("HH:mm")
             )
-            val eventNbOfPeopleTextView = findViewById<EditText>(R.id.eventNbOfPeopleTextView)
+            val eventNbOfPeopleTextView = findViewById<EditText>(R.id.editEventNbOfPeopleTextView)
             eventNbOfPeopleTextView.inputType = InputType.TYPE_CLASS_NUMBER
             event.nbOfPeople = eventNbOfPeopleTextView.text.toString().toInt()
-            val eventAttendanceFeeTextView = findViewById<EditText>(R.id.eventAttendanceFeeTextView)
+            val eventAttendanceFeeTextView = findViewById<EditText>(R.id.editEventAttendanceFeeTextView)
             eventAttendanceFeeTextView.inputType = InputType.TYPE_CLASS_NUMBER
             event.attendanceFee = eventAttendanceFeeTextView.text.toString().toInt()
-            val intent = Intent(this, EventCreatedActivity::class.java)
-            intent.putExtra("event", event)
-            startActivity(intent)
+            val intent = Intent()
+            setResult(Activity.RESULT_OK, intent)
+            finish()
         }
     }
 
@@ -268,17 +286,17 @@ class CreateEventActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyC
         val neighborhood =
                 Registry.listOfNeighborhoods.find { neighborhood: Neighborhood -> event.location.neighborhood == neighborhood.name }
         mMap.addPolygon(
-            PolygonOptions()
-                .clickable(false)
-                .strokeColor(
-                    ContextCompat.getColor(
-                        this@CreateEventActivity,
-                        R.color.purple_sportify
-                    )
-                )
-                .addAll(neighborhood!!.coords)
+                PolygonOptions()
+                        .clickable(false)
+                        .strokeColor(
+                                ContextCompat.getColor(
+                                        this@EditEventActivity,
+                                        R.color.purple_sportify
+                                )
+                        )
+                        .addAll(neighborhood!!.coords)
         )
-            .tag = neighborhood.name
+                .tag = neighborhood.name
     }
 
 
@@ -290,9 +308,9 @@ class CreateEventActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyC
 
 
     override fun onActivityResult(
-        requestCode: Int,
-        resultCode: Int,
-        data: Intent?
+            requestCode: Int,
+            resultCode: Int,
+            data: Intent?
     ) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == sportsSelectionId) {

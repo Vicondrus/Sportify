@@ -23,7 +23,7 @@
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar4"
-                android:layout_width="411dp"
+                android:layout_width="0dp"
                 android:layout_height="1126dp"
                 android:background="@color/dark_tone_sportify"
                 android:minHeight="?attr/actionBarSize"
@@ -99,14 +99,36 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="25dp"
-                android:layout_marginEnd="30dp"
-                android:text="Location"
+                tools:text="Location"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/imageView13"
                 app:layout_constraintTop_toBottomOf="@+id/eventPageOrganizerEventAttendanceFee" />
+
+            <TextView
+                android:id="@+id/eventPageOrganizerEventNeighborhood"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="30dp"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/commaLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/commaLabel"
+                app:layout_constraintTop_toTopOf="@+id/commaLabel"
+                tools:text="Neighborhood" />
+
+            <TextView
+                android:id="@+id/commaLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=","
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/eventPageOrganizerEventLocation"
+                app:layout_constraintStart_toEndOf="@+id/eventPageOrganizerEventLocation"
+                app:layout_constraintTop_toTopOf="@+id/eventPageOrganizerEventLocation" />
 
             <ImageView
                 android:id="@+id/imageView"
@@ -247,13 +269,23 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="25dp"
-                android:layout_marginEnd="30dp"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView11"
                 app:layout_constraintTop_toBottomOf="@+id/eventPageOrganizerEventTimeStart"
                 tools:text="Number of people" />
+
+            <TextView
+                android:id="@+id/peopleLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="people"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/eventPageOrganizerEventNbOfPeople"
+                app:layout_constraintStart_toEndOf="@+id/eventPageOrganizerEventNbOfPeople"
+                app:layout_constraintTop_toTopOf="@+id/eventPageOrganizerEventNbOfPeople" />
 
             <TextView
                 android:id="@+id/eventPageOrganizerEventAttendanceFee"
@@ -261,13 +293,23 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="25dp"
-                android:layout_marginEnd="30dp"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView12"
                 app:layout_constraintTop_toBottomOf="@+id/eventPageOrganizerEventNbOfPeople"
                 tools:text="Attendance fee" />
+
+            <TextView
+                android:id="@+id/labelRON"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="RON"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/eventPageOrganizerEventAttendanceFee"
+                app:layout_constraintStart_toEndOf="@+id/eventPageOrganizerEventAttendanceFee"
+                app:layout_constraintTop_toTopOf="@+id/eventPageOrganizerEventAttendanceFee" />
 
             <TextView
                 android:id="@+id/eventPageOrganizerEventDate"
@@ -310,7 +352,7 @@
                 android:id="@+id/eventPageOrganizerEventTimeEnd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Event time"
+                tools:text="Event time"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@+id/eventPageOrganizerEventTimeStart"

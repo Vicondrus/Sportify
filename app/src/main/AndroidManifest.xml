@@ -19,10 +19,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Sportify">
+        <activity android:name=".EventPageUserActivity"></activity>
+        <activity android:name=".EditEventActivity" />
+        <activity android:name=".MapViewEventActivity" />
+
         <uses-library
             android:name="com.google.android.wearable"
             android:required="false" />
-
         <!--
                Set to true if your app is Standalone, that is, it does not require the handheld
                app to run.
@@ -40,14 +43,14 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyBmVBp2jlJg9UCB1d3xaOfKFHVpNQHwwSU" />
 
-        <activity android:name=".NewsFeedActivity"/>
+        <activity android:name=".NewsFeedActivity" />
         <activity android:name=".ProfilePageActivity" />
         <activity android:name=".CreateEventActivity" />
         <activity android:name=".EventCreatedActivity" />
         <activity android:name=".ChatMainActivity" />
         <activity android:name=".ChatFriendActivity" />
         <activity android:name=".EventPageOrganizerActivity" />
-        <activity android:name=".LoginActivity" >
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -55,9 +58,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SportsSelectionActivity" />
-
         <activity android:name=".UserResultActivity" />
-
         <activity
             android:name=".LevelPopupActivity"
             android:parentActivityName=".SportsSelectionActivity"

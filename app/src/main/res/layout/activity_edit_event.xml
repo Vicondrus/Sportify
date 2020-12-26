@@ -33,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:text="@string/create_event_label"
+                android:text="Edit your event"
                 android:textColor="@color/white"
                 android:textSize="28sp"
                 android:textStyle="bold"
@@ -54,7 +54,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageButton
-                    android:id="@+id/createEventImage"
+                    android:id="@+id/editEventImage"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:background="@null"
@@ -92,7 +92,7 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/createEventSearchTagsRecyclerView"
+                android:id="@+id/editEventSearchTagsRecyclerView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -102,7 +102,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/cardView7" />
 
             <ImageButton
-                android:id="@+id/createEventAddSportBtn"
+                android:id="@+id/editEventAddSportBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
@@ -114,19 +114,19 @@
                 app:srcCompat="@android:drawable/ic_menu_add" />
 
             <ImageButton
-                android:id="@+id/createEventAddRequirementButton"
+                android:id="@+id/editEventAddRequirementButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
                 android:background="@drawable/add_button"
                 android:backgroundTint="@color/cardview_shadow_end_color"
-                app:layout_constraintBottom_toBottomOf="@+id/createEventRequirementTextView"
+                app:layout_constraintBottom_toBottomOf="@+id/editEventRequirementTextView"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/createEventRequirementTextView"
+                app:layout_constraintTop_toTopOf="@+id/editEventRequirementTextView"
                 app:srcCompat="@android:drawable/ic_menu_add" />
 
             <Button
-                android:id="@+id/createEventLocationBtn"
+                android:id="@+id/editEventLocationBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
@@ -136,20 +136,20 @@
                 android:textSize="12sp"
                 app:cornerRadius="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/eventAttendanceFeeTextView" />
+                app:layout_constraintTop_toBottomOf="@+id/editEventAttendanceFeeTextView" />
 
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                app:layout_constraintBottom_toBottomOf="@+id/eventNameTextView"
+                app:layout_constraintBottom_toBottomOf="@+id/editEventNameTextView"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/eventNameTextView"
+                app:layout_constraintTop_toTopOf="@+id/editEventNameTextView"
                 app:srcCompat="@drawable/ic_edit" />
 
             <EditText
-                android:id="@+id/eventNameTextView"
+                android:id="@+id/editEventNameTextView"
                 android:layout_width="0dp"
                 android:layout_height="43dp"
                 android:layout_marginStart="15dp"
@@ -168,7 +168,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/eventDescriptionTextView"
+                android:id="@+id/editEventDescriptionTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -180,19 +180,19 @@
                 android:textColor="@color/white"
                 android:textColorHint="@color/grey_sportify"
                 app:layout_constraintStart_toEndOf="@+id/imageView9"
-                app:layout_constraintTop_toBottomOf="@+id/eventNameTextView" />
+                app:layout_constraintTop_toBottomOf="@+id/editEventNameTextView" />
 
             <ImageView
                 android:id="@+id/imageView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@+id/eventDescriptionTextView"
+                app:layout_constraintBottom_toBottomOf="@+id/editEventDescriptionTextView"
                 app:layout_constraintStart_toStartOf="@+id/imageView3"
-                app:layout_constraintTop_toTopOf="@+id/eventDescriptionTextView"
+                app:layout_constraintTop_toTopOf="@+id/editEventDescriptionTextView"
                 app:srcCompat="@drawable/ic_description_" />
 
             <EditText
-                android:id="@+id/eventDateDate"
+                android:id="@+id/editEventDateDate"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -203,15 +203,15 @@
                 android:textColor="@color/white"
                 android:textColorHint="@color/dark_grey_sportify"
                 app:layout_constraintStart_toEndOf="@+id/imageView10"
-                app:layout_constraintTop_toBottomOf="@+id/eventDescriptionTextView" />
+                app:layout_constraintTop_toBottomOf="@+id/editEventDescriptionTextView" />
 
             <ImageView
                 android:id="@+id/imageView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@+id/eventDateDate"
+                app:layout_constraintBottom_toBottomOf="@+id/editEventDateDate"
                 app:layout_constraintStart_toStartOf="@+id/imageView3"
-                app:layout_constraintTop_toTopOf="@+id/eventDateDate"
+                app:layout_constraintTop_toTopOf="@+id/editEventDateDate"
                 app:srcCompat="@drawable/ic_calendar" />
 
             <EditText
@@ -224,10 +224,10 @@
                 android:inputType="time"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toEndOf="@+id/imageView10"
-                app:layout_constraintTop_toBottomOf="@+id/eventDateDate" />
+                app:layout_constraintTop_toBottomOf="@+id/editEventDateDate" />
 
             <EditText
-                android:id="@+id/eventTimeEnd"
+                android:id="@+id/editEventTimeEnd"
                 android:layout_width="50dp"
                 android:layout_height="43dp"
                 android:backgroundTint="@color/dark_grey_sportify"
@@ -242,13 +242,13 @@
                 android:id="@+id/imageView11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@+id/eventNbOfPeopleTextView"
+                app:layout_constraintBottom_toBottomOf="@+id/editEventNbOfPeopleTextView"
                 app:layout_constraintStart_toStartOf="@+id/imageView3"
-                app:layout_constraintTop_toTopOf="@+id/eventNbOfPeopleTextView"
+                app:layout_constraintTop_toTopOf="@+id/editEventNbOfPeopleTextView"
                 app:srcCompat="@drawable/ic_user" />
 
             <EditText
-                android:id="@+id/eventNbOfPeopleTextView"
+                android:id="@+id/editEventNbOfPeopleTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -268,13 +268,13 @@
                 android:id="@+id/imageView12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="@+id/eventAttendanceFeeTextView"
+                app:layout_constraintBottom_toBottomOf="@+id/editEventAttendanceFeeTextView"
                 app:layout_constraintStart_toStartOf="@+id/imageView3"
-                app:layout_constraintTop_toTopOf="@+id/eventAttendanceFeeTextView"
+                app:layout_constraintTop_toTopOf="@+id/editEventAttendanceFeeTextView"
                 app:srcCompat="@drawable/ic_credit_card" />
 
             <EditText
-                android:id="@+id/eventAttendanceFeeTextView"
+                android:id="@+id/editEventAttendanceFeeTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -288,7 +288,7 @@
                 android:textColorHint="@color/grey_sportify"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView12"
-                app:layout_constraintTop_toBottomOf="@+id/eventNbOfPeopleTextView" />
+                app:layout_constraintTop_toBottomOf="@+id/editEventNbOfPeopleTextView" />
 
             <ImageView
                 android:id="@+id/imageView13"
@@ -312,10 +312,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/imageView13"
-                app:layout_constraintTop_toBottomOf="@+id/eventAttendanceFeeTextView" />
+                app:layout_constraintTop_toBottomOf="@+id/editEventAttendanceFeeTextView" />
 
             <fragment
-                android:id="@+id/createEventMapView"
+                android:id="@+id/editEventMapView"
                 class="com.huawei.hms.maps.SupportMapFragment"
                 android:layout_width="340dp"
                 android:layout_height="150dp"
@@ -327,7 +327,7 @@
                 app:cameraZoom="11"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/createEventNeighborhoodLabel"
+                app:layout_constraintTop_toBottomOf="@+id/editEventNeighborhoodLabel"
                 app:mapType="normal"
                 app:uiZoomControls="false" />
 
@@ -351,10 +351,10 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/imageView"
-                app:layout_constraintTop_toBottomOf="@+id/createEventSearchTagsRecyclerView" />
+                app:layout_constraintTop_toBottomOf="@+id/editEventSearchTagsRecyclerView" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/createEventSportsRecyclerView"
+                android:id="@+id/editEventSportsRecyclerView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
@@ -385,17 +385,17 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView2"
-                app:layout_constraintTop_toBottomOf="@+id/createEventSportsRecyclerView" />
+                app:layout_constraintTop_toBottomOf="@+id/editEventSportsRecyclerView" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/createEventRequirementsRecyclerView"
+                android:id="@+id/editEventRequirementsRecyclerView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/createEventRequirementTextView" />
+                app:layout_constraintTop_toBottomOf="@+id/editEventRequirementTextView" />
 
             <ImageView
                 android:id="@+id/imageView14"
@@ -419,10 +419,10 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView14"
-                app:layout_constraintTop_toBottomOf="@+id/createEventMapView" />
+                app:layout_constraintTop_toBottomOf="@+id/editEventMapView" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/createEventTagsRecyclerView"
+                android:id="@+id/editEventTagsRecyclerView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
@@ -434,7 +434,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
             <Button
-                android:id="@+id/createEventButton"
+                android:id="@+id/confirmEditEventButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="30dp"
@@ -444,7 +444,7 @@
                 app:cornerRadius="50dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/createEventRequirementsRecyclerView" />
+                app:layout_constraintTop_toBottomOf="@+id/editEventRequirementsRecyclerView" />
 
             <TextView
                 android:id="@+id/textView"
@@ -457,7 +457,7 @@
                 app:layout_constraintTop_toTopOf="@+id/editEventTimeStart" />
 
             <TextView
-                android:id="@+id/createEventLocationLabel"
+                android:id="@+id/editEventLocationLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -468,18 +468,18 @@
                 tools:text="Location name " />
 
             <TextView
-                android:id="@+id/createEventNeighborhoodLabel"
+                android:id="@+id/editEventNeighborhoodLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 app:layout_constraintStart_toStartOf="@+id/textView6"
-                app:layout_constraintTop_toBottomOf="@+id/createEventLocationLabel"
+                app:layout_constraintTop_toBottomOf="@+id/editEventLocationLabel"
                 tools:text="Neighborhood name " />
 
             <EditText
-                android:id="@+id/createEventRequirementTextView"
+                android:id="@+id/editEventRequirementTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -490,7 +490,7 @@
                 android:inputType="textPersonName"
                 android:textColor="@color/white"
                 android:textColorHint="@color/grey_sportify"
-                app:layout_constraintEnd_toStartOf="@+id/createEventAddRequirementButton"
+                app:layout_constraintEnd_toStartOf="@+id/editEventAddRequirementButton"
                 app:layout_constraintStart_toStartOf="@+id/textView7"
                 app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -504,10 +504,10 @@
                 app:cardCornerRadius="30dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/createEventTagsRecyclerView">
+                app:layout_constraintTop_toBottomOf="@+id/editEventTagsRecyclerView">
 
                 <SearchView
-                    android:id="@+id/createEventTagsSearchView"
+                    android:id="@+id/editEventTagsSearchView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
 

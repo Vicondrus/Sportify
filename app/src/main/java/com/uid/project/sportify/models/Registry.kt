@@ -97,7 +97,8 @@ class Registry private constructor() {
                 if (event1 == null) {
                     event1 = Event(
                         "", R.drawable.event_picture, "", "",
-                        LocalDate.MIN, LocalTime.MIN, LocalTime.MAX, 0, 0, "Grigorescu",
+                        LocalDate.MIN, LocalTime.MIN, LocalTime.MAX, 0, 0,
+                        Location("", "Centru", Coordinates(46.766667, 23.583333)),
                         ArrayList(), ArrayList(), ArrayList()
                     )
                 }

@@ -22,7 +22,12 @@ class EventCreatedActivity : AppCompatActivity() {
         val eventNameContainer = findViewById<TextView>(R.id.eventCreatedEventNameTextView)
         eventNameContainer.text = event.name
         val eventImage = findViewById<CircleImageView>(R.id.eventCreatedEventImage)
-        eventImage.setImageURI(Uri.parse(event.imageUri))
+//        eventImage.setImageURI(Uri.parse(event.imageUri))
+        if (event.imageUri == null) {
+            eventImage.setImageResource(event.image)
+        } else {
+            eventImage.setImageURI(Uri.parse(event.imageUri))
+        }
 
         val eventCreatedButton = findViewById<Button>(R.id.eventCreatedDoneButton)
         eventCreatedButton.setOnClickListener {
