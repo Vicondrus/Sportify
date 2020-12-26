@@ -33,10 +33,10 @@ class NewsFeedPostPhotosViewHolder(private val view: View) :
 
     fun bind(newsFeedPost: NewsFeedPost) {
         val newsFeedPostPhotos = newsFeedPost as NewsFeedPostPhotos
-        friendName?.text = newsFeedPostPhotos.friendName
+        friendName?.text = newsFeedPostPhotos.event.host
         friendImage?.setImageResource(newsFeedPostPhotos.friendImage)
-        eventName?.text = newsFeedPostPhotos.eventName
-        eventImage?.setImageResource(newsFeedPostPhotos.eventImage)
+        eventName?.text = newsFeedPostPhotos.event.name
+        eventImage?.setImageResource(newsFeedPostPhotos.event.image)
         postTime?.text = newsFeedPostPhotos.postTime
         postDescription?.text = newsFeedPostPhotos.postDescription
         postCoverImage?.setImageResource(newsFeedPostPhotos.postCoverImage)

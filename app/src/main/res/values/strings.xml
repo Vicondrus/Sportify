@@ -57,4 +57,12 @@
     <string name="invalidEmailLabel">Email address not valid</string>
     <string name="dashLabel">-</string>
     <string name="requirementsHint">Type some requirements...</string>
+    <string name="areYouGoingLabel">Are you going?</string>
+    <string name="youAreGoingLabel">You are going!</string>
+    <string name="spotsLeftLabel">spots left</string>
+    <string name="hosted_by_label">Hosted by</string>
+    <string name="all_fields_mandatory_label">* All fields are mandatory!</string>
+    <string name="date_error_label">* Date cannot be before current date!</string>
+    <string name="time_error_label">* End time must be before start time!</string>
+
 </resources>

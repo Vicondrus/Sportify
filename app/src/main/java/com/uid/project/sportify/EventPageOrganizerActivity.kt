@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -31,13 +32,11 @@ class EventPageOrganizerActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-//        val event = this.intent.getSerializableExtra("event") as Event
         val event = Registry.event1Manager
 
         val eventName = findViewById<TextView>(R.id.eventPageOrganizerEventName)
         eventName.text = event.name
         val eventImage = findViewById<CircleImageView>(R.id.eventPageOrganizerEventImage)
-//        eventImage.setImageURI(Uri.parse(event.imageUri))
         if (event.imageUri == null) {
             eventImage.setImageResource(event.image)
         } else {
@@ -98,6 +97,22 @@ class EventPageOrganizerActivity : AppCompatActivity() {
             val intent = Intent(this, EditEventActivity::class.java)
             startActivityForResult(intent, editEventId)
         }
+
+        val delegateFriendButton = findViewById<Button>(R.id.eventDelegateFriendBtn)
+        delegateFriendButton.setOnClickListener {
+            val intent = Intent(this, FriendListActivity::class.java)
+            intent.putExtra("activityName", "Delegate friend")
+            intent.putExtra("eventName", event.name)
+            startActivity(intent)
+        }
+
+        val scanQRCodeButton = findViewById<Button>(R.id.eventScanQRCodeBtn)
+        scanQRCodeButton.setOnClickListener {
+//            val intent = Intent(this, FriendListActivity::class.java)
+//            intent.putExtra("activityName", "Delegate friend")
+//            intent.putExtra("eventName", event.name)
+//            startActivity(intent)
+        }
     }
 
 
@@ -113,7 +128,7 @@ class EventPageOrganizerActivity : AppCompatActivity() {
                 val eventImage = findViewById<CircleImageView>(R.id.eventPageOrganizerEventImage)
                 eventImage.setImageURI(Uri.parse(event.imageUri))
                 val eventDescription =
-                    findViewById<TextView>(R.id.eventPageOrganizerEventDescription)
+                    findViewById<TextView>(R.id.eventPageUserEventDescription)
                 eventDescription.text = event.description
                 val eventDate = findViewById<TextView>(R.id.eventPageOrganizerEventDate)
                 eventDate.text = event.date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))

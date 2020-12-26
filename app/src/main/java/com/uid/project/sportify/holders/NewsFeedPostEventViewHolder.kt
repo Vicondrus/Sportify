@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.uid.project.sportify.R
 import com.uid.project.sportify.models.NewsFeedPost
 import com.uid.project.sportify.models.NewsFeedPostEvent
+import java.time.format.DateTimeFormatter
 
 class NewsFeedPostEventViewHolder(private val view: View) :
         RecyclerView.ViewHolder(view), View.OnClickListener {
@@ -39,16 +40,19 @@ class NewsFeedPostEventViewHolder(private val view: View) :
 
     fun bind(newsFeedPost: NewsFeedPost) {
         val newsFeedPostEvent = newsFeedPost as NewsFeedPostEvent
-        friendName?.text = newsFeedPostEvent.friendName
+        friendName?.text = newsFeedPostEvent.event.host
         friendImage?.setImageResource(newsFeedPostEvent.friendImage)
-        eventName?.text = newsFeedPostEvent.eventName
-        eventImage?.setImageResource(newsFeedPostEvent.eventImage)
-        eventDate?.text = newsFeedPostEvent.eventDate
-        eventTimeStart?.text = newsFeedPostEvent.eventTimeStart
-        eventTimeEnd?.text = newsFeedPostEvent.eventTimeEnd
-        eventDescription?.text = newsFeedPostEvent.eventDescription
-        eventLocation?.text = newsFeedPostEvent.eventLocation
-        eventNbOfPeople?.text = newsFeedPostEvent.eventNbOfPeople
+        eventName?.text = newsFeedPostEvent.event.name
+        eventImage?.setImageResource(newsFeedPostEvent.event.image)
+        eventDate?.text =
+            newsFeedPostEvent.event.date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
+        eventTimeStart?.text =
+            newsFeedPostEvent.event.timeStart.format(DateTimeFormatter.ofPattern("HH:mm"))
+        eventTimeEnd?.text =
+            newsFeedPostEvent.event.timeEnd.format(DateTimeFormatter.ofPattern("HH:mm"))
+        eventDescription?.text = newsFeedPostEvent.event.description
+        eventLocation?.text = newsFeedPostEvent.event.location.location
+        eventNbOfPeople?.text = "" + newsFeedPostEvent.event.nbOfPeople + " people are going"
     }
 
     override fun onClick(view: View?) {

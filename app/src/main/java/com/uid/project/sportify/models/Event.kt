@@ -18,6 +18,11 @@ class Event(
     val sports: ArrayList<Sport>,
     val requirements: ArrayList<String>,
     val tags: ArrayList<String>,
-    val participants: Int = 0,
-    var imageUri: String? = null
-) : Serializable
+    var participants: Int = 0,
+    var imageUri: String? = null,
+    var participantsList: ArrayList<String> = arrayListOf()
+) : Serializable {
+    override fun toString(): String {
+        return "Event(name='$name', image=$image, host='$host', description='$description', date=$date, timeStart=$timeStart, timeEnd=$timeEnd, nbOfPeople=$nbOfPeople, attendanceFee=$attendanceFee, location=$location, sports=$sports, requirements=$requirements, tags=$tags, participants=$participants, imageUri=$imageUri, participantsList=$participantsList)"
+    }
+}

@@ -5,6 +5,7 @@ import com.uid.project.sportify.R
 import java.time.LocalDate
 import java.time.LocalTime
 import java.time.ZoneId
+import java.time.format.DateTimeFormatter
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -106,6 +107,54 @@ class Registry private constructor() {
             }
             set(e: Event) {
                 event1 = e
+            }
+
+        private var event2: Event? = null
+        var event2Manager: Event
+            get() {
+                if (event2 == null) {
+                    event2 = Event(
+                        "Volleyball game for beginners",
+                        R.drawable.event_picture,
+                        "Alex Ion",
+                        "This event targets all amateur volleyball players or even those inexperienced! Cantec, joc, si voie buna la noi!",
+                        LocalDate.parse("05/01/2021", DateTimeFormatter.ofPattern("dd/MM/yyyy")),
+                        LocalTime.parse("12:00", DateTimeFormatter.ofPattern("HH:mm")),
+                        LocalTime.parse("14:30", DateTimeFormatter.ofPattern("HH:mm")),
+                        12,
+                        10,
+                        Location("Sala sporturilor", "Centru", Coordinates(46.766667, 23.583333)),
+                        ArrayList(), ArrayList(), ArrayList()
+                    )
+                }
+                return event2 as Event
+            }
+            set(e: Event) {
+                event2 = e
+            }
+
+        private var event3: Event? = null
+        var event3Manager: Event
+            get() {
+                if (event3 == null) {
+                    event3 = Event(
+                        "Monthly school football competition",
+                        R.drawable.sport_pic_2,
+                        "Maria Pop",
+                        "We welcome all schools from Cluj-Napoca to participate to this football and basketball event!",
+                        LocalDate.parse("12/02/2021", DateTimeFormatter.ofPattern("dd/MM/yyyy")),
+                        LocalTime.parse("10:00", DateTimeFormatter.ofPattern("HH:mm")),
+                        LocalTime.parse("15:00", DateTimeFormatter.ofPattern("HH:mm")),
+                        20,
+                        0,
+                        Location("", "Centru", Coordinates(46.766667, 23.583333)),
+                        ArrayList(), ArrayList(), ArrayList()
+                    )
+                }
+                return event3 as Event
+            }
+            set(e: Event) {
+                event3 = e
             }
 
         val setOfTags: MutableSet<String>
@@ -307,6 +356,80 @@ class Registry private constructor() {
             )
 
         val listOfEvents: ArrayList<Event?>
-            get() = arrayListOf(event1)
+            get() = arrayListOf(event1, event2, event3)
+
+        val listofNewsFeedPosts: ArrayList<NewsFeedPost>
+            get() = arrayListOf(
+                NewsFeedPostEvent(R.drawable.boy_pic_3, Registry.event2Manager),
+                NewsFeedPostPhotos(
+                    R.drawable.girl_pic_2,
+                    "1 hour ago",
+                    "The boys from Colegiul National Vasile Lucaciu won the cup" +
+                            "once again this month! Congrats to everyone!!",
+                    R.drawable.sport_pic_1,
+                    Registry.event3Manager
+                )
+            )
+
+        val listOfMessages: ArrayList<Message>
+            get() = arrayListOf(
+                Message("Hello, Ana!", MessageType.MSG_RECEIVED),
+                Message("How are u?", MessageType.MSG_RECEIVED),
+                Message("Hello dear friend!", MessageType.MSG_SENT),
+                Message(
+                    "Super fine! Gettin ready for the monthly student volleyball game!",
+                    MessageType.MSG_SENT
+                ),
+                Message("Are u coming too?", MessageType.MSG_SENT),
+                Message("Yes, just arrived at the place", MessageType.MSG_RECEIVED),
+                Message("Great! See u there then!", MessageType.MSG_SENT),
+                Message("Can't wait!", MessageType.MSG_RECEIVED)
+            )
+
+        val listOfChatMessages: ArrayList<ChatMessage>
+            get() = arrayListOf(
+                ChatMessage(
+                    Friend("Dina Meyer", R.drawable.girl_pic_1),
+                    "2 hrs",
+                    "",
+                    false,
+                    listOfMessages
+                ),
+                ChatMessage(
+                    Friend("Stephane Moreau", R.drawable.boy_pic_1),
+                    "3 hrs",
+                    "",
+                    false,
+                    listOfMessages
+                ),
+                ChatMessage(
+                    Friend("Andrew James", R.drawable.boy_pic_2),
+                    "9 hrs",
+                    "",
+                    true,
+                    listOfMessages
+                ),
+                ChatMessage(
+                    Friend("Andreea Pop", R.drawable.girl_pic_2),
+                    "Aug 19",
+                    "",
+                    true,
+                    listOfMessages
+                ),
+                ChatMessage(
+                    Friend("John Smith", R.drawable.boy_pic_3),
+                    "Jul 24",
+                    "",
+                    true,
+                    listOfMessages
+                ),
+                ChatMessage(
+                    Friend("Jane Doe", R.drawable.girl_pic_3),
+                    "Jun 12",
+                    "",
+                    true,
+                    listOfMessages
+                )
+            )
     }
 }

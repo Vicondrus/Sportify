@@ -6,10 +6,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.calatour.model.ChatMessageList
 import com.uid.project.sportify.adapters.ChatMessagesAdapter
 import com.uid.project.sportify.models.ChatMessage
 import com.uid.project.sportify.models.Message
+import com.uid.project.sportify.models.Registry
 
 class ChatMainActivity : AppCompatActivity() {
 
@@ -28,7 +28,7 @@ class ChatMainActivity : AppCompatActivity() {
             this@ChatMainActivity,
         )
 
-        chatMessageList = ChatMessageList().getMessages()
+        chatMessageList = Registry.listOfChatMessages
 
         messagesRecyclerView.layoutManager = layoutManager
         chatMessagesAdapter =

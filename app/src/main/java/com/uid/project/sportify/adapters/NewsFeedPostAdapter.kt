@@ -1,14 +1,18 @@
 package com.uid.project.sportify.adapters
 
 import android.content.Context
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.uid.project.sportify.EventPageUserActivity
 import com.uid.project.sportify.R
 import com.uid.project.sportify.holders.NewsFeedPostEventViewHolder
 import com.uid.project.sportify.holders.NewsFeedPostPhotosViewHolder
 import com.uid.project.sportify.models.NewsFeedPost
 import com.uid.project.sportify.models.NewsFeedPostEvent
+import com.uid.project.sportify.models.NewsFeedPostPhotos
 
 
 class NewsFeedPostAdapter(private val dataSet: List<NewsFeedPost>, private val context: Context) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -33,18 +37,19 @@ class NewsFeedPostAdapter(private val dataSet: List<NewsFeedPost>, private val c
         if (getItemViewType(position) == POST_EVENT) {
             (holder as NewsFeedPostEventViewHolder).bind(post)
             holder.eventDetailsBtn?.setOnClickListener {
-//                val intent = Intent(context, ChatFriendActivity::class.java)
-//                val friend: Friend = dataSet[position].friend
-//                intent.putExtra("friend", friend)
-//                context.startActivity(intent)
+                val intent = Intent(context, EventPageUserActivity::class.java)
+                val postEvent = post as NewsFeedPostEvent
+                Log.d("EVENT", postEvent.event.toString())
+                intent.putExtra("event", postEvent.event)
+                context.startActivity(intent)
             }
         } else {
             (holder as NewsFeedPostPhotosViewHolder).bind(post)
             holder.postPhotoToolbar?.setOnClickListener {
-//                val intent = Intent(context, ChatFriendActivity::class.java)
-//                val friend: Friend = dataSet[position].friend
-//                intent.putExtra("friend", friend)
-//                context.startActivity(intent)
+                val intent = Intent(context, EventPageUserActivity::class.java)
+                val postEvent = post as NewsFeedPostPhotos
+                intent.putExtra("event", postEvent.event)
+                context.startActivity(intent)
             }
         }
     }

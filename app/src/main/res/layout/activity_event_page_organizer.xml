@@ -48,7 +48,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                app:layout_constraintBottom_toBottomOf="@+id/eventPageOrganizerEventDescription"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/eventPageOrganizerEventDescription"
                 app:srcCompat="@drawable/ic_description_" />
