@@ -126,9 +126,13 @@ class EventPageOrganizerActivity : AppCompatActivity() {
                 val eventName = findViewById<TextView>(R.id.eventPageOrganizerEventName)
                 eventName.text = event.name
                 val eventImage = findViewById<CircleImageView>(R.id.eventPageOrganizerEventImage)
-                eventImage.setImageURI(Uri.parse(event.imageUri))
+                if (event.imageUri == null) {
+                    eventImage.setImageResource(event.image)
+                } else {
+                    eventImage.setImageURI(Uri.parse(event.imageUri))
+                }
                 val eventDescription =
-                    findViewById<TextView>(R.id.eventPageUserEventDescription)
+                        findViewById<TextView>(R.id.eventPageOrganizerEventDescription)
                 eventDescription.text = event.description
                 val eventDate = findViewById<TextView>(R.id.eventPageOrganizerEventDate)
                 eventDate.text = event.date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))

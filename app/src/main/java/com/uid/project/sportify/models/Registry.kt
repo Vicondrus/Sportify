@@ -8,7 +8,7 @@ import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 import java.util.*
 import kotlin.collections.ArrayList
-
+import kotlin.random.Random.Default.nextInt
 class Registry private constructor() {
 
     companion object {
@@ -97,10 +97,10 @@ class Registry private constructor() {
             get() {
                 if (event1 == null) {
                     event1 = Event(
-                        "", R.drawable.event_picture, "", "",
-                        LocalDate.MIN, LocalTime.MIN, LocalTime.MAX, 0, 0,
-                        Location("", "Centru", Coordinates(46.766667, 23.583333)),
-                        ArrayList(), ArrayList(), ArrayList()
+                            "", R.drawable.event_picture, "", "",
+                            LocalDate.MIN, LocalTime.MIN, LocalTime.MAX, 0, 0,
+                            Location("", "Centru", Coordinates(46.766667, 23.583333)),
+                            arrayListOf(), ArrayList(), ArrayList()
                     )
                 }
                 return event1 as Event
@@ -114,17 +114,19 @@ class Registry private constructor() {
             get() {
                 if (event2 == null) {
                     event2 = Event(
-                        "Volleyball game for beginners",
-                        R.drawable.event_picture,
-                        "Alex Ion",
-                        "This event targets all amateur volleyball players or even those inexperienced! Cantec, joc, si voie buna la noi!",
-                        LocalDate.parse("05/01/2021", DateTimeFormatter.ofPattern("dd/MM/yyyy")),
-                        LocalTime.parse("12:00", DateTimeFormatter.ofPattern("HH:mm")),
-                        LocalTime.parse("14:30", DateTimeFormatter.ofPattern("HH:mm")),
-                        12,
-                        10,
-                        Location("Sala sporturilor", "Centru", Coordinates(46.766667, 23.583333)),
-                        ArrayList(), ArrayList(), ArrayList()
+                            "Volleyball game for beginners",
+                            R.drawable.event_picture,
+                            "Alex Ion",
+                            "This event targets all amateur volleyball players or even those inexperienced! Cantec, joc, si voie buna la noi!",
+                            LocalDate.parse("05/01/2021", DateTimeFormatter.ofPattern("dd/MM/yyyy")),
+                            LocalTime.parse("12:00", DateTimeFormatter.ofPattern("HH:mm")),
+                            LocalTime.parse("14:30", DateTimeFormatter.ofPattern("HH:mm")),
+                            12,
+                            10,
+                            Location("Sala sporturilor", "Centru", Coordinates(46.766667, 23.583333)),
+                            arrayListOf(Sport("Volleyball", Level.BEGINNER)),
+                            arrayListOf("appropriate sport shoes"),
+                            arrayListOf("Volleyball", "beginner")
                     )
                 }
                 return event2 as Event
@@ -360,30 +362,41 @@ class Registry private constructor() {
 
         val listofNewsFeedPosts: ArrayList<NewsFeedPost>
             get() = arrayListOf(
-                NewsFeedPostEvent(R.drawable.boy_pic_3, Registry.event2Manager),
-                NewsFeedPostPhotos(
-                    R.drawable.girl_pic_2,
-                    "1 hour ago",
-                    "The boys from Colegiul National Vasile Lucaciu won the cup" +
-                            "once again this month! Congrats to everyone!!",
-                    R.drawable.sport_pic_1,
-                    Registry.event3Manager
-                )
+                    NewsFeedPostEvent(R.drawable.boy_pic_3, Registry.event2Manager),
+                    NewsFeedPostPhotos(
+                            R.drawable.girl_pic_2,
+                            "1 hour ago",
+                            "The boys from Colegiul National Vasile Lucaciu won the cup" +
+                                    "once again this month! Congrats to everyone!!",
+                            R.drawable.sport_pic_1,
+                            event3Manager
+                    )
+            )
+
+        val listOfRandomMessages: ArrayList<String>
+            get() = arrayListOf(
+                    "Can't wait!", "Ok!", "Cool!", "See you there!", "Have a nice day!", "Good evening!",
+                    "TTY later!", "Bye byee", "That's right, I cannot miss this", "I'll be waiting for u!"
             )
 
         val listOfMessages: ArrayList<Message>
             get() = arrayListOf(
-                Message("Hello, Ana!", MessageType.MSG_RECEIVED),
-                Message("How are u?", MessageType.MSG_RECEIVED),
-                Message("Hello dear friend!", MessageType.MSG_SENT),
-                Message(
-                    "Super fine! Gettin ready for the monthly student volleyball game!",
-                    MessageType.MSG_SENT
-                ),
-                Message("Are u coming too?", MessageType.MSG_SENT),
-                Message("Yes, just arrived at the place", MessageType.MSG_RECEIVED),
-                Message("Great! See u there then!", MessageType.MSG_SENT),
-                Message("Can't wait!", MessageType.MSG_RECEIVED)
+                    Message("Hello, Ana!", MessageType.MSG_RECEIVED),
+                    Message("I haven't heard from u in a while", MessageType.MSG_RECEIVED),
+                    Message("Hello dear friend!", MessageType.MSG_SENT),
+                    Message("Yeah I know...", MessageType.MSG_SENT),
+                    Message("Been busy with the final exams", MessageType.MSG_SENT),
+                    Message("But now I'm free as a bird!", MessageType.MSG_SENT),
+                    Message("That's great news!", MessageType.MSG_RECEIVED),
+                    Message("How are u?", MessageType.MSG_RECEIVED),
+                    Message(
+                            "Super fine! Gettin ready for the monthly student volleyball game!",
+                            MessageType.MSG_SENT
+                    ),
+                    Message("Are u coming too?", MessageType.MSG_SENT),
+                    Message("Yes, just arrived at the place", MessageType.MSG_RECEIVED),
+                    Message("Great! See u there then!", MessageType.MSG_SENT),
+                    Message(listOfRandomMessages[nextInt(0, 9)], MessageType.MSG_RECEIVED)
             )
 
         val listOfChatMessages: ArrayList<ChatMessage>
@@ -431,5 +444,6 @@ class Registry private constructor() {
                     listOfMessages
                 )
             )
+
     }
 }

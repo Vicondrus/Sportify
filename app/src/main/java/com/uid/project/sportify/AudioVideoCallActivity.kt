@@ -11,6 +11,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import com.bumptech.glide.Glide
 import com.uid.project.sportify.models.CallType
 import com.uid.project.sportify.models.Friend
 import java.util.*
@@ -32,6 +33,11 @@ class AudioVideoCallActivity : AppCompatActivity() {
         callType = intent.getSerializableExtra("callType") as CallType
 
         friend = intent.getSerializableExtra("friend") as Friend
+
+        val myVideoImageView = findViewById<ImageView>(R.id.callMyVideo)
+        Glide.with(this).load(R.drawable.my_camera_gif).into(myVideoImageView)
+        val friendImageView = findViewById<ImageView>(R.id.callFriendVideo)
+        Glide.with(this).load(R.drawable.dog_video).into(friendImageView)
 
         val callingFriendImageImageView = findViewById<ImageView>(R.id.callingFriendImage)
         callingFriendImageImageView.setImageResource(friend.profilePictureId)
@@ -73,7 +79,7 @@ class AudioVideoCallActivity : AppCompatActivity() {
         }
 
         findViewById<CardView>(R.id.myVideoCardView).visibility = View.GONE
-        findViewById<ImageView>(R.id.callFriendVideo).visibility = View.GONE
+        friendImageView.visibility = View.GONE
         findViewById<CardView>(R.id.callButtonsCardView).visibility = View.GONE
 
 
@@ -84,7 +90,7 @@ class AudioVideoCallActivity : AppCompatActivity() {
                 findViewById<TextView>(R.id.callingLabelTextView).visibility = View.GONE
                 findViewById<ProgressBar>(R.id.callingProgressBar).visibility = View.GONE
                 findViewById<CardView>(R.id.callButtonsCardView).visibility = View.VISIBLE
-                findViewById<ImageView>(R.id.callFriendVideo).visibility = View.VISIBLE
+                friendImageView.visibility = View.VISIBLE
                 if (callType == CallType.CALL_AUDIO) {
                     // do not display my video
                     findViewById<CardView>(R.id.myVideoCardView).visibility = View.GONE

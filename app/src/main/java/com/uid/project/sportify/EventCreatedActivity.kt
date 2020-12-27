@@ -16,13 +16,11 @@ class EventCreatedActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-//        val event = this.intent.getSerializableExtra("event") as Event
         val event = Registry.event1Manager
 
         val eventNameContainer = findViewById<TextView>(R.id.eventCreatedEventNameTextView)
         eventNameContainer.text = event.name
         val eventImage = findViewById<CircleImageView>(R.id.eventCreatedEventImage)
-//        eventImage.setImageURI(Uri.parse(event.imageUri))
         if (event.imageUri == null) {
             eventImage.setImageResource(event.image)
         } else {

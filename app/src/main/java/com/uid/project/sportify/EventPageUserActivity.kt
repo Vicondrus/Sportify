@@ -48,6 +48,8 @@ class EventPageUserActivity : AppCompatActivity() {
         }
         val eventDescription = findViewById<TextView>(R.id.eventPageUserEventDescription)
         eventDescription.text = event.description
+        val eventHostName = findViewById<TextView>(R.id.eventHostName)
+        eventHostName.text = event.host
         val eventDate = findViewById<TextView>(R.id.eventPageUserEventDate)
         eventDate.text = event.date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
         val eventTimeStart = findViewById<TextView>(R.id.eventPageUserEventTimeStart)
@@ -146,7 +148,7 @@ class EventPageUserActivity : AppCompatActivity() {
         val tellFriends = findViewById<Button>(R.id.eventUserTellFriendBtn)
         tellFriends.setOnClickListener {
             val intent = Intent(this, FriendListActivity::class.java)
-            intent.putExtra("activityName", "Delegate friend")
+            intent.putExtra("activityName", "Invite friends")
             intent.putExtra("eventName", event.name)
             startActivity(intent)
         }

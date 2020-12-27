@@ -4,18 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/dark_tone_sportify"
-    android:backgroundTint="@color/dark_tone_sportify"
-    tools:context=".EventPageOrganizerActivity">
+    tools:context=".EventPageUserActivity">
 
 
     <ScrollView
         android:id="@+id/scrollView4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@color/dark_tone_sportify"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView9">
+        app:layout_constraintTop_toBottomOf="@+id/cardView9"
+        app:layout_constraintVertical_bias="0.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -23,8 +25,8 @@
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar4"
-                android:layout_width="0dp"
-                android:layout_height="1000dp"
+                android:layout_width="414dp"
+                android:layout_height="1108dp"
                 android:background="@color/dark_tone_sportify"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
@@ -230,7 +232,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView8" />
@@ -376,8 +377,7 @@
         android:id="@+id/cardView8"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="@color/pink_sportify"
-        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@color/light_tone_sportify"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -385,15 +385,15 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@null">
+            android:background="@drawable/layout_style_pink">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/eventPageUserEventImage"
                 android:layout_width="59dp"
                 android:layout_height="59dp"
                 android:layout_marginStart="30dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginBottom="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:src="@drawable/event_picture"
                 app:civ_border_color="@color/white"
                 app:civ_border_width="0dp"
@@ -409,7 +409,7 @@
                 android:layout_marginEnd="30dp"
                 android:editable="false"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="22sp"
                 android:textStyle="bold|italic"
                 app:layout_constraintBottom_toBottomOf="@+id/eventPageUserEventImage"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -423,8 +423,7 @@
         android:id="@+id/cardView9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="@color/light_tone_sportify"
-        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@color/dark_tone_sportify"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView8">
@@ -432,7 +431,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@null">
+            android:background="@drawable/layout_style_light_tone">
 
             <Button
                 android:id="@+id/eventUserTellFriendBtn"

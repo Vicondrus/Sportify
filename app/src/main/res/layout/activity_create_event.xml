@@ -16,8 +16,7 @@
         android:layout_height="wrap_content"
         android:background="@color/dark_tone_sportify"
         android:backgroundTintMode="add"
-        app:cardBackgroundColor="@color/purple_sportify"
-        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@color/dark_tone_sportify"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -26,7 +25,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@null">
+            android:background="@drawable/layout_style_purple">
 
             <TextView
                 android:id="@+id/textView3"
@@ -35,7 +34,7 @@
                 android:layout_marginStart="20dp"
                 android:text="@string/create_event_label"
                 android:textColor="@color/white"
-                android:textSize="28sp"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/cardView6"
                 app:layout_constraintStart_toEndOf="@+id/cardView6"
@@ -60,7 +59,23 @@
                     android:background="@null"
                     android:scaleType="centerCrop"
                     app:srcCompat="@drawable/event_picture" />
+
             </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/createEventAddImgBtn"
+                android:layout_width="32dp"
+                android:layout_height="40dp"
+                android:backgroundTint="@color/dark_tone_sportify"
+                android:minWidth="10dip"
+                android:paddingHorizontal="0dp"
+                android:paddingVertical="0dp"
+                android:text="+"
+                android:textSize="18sp"
+                app:cornerRadius="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/cardView6" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
@@ -90,6 +105,42 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/createEventTagError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/list_error_label"
+                android:textColor="@color/error_light"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="@+id/textView8"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+            <TextView
+                android:id="@+id/createEventSportError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/list_error_label"
+                android:textColor="@color/error_light"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="@+id/textView5"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+            <TextView
+                android:id="@+id/createEventRequirementError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/list_error_label"
+                android:textColor="@color/error_light"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="@+id/textView7"
+                app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/createEventSearchTagsRecyclerView"
@@ -215,10 +266,11 @@
                 app:srcCompat="@drawable/ic_calendar" />
 
             <EditText
-                android:id="@+id/editEventTimeStart"
+                android:id="@+id/eventTimeStart"
                 android:layout_width="50dp"
                 android:layout_height="43dp"
                 android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
                 android:backgroundTint="@color/dark_grey_sportify"
                 android:ems="10"
                 android:inputType="time"
@@ -234,9 +286,9 @@
                 android:ems="10"
                 android:inputType="time"
                 android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="@+id/editEventTimeStart"
+                app:layout_constraintBottom_toBottomOf="@+id/eventTimeStart"
                 app:layout_constraintStart_toEndOf="@+id/textView"
-                app:layout_constraintTop_toTopOf="@+id/editEventTimeStart" />
+                app:layout_constraintTop_toTopOf="@+id/eventTimeStart" />
 
             <ImageView
                 android:id="@+id/imageView11"
@@ -252,6 +304,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginEnd="30dp"
                 android:backgroundTint="@color/dark_grey_sportify"
                 android:ems="10"
@@ -357,10 +410,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                app:layout_constraintTop_toBottomOf="@+id/createEventSportError" />
 
             <ImageView
                 android:id="@+id/imageView2"
@@ -425,12 +478,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:background="@null"
                 android:backgroundTint="@null"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+                app:layout_constraintTop_toBottomOf="@+id/createEventTagError" />
 
             <Button
                 android:id="@+id/createEventButton"
@@ -451,9 +504,9 @@
                 android:layout_height="wrap_content"
                 android:text="@string/dashLabel"
                 android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="@+id/editEventTimeStart"
-                app:layout_constraintStart_toEndOf="@+id/editEventTimeStart"
-                app:layout_constraintTop_toTopOf="@+id/editEventTimeStart" />
+                app:layout_constraintBottom_toBottomOf="@+id/eventTimeStart"
+                app:layout_constraintStart_toEndOf="@+id/eventTimeStart"
+                app:layout_constraintTop_toTopOf="@+id/eventTimeStart" />
 
             <TextView
                 android:id="@+id/createEventLocationLabel"
@@ -481,7 +534,6 @@
                 android:id="@+id/createEventRequirementTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:backgroundTint="@color/dark_grey_sportify"
                 android:ems="10"
@@ -491,7 +543,7 @@
                 android:textColorHint="@color/grey_sportify"
                 app:layout_constraintEnd_toStartOf="@+id/createEventAddRequirementButton"
                 app:layout_constraintStart_toStartOf="@+id/textView7"
-                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+                app:layout_constraintTop_toBottomOf="@+id/createEventRequirementError" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView7"
@@ -553,7 +605,7 @@
                 android:textSize="16sp"
                 android:textStyle="italic"
                 app:layout_constraintStart_toStartOf="@+id/eventDateDate"
-                app:layout_constraintTop_toBottomOf="@+id/editEventTimeStart" />
+                app:layout_constraintTop_toBottomOf="@+id/eventTimeStart" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
