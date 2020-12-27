@@ -16,15 +16,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.huawei.hms.maps.HuaweiMap
 import com.huawei.hms.maps.SupportMapFragment
+import com.huawei.hms.maps.model.BitmapDescriptorFactory
+import com.huawei.hms.maps.model.LatLng
+import com.huawei.hms.maps.model.MarkerOptions
 import com.huawei.hms.maps.model.PolygonOptions
 import com.uid.project.sportify.adapters.DeletableRequirementsListAdapter
 import com.uid.project.sportify.adapters.DeletableSportsListAdapter
 import com.uid.project.sportify.adapters.DeletableTagsListAdapter
 import com.uid.project.sportify.adapters.TagsSearchListAdapter
-import com.uid.project.sportify.models.Event
-import com.uid.project.sportify.models.Neighborhood
-import com.uid.project.sportify.models.Registry
-import com.uid.project.sportify.models.Sport
+import com.uid.project.sportify.models.*
 import java.time.LocalDate
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
@@ -41,8 +41,10 @@ class CreateEventActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyC
     private val pictureSelectionId = 2
     private val mapSelectionId = 3
     private lateinit var event: Event
+    private lateinit var location: Location
     private lateinit var eventImage: ImageView
-    private lateinit var location: TextView
+    private lateinit var eventLocationLabel: TextView
+    private lateinit var eventNeighborhoodLabel: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -78,8 +80,8 @@ class CreateEventActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyC
         eventTimeStartTextView.inputType = InputType.TYPE_NULL
         val eventTimeEndTextView = findViewById<EditText>(R.id.eventTimeEnd)
         eventTimeEndTextView.inputType = InputType.TYPE_NULL
-        val eventLocationLabel = findViewById<TextView>(R.id.createEventLocationLabel)
-        val eventNeighborhoodLabel = findViewById<TextView>(R.id.createEventNeighborhoodLabel)
+        eventLocationLabel = findViewById<TextView>(R.id.createEventLocationLabel)
+        eventNeighborhoodLabel = findViewById<TextView>(R.id.createEventNeighborhoodLabel)
 
         /**
          * Date
@@ -332,6 +334,7 @@ class CreateEventActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyC
                 event.timeEnd = LocalTime.parse(eventTimeEndTextView.text.toString(), DateTimeFormatter.ofPattern("HH:mm"))
                 event.nbOfPeople = eventNbOfPeople.text.toString().toInt()
                 event.attendanceFee = eventAttendanceFee.text.toString().toInt()
+                event.location = location
                 val intent = Intent(this, EventCreatedActivity::class.java)
                 startActivity(intent)
             }
@@ -424,26 +427,20 @@ class CreateEventActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyC
 
         mMap = map
         mMap.clear()
-        val neighborhood =
-                Registry.listOfNeighborhoods.find { neighborhood: Neighborhood -> event.location.neighborhood == neighborhood.name }
-        mMap.addPolygon(
-            PolygonOptions()
-                .clickable(false)
-                .strokeColor(
-                    ContextCompat.getColor(
-                        this@CreateEventActivity,
-                        R.color.purple_sportify
-                    )
-                )
-                .addAll(neighborhood!!.coords)
-        )
-            .tag = neighborhood.name
+        if(eventLocationLabel.text!="") {
+            mMap.addMarker(MarkerOptions()
+                    .position(LatLng(location.coords.latitude, location.coords.longitude))
+                    .title(location.location).icon(BitmapDescriptorFactory
+                            .defaultMarker(BitmapDescriptorFactory.HUE_VIOLET)))
+        }
     }
 
 
     fun goToMap(view: View) {
         val intent = Intent(this, MapViewEventActivity::class.java)
-        intent.putExtra("currentLocation", event.location)
+        if(eventLocationLabel.text!="") {
+            intent.putExtra("currentLocation", location.location)
+        }
         startActivityForResult(intent, mapSelectionId)
     }
 
@@ -474,9 +471,10 @@ class CreateEventActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyC
             if (resultCode == Activity.RESULT_OK) {
                 val result = data?.getStringExtra("chosenLocation")
                 if (result != null) {
-                    event.location.neighborhood = result
+                    location = Registry.listOfLocations.find { location -> location.location == result }!!
+                    eventLocationLabel.text = result
+                    eventNeighborhoodLabel.text = location.neighborhood
                     onMapReady(mMap)
-                    location.text = result
                 }
             }
         }

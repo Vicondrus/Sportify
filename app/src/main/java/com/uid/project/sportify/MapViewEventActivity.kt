@@ -15,33 +15,30 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.google.android.libraries.places.api.Places
-import com.google.android.libraries.places.api.model.Place
-import com.google.android.libraries.places.api.net.PlacesClient
 import com.huawei.hms.maps.HuaweiMap
 import com.huawei.hms.maps.MapView
 import com.huawei.hms.maps.OnMapReadyCallback
+import com.huawei.hms.maps.model.BitmapDescriptorFactory
 import com.huawei.hms.maps.model.LatLng
 import com.huawei.hms.maps.model.Marker
-import com.huawei.hms.maps.model.PolygonOptions
+import com.huawei.hms.maps.model.MarkerOptions
 import com.uid.project.sportify.models.Location
-import com.uid.project.sportify.models.Neighborhood
 import com.uid.project.sportify.models.Registry
 import java.util.*
 
 
-class MapViewEventActivity : AppCompatActivity(), OnMapReadyCallback, HuaweiMap.OnMapClickListener {
+class MapViewEventActivity : AppCompatActivity(), OnMapReadyCallback{
     private var hMap: HuaweiMap? = null
 
     private var mMapView: MapView? = null
 
-    private lateinit var placesClient: PlacesClient
+//    private lateinit var placesClient: PlacesClient
 
-    private lateinit var selectedLocation: Location
+    private lateinit var selectedLocation: String
 
     private lateinit var confirmationButton: Button
 
-    private var placeFields: List<Place.Field> = listOf(Place.Field.NAME)
+//    private var placeFields: List<Place.Field> = listOf(Place.Field.NAME)
 
     companion object {
         private const val TAG = "MapViewDemoActivity"
@@ -63,12 +60,12 @@ class MapViewEventActivity : AppCompatActivity(), OnMapReadyCallback, HuaweiMap.
             getMapAsync(this@MapViewEventActivity)
         }
 
-        if (!Places.isInitialized()) {
-            Places.initialize(this@MapViewEventActivity, "AIzaSyDXDgcX0T2FQfbQ6XlqDHDfik33I3virBg")
-        }
-        placesClient = Places.createClient(this)
+//        if (!Places.isInitialized()) {
+//            Places.initialize(this@MapViewEventActivity, "AIzaSyDXDgcX0T2FQfbQ6XlqDHDfik33I3virBg")
+//        }
+//        placesClient = Places.createClient(this)
 
-        selectedLocation = intent.getSerializableExtra("currentLocation") as Location
+        selectedLocation = intent.getStringExtra("currentLocation").toString()
 
 
         confirmationButton = findViewById<Button>(R.id.confirmationButtonEvent)
@@ -83,8 +80,8 @@ class MapViewEventActivity : AppCompatActivity(), OnMapReadyCallback, HuaweiMap.
 
     }
 
-    private fun selectNeighborhood(neighborhood: String) {
-        selectedLocation.neighborhood = neighborhood
+    private fun selectMarker(title: String) {
+        selectedLocation = title
         confirmationButton.isEnabled = true
         confirmationButton.setBackgroundColor(Color.parseColor("#8A56AC"))
     }
@@ -94,38 +91,42 @@ class MapViewEventActivity : AppCompatActivity(), OnMapReadyCallback, HuaweiMap.
     override fun onMapReady(map: HuaweiMap) {
         Log.d(TAG, "onMapReady: ")
         hMap = map
-        hMap!!.setOnMapClickListener(this)
-        Registry.listOfNeighborhoods.forEach { neighborhood: Neighborhood ->
-            var color = ContextCompat.getColor(this@MapViewEventActivity, R.color.grey_sportify)
-            if (neighborhood.name == selectedLocation.neighborhood) {
-                color = ContextCompat.getColor(this@MapViewEventActivity, R.color.purple_sportify)
+
+        Registry.listOfLocations.forEach{ location ->
+            if (location.location == selectedLocation){
+                hMap!!.addMarker(MarkerOptions()
+                        .position(LatLng(location.coords.latitude, location.coords.longitude))
+                        .title(location.location).icon(BitmapDescriptorFactory
+                                .defaultMarker(BitmapDescriptorFactory.HUE_VIOLET)))
+            }else {
+                hMap!!.addMarker(MarkerOptions()
+                        .position(LatLng(location.coords.latitude, location.coords.longitude))
+                        .title(location.location).icon(BitmapDescriptorFactory
+                                .defaultMarker(BitmapDescriptorFactory.HUE_ROSE)))
             }
-            hMap!!.addPolygon(
-                PolygonOptions()
-                    .clickable(true)
-                    .addAll(neighborhood.coords)
-                    .strokeColor(color)
-            ).tag = neighborhood.name
         }
 
-        hMap!!.setOnPolygonClickListener { polygon ->
-            Toast.makeText(applicationContext, polygon.tag.toString(), Toast.LENGTH_SHORT).show()
-            selectNeighborhood(polygon.tag.toString())
-            hMap!!.clear()
-            Registry.listOfNeighborhoods.forEach { neighborhood: Neighborhood ->
-                var color = ContextCompat.getColor(this@MapViewEventActivity, R.color.grey_sportify)
-                if (neighborhood.name == polygon.tag.toString()) {
-                    color =
-                        ContextCompat.getColor(this@MapViewEventActivity, R.color.purple_sportify)
+        hMap!!.setOnMarkerClickListener { marker ->
+            val aux = marker.title
+            Toast.makeText(applicationContext, marker.title.toString(), Toast.LENGTH_SHORT).show()
+            selectMarker(aux)
+            map.clear()
+            Registry.listOfLocations.forEach{ location ->
+                if (location.location == aux){
+                    hMap!!.addMarker(MarkerOptions()
+                            .position(LatLng(location.coords.latitude, location.coords.longitude))
+                            .title(location.location).icon(BitmapDescriptorFactory
+                                    .defaultMarker(BitmapDescriptorFactory.HUE_VIOLET)))
+                }else {
+                    hMap!!.addMarker(MarkerOptions()
+                            .position(LatLng(location.coords.latitude, location.coords.longitude))
+                            .title(location.location).icon(BitmapDescriptorFactory
+                                    .defaultMarker(BitmapDescriptorFactory.HUE_ROSE)))
                 }
-                hMap!!.addPolygon(
-                    PolygonOptions()
-                        .clickable(true)
-                        .addAll(neighborhood.coords)
-                        .strokeColor(color)
-                ).tag = neighborhood.name
             }
+            true
         }
+
     }
 
 
@@ -158,9 +159,9 @@ class MapViewEventActivity : AppCompatActivity(), OnMapReadyCallback, HuaweiMap.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             for (permission in permissions) {
                 if (ActivityCompat.checkSelfPermission(
-                        context,
-                        permission
-                    ) != PackageManager.PERMISSION_GRANTED
+                                context,
+                                permission
+                        ) != PackageManager.PERMISSION_GRANTED
                 ) {
                     return false
                 }
@@ -169,16 +170,16 @@ class MapViewEventActivity : AppCompatActivity(), OnMapReadyCallback, HuaweiMap.
         return true
     }
 
-    override fun onMapClick(p0: LatLng?) {
-        if (p0 != null) {
-            val geocoder = Geocoder(this@MapViewEventActivity, Locale.getDefault())
-            val addresses: List<Address> = geocoder.getFromLocation(p0.latitude, p0.longitude, 1)
-            val address = addresses[0].thoroughfare
-            selectedLocation.coords.latitude = p0.latitude
-            selectedLocation.coords.longitude = p0.longitude
-            selectedLocation.location = address
-        }
-    }
+//    override fun onMapClick(p0: LatLng?) {
+//        if (p0 != null) {
+//            val geocoder = Geocoder(this@MapViewEventActivity, Locale.getDefault())
+//            val addresses: List<Address> = geocoder.getFromLocation(p0.latitude, p0.longitude, 1)
+//            val address = addresses[0].thoroughfare
+//            selectedLocation.coords.latitude = p0.latitude
+//            selectedLocation.coords.longitude = p0.longitude
+//            selectedLocation.location = address
+//        }
+//    }
 
     fun checkPermissions() {
         //Checks if permission is NOT granted...
@@ -186,9 +187,9 @@ class MapViewEventActivity : AppCompatActivity(), OnMapReadyCallback, HuaweiMap.
             != PackageManager.PERMISSION_GRANTED
         ) {
             ActivityCompat.requestPermissions(
-                this@MapViewEventActivity,
-                arrayOf(ACCESS_FINE_LOCATION),
-                0
+                    this@MapViewEventActivity,
+                    arrayOf(ACCESS_FINE_LOCATION),
+                    0
             )
         }
     }
