@@ -3,10 +3,12 @@ package com.uid.project.sportify
 import android.app.Activity
 import android.content.Intent
 import android.graphics.BlendMode
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.SearchView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
@@ -27,12 +29,13 @@ class CreateGroupActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyC
     lateinit var location : TextView
     private lateinit var tagsListAdapter: DeletableTagsListAdapter
     private lateinit var tagsSearchListAdapter: TagsSearchListAdapter
-
+    private val pictureSelectionId = 2
     private lateinit var groupName: TextInputEditText
     private lateinit var groupDescription: TextInputEditText
-
+    private lateinit var groupImage: ImageView
     private lateinit var finishButton : Button
-
+    private lateinit var group: Group
+    private var uri: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
@@ -96,6 +99,16 @@ class CreateGroupActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyC
 
         })
 
+        groupImage = findViewById(R.id.createGroupImage)
+        val changeEventPictureButton = findViewById<Button>(R.id.createGroupAddImgBtn)
+        changeEventPictureButton.setOnClickListener {
+            val pickPhoto = Intent(
+                Intent.ACTION_PICK,
+                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI
+            )
+            startActivityForResult(pickPhoto, pictureSelectionId)
+        }
+
     }
 
     fun goToFriends(view: View){
@@ -130,6 +143,11 @@ class CreateGroupActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyC
                 return
             }
         }
+        if (requestCode == pictureSelectionId && resultCode == Activity.RESULT_OK) {
+                val selectedImage: Uri = data!!.data as Uri
+                uri = selectedImage.toString()
+                groupImage.setImageURI(Uri.parse(selectedImage.toString()))
+        }
 
         mMap.clear()
         Registry.listOfNeighborhoods.forEach { neighborhood: Neighborhood ->
@@ -158,8 +176,9 @@ class CreateGroupActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyC
     }
 
     fun createGroupFinish(view : View){
-        val group = Group(groupName.text.toString(), groupDescription.text.toString(), location.text.toString(), tagsListAdapter.dataSet)
+        group = Group(groupName.text.toString(), groupDescription.text.toString(),  location.text.toString(), tagsListAdapter.dataSet, R.drawable.event_picture, uri )
 
+        Registry.listOfGroups.add(group)
         val intent = Intent(this, GroupCreatedActivity::class.java)
         intent.putExtra("group", group)
         startActivity(intent)

@@ -17,7 +17,7 @@
             android:id="@+id/textViewTitle" android:textColor="@color/white"
             android:textStyle="bold" android:textAlignment="textEnd" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
-            android:background="@color/dark_tone_sportify" android:textSize="20sp"
+            android:background="@drawable/layout_style_dark" android:textSize="20sp"
             android:paddingTop="20dp" android:text="@string/check_in_assigned"
             android:paddingEnd="16dp"/>
     <ImageButton

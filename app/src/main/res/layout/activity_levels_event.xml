@@ -31,13 +31,13 @@
             android:id="@+id/textViewTitle4" android:textColor="@color/white"
             android:textStyle="bold" android:textAlignment="textEnd" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
-            android:background="@color/grey_sportify" android:textSize="20sp"
+            android:background="@drawable/layout_style_purple" android:textSize="20sp"
             android:paddingTop="20dp" android:text="The required fitness levels for this event:"
             android:paddingEnd="16dp" android:paddingStart="70dp"/>
     <ImageButton
             android:layout_width="60dp"
             android:layout_height="60dp" app:srcCompat="@drawable/ic_arrow" android:id="@+id/imageButton13"
-            android:tint="@color/white" android:backgroundTint="@color/grey_sportify" android:rotation="180"
+            android:tint="@color/white" android:backgroundTint="@color/purple_sportify" android:rotation="180"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="16dp" android:layout_marginStart="16dp" android:scaleType="fitCenter"
             android:onClick="onBack"/>

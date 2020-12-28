@@ -14,7 +14,7 @@
             android:id="@+id/editTextTextPersonName" android:textColor="@color/dark_tone_sportify"
             android:textStyle="bold" android:textAlignment="textEnd" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
-            android:background="@color/white" android:textSize="30sp"
+            android:background="@drawable/layout_style_white" android:textSize="30sp"
             android:paddingTop="40dp" android:paddingEnd="20dp"/>
     <Button
             android:text="next"
@@ -82,9 +82,11 @@
                     android:id="@+id/button_no_1"
                     android:layout_height="80dp"
                     app:cornerRadius="40dp"
-                    android:textSize="20sp" android:onClick="writeNumber" android:layout_margin="10dp"/>
+                    android:textSize="24sp" android:onClick="writeNumber" android:layout_margin="10dp"
+                    app:backgroundTint="@color/grey_transparent"/>
             <Button
                     android:text="2"
+                    app:backgroundTint="@color/grey_transparent"
                     android:layout_width="wrap_content"
                     android:id="@+id/button_no_2"
                     android:layout_height="80dp"
@@ -92,6 +94,7 @@
                     android:textSize="20sp" android:onClick="writeNumber" android:layout_margin="10dp"/>
             <Button
                     android:text="3"
+                    app:backgroundTint="@color/grey_transparent"
                     android:layout_width="wrap_content"
                     android:id="@+id/button_no_3"
                     android:layout_height="80dp"
@@ -101,6 +104,7 @@
         <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
             <Button
                     android:text="4"
+                    app:backgroundTint="@color/grey_transparent"
                     android:layout_width="wrap_content"
                     android:layout_height="80dp"
                     app:cornerRadius="40dp"
@@ -108,6 +112,7 @@
                     android:layout_margin="10dp"/>
             <Button
                     android:text="5"
+                    app:backgroundTint="@color/grey_transparent"
                     android:layout_width="wrap_content"
                     android:layout_height="80dp"
                     app:cornerRadius="40dp"
@@ -115,6 +120,7 @@
                     android:layout_margin="10dp"/>
             <Button
                     android:text="6"
+                    app:backgroundTint="@color/grey_transparent"
                     android:layout_width="wrap_content"
                     android:layout_height="80dp"
                     app:cornerRadius="40dp"
@@ -124,6 +130,7 @@
         <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
             <Button
                     android:text="7"
+                    app:backgroundTint="@color/grey_transparent"
                     android:layout_width="wrap_content"
                     android:layout_height="80dp"
                     app:cornerRadius="40dp"
@@ -131,6 +138,7 @@
                     android:layout_margin="10dp"/>
             <Button
                     android:text="8"
+                    app:backgroundTint="@color/grey_transparent"
                     android:layout_width="wrap_content"
                     android:layout_height="80dp"
                     app:cornerRadius="40dp"
@@ -138,6 +146,7 @@
                     android:layout_margin="10dp"/>
             <Button
                     android:text="9"
+                    app:backgroundTint="@color/grey_transparent"
                     android:layout_width="wrap_content"
                     android:layout_height="80dp"
                     app:cornerRadius="40dp"
@@ -148,6 +157,7 @@
             <Button
                     android:layout_column="1"
                     android:text="0"
+                    app:backgroundTint="@color/grey_transparent"
                     android:layout_width="wrap_content"
                     android:layout_height="80dp"
                     app:cornerRadius="40dp"
@@ -158,6 +168,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="80dp"
                     app:cornerRadius="40dp"
+                    app:backgroundTint="@color/grey_transparent"
                     android:textSize="20sp" android:id="@+id/button_undo" android:onClick="undo"
                     android:layout_margin="10dp"/>
         </TableRow>

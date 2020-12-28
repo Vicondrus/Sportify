@@ -32,7 +32,7 @@
             android:id="@+id/textViewTitle3" android:textColor="@color/white"
             android:textStyle="bold" android:textAlignment="textStart" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
-            android:background="@color/dark_tone_sportify" android:textSize="30sp"
+            android:background="@drawable/layout_style_dark" android:textSize="30sp"
             android:paddingTop="40dp" android:text="Terms"
             android:paddingEnd="16dp" android:paddingStart="70dp"/>
     <ImageButton
