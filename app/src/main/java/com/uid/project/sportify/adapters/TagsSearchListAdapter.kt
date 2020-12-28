@@ -25,7 +25,7 @@ class TagsSearchListAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SimpleItemViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        return SimpleItemViewHolder(inflater, parent, R.color.pink_sportify)
+        return SimpleItemViewHolder(inflater, parent, R.color.purple_sportify)
     }
 
     override fun onBindViewHolder(holder: SimpleItemViewHolder, position: Int) {

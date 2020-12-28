@@ -5,83 +5,195 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/grey_sportify"
+    android:background="@color/dark_tone_sportify"
+    android:backgroundTint="@color/dark_tone_sportify"
     android:isScrollContainer="true"
     tools:context=".CreateEventActivity">
 
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar2"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView4"
         android:layout_width="0dp"
-        android:layout_height="85dp"
-        android:background="@color/purple_sportify"
-        android:isScrollContainer="false"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/eventImage"
-        android:layout_width="59dp"
-        android:layout_height="59dp"
-        android:src="@drawable/event_picture"
-        app:civ_border_color="@color/white"
-        app:civ_border_width="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-        app:layout_constraintHorizontal_bias="0.085"
-        app:layout_constraintStart_toStartOf="@+id/toolbar2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.481" />
-
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/create_event_label"
-        android:textColor="@color/white"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-        app:layout_constraintHorizontal_bias="0.569"
-        app:layout_constraintStart_toStartOf="@+id/toolbar2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.34" />
+        android:background="@color/dark_tone_sportify"
+        android:backgroundTintMode="add"
+        app:cardBackgroundColor="@color/dark_tone_sportify"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/layout_style_purple">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="@string/create_event_label"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/cardView6"
+                app:layout_constraintStart_toEndOf="@+id/cardView6"
+                app:layout_constraintTop_toTopOf="@+id/cardView6" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageButton
+                    android:id="@+id/createEventImage"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:background="@null"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/event_picture" />
+
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/createEventAddImgBtn"
+                android:layout_width="32dp"
+                android:layout_height="40dp"
+                android:backgroundTint="@color/dark_tone_sportify"
+                android:minWidth="10dip"
+                android:paddingHorizontal="0dp"
+                android:paddingVertical="0dp"
+                android:text="+"
+                android:textSize="18sp"
+                app:cornerRadius="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/cardView6" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
     <ScrollView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar2">
+        app:layout_constraintTop_toBottomOf="@+id/cardView4">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar4"
                 android:layout_width="0dp"
-                android:layout_height="1600dp"
+                android:layout_height="0dp"
                 android:background="@color/dark_tone_sportify"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/createEventTagError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/list_error_label"
+                android:textColor="@color/error_light"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="@+id/textView8"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+            <TextView
+                android:id="@+id/createEventSportError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/list_error_label"
+                android:textColor="@color/error_light"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="@+id/textView5"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+            <TextView
+                android:id="@+id/createEventRequirementError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/list_error_label"
+                android:textColor="@color/error_light"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="@+id/textView7"
+                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/createEventSearchTagsRecyclerView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingHorizontal="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView7" />
+
+            <ImageButton
+                android:id="@+id/createEventAddSportBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/add_button"
+                android:backgroundTint="@color/cardview_shadow_end_color"
+                app:layout_constraintBottom_toBottomOf="@+id/textView5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView5"
+                app:srcCompat="@android:drawable/ic_menu_add" />
+
+            <ImageButton
+                android:id="@+id/createEventAddRequirementButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/add_button"
+                android:backgroundTint="@color/cardview_shadow_end_color"
+                app:layout_constraintBottom_toBottomOf="@+id/createEventRequirementTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/createEventRequirementTextView"
+                app:srcCompat="@android:drawable/ic_menu_add" />
+
+            <Button
+                android:id="@+id/createEventLocationBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="30dp"
+                android:onClick="goToMap"
+                android:text="Change location"
+                android:textSize="12sp"
+                app:cornerRadius="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/eventAttendanceFeeTextView" />
 
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/eventNameTextView"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/eventNameTextView"
@@ -92,7 +204,7 @@
                 android:layout_width="0dp"
                 android:layout_height="43dp"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginEnd="30dp"
                 android:backgroundTint="@color/dark_grey_sportify"
                 android:ems="10"
@@ -100,18 +212,18 @@
                 android:inputType="textPersonName"
                 android:textColor="@color/white"
                 android:textColorHint="@color/grey_sportify"
+                android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/imageView3"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
             <EditText
                 android:id="@+id/eventDescriptionTextView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginEnd="30dp"
+                android:layout_marginTop="15dp"
                 android:backgroundTint="@color/dark_grey_sportify"
                 android:ems="10"
                 android:hint="@string/event_description_label"
@@ -125,25 +237,22 @@
                 android:id="@+id/imageView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
                 app:layout_constraintBottom_toBottomOf="@+id/eventDescriptionTextView"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/imageView3"
                 app:layout_constraintTop_toTopOf="@+id/eventDescriptionTextView"
                 app:srcCompat="@drawable/ic_description_" />
 
             <EditText
                 android:id="@+id/eventDateDate"
-                android:layout_width="0dp"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginEnd="150dp"
+                android:layout_marginTop="15dp"
                 android:backgroundTint="@color/dark_grey_sportify"
                 android:ems="10"
                 android:inputType="date"
                 android:textColor="@color/white"
                 android:textColorHint="@color/dark_grey_sportify"
-                app:layout_constraintEnd_toEndOf="@+id/toolbar4"
                 app:layout_constraintStart_toEndOf="@+id/imageView10"
                 app:layout_constraintTop_toBottomOf="@+id/eventDescriptionTextView" />
 
@@ -151,33 +260,42 @@
                 android:id="@+id/imageView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
                 app:layout_constraintBottom_toBottomOf="@+id/eventDateDate"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/imageView3"
                 app:layout_constraintTop_toTopOf="@+id/eventDateDate"
                 app:srcCompat="@drawable/ic_calendar" />
 
             <EditText
-                android:id="@+id/eventTimeTime"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:id="@+id/eventTimeStart"
+                android:layout_width="50dp"
+                android:layout_height="43dp"
                 android:layout_marginStart="15dp"
-                android:layout_marginEnd="150dp"
+                android:layout_marginTop="5dp"
                 android:backgroundTint="@color/dark_grey_sportify"
                 android:ems="10"
                 android:inputType="time"
                 android:textColor="@color/white"
-                app:layout_constraintEnd_toEndOf="@+id/toolbar4"
                 app:layout_constraintStart_toEndOf="@+id/imageView10"
-                app:layout_constraintTop_toBottomOf="@+id/eventDateDate" />
+                app:layout_constraintTop_toBottomOf="@+id/createEventDateError" />
+
+            <EditText
+                android:id="@+id/eventTimeEnd"
+                android:layout_width="50dp"
+                android:layout_height="43dp"
+                android:backgroundTint="@color/dark_grey_sportify"
+                android:ems="10"
+                android:inputType="time"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/eventTimeStart"
+                app:layout_constraintStart_toEndOf="@+id/textView"
+                app:layout_constraintTop_toTopOf="@+id/eventTimeStart" />
 
             <ImageView
                 android:id="@+id/imageView11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
                 app:layout_constraintBottom_toBottomOf="@+id/eventNbOfPeopleTextView"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/imageView3"
                 app:layout_constraintTop_toTopOf="@+id/eventNbOfPeopleTextView"
                 app:srcCompat="@drawable/ic_user" />
 
@@ -186,25 +304,24 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginEnd="30dp"
                 android:backgroundTint="@color/dark_grey_sportify"
                 android:ems="10"
                 android:hint="@string/event_nb_of_people_label"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:textColor="@color/white"
                 android:textColorHint="@color/grey_sportify"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView11"
-                app:layout_constraintTop_toBottomOf="@+id/eventTimeTime" />
+                app:layout_constraintTop_toBottomOf="@+id/createEventTimeError" />
 
             <ImageView
                 android:id="@+id/imageView12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
                 app:layout_constraintBottom_toBottomOf="@+id/eventAttendanceFeeTextView"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/imageView3"
                 app:layout_constraintTop_toTopOf="@+id/eventAttendanceFeeTextView"
                 app:srcCompat="@drawable/ic_credit_card" />
 
@@ -213,12 +330,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginEnd="30dp"
                 android:backgroundTint="@color/dark_grey_sportify"
                 android:ems="10"
                 android:hint="@string/event_attendance_fee_label"
-                android:inputType="textPersonName"
+                android:inputType="number"
                 android:textColor="@color/white"
                 android:textColorHint="@color/grey_sportify"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -229,9 +346,8 @@
                 android:id="@+id/imageView13"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView6"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/imageView3"
                 app:layout_constraintTop_toTopOf="@+id/textView6"
                 app:srcCompat="@drawable/ic_location" />
 
@@ -240,7 +356,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="30dp"
                 android:text="@string/location_label"
                 android:textColor="@color/white"
                 android:textSize="18sp"
@@ -251,26 +367,28 @@
                 app:layout_constraintTop_toBottomOf="@+id/eventAttendanceFeeTextView" />
 
             <fragment
-                android:id="@+id/eventLocationMapView"
-                android:name="com.google.android.gms.maps.SupportMapFragment"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:id="@+id/createEventMapView"
+                class="com.huawei.hms.maps.SupportMapFragment"
+                android:layout_width="340dp"
+                android:layout_height="150dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="40dp"
+                app:cameraTargetLat="46.76667"
+                app:cameraTargetLng="23.6"
+                app:cameraZoom="11"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView6"
-                tools:context="com.example.polygons.PolyActivity" />
+                app:layout_constraintTop_toBottomOf="@+id/createEventNeighborhoodLabel"
+                app:mapType="normal"
+                app:uiZoomControls="false" />
 
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView5"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/imageView3"
                 app:layout_constraintTop_toTopOf="@+id/textView5"
                 app:srcCompat="@drawable/ic_ball" />
 
@@ -279,33 +397,30 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginEnd="30dp"
+                android:layout_marginTop="30dp"
                 android:text="@string/event_sports_label"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView"
-                app:layout_constraintTop_toBottomOf="@+id/eventLocationMapView" />
+                app:layout_constraintTop_toBottomOf="@+id/createEventSearchTagsRecyclerView" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/eventSportsReciclerView"
-                android:layout_width="62dp"
-                android:layout_height="191dp"
+                android:id="@+id/createEventSportsRecyclerView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                app:layout_constraintTop_toBottomOf="@+id/createEventSportError" />
 
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView7"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/imageView3"
                 app:layout_constraintTop_toTopOf="@+id/textView7"
                 app:srcCompat="@drawable/ic_checked" />
 
@@ -322,25 +437,24 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView2"
-                app:layout_constraintTop_toBottomOf="@+id/eventSportsReciclerView" />
+                app:layout_constraintTop_toBottomOf="@+id/createEventSportsRecyclerView" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/eventRequirementsReciclerView"
-                android:layout_width="62dp"
-                android:layout_height="191dp"
+                android:id="@+id/createEventRequirementsRecyclerView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+                app:layout_constraintTop_toBottomOf="@+id/createEventRequirementTextView" />
 
             <ImageView
                 android:id="@+id/imageView14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView8"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/imageView3"
                 app:layout_constraintTop_toTopOf="@+id/textView8"
                 app:srcCompat="@drawable/ic_hashtag" />
 
@@ -349,7 +463,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginEnd="30dp"
                 android:text="@string/event_tags_label"
                 android:textColor="@color/white"
@@ -357,29 +471,141 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView14"
-                app:layout_constraintTop_toBottomOf="@+id/eventRequirementsReciclerView" />
+                app:layout_constraintTop_toBottomOf="@+id/createEventMapView" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/eventTagsReciclerView"
-                android:layout_width="62dp"
-                android:layout_height="191dp"
+                android:id="@+id/createEventTagsRecyclerView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@null"
+                android:backgroundTint="@null"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+                app:layout_constraintTop_toBottomOf="@+id/createEventTagError" />
 
             <Button
                 android:id="@+id/createEventButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="30dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="30dp"
                 android:text="@string/continue_label"
                 android:textSize="16sp"
+                app:cornerRadius="50dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/eventTagsReciclerView" />
+                app:layout_constraintTop_toBottomOf="@+id/createEventRequirementsRecyclerView" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dashLabel"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/eventTimeStart"
+                app:layout_constraintStart_toEndOf="@+id/eventTimeStart"
+                app:layout_constraintTop_toTopOf="@+id/eventTimeStart" />
+
+            <TextView
+                android:id="@+id/createEventLocationLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/textView6"
+                app:layout_constraintTop_toBottomOf="@+id/textView6"
+                tools:text="Location name " />
+
+            <TextView
+                android:id="@+id/createEventNeighborhoodLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/textView6"
+                app:layout_constraintTop_toBottomOf="@+id/createEventLocationLabel"
+                tools:text="Neighborhood name " />
+
+            <EditText
+                android:id="@+id/createEventRequirementTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/dark_grey_sportify"
+                android:ems="10"
+                android:hint="@string/requirementsHint"
+                android:inputType="textPersonName"
+                android:textColor="@color/white"
+                android:textColorHint="@color/grey_sportify"
+                app:layout_constraintEnd_toStartOf="@+id/createEventAddRequirementButton"
+                app:layout_constraintStart_toStartOf="@+id/textView7"
+                app:layout_constraintTop_toBottomOf="@+id/createEventRequirementError" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/dark_tone_sportify"
+                app:cardCornerRadius="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/createEventTagsRecyclerView">
+
+                <SearchView
+                    android:id="@+id/createEventTagsSearchView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:background="@color/dark_grey_sportify"
+                    android:backgroundTint="@color/grey_sportify"
+                    android:iconifiedByDefault="false"
+                    android:orientation="vertical"
+                    android:queryHint="Search tags...">
+
+                </SearchView>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/all_fields_mandatory_label"
+                android:textColor="@color/light_grey_sportify"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="@+id/imageView3"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/createEventDateError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/date_error_label"
+                android:textColor="@color/error_light"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="@+id/eventDateDate"
+                app:layout_constraintTop_toBottomOf="@+id/eventDateDate" />
+
+            <TextView
+                android:id="@+id/createEventTimeError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/time_error_label"
+                android:textColor="@color/error_light"
+                android:textSize="16sp"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="@+id/eventDateDate"
+                app:layout_constraintTop_toBottomOf="@+id/eventTimeStart" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

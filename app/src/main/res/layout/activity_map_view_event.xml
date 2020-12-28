@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.huawei.hms.maps.MapView
+            android:id="@+id/mapViewEvent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            map:cameraTargetLat="46.76667"
+            map:cameraTargetLng="23.6"
+            map:cameraZoom="10"
+            map:layout_constraintBottom_toBottomOf="parent"
+            map:layout_constraintEnd_toEndOf="parent"
+            map:layout_constraintHorizontal_bias="0.0"
+            map:layout_constraintStart_toStartOf="parent"
+            map:layout_constraintVertical_bias="0.0"
+            map:mapType="normal"
+            map:uiCompass="true"
+            map:uiZoomControls="true" />
+
+        <Button
+            android:id="@+id/confirmationButtonEvent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Done"
+            map:cornerRadius="30dp"
+            map:layout_constraintBottom_toBottomOf="@+id/mapViewEvent"
+            map:layout_constraintEnd_toEndOf="parent"
+            map:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

@@ -14,4 +14,5 @@
     <color name="icon_color_create_event">#FFFFFF</color>
     <color name="green">#228B22</color>
     <color name="error">#A00618</color>
+    <color name="error_light">#E34658</color>
 </resources>

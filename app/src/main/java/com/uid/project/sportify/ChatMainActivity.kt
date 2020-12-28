@@ -6,10 +6,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.calatour.model.ChatMessageList
 import com.uid.project.sportify.adapters.ChatMessagesAdapter
 import com.uid.project.sportify.models.ChatMessage
 import com.uid.project.sportify.models.Message
+import com.uid.project.sportify.models.Registry
 
 class ChatMainActivity : AppCompatActivity() {
 
@@ -28,7 +28,7 @@ class ChatMainActivity : AppCompatActivity() {
             this@ChatMainActivity,
         )
 
-        chatMessageList = ChatMessageList().getMessages()
+        chatMessageList = Registry.listOfChatMessages
 
         messagesRecyclerView.layoutManager = layoutManager
         chatMessagesAdapter =
@@ -44,15 +44,24 @@ class ChatMainActivity : AppCompatActivity() {
                 val position = data.getIntExtra("messagePosition", -1)
                 if (position > -1) {
                     var chatMessage: ChatMessage = chatMessagesAdapter.getItem(position)
-                    chatMessage.messageList = messageList
-                    chatMessage.isRead = true
-                    chatMessage.lastMessage = "You: " + messageList.last().message
-                    chatMessage.time = "Now"
-                    chatMessagesAdapter.removeMessage(position)
-                    chatMessagesAdapter.addMessage(0, chatMessage)
-                    chatMessagesAdapter.notifyDataSetChanged()
+                    // if there was a message send, change the order
+                    if (messageList.size != chatMessage.messageList.size) {
+                        chatMessage.messageList = messageList
+                        chatMessage.isRead = true
+                        chatMessage.lastMessage = "You: " + messageList.last().message
+                        chatMessage.time = "Now"
+                        chatMessagesAdapter.removeMessage(position)
+                        chatMessagesAdapter.addMessage(0, chatMessage)
+                        chatMessagesAdapter.notifyDataSetChanged()
+//                        Registry.listOfChatMessages=chatMessageList
+                    }
                 }
             }
         }
     }
+
+//    override fun onBackPressed() {
+//
+//        super.onBackPressed()
+//    }
 }

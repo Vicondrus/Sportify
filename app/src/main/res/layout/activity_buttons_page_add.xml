@@ -34,10 +34,11 @@
     <Button
         android:id="@+id/buttonsPageCreateEventBtn"
         android:layout_width="0dp"
-        android:layout_height="150dp"
+        android:layout_height="160dp"
         android:text="@string/create_event_label"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:cornerRadius="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar19" />
@@ -45,23 +46,25 @@
     <Button
         android:id="@+id/buttonsPageCreateGroupBtn"
         android:layout_width="0dp"
-        android:layout_height="150dp"
+        android:layout_height="160dp"
         android:backgroundTint="@color/pink_sportify"
         android:text="@string/create_group_label"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:cornerRadius="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonsPageCreateEventBtn" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/buttonsPageBookPlaceBtn"
         android:layout_width="0dp"
-        android:layout_height="150dp"
+        android:layout_height="160dp"
         android:backgroundTint="@color/light_tone_sportify"
-        android:text="Button"
+        android:text="@string/book_a_place_label"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:cornerRadius="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonsPageCreateGroupBtn" />
