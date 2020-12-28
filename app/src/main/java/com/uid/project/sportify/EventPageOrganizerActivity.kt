@@ -24,6 +24,7 @@ class EventPageOrganizerActivity : AppCompatActivity() {
     private lateinit var sportsListAdapter: SportsListAdapter
     private lateinit var tagsListAdapter: TagsListAdapter
     private lateinit var requirementsListAdapter: RequirementsListAdapter
+    private lateinit var eventImage : CircleImageView
     private val editEventId = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -108,10 +109,14 @@ class EventPageOrganizerActivity : AppCompatActivity() {
 
         val scanQRCodeButton = findViewById<Button>(R.id.eventScanQRCodeBtn)
         scanQRCodeButton.setOnClickListener {
-//            val intent = Intent(this, FriendListActivity::class.java)
-//            intent.putExtra("activityName", "Delegate friend")
-//            intent.putExtra("eventName", event.name)
-//            startActivity(intent)
+            val intent = Intent(this, ScanActivity::class.java)
+            intent.putExtra("eventName", event.name)
+            intent.putExtra("eventDate", event.date.toString())
+            intent.putExtra("timeStart", event.timeStart.toString())
+            intent.putExtra("timeEnd", event.timeEnd.toString())
+            intent.putExtra("eventLocation", event.location.location)
+            intent.putExtra("image", event.imageUri)
+            startActivity(intent)
         }
     }
 
@@ -125,7 +130,7 @@ class EventPageOrganizerActivity : AppCompatActivity() {
 
                 val eventName = findViewById<TextView>(R.id.eventPageOrganizerEventName)
                 eventName.text = event.name
-                val eventImage = findViewById<CircleImageView>(R.id.eventPageOrganizerEventImage)
+                eventImage = findViewById(R.id.eventPageOrganizerEventImage)
                 if (event.imageUri == null) {
                     eventImage.setImageResource(event.image)
                 } else {
@@ -166,6 +171,8 @@ class EventPageOrganizerActivity : AppCompatActivity() {
                 tagsRecyclerView.adapter = tagsListAdapter
 
             }
+        }else{
+
         }
     }
 }

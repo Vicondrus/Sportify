@@ -40,7 +40,7 @@
             android:tint="@color/white" android:backgroundTint="@color/grey_sportify" android:rotation="180"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="16dp" android:layout_marginStart="16dp" android:scaleType="fitCenter"
-            android:onClick="onBackPressed"/>
+            android:onClick="onBack"/>
     <TextView
             android:text="Message from the event creator"
             android:layout_width="wrap_content"

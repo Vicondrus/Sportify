@@ -159,6 +159,7 @@ class CreateGroupActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyC
 
     fun createGroupFinish(view : View){
         val group = Group(groupName.text.toString(), groupDescription.text.toString(), location.text.toString(), tagsListAdapter.dataSet)
+
         val intent = Intent(this, GroupCreatedActivity::class.java)
         intent.putExtra("group", group)
         startActivity(intent)

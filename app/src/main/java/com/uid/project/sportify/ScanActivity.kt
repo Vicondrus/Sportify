@@ -1,13 +1,16 @@
 package com.uid.project.sportify
 
 import android.Manifest
+import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.util.Size
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.NonNull
@@ -24,6 +27,7 @@ import androidx.lifecycle.LifecycleOwner
 import com.google.common.util.concurrent.ListenableFuture
 import com.uid.project.sportify.QR.QRCodeFoundListener
 import com.uid.project.sportify.QR.QRCodeImageAnalyzer
+import de.hdodenhof.circleimageview.CircleImageView
 import java.util.concurrent.ExecutionException
 import java.util.concurrent.ExecutorService
 
@@ -31,7 +35,7 @@ import java.util.concurrent.ExecutorService
 class ScanActivity : AppCompatActivity() {
     private lateinit var viewFinder : PreviewView
 
-    private lateinit var cameraExecutor: ExecutorService
+
     private val code = 1
     private var participantCode : String = ""
 
@@ -57,11 +61,22 @@ class ScanActivity : AppCompatActivity() {
                 this, REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS
             )
         }
+        var titleEvent = findViewById<TextView>(R.id.textView2)
+        var dateEvent = findViewById<TextView>(R.id.textView)
+        var location = findViewById<TextView>(R.id.textView37)
+        var image = findViewById<CircleImageView>(R.id.imageView15)
 
+        titleEvent.text = intent.getStringExtra("eventName")
+        location.text = intent.getStringExtra("eventLocation")
+        var dateTime = intent.getStringExtra("eventDate") + " at " +
+                intent.getStringExtra("timeStart") +
+                getString(R.string.dashLabel) +
+                intent.getStringExtra("timeEnd")
+        dateEvent.text = dateTime
+        image.setImageURI(Uri.parse(intent.getStringExtra("image")))
 
 
     }
-
 
     private fun startCamera() {
         cameraProviderFuture?.addListener({
@@ -129,7 +144,6 @@ class ScanActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        cameraExecutor.shutdown()
     }
 
     companion object {
@@ -138,12 +152,9 @@ class ScanActivity : AppCompatActivity() {
         private const val REQUEST_CODE_PERMISSIONS = 10
         private val REQUIRED_PERMISSIONS = arrayOf(Manifest.permission.CAMERA)
     }
-    fun finished(view: View){
-        setResult(RESULT_OK, intent)
-        finish()
 
-    }
-    override fun onBackPressed() {
+    fun finished(view: View){
+        setResult(Activity.RESULT_OK, intent)
         finish()
     }
 

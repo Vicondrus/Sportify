@@ -2,12 +2,15 @@ package com.uid.project.sportify
 
 import android.content.Intent
 import android.net.Uri
+import android.opengl.Visibility
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.huawei.hms.maps.HuaweiMap
@@ -25,8 +28,10 @@ class EventPageUserActivity : AppCompatActivity() {
     private lateinit var sportsListAdapter: SportsListAdapter
     private lateinit var tagsListAdapter: TagsListAdapter
     private lateinit var requirementsListAdapter: RequirementsListAdapter
+    private lateinit var event : Event
     private var isGoing: Boolean = false
     private var user = Registry.user1Manager
+    private var registered:Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +39,7 @@ class EventPageUserActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-        val event = intent.getSerializableExtra("event") as Event
+        event = intent.getSerializableExtra("event") as Event
 
         Log.d("EVENT IN USER ACT", event.toString())
 
@@ -106,29 +111,45 @@ class EventPageUserActivity : AppCompatActivity() {
 
         val goingTextView = findViewById<TextView>(R.id.goingTextView)
         val goingButton = findViewById<ImageButton>(R.id.eventGoingBtn)
-
+        val qrCard = findViewById<CardView>(R.id.qrCardView)
+        val qrButton = findViewById<ImageButton>(R.id.qrBtn)
+        qrCard.visibility = View.GONE
         // if event participant list contains user1
         if (event.participantsList.contains(user.name)) {
             isGoing = true
             goingTextView.text = resources.getString(R.string.youAreGoingLabel)
             goingButton.setImageResource(R.drawable.ic_cancel)
+            qrCard.visibility = View.VISIBLE
         }
 
         // if no more spots left
         if (!isGoing && event.participants == event.nbOfPeople) {
             goingButton.isEnabled = false
             goingButton.isClickable = false
+            qrCard.visibility = View.GONE
         }
 
+        qrButton.setOnClickListener{
+            val intent = Intent(this, ViewEventCodeActivity::class.java)
+            intent.putExtra("eventName", event.name)
+            intent.putExtra("eventDate", event.date.toString())
+            intent.putExtra("timeStart", event.timeStart.toString())
+            intent.putExtra("timeEnd", event.timeEnd.toString())
+            intent.putExtra("eventLocation", event.location.location)
+            intent.putExtra("image", event.image)
+            startActivity(intent)
+        }
 
 
         goingButton.setOnClickListener {
             if (!isGoing) { // user wants to go
+                createRegisterProcess()
                 event.participants += 1
                 event.participantsList.add(user.name)
 //                user.participations.add(Participation())
                 goingTextView.text = resources.getString(R.string.youAreGoingLabel)
                 goingButton.setImageResource(R.drawable.ic_cancel)
+                qrCard.visibility = View.VISIBLE
                 if (event.participants == event.nbOfPeople) {
                     eventSpotsLeft.text = "No"
                 } else {
@@ -136,6 +157,7 @@ class EventPageUserActivity : AppCompatActivity() {
                 }
 
             } else { // user does not want to go anymore
+                qrCard.visibility = View.GONE
                 event.participants -= 1
                 event.participantsList.remove(Registry.user1Manager.name)
                 goingTextView.text = resources.getString(R.string.areYouGoingLabel)
@@ -145,6 +167,8 @@ class EventPageUserActivity : AppCompatActivity() {
             isGoing = !isGoing
         }
 
+
+
         val tellFriends = findViewById<Button>(R.id.eventUserTellFriendBtn)
         tellFriends.setOnClickListener {
             val intent = Intent(this, FriendListActivity::class.java)
@@ -153,5 +177,18 @@ class EventPageUserActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+    private fun createRegisterProcess() {
+        val intent = Intent(this, EventRegisterPopupActivity::class.java)
+        intent.putExtra("event", event);
+        intent.putExtra("eventName", event.name)
+        intent.putExtra("eventDate", event.date.toString())
+        intent.putExtra("timeStart", event.timeStart.toString())
+        intent.putExtra("timeEnd", event.timeEnd.toString())
+        intent.putExtra("eventLocation", event.location.location)
+        intent.putExtra("image", event.image)
+        startActivity(intent)
+    }
+
 
 }

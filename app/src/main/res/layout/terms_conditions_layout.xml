@@ -7,7 +7,7 @@
     <Button
             android:text="@string/continue_label"
             android:layout_width="0dp"
-            android:layout_height="60dp" android:id="@+id/button11"
+            android:layout_height="60dp" android:id="@+id/button110"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="16dp" android:layout_marginStart="16dp"
             app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="32dp" app:cornerRadius="20dp"
