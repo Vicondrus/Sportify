@@ -4,13 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.uid.project.sportify.UserResultActivity
-import com.uid.project.sportify.R
 
 import com.uid.project.sportify.adapters.UserResultAdapter
 
@@ -23,7 +17,7 @@ private lateinit var userResultAdapter: UserResultAdapter
 
         val button1 = findViewById<ImageButton>(R.id.imageButton1)
         val button2 = findViewById<ImageButton>(R.id.imageButton2) //must modify id
-        val button3 = findViewById<ImageButton>(R.id.imageButton3) //must modify id
+        val button3 = findViewById<ImageButton>(R.id.relatedTagsButton) //must modify id
         val button4 = findViewById<ImageButton>(R.id.imageButton4)
         val button5 = findViewById<ImageButton>(R.id.imageButton5)
         val button6 = findViewById<ImageButton>(R.id.imageButton6)

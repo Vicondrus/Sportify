@@ -139,7 +139,7 @@
             <ImageButton
                 android:layout_width="100dp"
                 android:layout_height="50dp" app:srcCompat="@drawable/keyboard_arrow_right_24px"
-                android:id="@+id/imageButton3"
+                android:id="@+id/relatedTagsButton"
                 app:layout_constraintTop_toTopOf="@+id/textView6" app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginEnd="10dp" android:background="@color/dark_tone_sportify"
                 android:scaleType="fitCenter"/>

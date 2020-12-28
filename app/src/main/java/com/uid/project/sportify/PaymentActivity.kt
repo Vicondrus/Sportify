@@ -19,9 +19,10 @@ class PaymentActivity: AppCompatActivity()  {
         builder.setTitle("Please Confirm")
         builder.setMessage("Are you sure you want to continue?")
 //builder.setPositiveButton("OK", DialogInterface.OnClickListener(function = x))
-
+        val place = this.intent.getSerializableExtra("placeName") as String
         builder.setPositiveButton(android.R.string.yes) { dialog, which ->
             val intent = Intent(this@PaymentActivity, PlaceBookedActivity::class.java)
+            intent.putExtra("placeName",place)
             startActivity(intent)
         }
 

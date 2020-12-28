@@ -30,26 +30,24 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.674"
+        app:layout_constraintHorizontal_bias="0.798"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.747" />
+        app:layout_constraintVertical_bias="0.726" />
+
 
     <ImageView
         android:id="@+id/imageView16"
         android:layout_width="92dp"
         android:layout_height="59dp"
         android:rotation="180"
-        android:rotationX="180"
-        android:rotationY="180"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.003"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.704"
+        app:layout_constraintVertical_bias="0.26"
         app:srcCompat="@drawable/keyboard_arrow_right_24px" />
-
 
     <ImageView
         android:id="@+id/imageViewParticipants"
@@ -140,7 +138,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="72dp"
         android:progressBackgroundTint="@color/pink_sportify"
-        android:progressTint="@color/pink_sportify"
+        android:progressTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.906"
@@ -238,18 +236,18 @@
 
     <TextView
         android:id="@+id/priceTxt"
-        android:layout_width="156dp"
-        android:layout_height="25dp"
+        android:layout_width="99dp"
+        android:layout_height="27dp"
         android:text="Price here"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.521" />
+        app:layout_constraintVertical_bias="0.528" />
 
     <Button
         android:id="@+id/btnBookDetails"
@@ -265,8 +263,8 @@
 
     <TextView
         android:id="@+id/sportSuitableTxt"
-        android:layout_width="156dp"
-        android:layout_height="25dp"
+        android:layout_width="117dp"
+        android:layout_height="23dp"
         android:text="Sport here"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
@@ -288,8 +286,8 @@
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.984"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.642" />
 
@@ -297,12 +295,16 @@
         android:id="@+id/descriptionDetailsTxt"
         android:layout_width="193dp"
         android:layout_height="72dp"
+        android:layout_marginTop="200dp"
         android:text="Description"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
+        android:layout_marginLeft="20dp"
         android:textStyle="italic"
-        tools:layout_editor_absoluteX="60dp"
-        tools:layout_editor_absoluteY="205dp" />
+        app:layout_constraintEnd_toStartOf="@+id/placeDetailsImage"
+        app:layout_constraintHorizontal_bias="0.434"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,7 +12,7 @@ class ButtonsPageAddActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-        val createEventButton = findViewById<Button>(R.id.buttonsPageCreateEventBtn)
+        val createEventButton = findViewById<Button>(R.id.btnSearchEvent)
         val bookPlaceButton = findViewById<Button>(R.id.buttonsPageBookPlaceBtn)
         createEventButton.setOnClickListener {
             val intent = Intent(this, CreateEventActivity::class.java)

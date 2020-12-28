@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context=".ButtonsPageAddActivity">
+    tools:context=".ButtonsPageSearchActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar19"
@@ -22,7 +22,7 @@
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/what_to_do_today_label"
+        android:text="Choose search option:"
         android:textColor="@color/dark_tone_sportify"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -35,7 +35,7 @@
         android:id="@+id/btnSearchEvent"
         android:layout_width="0dp"
         android:layout_height="150dp"
-        android:text="@string/create_event_label"
+        android:text="@string/search_event_btn"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,22 +47,11 @@
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:backgroundTint="@color/pink_sportify"
-        android:text="Button"
+        android:text="@string/search_user_btn"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnSearchEvent" />
 
-    <Button
-        android:id="@+id/buttonsPageBookPlaceBtn"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:backgroundTint="@color/light_tone_sportify"
-        android:text="@string/book_place_label"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSearchUser" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,7 +6,8 @@ data class PlaceResult( var placeName: String,
                        var placeImage: String,
                        var placeDescription: String,
                        var placeLocation:String,
-                        var placeRating:String): Serializable
+                        var placeRating:String,
+                        var placePrice: String ): Serializable
 
 
 

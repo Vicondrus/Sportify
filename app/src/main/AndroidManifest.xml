@@ -50,7 +50,12 @@
         <activity android:name=".ChatFriendActivity" />
         <activity android:name=".EventPageOrganizerActivity" />
         <activity android:name=".PlaceBookedActivity" />
-        <activity android:name=".LoginActivity" >
+        <activity android:name=".ButtonsPageSearchActivity" />
+        <activity android:name=".SportSelectionEvent" />
+        <activity android:name=".SearchEventActivity" />
+        <activity android:name=".EventResultActivity" />
+        <activity android:name=".TagsEventSearch" />
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

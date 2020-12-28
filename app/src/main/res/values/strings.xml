@@ -45,6 +45,8 @@
     <string name="select_sport_label">Select Sport</string>
     <string name="choose_level_label">Choose your level</string>
     <string name="title_activity_main2">MainActivity2</string>
+    <string name="search_user_btn">Search User</string>
+    <string name="search_event_btn">Search Event</string>
     <!--
     This string is used for square devices and overridden by hello_world in
     values-round/strings.xml for round devices.

@@ -50,6 +50,9 @@ class TagsSearchListAdapter(
         return tagsFilterList.size
     }
 
+    fun getDataList(): MutableList<String> {
+        return dataList
+    }
     override fun getFilter(): Filter {
         return object : Filter() {
             override fun performFiltering(constraint: CharSequence?): FilterResults {

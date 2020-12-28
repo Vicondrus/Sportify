@@ -1,9 +1,7 @@
 package com.uid.project.sportify.adapters
 
 
-import android.content.Context
 import android.content.Intent
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,12 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.uid.project.sportify.BookPlaceActivity
-import com.uid.project.sportify.EventCreatedActivity
-import com.uid.project.sportify.ProfilePageActivity
 import com.uid.project.sportify.R
-import com.uid.project.sportify.models.Event
 import com.uid.project.sportify.models.PlaceResult
-import com.uid.project.sportify.models.UserResult
 
 
 class PlacesResultAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -65,9 +59,9 @@ class PlacesResultAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             itemView: View
     ): RecyclerView.ViewHolder(itemView){
 
-        val btnBookPlaceResult= itemView.findViewById<Button>(R.id.btnBookResult)
+        val btnBookPlaceResult= itemView.findViewById<Button>(R.id.btnDetailsEvent)
         val place_image = itemView.findViewById<ImageView>(R.id.imgPlace)
-        val place_description= itemView.findViewById<TextView>(R.id.txtDescription)
+        val place_description= itemView.findViewById<TextView>(R.id.txtDateEvent)
         val place_location=itemView.findViewById<TextView>(R.id.txtLocation)
         val place_name=itemView.findViewById<TextView>(R.id.txtPlaceName)
         val place_rating=itemView.findViewById<TextView>(R.id.txtRating)
@@ -79,7 +73,7 @@ class PlacesResultAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
                 override fun onClick(v: View?) {
                     //call here the intent for user profile
-                    val place = PlaceResult(placeResult.placeName, placeResult.placeImage, placeResult.placeDescription, placeResult.placeLocation, placeResult.placeRating)
+                    val place = PlaceResult(placeResult.placeName, placeResult.placeImage, placeResult.placeDescription, placeResult.placeLocation, placeResult.placeRating,placeResult.placePrice)
 
 
                     val context= v?.context

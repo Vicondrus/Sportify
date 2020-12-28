@@ -1,9 +1,7 @@
 package com.uid.project.sportify
 
 import android.app.Activity
-import android.app.Activity.RESULT_OK
 import android.content.Intent
-import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.view.View.OnFocusChangeListener
@@ -13,12 +11,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.provider.FontsContractCompat.FontRequestCallback.RESULT_OK
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.huawei.hms.maps.HuaweiMap
 import com.huawei.hms.maps.SupportMapFragment
-import com.huawei.hms.maps.model.LatLng
 import com.huawei.hms.maps.model.PolygonOptions
 import com.uid.project.sportify.adapters.DeletableSportsListAdapter
 import com.uid.project.sportify.adapters.DeletableTagsListAdapter
@@ -145,7 +141,7 @@ class CustomizeProfileActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapR
         tagsRecyclerView.adapter = tagsListAdapter
 
         val customizeProfileTagsSearchView =
-            findViewById<SearchView>(R.id.customizeProfileTagsSearchView)
+            findViewById<SearchView>(R.id.enterTagsTextView)
         val searchTagsRecyclerView = findViewById<RecyclerView>(R.id.searchTagsRecyclerView)
         searchTagsRecyclerView.layoutManager = layoutManager3
 
@@ -170,7 +166,7 @@ class CustomizeProfileActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapR
 
         })
 
-        val button = findViewById<Button>(R.id.customizeProfileSaveButton)
+        val button = findViewById<Button>(R.id.doneTagButton)
         button.setOnClickListener {
             user.name = name.text.toString()
             user.email = email.text.toString()
@@ -186,7 +182,7 @@ class CustomizeProfileActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapR
             Registry.user1Manager = user
             finish()
         }
-        val addSport = findViewById<ImageButton>(R.id.addSportButton)
+        val addSport = findViewById<ImageButton>(R.id.addTagButton)
         addSport.setOnClickListener {
             user.name = name.text.toString()
             user.email = email.text.toString()

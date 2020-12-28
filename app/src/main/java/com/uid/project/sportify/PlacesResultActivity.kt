@@ -24,7 +24,7 @@ class PlacesResultActivity: AppCompatActivity() {
         placesResultAdapter.submitList(data)
 
     }        private fun initRecyclerView(){
-        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view1)
+        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view3)
         recyclerView.layoutManager= LinearLayoutManager(this@PlacesResultActivity)
         placesResultAdapter= PlacesResultAdapter()
         recyclerView.adapter=placesResultAdapter

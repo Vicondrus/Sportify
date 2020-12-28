@@ -8,7 +8,7 @@
     tools:context=".PlacesResultActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view1"
+        android:id="@+id/recycler_view3"
         android:clipToPadding="false"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,7 +23,7 @@
         android:id="@+id/imageView3"
         android:layout_width="481dp"
         android:layout_height="164dp"
-        app:layout_constraintBottom_toTopOf="@+id/recycler_view1"
+        app:layout_constraintBottom_toTopOf="@+id/recycler_view3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
