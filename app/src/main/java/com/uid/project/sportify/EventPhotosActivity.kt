@@ -33,7 +33,5 @@ class EventPhotosActivity : AppCompatActivity() {
         eventName.text = event.name
         updateTime.text = post.postTime
         description.text = post.postDescription
-
-
     }
 }
