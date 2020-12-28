@@ -42,7 +42,5 @@ class EventCreatedActivity : AppCompatActivity() {
             intent.putExtra("eventName", event.name)
             startActivity(intent)
         }
-
-
     }
 }

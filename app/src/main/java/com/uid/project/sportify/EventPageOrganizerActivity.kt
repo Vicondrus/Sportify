@@ -15,6 +15,7 @@ import com.uid.project.sportify.adapters.RequirementsListAdapter
 import com.uid.project.sportify.adapters.SportsListAdapter
 import com.uid.project.sportify.adapters.TagsListAdapter
 import com.uid.project.sportify.models.Event
+import com.uid.project.sportify.models.Registry
 import de.hdodenhof.circleimageview.CircleImageView
 import java.time.format.DateTimeFormatter
 
@@ -24,6 +25,7 @@ class EventPageOrganizerActivity : AppCompatActivity() {
     private lateinit var sportsListAdapter: SportsListAdapter
     private lateinit var tagsListAdapter: TagsListAdapter
     private lateinit var requirementsListAdapter: RequirementsListAdapter
+    private lateinit var event: Event
     private val editEventId = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,8 +34,7 @@ class EventPageOrganizerActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-//        val event = Registry.event1Manager
-        val event = intent.getSerializableExtra("event") as Event
+        event = intent.getSerializableExtra("event") as Event
 
         val eventName = findViewById<TextView>(R.id.eventPageOrganizerEventName)
         eventName.text = event.name
@@ -128,9 +129,13 @@ class EventPageOrganizerActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == editEventId) {
             if (resultCode == Activity.RESULT_OK) {
+                // Remove the event from the registry
+                Registry.listOfOrganizedEvents.removeIf { ev -> ev.name == event.name }
+                // Get the edited event
+                event = data?.getSerializableExtra("eventEdited") as Event
+                // Add the edited event to registry
+                Registry.listOfOrganizedEvents.add(event)
                 // Update fields
-//                val event = Registry.event1Manager
-                val event = intent.getSerializableExtra("event") as Event
                 val eventName = findViewById<TextView>(R.id.eventPageOrganizerEventName)
                 eventName.text = event.name
                 val eventImage = findViewById<CircleImageView>(R.id.eventPageOrganizerEventImage)

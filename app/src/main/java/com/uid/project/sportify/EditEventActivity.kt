@@ -54,7 +54,7 @@ class EditEventActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyCal
         supportActionBar?.hide()
 
 //        event = Registry.event1Manager
-        val event = intent.getSerializableExtra("event") as Event
+        event = intent.getSerializableExtra("event") as Event
 
         val editEventButton = findViewById<Button>(R.id.confirmEditEventButton)
         editEventButton.isEnabled = true
@@ -342,8 +342,8 @@ class EditEventActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyCal
                 event.nbOfPeople = eventNbOfPeople.text.toString().toInt()
                 event.attendanceFee = eventAttendanceFee.text.toString().toInt()
                 event.location = location
-                intent.putExtra("event", event)
                 val intent = Intent()
+                intent.putExtra("eventEdited", event)
                 setResult(Activity.RESULT_OK, intent)
                 finish()
             }

@@ -8,10 +8,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.uid.project.sportify.adapters.GroupsListAdapter
-import com.uid.project.sportify.adapters.ParticipationListAdapter
-import com.uid.project.sportify.adapters.SportsListAdapter
-import com.uid.project.sportify.adapters.TagsListAdapter
+import com.uid.project.sportify.adapters.*
 import com.uid.project.sportify.models.Participation
 import com.uid.project.sportify.models.Registry
 import com.uid.project.sportify.models.User
@@ -25,6 +22,7 @@ class ProfilePageActivity : AppCompatActivity() {
     private lateinit var pastListAdapter: ParticipationListAdapter
     private lateinit var upcomingListAdapter: ParticipationListAdapter
     private lateinit var groupsListAdapter: GroupsListAdapter
+    private lateinit var ownListAdapter: EventItemListAdapter
     private val customizeCode = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -69,11 +67,16 @@ class ProfilePageActivity : AppCompatActivity() {
             false
         )
         val layoutManager4 = LinearLayoutManager(
-            this@ProfilePageActivity,
-            LinearLayoutManager.HORIZONTAL,
-            false
+                this@ProfilePageActivity,
+                LinearLayoutManager.HORIZONTAL,
+                false
         )
         val layoutManager5 = LinearLayoutManager(
+                this@ProfilePageActivity,
+                LinearLayoutManager.HORIZONTAL,
+                false
+        )
+        val layoutManager6 = LinearLayoutManager(
                 this@ProfilePageActivity,
                 LinearLayoutManager.HORIZONTAL,
                 false
@@ -93,6 +96,9 @@ class ProfilePageActivity : AppCompatActivity() {
 
         val groupsRecyclerView = findViewById<RecyclerView>(R.id.groupsRecyclerView)
         groupsRecyclerView.layoutManager = layoutManager5
+
+        val ownRecyclerView = findViewById<RecyclerView>(R.id.ownRecyclerView)
+        ownRecyclerView.layoutManager = layoutManager6
 
         sportsListAdapter = SportsListAdapter(user.sports)
         sportsRecyclerView.adapter = sportsListAdapter
@@ -117,6 +123,9 @@ class ProfilePageActivity : AppCompatActivity() {
         groupsListAdapter = GroupsListAdapter(Registry.listOfGroups)
         groupsRecyclerView.adapter = groupsListAdapter
 
+        ownListAdapter = EventItemListAdapter(Registry.listOfOrganizedEvents, this@ProfilePageActivity)
+        ownRecyclerView.adapter = ownListAdapter
+
         val button = findViewById<Button>(R.id.customizeButton)
 
         if (selectedUserPosition == -1) {
@@ -124,7 +133,7 @@ class ProfilePageActivity : AppCompatActivity() {
                 val intent = Intent(this, CustomizeProfileActivity::class.java)
                 startActivityForResult(intent, customizeCode)
             }
-        }else{
+        } else {
             button.visibility = View.GONE
         }
 

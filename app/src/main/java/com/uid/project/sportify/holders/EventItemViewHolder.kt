@@ -20,7 +20,7 @@ class EventItemViewHolder(inflater: LayoutInflater, private var parent: ViewGrou
     init {
         eventName = itemView.findViewById(R.id.listItemEventName)
         eventDate = itemView.findViewById(R.id.listItemEventDate)
-        eventName = itemView.findViewById(R.id.listItemEventImage)
+        eventImage = itemView.findViewById(R.id.listItemEventImage)
     }
 
     fun bind(event: Event) {
