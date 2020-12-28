@@ -16,7 +16,7 @@ class DeletableTagsListAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DeletableItemViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        return DeletableItemViewHolder(inflater, parent, R.color.dark_tone_sportify)
+        return DeletableItemViewHolder(inflater, parent, R.color.purple_sportify)
     }
 
     override fun onBindViewHolder(holder: DeletableItemViewHolder, position: Int) {

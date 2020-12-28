@@ -4,23 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/light_grey_sportify"
+    android:background="@color/light_tone_sportify"
+    android:backgroundTint="@null"
     android:backgroundTintMode="src_over"
     android:foregroundTint="@color/grey_sportify"
     tools:context=".AudioVideoCallActivity">
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar21"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/light_tone_sportify"
-        android:backgroundTintMode="add"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/callingHangUpButton"
@@ -37,39 +25,14 @@
         android:id="@+id/callingLabelTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
         android:layout_marginTop="30dp"
         android:text="@string/calling_label"
         android:textColor="@color/dark_tone_sportify"
         android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/callingFriendImage" />
-
-    <TextView
-        android:id="@+id/callingFriendName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:textColor="@color/dark_tone_sportify"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/callingLabelTextView"
-        app:layout_constraintStart_toEndOf="@+id/callingLabelTextView"
-        app:layout_constraintTop_toTopOf="@+id/callingLabelTextView"
-        tools:text="friend name" />
-
-    <TextView
-        android:id="@+id/threeDotsLabelTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/three_dots_label"
-        android:textColor="@color/dark_tone_sportify"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/callingLabelTextView"
-        app:layout_constraintStart_toEndOf="@+id/callingFriendName"
-        app:layout_constraintTop_toTopOf="@+id/callingLabelTextView" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/callingFriendImage"
@@ -81,5 +44,106 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/callingProgressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/purple_sportify"
+        app:layout_constraintBottom_toTopOf="@+id/callingHangUpButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/callingLabelTextView" />
+
+    <ImageView
+        android:id="@+id/callFriendVideo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/dog_video" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/callButtonsCardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="80dp"
+        android:layout_marginBottom="40dp"
+        app:cardBackgroundColor="#9EFFFFFF"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/callFriendVideo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/callMicrophoneBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@null"
+                android:backgroundTintMode="src_over"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_microphone_on"
+                tools:layout_conversion_absoluteHeight="44dp"
+                tools:layout_conversion_absoluteWidth="49dp" />
+
+            <ImageButton
+                android:id="@+id/callVideoBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:backgroundTint="@null"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/callHangUpBtn"
+                app:layout_constraintStart_toEndOf="@+id/callMicrophoneBtn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_video_camera_on"
+                tools:layout_conversion_absoluteHeight="49dp"
+                tools:layout_conversion_absoluteWidth="54dp" />
+
+            <ImageButton
+                android:id="@+id/callHangUpBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="30dp"
+                android:background="@null"
+                android:backgroundTint="@null"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_hang_up" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/myVideoCardView"
+        android:layout_width="117dp"
+        android:layout_height="143dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        app:cardBackgroundColor="@color/black"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/callMyVideo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/my_camera_gif" />
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
