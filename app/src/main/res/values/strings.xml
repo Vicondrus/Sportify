@@ -77,7 +77,6 @@
     <string name="date_error_label">* Date cannot be before current date!</string>
     <string name="time_error_label">* End time must be after start time!</string>
     <string name="list_error_label">* You must add at least one element!</string>
-    <string name="create_group_label">Create group</string>
     <string name="book_a_place_label">Book a place</string>
 
 </resources>
