@@ -24,21 +24,25 @@ class TagsEventSearch:AppCompatActivity() {
         setContentView(R.layout.activity_tags_event)
         val addTagButton = findViewById<ImageButton>(R.id.addTagButton)
         val enterTagsTextView = findViewById<EditText>(R.id.enterTagsTextView)
+        val tagsEntered = findViewById<TextView>(R.id.textView24)
         addTagButton.setOnClickListener {
              var data= enterTagsTextView.text.toString() + ""
-            list.add(data)
+            list.add(data.toString())
             Log.v("tagss","in tag")
             Log.v("tagss",data)
-
+            val builder = StringBuilder()
+            for (details in list) {
+                builder.append(details + " ,")
+            }
+            tagsEntered.text=builder.toString()
         }
 
-        list.add("hello")
         if(list.isEmpty())
             Log.v("empty","yes")
         for(value in list)
             Log.v("valuee",value)
 
-        list.add("okay")
+
         val doneTagButton= findViewById<Button>(R.id.doneTagButton)
         doneTagButton.setOnClickListener(object : View.OnClickListener {
 
@@ -46,8 +50,7 @@ class TagsEventSearch:AppCompatActivity() {
 
                 val intent = Intent(this@TagsEventSearch, SearchEventActivity::class.java)
                 //val intent=Intent()
-                val list= ArrayList<String>()
-                intent.putExtra("list",list)
+                intent.putStringArrayListExtra("list",list)
                 // intent.putExtra("sportLevel",sportLevel)
                 setResult(Activity.RESULT_OK, intent);
                 // startActivity(intent)

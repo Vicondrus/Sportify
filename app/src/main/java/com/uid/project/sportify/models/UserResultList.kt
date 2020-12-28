@@ -1,124 +1,29 @@
 package com.uid.project.sportify.models
 
 
-import com.uid.project.sportify.models.UserResult
-
 class UserResultList {
 
     companion object{
 
         //hardcoded data
-        fun createDataSet(): ArrayList<UserResult>{
-            val list = ArrayList<UserResult>()
-            list.add(
-                UserResult(
-                    "Andrei Mihai",
-                    "https://raw.githubusercontent.com/mitchtabian/Kotlin-RecyclerView-Example/json-data-source/app/src/main/res/drawable/javascript_expert_wes_bos.png",
-                    "https://raw.githubusercontent.com/mitchtabian/Blog-Images/master/digital_ocean.png",
-                    "Basketball",
-                    "Advanced"
-                )
-            )
-            list.add(
-                UserResult(
-                    "Alexandra Bianca",
-                    "https://raw.githubusercontent.com/mitchtabian/Kotlin-RecyclerView-Example/json-data-source/app/src/main/res/drawable/javascript_expert_wes_bos.png",
-                    "https://raw.githubusercontent.com/mitchtabian/Blog-Images/master/digital_ocean.png",
-                    "Basketball",
-                    "Intermediate"
-                )
-            )
+        fun createDataSet(name:String, sportsSelected: Array<String>?): ArrayList<User>{
+            val list = ArrayList<User>()
+            var ok=false
+            if(Registry.user1Manager.name.equals(name)){
+              /*  if (sportsSelected != null) {
+                    for(sportSelected in sportsSelected)
+                        for(sport in Registry.user1Manager.sports)
 
-            list.add(
-                UserResult(
-                    "Andrei Mihai",
-                    "https://raw.githubusercontent.com/mitchtabian/Kotlin-RecyclerView-Example/json-data-source/app/src/main/res/drawable/javascript_expert_wes_bos.png",
-                    "https://raw.githubusercontent.com/mitchtabian/Blog-Images/master/digital_ocean.png",
-                    "Basketball",
-                    "Advanced"
-                )
-            )
-            list.add(
-                UserResult(
-                    "Andrei Mihai",
-                    "https://raw.githubusercontent.com/mitchtabian/Kotlin-RecyclerView-Example/json-data-source/app/src/main/res/drawable/javascript_expert_wes_bos.png",
-                    "https://raw.githubusercontent.com/mitchtabian/Blog-Images/master/digital_ocean.png",
-                    "Basketball",
-                    "Advanced"
-                )
-            )
-            list.add(
-                UserResult(
-                    "Andrei Mihai",
-                    "https://raw.githubusercontent.com/mitchtabian/Kotlin-RecyclerView-Example/json-data-source/app/src/main/res/drawable/javascript_expert_wes_bos.png",
-                    "https://raw.githubusercontent.com/mitchtabian/Blog-Images/master/digital_ocean.png",
-                    "Basketball",
-                    "Advanced"
-                )
-            )
-            list.add(
-                UserResult(
-                    "Andrei Mihai",
-                    "https://raw.githubusercontent.com/mitchtabian/Kotlin-RecyclerView-Example/json-data-source/app/src/main/res/drawable/javascript_expert_wes_bos.png",
-                    "https://raw.githubusercontent.com/mitchtabian/Blog-Images/master/digital_ocean.png",
-                    "Basketball",
-                    "Advanced"
-                )
-            )
-            list.add(
-                UserResult(
-                    "Andrei Mihai",
-                    "https://raw.githubusercontent.com/mitchtabian/Kotlin-RecyclerView-Example/json-data-source/app/src/main/res/drawable/javascript_expert_wes_bos.png",
-                    "https://raw.githubusercontent.com/mitchtabian/Blog-Images/master/digital_ocean.png",
-                    "Basketball",
-                    "Advanced"
-                )
-            )
-            list.add(
-                UserResult(
-                    "Andrei Mihai",
-                    "https://raw.githubusercontent.com/mitchtabian/Kotlin-RecyclerView-Example/json-data-source/app/src/main/res/drawable/javascript_expert_wes_bos.png",
-                    "https://raw.githubusercontent.com/mitchtabian/Blog-Images/master/digital_ocean.png",
-                    "Basketball",
-                    "Advanced"
-                )
-            )
-            list.add(
-                UserResult(
-                    "Andrei Mihai",
-                    "https://raw.githubusercontent.com/mitchtabian/Kotlin-RecyclerView-Example/json-data-source/app/src/main/res/drawable/javascript_expert_wes_bos.png",
-                    "https://raw.githubusercontent.com/mitchtabian/Blog-Images/master/digital_ocean.png",
-                    "Basketball",
-                    "Advanced"
-                )
-            )
-            list.add(
-                UserResult(
-                    "Andrei Mihai",
-                    "https://raw.githubusercontent.com/mitchtabian/Kotlin-RecyclerView-Example/json-data-source/app/src/main/res/drawable/javascript_expert_wes_bos.png",
-                    "https://raw.githubusercontent.com/mitchtabian/Blog-Images/master/digital_ocean.png",
-                    "Basketball",
-                    "Advanced"
-                )
-            )
-            list.add(
-                UserResult(
-                    "Andrei Mihai",
-                    "https://raw.githubusercontent.com/mitchtabian/Kotlin-RecyclerView-Example/json-data-source/app/src/main/res/drawable/javascript_expert_wes_bos.png",
-                    "https://raw.githubusercontent.com/mitchtabian/Blog-Images/master/digital_ocean.png",
-                    "Basketball",
-                    "Advanced"
-                )
-            )
-            list.add(
-                UserResult(
-                    "Andrei Mihai",
-                    "https://raw.githubusercontent.com/mitchtabian/Kotlin-RecyclerView-Example/json-data-source/app/src/main/res/drawable/javascript_expert_wes_bos.png",
-                    "https://raw.githubusercontent.com/mitchtabian/Blog-Images/master/digital_ocean.png",
-                    "Basketball",
-                    "Advanced"
-                )
-            )
+                            if(sport.name.equals(sportSelected))
+                                ok=true
+                }
+                ok=true
+               if(ok==true){list.add(
+                       Registry.user1Manager) }*/
+                list.add(
+                        Registry.user1Manager)
+            }
+
 
 
             return list

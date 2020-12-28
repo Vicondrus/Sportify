@@ -127,7 +127,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-            <fragment
+
+            <fragment xmlns:map="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/mapFragment"
                 class="com.huawei.hms.maps.SupportMapFragment"
                 android:layout_width="0dp"
@@ -200,8 +201,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginTop="8dp"
-                android:text="Text View Sport"
-                android:textColor="@color/white"
+                android:text=""
+                android:textColor="@color/grey_sportify"
                 android:textStyle="italic"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -209,11 +210,10 @@
 
             <Button
                 android:id="@+id/button4"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_width="272dp"
+                android:layout_height="47dp"
                 android:text="Continue"
                 android:textSize="18sp"
-
 
                 android:textStyle="bold"
                 app:cornerRadius="20dp"
@@ -309,7 +309,7 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/recyclerView"
                 app:layout_constraintTop_toBottomOf="@+id/textViewSportSelection"
-                app:layout_constraintVertical_bias="0.457" />
+                app:layout_constraintVertical_bias="0.1" />
 
             <ImageView
                 android:id="@+id/cardImageSearchEvent"
@@ -320,8 +320,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/textView23"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3"
-                app:layout_constraintVertical_bias="0.637"
+                app:layout_constraintTop_toTopOf="@+id/textView23"
+                app:layout_constraintVertical_bias="0.0"
                 app:srcCompat="@drawable/ic_credit_card"
                 tools:srcCompat="@drawable/ic_credit_card" />
 
@@ -329,12 +329,12 @@
                 android:id="@+id/textView22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
                 android:text="Choose the max fee for searched events"
                 android:textColor="@color/grey_sportify"
                 android:textSize="18sp"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/button4"
                 app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
             <EditText
@@ -359,7 +359,7 @@
                 android:id="@+id/eventFeeEditText"
                 android:layout_width="165dp"
                 android:layout_height="38dp"
-                android:layout_marginBottom="68dp"
+                android:layout_marginBottom="112dp"
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:text="Fee here"

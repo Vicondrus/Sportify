@@ -43,15 +43,17 @@
                 android:id="@+id/imgUserSport"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
+                android:layout_marginStart="276dp"
                 android:layout_marginLeft="300dp"
-                android:layout_marginTop="10dp" />
+                android:layout_marginTop="7dp" />
 
             <TextView
                 android:id="@+id/txtSportName"
-                android:layout_width="wrap_content"
+                android:layout_width="147dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="183dp"
+                android:layout_marginLeft="142dp"
                 android:layout_marginTop="60dp"
                 android:layout_toRightOf="@+id/imgPlace"
                 android:text="Name here"
@@ -59,9 +61,9 @@
 
             <TextView
                 android:id="@+id/txtSportLevel"
-                android:layout_width="wrap_content"
+                android:layout_width="209dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="181dp"
+                android:layout_marginLeft="82dp"
                 android:layout_marginTop="80dp"
                 android:layout_toRightOf="@+id/imgPlace"
                 android:text="Name here"
