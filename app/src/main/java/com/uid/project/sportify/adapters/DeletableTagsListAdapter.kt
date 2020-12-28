@@ -9,7 +9,7 @@ import com.uid.project.sportify.R
 import com.uid.project.sportify.holders.DeletableItemViewHolder
 
 class DeletableTagsListAdapter(
-    private val dataSet: MutableList<String>,
+    val dataSet: MutableList<String>,
     private val context: Context
 ) : RecyclerView.Adapter<DeletableItemViewHolder>() {
     var listener: ((String) -> Unit)? = null

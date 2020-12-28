@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   android:background="@color/pink_sportify">
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/sportsForEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:paddingHorizontal="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTitle4" android:layout_marginTop="8dp"/>
+    <Button
+            android:text="@string/continue_label"
+            android:layout_width="0dp"
+            android:layout_height="60dp" android:id="@+id/button12"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="16dp" android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="32dp" app:cornerRadius="20dp"
+            android:onClick="continueEvent"/>
+    <TextView
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:id="@+id/textViewTitle4" android:textColor="@color/white"
+            android:textStyle="bold" android:textAlignment="textEnd" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/grey_sportify" android:textSize="20sp"
+            android:paddingTop="20dp" android:text="The required fitness levels for this event:"
+            android:paddingEnd="16dp" android:paddingStart="70dp"/>
+    <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="60dp" app:srcCompat="@drawable/ic_arrow" android:id="@+id/imageButton13"
+            android:tint="@color/white" android:backgroundTint="@color/grey_sportify" android:rotation="180"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="16dp" android:layout_marginStart="16dp" android:scaleType="fitCenter"
+            android:onClick="onBackPressed"/>
+    <TextView
+            android:text="Message from the event creator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView32"
+            android:textColor="@color/white" android:textStyle="bold"
+            android:textSize="20sp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/customizeSportsRecyclerViewRegisterActivity"
+            android:layout_marginTop="24dp"/>
+    <TextView
+            android:text="Your fitness levels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView34"
+            android:textColor="@color/white" android:textStyle="bold"
+            android:textSize="24sp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
+            app:layout_constraintHorizontal_bias="0.241"
+            app:layout_constraintTop_toBottomOf="@+id/sportsForEvent" android:layout_marginTop="16dp"/>
+    <TextView
+            android:text="@string/lorem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" android:id="@+id/textView33"
+            android:textColor="@color/white" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView32" android:layout_marginTop="16dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/customizeSportsRecyclerViewRegisterActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:paddingHorizontal="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5" app:layout_constraintTop_toBottomOf="@+id/textView34"
+            android:layout_marginTop="16dp">
+    </androidx.recyclerview.widget.RecyclerView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

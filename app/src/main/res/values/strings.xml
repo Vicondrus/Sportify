@@ -55,6 +55,18 @@
     <string name="passwordLabel">Password</string>
     <string name="invalidCredentialsLabel">Invalid Credentials</string>
     <string name="invalidEmailLabel">Email address not valid</string>
+    <string name="create_group_label">Create new group</string>
+    <string name="check_in_assigned">"You have been assigned to\nscan the check-in codes."</string>
+    <string name="check_in_received">"This is your code for the event.\nAsk the check-in person \nto validate it"</string>
+    <string name="check_in_success">"PERSON CHECKED-IN SUCCESSFULLY"</string>
+    <string name="scan_here">SCAN HERE</string>
+    <string name="check_in_fail">THE CODE IS NOT VALID. TRY AGAIN</string>
+    <string name="scan_new">Type new code</string>
+    <string name="retype_code">Retype code</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sodales nibh lectus.
+        In quam dolor, cursus vitae interdum a, dictum ac nulla. Aliquam lorem justo, imperdiet vel ullamcorper sit amet,
+        cursus vitae eros. Fusce eget congue ex. Curabitur tincidunt non massa at rutrum. Fusce non convallis lacus, a blandit est.
+        Nullam dignissim dui tristique risus pellentesque, ac viverra massa scelerisque.</string>
     <string name="dashLabel">-</string>
     <string name="requirementsHint">Type some requirements...</string>
     <string name="areYouGoingLabel">Are you going?</string>
@@ -65,7 +77,6 @@
     <string name="date_error_label">* Date cannot be before current date!</string>
     <string name="time_error_label">* End time must be after start time!</string>
     <string name="list_error_label">* You must add at least one element!</string>
-    <string name="create_group_label">Create group</string>
     <string name="book_a_place_label">Book a place</string>
 
 </resources>

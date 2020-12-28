@@ -4,13 +4,14 @@
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
-    <uses-feature android:name="android.hardware.type.watch" />
+    <uses-feature android:name="android.hardware.camera.any" />
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
         android:allowBackup="true"
@@ -19,7 +20,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Sportify">
-        <activity android:name=".EventPhotosActivity"></activity>
+        <activity android:name=".EventPhotosActivity"/>
         <activity android:name=".EventPageUserActivity" />
         <activity android:name=".EditEventActivity" />
         <activity android:name=".MapViewEventActivity" />
@@ -46,11 +47,15 @@
 
         <activity android:name=".NewsFeedActivity" />
         <activity android:name=".ProfilePageActivity" />
+        <activity android:name=".CreateGroupActivity" />
         <activity android:name=".CreateEventActivity" />
         <activity android:name=".EventCreatedActivity" />
         <activity android:name=".ChatMainActivity" />
         <activity android:name=".ChatFriendActivity" />
         <activity android:name=".EventPageOrganizerActivity" />
+        <activity android:name=".VerificationCodeActivity"/>
+        <activity android:name=".ViewEventCodeActivity"/>
+        <activity android:name=".ScanActivity"/>
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -59,6 +64,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".SportsSelectionActivity" />
+        <activity android:name=".GroupCreatedActivity" />
+        <activity android:name=".LevelsEventActivity"/>
+        <activity android:name=".TermsAndConditionsActivity"/>
+        <activity android:name=".ActivityRegisterConfirmation"/>
+        <activity
+                android:name=".EventRegisterPopupActivity"
+                android:parentActivityName=".EventPageOrganizerActivity"
+                android:theme="@style/Theme.AppCompat.Dialog.Alert" />
+
         <activity android:name=".UserResultActivity" />
         <activity
             android:name=".LevelPopupActivity"
@@ -72,6 +86,9 @@
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
+
+
+
     </application>
 
 </manifest>
