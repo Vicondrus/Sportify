@@ -1,6 +1,8 @@
 package com.uid.project.sportify
 
+import android.app.Activity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.SearchView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -42,6 +44,12 @@ class FriendListActivity : AppCompatActivity() {
 
         val recentsRecyclerView = findViewById<RecyclerView>(R.id.recentsRecyclerView)
         recentsRecyclerView.layoutManager = layoutManager1
+
+        val doneButton = findViewById<Button>(R.id.friends_done)
+        doneButton.setOnClickListener {
+            setResult(Activity.RESULT_OK, intent)
+            finish()
+        }
 
         val random = Random()
         val friends = Registry.listOfFriends

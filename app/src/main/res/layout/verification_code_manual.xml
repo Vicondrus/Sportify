@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   android:background="@color/dark_tone_sportify">
+
+    <TextView
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:text="Verification Code"
+            android:ems="10"
+            android:id="@+id/editTextTextPersonName" android:textColor="@color/dark_tone_sportify"
+            android:textStyle="bold" android:textAlignment="textEnd" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/white" android:textSize="30sp"
+            android:paddingTop="40dp" android:paddingEnd="20dp"/>
+    <Button
+            android:text="next"
+            android:layout_width="0dp"
+            android:layout_height="60dp" android:id="@+id/button" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintTop_toBottomOf="@+id/editTextNumber"
+            android:layout_marginTop="32dp" app:cornerRadius="20dp" android:onClick="finished"/>
+    <EditText
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:clickable="false"
+            android:id="@+id/editTextNumber" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="92dp" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="124dp" android:backgroundTint="@color/grey_sportify"
+            android:textColor="@color/white" android:textSize="30sp" android:contextClickable="false"
+            android:enabled="false"/>
+    <EditText
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:clickable="false"
+            android:id="@+id/editTextNumber4"
+            app:layout_constraintStart_toEndOf="@+id/editTextNumber3"
+            app:layout_constraintTop_toTopOf="@+id/editTextNumber3" android:layout_marginStart="24dp"
+            android:backgroundTint="@color/grey_sportify" android:textColor="@color/white" android:textSize="30sp"
+            android:contextClickable="false" android:enabled="false"/>
+    <EditText
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:clickable="false"
+            android:id="@+id/editTextNumber3"
+            app:layout_constraintStart_toEndOf="@+id/editTextNumber2" android:layout_marginStart="24dp"
+            app:layout_constraintTop_toTopOf="@+id/editTextNumber2" android:backgroundTint="@color/grey_sportify"
+            android:textColor="@color/white" android:textSize="30sp" android:contextClickable="false"
+            android:enabled="false"/>
+    <EditText
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:clickable="false"
+            android:id="@+id/editTextNumber2"
+            app:layout_constraintStart_toEndOf="@+id/editTextNumber" android:layout_marginStart="24dp"
+            app:layout_constraintTop_toTopOf="@+id/editTextNumber" android:backgroundTint="@color/grey_sportify"
+            android:textColor="@color/white" android:textSize="30sp" android:contextClickable="false"
+            android:enabled="false"/>
+    <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:layout_constraintTop_toBottomOf="@+id/button"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="24dp" android:layout_marginEnd="24dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+            <Button
+                    android:text="1"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/button_no_1"
+                    android:layout_height="80dp"
+                    app:cornerRadius="40dp"
+                    android:textSize="20sp" android:onClick="writeNumber" android:layout_margin="10dp"/>
+            <Button
+                    android:text="2"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/button_no_2"
+                    android:layout_height="80dp"
+                    app:cornerRadius="40dp"
+                    android:textSize="20sp" android:onClick="writeNumber" android:layout_margin="10dp"/>
+            <Button
+                    android:text="3"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/button_no_3"
+                    android:layout_height="80dp"
+                    app:cornerRadius="40dp"
+                    android:textSize="20sp" android:onClick="writeNumber" android:layout_margin="10dp"/>
+        </TableRow>
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+            <Button
+                    android:text="4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    app:cornerRadius="40dp"
+                    android:textSize="20sp" android:id="@+id/button_no_4" android:onClick="writeNumber"
+                    android:layout_margin="10dp"/>
+            <Button
+                    android:text="5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    app:cornerRadius="40dp"
+                    android:textSize="20sp" android:id="@+id/button_no_5" android:onClick="writeNumber"
+                    android:layout_margin="10dp"/>
+            <Button
+                    android:text="6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    app:cornerRadius="40dp"
+                    android:textSize="20sp" android:id="@+id/button_no_6" android:onClick="writeNumber"
+                    android:layout_margin="10dp"/>
+        </TableRow>
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+            <Button
+                    android:text="7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    app:cornerRadius="40dp"
+                    android:textSize="20sp" android:id="@+id/button_no_7" android:onClick="writeNumber"
+                    android:layout_margin="10dp"/>
+            <Button
+                    android:text="8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    app:cornerRadius="40dp"
+                    android:textSize="20sp" android:id="@+id/button_no_8" android:onClick="writeNumber"
+                    android:layout_margin="10dp"/>
+            <Button
+                    android:text="9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    app:cornerRadius="40dp"
+                    android:textSize="20sp" android:id="@+id/button_no_9" android:onClick="writeNumber"
+                    android:layout_margin="10dp"/>
+        </TableRow>
+        <TableRow android:layout_width="match_parent" android:layout_height="match_parent">
+            <Button
+                    android:layout_column="1"
+                    android:text="0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    app:cornerRadius="40dp"
+                    android:textSize="20sp" android:id="@+id/button_no_0" android:onClick="writeNumber"
+                    android:layout_margin="10dp"/>
+            <Button
+                    android:text="undo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="80dp"
+                    app:cornerRadius="40dp"
+                    android:textSize="20sp" android:id="@+id/button_undo" android:onClick="undo"
+                    android:layout_margin="10dp"/>
+        </TableRow>
+    </TableLayout>
+    <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="60dp" app:srcCompat="@drawable/ic_arrow" android:id="@+id/imageButton"
+            android:tint="@color/dark_tone_sportify" android:backgroundTint="@color/white" android:rotation="180"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="16dp" android:layout_marginStart="16dp" android:scaleType="fitCenter"
+            android:onClick="onBackPressed"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

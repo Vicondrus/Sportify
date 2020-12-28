@@ -17,5 +17,11 @@ class ButtonsPageAddActivity : AppCompatActivity() {
             val intent = Intent(this, CreateEventActivity::class.java)
             startActivity(intent)
         }
+
+        val createGroupButton = findViewById<Button>(R.id.buttonsPageCreateGroupBtn)
+        createGroupButton.setOnClickListener {
+            val intent = Intent(this, CreateGroupActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

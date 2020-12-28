@@ -43,11 +43,11 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar19" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/buttonsPageCreateGroupBtn"
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:backgroundTint="@color/pink_sportify"
-        android:text="Button"
+        android:text="@string/create_group_label"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,5 +64,5 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button8" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonsPageCreateGroupBtn" />
 </androidx.constraintlayout.widget.ConstraintLayout>
