@@ -335,6 +335,7 @@ class CreateEventActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyC
                 event.nbOfPeople = eventNbOfPeople.text.toString().toInt()
                 event.attendanceFee = eventAttendanceFee.text.toString().toInt()
                 event.location = location
+                Registry.listOfOrganizedEvents.add(event)
                 val intent = Intent(this, EventCreatedActivity::class.java)
                 startActivity(intent)
             }

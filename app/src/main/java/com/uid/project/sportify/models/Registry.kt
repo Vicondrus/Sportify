@@ -453,5 +453,12 @@ class Registry private constructor() {
                 Location("Sala Sport CNER", "Centru", Coordinates(46.76816046323552, 23.59388245841115)),
                 Location("Teren Tenis Camin UTCN", "Zorilor", Coordinates(46.755703425581494, 23.588802265143215))
         )
+
+        val listOfGroups: MutableList<Group>
+        get() = mutableListOf(Group("'U' Basketball Fanclub", "The official Universitatea Cluj Baskteball Fanclub", "Centru", arrayListOf(), R.drawable.academia_ubt),
+                Group("TennisClub Grigorescu", "Made for tennis lovers in Grigorescu", "Grigorescu", arrayListOf()))
+
+        val listOfOrganizedEvents: ArrayList<Event>
+        get() = arrayListOf()
     }
 }
