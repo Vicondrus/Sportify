@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.uid.project.sportify.models.Registry
+import com.uid.project.sportify.models.Event
 import de.hdodenhof.circleimageview.CircleImageView
 
 class EventCreatedActivity : AppCompatActivity() {
@@ -16,7 +16,8 @@ class EventCreatedActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-        val event = Registry.event1Manager
+//        val event = Registry.event1Manager
+        val event = intent.getSerializableExtra("event") as Event
 
         val eventNameContainer = findViewById<TextView>(R.id.eventCreatedEventNameTextView)
         eventNameContainer.text = event.name

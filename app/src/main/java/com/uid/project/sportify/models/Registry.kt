@@ -366,7 +366,7 @@ class Registry private constructor() {
                     NewsFeedPostPhotos(
                             R.drawable.girl_pic_2,
                             "1 hour ago",
-                            "The boys from Colegiul National Vasile Lucaciu won the cup" +
+                            "The boys from Colegiul National Vasile Lucaciu won the cup " +
                                     "once again this month! Congrats to everyone!!",
                             R.drawable.sport_pic_1,
                             event3Manager
@@ -446,12 +446,18 @@ class Registry private constructor() {
             )
 
         val listOfLocations: ArrayList<Location>
-        get() = arrayListOf(Location("Sala Sporturilor", "Manastur", Coordinates(46.76564585071395, 23.564550507738485)),
-                Location("Complex Sportiv Gheorgheni", "Gheorgheni", Coordinates(46.76849513345118, 23.63299188574465)),
-                Location("Bazinul Olimpic UTCN", "Manastur", Coordinates(46.76604429284985, 23.564366284392985)),
-        Location("Bazin Olimpic Grigorescu", "Grigorescu", Coordinates(46.7643645231033, 23.54537124323578)),
-                Location("Sala Sport CNER", "Centru", Coordinates(46.76816046323552, 23.59388245841115)),
-                Location("Teren Tenis Camin UTCN", "Zorilor", Coordinates(46.755703425581494, 23.588802265143215))
-        )
+            get() = arrayListOf(Location("Sala Sporturilor", "Manastur", Coordinates(46.76564585071395, 23.564550507738485)),
+                    Location("Complex Sportiv Gheorgheni", "Gheorgheni", Coordinates(46.76849513345118, 23.63299188574465)),
+                    Location("Bazinul Olimpic UTCN", "Manastur", Coordinates(46.76604429284985, 23.564366284392985)),
+                    Location("Bazin Olimpic Grigorescu", "Grigorescu", Coordinates(46.7643645231033, 23.54537124323578)),
+                    Location("Sala Sport CNER", "Centru", Coordinates(46.76816046323552, 23.59388245841115)),
+                    Location("Teren Tenis Camin UTCN", "Zorilor", Coordinates(46.755703425581494, 23.588802265143215))
+            )
+
+        val listOfEventPhotos: ArrayList<Int>
+            get() = arrayListOf(
+                    R.drawable.sport_pic_1,
+                    R.drawable.sport_pic_2,
+                    R.drawable.sport_pic_3)
     }
 }
