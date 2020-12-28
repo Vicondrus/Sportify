@@ -19,7 +19,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Sportify">
-        <activity android:name=".EventPageUserActivity"></activity>
+        <activity android:name=".EventPhotosActivity"></activity>
+        <activity android:name=".EventPageUserActivity" />
         <activity android:name=".EditEventActivity" />
         <activity android:name=".MapViewEventActivity" />
 

@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.uid.project.sportify.EventPageUserActivity
+import com.uid.project.sportify.EventPhotosActivity
 import com.uid.project.sportify.R
 import com.uid.project.sportify.holders.NewsFeedPostEventViewHolder
 import com.uid.project.sportify.holders.NewsFeedPostPhotosViewHolder
@@ -46,9 +47,9 @@ class NewsFeedPostAdapter(private val dataSet: List<NewsFeedPost>, private val c
         } else {
             (holder as NewsFeedPostPhotosViewHolder).bind(post)
             holder.postPhotoToolbar?.setOnClickListener {
-                val intent = Intent(context, EventPageUserActivity::class.java)
+                val intent = Intent(context, EventPhotosActivity::class.java)
                 val postEvent = post as NewsFeedPostPhotos
-                intent.putExtra("event", postEvent.event)
+                intent.putExtra("post", postEvent)
                 context.startActivity(intent)
             }
         }
