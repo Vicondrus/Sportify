@@ -5,10 +5,10 @@ import java.io.Serializable
 data class PlaceResult(var placeName: String,
                        var placeImage: Int,
                        var placeDescription: String,
-                       var placeLocation:String,
-                       var placeRating:String,
+                       var placeLocation: String,
+                       var placeRating: String,
                        var placePrice: String,
-                       var placeUnavailableDates: List<String>): Serializable
+                       var placeUnavailableDates: List<String>) : Serializable
 
 
 

@@ -10,7 +10,6 @@ import android.text.InputType
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.core.widget.doOnTextChanged
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,7 +18,6 @@ import com.huawei.hms.maps.SupportMapFragment
 import com.huawei.hms.maps.model.BitmapDescriptorFactory
 import com.huawei.hms.maps.model.LatLng
 import com.huawei.hms.maps.model.MarkerOptions
-import com.huawei.hms.maps.model.PolygonOptions
 import com.uid.project.sportify.adapters.DeletableRequirementsListAdapter
 import com.uid.project.sportify.adapters.DeletableSportsListAdapter
 import com.uid.project.sportify.adapters.DeletableTagsListAdapter
@@ -133,19 +131,19 @@ class CreateEventActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyC
             val hour = calendar.get(Calendar.HOUR_OF_DAY)
             val minute = calendar.get(Calendar.MINUTE)
             val timePicker = TimePickerDialog(
-                this@CreateEventActivity,
-                TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
-                    var hourOfDayString: String = "" + hourOfDay
-                    var minuteString: String = "" + minute
-                    if (hourOfDay < 10) hourOfDayString = "0" + hourOfDay
-                    if (hourOfDay == 0) hourOfDayString = "" + hourOfDay + "0"
-                    if (minute < 10) minuteString = "0" + minute
-                    if (minute == 0) minuteString = "" + minute + "0"
-                    eventTimeStartTextView.setText(hourOfDayString + ":" + minuteString)
-                },
-                hour,
-                minute,
-                true
+                    this@CreateEventActivity,
+                    TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
+                        var hourOfDayString: String = "" + hourOfDay
+                        var minuteString: String = "" + minute
+                        if (hourOfDay < 10) hourOfDayString = "0" + hourOfDay
+                        if (hourOfDay == 0) hourOfDayString = "" + hourOfDay + "0"
+                        if (minute < 10) minuteString = "0" + minute
+                        if (minute == 0) minuteString = "" + minute + "0"
+                        eventTimeStartTextView.setText(hourOfDayString + ":" + minuteString)
+                    },
+                    hour,
+                    minute,
+                    true
             )
             timePicker.show()
         }
@@ -155,16 +153,16 @@ class CreateEventActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyC
             val hour = calendar.get(Calendar.HOUR_OF_DAY)
             val minute = calendar.get(Calendar.MINUTE)
             val timePicker = TimePickerDialog(
-                this@CreateEventActivity,
-                TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
-                    var hourOfDayString: String = "" + hourOfDay
-                    var minuteString: String = "" + minute
-                    if (hourOfDay < 10) hourOfDayString = "0" + hourOfDay
-                    if (hourOfDay == 0) hourOfDayString = "" + hourOfDay + "0"
-                    if (minute < 10) minuteString = "0" + minute
-                    if (minute == 0) minuteString = "" + minute + "0"
-                    eventTimeEndTextView.setText(hourOfDayString + ":" + minuteString)
-                },
+                    this@CreateEventActivity,
+                    TimePickerDialog.OnTimeSetListener { view, hourOfDay, minute ->
+                        var hourOfDayString: String = "" + hourOfDay
+                        var minuteString: String = "" + minute
+                        if (hourOfDay < 10) hourOfDayString = "0" + hourOfDay
+                        if (hourOfDay == 0) hourOfDayString = "" + hourOfDay + "0"
+                        if (minute < 10) minuteString = "0" + minute
+                        if (minute == 0) minuteString = "" + minute + "0"
+                        eventTimeEndTextView.setText(hourOfDayString + ":" + minuteString)
+                    },
                     hour,
                     minute,
                     true
@@ -195,24 +193,24 @@ class CreateEventActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyC
          * Sports, Tags, Requirements
          */
         val layoutManagerSports = LinearLayoutManager(
-            this@CreateEventActivity,
-            LinearLayoutManager.HORIZONTAL,
-            false
+                this@CreateEventActivity,
+                LinearLayoutManager.HORIZONTAL,
+                false
         )
         val layoutManagerTags = LinearLayoutManager(
-            this@CreateEventActivity,
-            LinearLayoutManager.HORIZONTAL,
-            false
+                this@CreateEventActivity,
+                LinearLayoutManager.HORIZONTAL,
+                false
         )
         val layoutManagerTagsSearch = LinearLayoutManager(
-            this@CreateEventActivity,
-            LinearLayoutManager.VERTICAL,
-            false
+                this@CreateEventActivity,
+                LinearLayoutManager.VERTICAL,
+                false
         )
         val layoutManagerRequirements = LinearLayoutManager(
-            this@CreateEventActivity,
-            LinearLayoutManager.HORIZONTAL,
-            false
+                this@CreateEventActivity,
+                LinearLayoutManager.HORIZONTAL,
+                false
         )
 
         val sportsRecyclerView = findViewById<RecyclerView>(R.id.createEventSportsRecyclerView)
@@ -226,26 +224,26 @@ class CreateEventActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyC
         tagsRecyclerView.adapter = tagsListAdapter
 
         val requirementsRecyclerView =
-            findViewById<RecyclerView>(R.id.createEventRequirementsRecyclerView)
+                findViewById<RecyclerView>(R.id.createEventRequirementsRecyclerView)
         requirementsRecyclerView.layoutManager = layoutManagerRequirements
         requirementsListAdapter =
-            DeletableRequirementsListAdapter(event.requirements, this@CreateEventActivity)
+                DeletableRequirementsListAdapter(event.requirements, this@CreateEventActivity)
         requirementsRecyclerView.adapter = requirementsListAdapter
 
         val tagsSearchView = findViewById<SearchView>(R.id.createEventTagsSearchView)
         val searchTagsRecyclerView =
-            findViewById<RecyclerView>(R.id.createEventSearchTagsRecyclerView)
+                findViewById<RecyclerView>(R.id.createEventSearchTagsRecyclerView)
         searchTagsRecyclerView.layoutManager = layoutManagerTagsSearch
         tagsSearchListAdapter = TagsSearchListAdapter(
-            Registry.setOfTags.toMutableList(),
-            tagsListAdapter,
-            tagsSearchView,
-            this@CreateEventActivity
+                Registry.setOfTags.toMutableList(),
+                tagsListAdapter,
+                tagsSearchView,
+                this@CreateEventActivity
         )
         searchTagsRecyclerView.adapter = tagsSearchListAdapter
 
         tagsSearchView.setOnQueryTextListener(object :
-            SearchView.OnQueryTextListener {
+                SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
             }
@@ -428,7 +426,7 @@ class CreateEventActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyC
 
         mMap = map
         mMap.clear()
-        if(eventLocationLabel.text!="") {
+        if (eventLocationLabel.text != "") {
             mMap.addMarker(MarkerOptions()
                     .position(LatLng(location.coords.latitude, location.coords.longitude))
                     .title(location.location).icon(BitmapDescriptorFactory
@@ -439,7 +437,7 @@ class CreateEventActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyC
 
     fun goToMap(view: View) {
         val intent = Intent(this, MapViewEventActivity::class.java)
-        if(eventLocationLabel.text!="") {
+        if (eventLocationLabel.text != "") {
             intent.putExtra("currentLocation", location.location)
         }
         startActivityForResult(intent, mapSelectionId)
@@ -447,9 +445,9 @@ class CreateEventActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyC
 
 
     override fun onActivityResult(
-        requestCode: Int,
-        resultCode: Int,
-        data: Intent?
+            requestCode: Int,
+            resultCode: Int,
+            data: Intent?
     ) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == sportsSelectionId) {

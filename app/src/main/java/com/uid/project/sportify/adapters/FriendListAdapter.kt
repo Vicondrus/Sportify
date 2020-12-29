@@ -11,8 +11,8 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class FriendListAdapter(
-    private val dataSet: MutableList<Friend>,
-    private val otherAdapter: RecentsListAdapter
+        private val dataSet: MutableList<Friend>,
+        private val otherAdapter: RecentsListAdapter
 ) : RecyclerView.Adapter<FriendItemViewHolder>(), Filterable {
 
     var friendsFilterList = ArrayList<Friend>()
@@ -50,7 +50,7 @@ class FriendListAdapter(
                     val resultList = ArrayList<Friend>()
                     for (row in dataSet) {
                         if (row.name.toLowerCase(Locale.ROOT)
-                                .contains(charSearch.toLowerCase(Locale.ROOT))
+                                        .contains(charSearch.toLowerCase(Locale.ROOT))
                         ) {
                             resultList.add(row)
                         }

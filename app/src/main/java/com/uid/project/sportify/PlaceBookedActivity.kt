@@ -16,14 +16,14 @@ class PlaceBookedActivity : AppCompatActivity() {
         supportActionBar?.hide()
         val place = intent.getStringExtra("placeName")
         val placeObj = intent.getSerializableExtra("placeObj") as PlaceResult
-        val txtPlace=findViewById<TextView>(R.id.eventCreatedEventNameTextView)
+        val txtPlace = findViewById<TextView>(R.id.eventCreatedEventNameTextView)
 
-        val imgPlace=findViewById<ImageView>(R.id.newsFriendImage1)
-       /* val event = this.intent.getSerializableExtra("event") as Event
+        val imgPlace = findViewById<ImageView>(R.id.newsFriendImage1)
+        /* val event = this.intent.getSerializableExtra("event") as Event
 
-        val eventNameContainer = findViewById<TextView>(R.id.eventCreatedEventNameTextView)
-        eventNameContainer.text = event.name*/
-        txtPlace.text=place.toString()
+         val eventNameContainer = findViewById<TextView>(R.id.eventCreatedEventNameTextView)
+         eventNameContainer.text = event.name*/
+        txtPlace.text = place.toString()
         imgPlace.setImageResource(placeObj.placeImage)
         val btnDone = findViewById<Button>(R.id.btnEventCreatedDone)
         btnDone.setOnClickListener {

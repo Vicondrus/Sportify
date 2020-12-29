@@ -23,7 +23,7 @@ class NewsFeedActivity : AppCompatActivity() {
 
         val newsFeedRecyclerView = findViewById<RecyclerView>(R.id.newsFeedRecyclerView)
         val layoutManager = LinearLayoutManager(
-            this@NewsFeedActivity,
+                this@NewsFeedActivity,
         )
         newsFeedRecyclerView.layoutManager = layoutManager
         newsFeedPosts = Registry.listofNewsFeedPosts

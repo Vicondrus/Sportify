@@ -9,6 +9,7 @@ import java.time.format.DateTimeFormatter
 import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.random.Random.Default.nextInt
+
 class Registry private constructor() {
 
     companion object {
@@ -82,7 +83,7 @@ class Registry private constructor() {
                                     )
 
                             ),
-                        R.drawable.ana_profile_picture
+                            R.drawable.ana_profile_picture
                     )
                 }
 
@@ -91,27 +92,26 @@ class Registry private constructor() {
             set(u: User) {
                 user1 = u
             }
-        private var place1: PlaceResult?=null
+        private var place1: PlaceResult? = null
         var place1Manager: PlaceResult
             get() {
 
-            if (place1 == null) {
-                place1 =  PlaceResult(
-                        "Yoga Venue Central",
-                        R.drawable.yogaplace ,
-                        // "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.facebook.com%2Ftheyogaplaceskopje%2Fphotos%2F&psig=AOvVaw1STjfrcu0MkG6J2RxZNuw3&ust=1608816607772000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIC--4Wb5O0CFQAAAAAdAAAAABAD",
-                        "Perfect spot for yogaplace.jpg events just in the center of New York.",
-                        "New York",
-                        "3.3",
-                        "100",
-                        listOf<String>("2021-09-09","2021-01-01")
+                if (place1 == null) {
+                    place1 = PlaceResult(
+                            "Yoga Venue Central",
+                            R.drawable.yogaplace,
+                            // "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.facebook.com%2Ftheyogaplaceskopje%2Fphotos%2F&psig=AOvVaw1STjfrcu0MkG6J2RxZNuw3&ust=1608816607772000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIC--4Wb5O0CFQAAAAAdAAAAABAD",
+                            "Perfect spot for yogaplace.jpg events just in the center of New York.",
+                            "New York",
+                            "3.3",
+                            "100",
+                            listOf<String>("2021-09-09", "2021-01-01")
 
-                )
+                    )
+                }
+                return place1 as PlaceResult
+
             }
-            return place1 as PlaceResult
-
-        }
-
             set(u: PlaceResult) {
                 place1 = u
             }
@@ -164,17 +164,17 @@ class Registry private constructor() {
             get() {
                 if (event3 == null) {
                     event3 = Event(
-                        "Monthly school football competition",
-                        R.drawable.sport_pic_2,
-                        "Maria Pop",
-                        "We welcome all schools from Cluj-Napoca to participate to this football and basketball event!",
-                        LocalDate.parse("12/02/2021", DateTimeFormatter.ofPattern("dd/MM/yyyy")),
-                        LocalTime.parse("10:00", DateTimeFormatter.ofPattern("HH:mm")),
-                        LocalTime.parse("15:00", DateTimeFormatter.ofPattern("HH:mm")),
-                        20,
-                        0,
-                        Location("", "Centru", Coordinates(46.766667, 23.583333)),
-                        ArrayList(), ArrayList(), ArrayList()
+                            "Monthly school football competition",
+                            R.drawable.sport_pic_2,
+                            "Maria Pop",
+                            "We welcome all schools from Cluj-Napoca to participate to this football and basketball event!",
+                            LocalDate.parse("12/02/2021", DateTimeFormatter.ofPattern("dd/MM/yyyy")),
+                            LocalTime.parse("10:00", DateTimeFormatter.ofPattern("HH:mm")),
+                            LocalTime.parse("15:00", DateTimeFormatter.ofPattern("HH:mm")),
+                            20,
+                            0,
+                            Location("", "Centru", Coordinates(46.766667, 23.583333)),
+                            ArrayList(), ArrayList(), ArrayList()
                     )
                 }
                 return event3 as Event
@@ -185,12 +185,12 @@ class Registry private constructor() {
 
         val setOfTags: MutableSet<String>
             get() = mutableSetOf(
-                "#Rozelor",
-                "#ParculMare",
-                "#Politehnica",
-                "#Babes",
-                "#ProfessionalBasketball",
-                "#ChildFriendly"
+                    "#Rozelor",
+                    "#ParculMare",
+                    "#Politehnica",
+                    "#Babes",
+                    "#ProfessionalBasketball",
+                    "#ChildFriendly"
             )
 
         val setOfAvailableSports: Set<Sport>
@@ -282,7 +282,7 @@ class Registry private constructor() {
                     Sport(
                             "Yoga",
                             Level.FAN,
-                            notSelectedImage = R.drawable.yogaplace,
+                            notSelectedImage = R.drawable.yoga,
                             selectedImage = R.drawable.yoga_selected
                     ),
             )
@@ -348,7 +348,7 @@ class Registry private constructor() {
                             LatLng(46.7777279, 23.6196324),
                             LatLng(46.7758469, 23.6118162),
                             LatLng(46.770086, 23.6065354),
-                            LatLng(46.7676169,23.6001989 ),
+                            LatLng(46.7676169, 23.6001989),
                             LatLng(46.7569747, 23.6194818),
                             LatLng(46.7618551, 23.6216291),
                             LatLng(46.7630898, 23.6260549),
@@ -360,7 +360,7 @@ class Registry private constructor() {
                             LatLng(46.7561809, 23.5724163),
                             LatLng(46.7495946, 23.5768827),
                             LatLng(46.7512412, 23.583024),
-                            LatLng(46.7482125,23.5851284 ),
+                            LatLng(46.7482125, 23.5851284),
                             LatLng(46.7477126, 23.5932452),
                             LatLng(46.7560633, 23.5972392),
                             LatLng(46.7594738, 23.5919139),
@@ -368,15 +368,15 @@ class Registry private constructor() {
                             LatLng(46.7576804, 23.5752937),
                             LatLng(46.7561809, 23.5724163))),
                     Neighborhood("Marasti", mutableListOf(
-                        LatLng(46.7859564, 23.5971155),
-                        LatLng(46.7837818, 23.6367119),
-                        LatLng(46.7822537, 23.6403194),
-                        LatLng(46.7789622, 23.6194475),
-                        LatLng(46.777434, 23.6202206),
-                        LatLng(46.7735544, 23.6061922),
-                        LatLng(46.7767286, 23.6027547),
-                        LatLng(46.7793149, 23.5937658),
-                        LatLng(46.7859564, 23.5971155)
+                            LatLng(46.7859564, 23.5971155),
+                            LatLng(46.7837818, 23.6367119),
+                            LatLng(46.7822537, 23.6403194),
+                            LatLng(46.7789622, 23.6194475),
+                            LatLng(46.777434, 23.6202206),
+                            LatLng(46.7735544, 23.6061922),
+                            LatLng(46.7767286, 23.6027547),
+                            LatLng(46.7793149, 23.5937658),
+                            LatLng(46.7859564, 23.5971155)
                     )
                     ),
             )
@@ -425,64 +425,127 @@ class Registry private constructor() {
 
         val listOfChatMessages: ArrayList<ChatMessage>
             get() = arrayListOf(
-                ChatMessage(
-                    Friend("Dina Meyer", R.drawable.girl_pic_1),
-                    "2 hrs",
-                    "",
-                    false,
-                    listOfMessages
-                ),
-                ChatMessage(
-                    Friend("Stephane Moreau", R.drawable.boy_pic_1),
-                    "3 hrs",
-                    "",
-                    false,
-                    listOfMessages
-                ),
-                ChatMessage(
-                    Friend("Andrew James", R.drawable.boy_pic_2),
-                    "9 hrs",
-                    "",
-                    true,
-                    listOfMessages
-                ),
-                ChatMessage(
-                    Friend("Andreea Pop", R.drawable.girl_pic_2),
-                    "Aug 19",
-                    "",
-                    true,
-                    listOfMessages
-                ),
-                ChatMessage(
-                    Friend("John Smith", R.drawable.boy_pic_3),
-                    "Jul 24",
-                    "",
-                    true,
-                    listOfMessages
-                ),
-                ChatMessage(
-                    Friend("Jane Doe", R.drawable.girl_pic_3),
-                    "Jun 12",
-                    "",
-                    true,
-                    listOfMessages
-                )
+                    ChatMessage(
+                            Friend("Dina Meyer", R.drawable.girl_pic_1),
+                            "2 hrs",
+                            "",
+                            false,
+                            listOfMessages
+                    ),
+                    ChatMessage(
+                            Friend("Stephane Moreau", R.drawable.boy_pic_1),
+                            "3 hrs",
+                            "",
+                            false,
+                            listOfMessages
+                    ),
+                    ChatMessage(
+                            Friend("Andrew James", R.drawable.boy_pic_2),
+                            "9 hrs",
+                            "",
+                            true,
+                            listOfMessages
+                    ),
+                    ChatMessage(
+                            Friend("Andreea Pop", R.drawable.girl_pic_2),
+                            "Aug 19",
+                            "",
+                            true,
+                            listOfMessages
+                    ),
+                    ChatMessage(
+                            Friend("John Smith", R.drawable.boy_pic_3),
+                            "Jul 24",
+                            "",
+                            true,
+                            listOfMessages
+                    ),
+                    ChatMessage(
+                            Friend("Jane Doe", R.drawable.girl_pic_3),
+                            "Jun 12",
+                            "",
+                            true,
+                            listOfMessages
+                    )
             )
 
         val listOfLocations: ArrayList<Location>
-        get() = arrayListOf(Location("Sala Sporturilor", "Manastur", Coordinates(46.76564585071395, 23.564550507738485)),
-                Location("Complex Sportiv Gheorgheni", "Gheorgheni", Coordinates(46.76849513345118, 23.63299188574465)),
-                Location("Bazinul Olimpic UTCN", "Manastur", Coordinates(46.76604429284985, 23.564366284392985)),
-        Location("Bazin Olimpic Grigorescu", "Grigorescu", Coordinates(46.7643645231033, 23.54537124323578)),
-                Location("Sala Sport CNER", "Centru", Coordinates(46.76816046323552, 23.59388245841115)),
-                Location("Teren Tenis Camin UTCN", "Zorilor", Coordinates(46.755703425581494, 23.588802265143215))
-        )
+            get() = arrayListOf(Location("Sala Sporturilor", "Manastur", Coordinates(46.76564585071395, 23.564550507738485)),
+                    Location("Complex Sportiv Gheorgheni", "Gheorgheni", Coordinates(46.76849513345118, 23.63299188574465)),
+                    Location("Bazinul Olimpic UTCN", "Manastur", Coordinates(46.76604429284985, 23.564366284392985)),
+                    Location("Bazin Olimpic Grigorescu", "Grigorescu", Coordinates(46.7643645231033, 23.54537124323578)),
+                    Location("Sala Sport CNER", "Centru", Coordinates(46.76816046323552, 23.59388245841115)),
+                    Location("Teren Tenis Camin UTCN", "Zorilor", Coordinates(46.755703425581494, 23.588802265143215))
+            )
 
         val listOfGroups: MutableList<Group>
-        get() = mutableListOf(Group("'U' Basketball Fanclub", "The official Universitatea Cluj Baskteball Fanclub", "Centru", arrayListOf(), R.drawable.academia_ubt),
-                Group("TennisClub Grigorescu", "Made for tennis lovers in Grigorescu", "Grigorescu", arrayListOf()))
+            get() = mutableListOf(Group("'U' Basketball Fanclub", "The official Universitatea Cluj Baskteball Fanclub", "Centru", arrayListOf(), R.drawable.academia_ubt),
+                    Group("TennisClub Grigorescu", "Made for tennis lovers in Grigorescu", "Grigorescu", arrayListOf()))
 
         val listOfOrganizedEvents: ArrayList<Event>
-        get() = arrayListOf()
+            get() = arrayListOf()
+
+        val listOfUsers: ArrayList<User>
+            get() = arrayListOf(User(
+                    "Alex Augustin", "alex.augustin@gmail.com",
+                    "password", "Centru", java.util.Date.from(
+                    LocalDate.parse("1999-09-16").atStartOfDay()
+                            .atZone(ZoneId.systemDefault())
+                            .toInstant()
+            ),
+                    mutableListOf(
+                            Sport(
+                                    "Tennis",
+                                    Level.ADVANCED,
+                                    notSelectedImage = R.drawable.tennis,
+                                    selectedImage = R.drawable.tennis_selected
+                            )
+                    ),
+                    mutableListOf("#Rozelor", "#ExpertTenis", "#UBB"),
+                    mutableListOf(
+                            Participation(
+                                    Activity(
+                                            "Basketball Match",
+                                            "Gheorgheni",
+                                            Date(Date().time - 2 * (1000 * 60 * 60 * 24)),
+                                            R.drawable.basketball_presentation
+                                    ), PaticipationType.PLAYER
+                            ),
+                            Participation(
+                                    Activity(
+                                            "Tennis Match",
+                                            "Grigorescu",
+                                            Date(Date().time + (1000 * 60 * 60 * 24 + 1000 * 60 * 300)),
+                                            R.drawable.tennis_presentation
+                                    ), PaticipationType.VIEWER
+                            ),
+                            Participation(
+                                    Activity(
+                                            "Tennis Match",
+                                            "Manastur",
+                                            Date(Date().time - (1000 * 60 * 60 * 24 + 1000 * 60 * 6543)),
+                                            R.drawable.tennis_presentation
+                                    ), PaticipationType.VIEWER
+                            ),
+                            Participation(
+                                    Activity(
+                                            "Basketball Match",
+                                            "Zorilor",
+                                            Date(Date().time + 3 * (1000 * 60 * 60 * 12)),
+                                            R.drawable.basketball_presentation
+                                    ), PaticipationType.PLAYER
+                            ),
+                            Participation(
+                                    Activity(
+                                            "Aerobics Class",
+                                            "Grigorescu",
+                                            Date(Date().time - 4 * (1000 * 60 * 60 * 12)),
+                                            R.drawable.aerobics_presentation
+                                    ), PaticipationType.PLAYER
+                            )
+
+                    ),
+                    R.drawable.friend6
+            ))
     }
 }

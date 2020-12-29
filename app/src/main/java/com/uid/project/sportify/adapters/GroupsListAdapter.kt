@@ -4,9 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.uid.project.sportify.holders.GroupItemViewHolder
-import com.uid.project.sportify.holders.ParticipationItemViewHolder
 import com.uid.project.sportify.models.Group
-import com.uid.project.sportify.models.Participation
 
 class GroupsListAdapter(private val dataSet: List<Group>) :
         RecyclerView.Adapter<GroupItemViewHolder>() {

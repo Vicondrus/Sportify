@@ -8,8 +8,6 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.uid.project.sportify.R
 import com.uid.project.sportify.models.Group
-import com.uid.project.sportify.models.Participation
-import java.text.SimpleDateFormat
 
 class GroupItemViewHolder(inflater: LayoutInflater, private var parent: ViewGroup) :
         RecyclerView.ViewHolder(inflater.inflate(R.layout.event_list_item, parent, false)) {
@@ -27,10 +25,10 @@ class GroupItemViewHolder(inflater: LayoutInflater, private var parent: ViewGrou
     }
 
     fun bind(group: Group) {
-        if(group.image !=-1) {
+        if (group.image != -1) {
             whole?.background =
                     ResourcesCompat.getDrawable(parent.resources, group.image, null)
-        }else{
+        } else {
             whole?.background =
                     ResourcesCompat.getDrawable(parent.resources, R.drawable.generic_group, null)
         }

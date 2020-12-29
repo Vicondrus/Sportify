@@ -1,4 +1,3 @@
-
 package com.uid.project.sportify.holders
 
 import android.view.LayoutInflater
@@ -10,11 +9,11 @@ import com.google.android.material.chip.Chip
 import com.uid.project.sportify.R
 
 class DeletableItemViewHolder(
-    inflater: LayoutInflater,
-    private var parent: ViewGroup,
-    private var color: Int
+        inflater: LayoutInflater,
+        private var parent: ViewGroup,
+        private var color: Int
 ) :
-    RecyclerView.ViewHolder(inflater.inflate(R.layout.deletable_list_item, parent, false)) {
+        RecyclerView.ViewHolder(inflater.inflate(R.layout.deletable_list_item, parent, false)) {
     private var deletableChip: Chip? = null
 
 
@@ -29,7 +28,7 @@ class DeletableItemViewHolder(
         deletableChip?.text = text
     }
 
-    fun setClickListener(clickListener: View.OnClickListener){
+    fun setClickListener(clickListener: View.OnClickListener) {
         deletableChip?.setOnCloseIconClickListener(clickListener)
     }
 }

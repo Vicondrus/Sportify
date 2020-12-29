@@ -6,10 +6,9 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.wear.activity.ConfirmationActivity
 import com.uid.project.sportify.models.PlaceResult
 
-class PaymentActivity: AppCompatActivity()  {
+class PaymentActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,19 +24,19 @@ class PaymentActivity: AppCompatActivity()  {
         val placeObj = intent.getSerializableExtra("place") as PlaceResult
         builder.setPositiveButton(android.R.string.yes) { dialog, which ->
             val intent = Intent(this@PaymentActivity, PlaceBookedActivity::class.java)
-            intent.putExtra("placeName",place.toString())
-            intent.putExtra("placeObj",placeObj)
+            intent.putExtra("placeName", place.toString())
+            intent.putExtra("placeObj", placeObj)
             startActivity(intent)
         }
 
         builder.setNegativeButton(android.R.string.no) { dialog, which ->
             Toast.makeText(applicationContext,
-                android.R.string.no, Toast.LENGTH_SHORT).show()
+                    android.R.string.no, Toast.LENGTH_SHORT).show()
         }
 
 
-        val btnContinue=findViewById<Button>(R.id.btnContinue)
-        btnContinue.setOnClickListener{
+        val btnContinue = findViewById<Button>(R.id.btnContinue)
+        btnContinue.setOnClickListener {
             builder.show()
         }
 

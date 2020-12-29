@@ -28,14 +28,14 @@ class LevelsEventActivity : AppCompatActivity() {
         setContentView(R.layout.activity_levels_event)
 
         val layoutManager1 = LinearLayoutManager(
-            this@LevelsEventActivity,
-            LinearLayoutManager.VERTICAL,
-            false
+                this@LevelsEventActivity,
+                LinearLayoutManager.VERTICAL,
+                false
         )
         val layoutManager2 = LinearLayoutManager(
-            this@LevelsEventActivity,
-            LinearLayoutManager.VERTICAL,
-            false
+                this@LevelsEventActivity,
+                LinearLayoutManager.VERTICAL,
+                false
         )
 
         val sportsRecyclerView = findViewById<RecyclerView>(R.id.customizeSportsRecyclerViewRegisterActivity)
@@ -52,7 +52,7 @@ class LevelsEventActivity : AppCompatActivity() {
         sportsRecyclerView2.adapter = sportsListAdapter2
     }
 
-    fun continueEvent(view : View){
+    fun continueEvent(view: View) {
         val intent = Intent(this, ActivityRegisterConfirmation::class.java)
         startActivity(intent)
         setResult(1)

@@ -35,10 +35,10 @@ class LoginActivity : AppCompatActivity() {
 
         val emailText = findViewById<EditText>(R.id.loginEmailEditText)
         emailText.setOnFocusChangeListener { v, hasFocus ->
-            if (!hasFocus){
-                if(!isEmailValid(emailText.text.toString())){
+            if (!hasFocus) {
+                if (!isEmailValid(emailText.text.toString())) {
                     emailError.visibility = View.VISIBLE
-                }else{
+                } else {
                     emailError.visibility = View.GONE
                 }
             }
@@ -59,13 +59,13 @@ class LoginActivity : AppCompatActivity() {
             loginError.visibility = View.GONE
             loginProgressBar.visibility = View.VISIBLE
             Timer("LoginProgress", false).schedule(2000) {
-                Handler(mainLooper).post{
+                Handler(mainLooper).post {
                     loginProgressBar.visibility = View.GONE
-                    if (emailText.text.toString() == Registry.user1Manager.email && passwordText.text.toString() == Registry.user1Manager.password){
+                    if (emailText.text.toString() == Registry.user1Manager.email && passwordText.text.toString() == Registry.user1Manager.password) {
                         loginError.visibility = View.GONE
                         val intent = Intent(this@LoginActivity, NewsFeedActivity::class.java)
                         startActivity(intent)
-                    }else{
+                    } else {
                         loginError.visibility = View.VISIBLE
                     }
                 }

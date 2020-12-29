@@ -45,11 +45,11 @@ class NewsFeedPostEventViewHolder(private val view: View) :
         eventName?.text = newsFeedPostEvent.event.name
         eventImage?.setImageResource(newsFeedPostEvent.event.image)
         eventDate?.text =
-            newsFeedPostEvent.event.date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
+                newsFeedPostEvent.event.date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
         eventTimeStart?.text =
-            newsFeedPostEvent.event.timeStart.format(DateTimeFormatter.ofPattern("HH:mm"))
+                newsFeedPostEvent.event.timeStart.format(DateTimeFormatter.ofPattern("HH:mm"))
         eventTimeEnd?.text =
-            newsFeedPostEvent.event.timeEnd.format(DateTimeFormatter.ofPattern("HH:mm"))
+                newsFeedPostEvent.event.timeEnd.format(DateTimeFormatter.ofPattern("HH:mm"))
         eventDescription?.text = newsFeedPostEvent.event.description
         eventLocation?.text = newsFeedPostEvent.event.location.location
         eventNbOfPeople?.text = "" + newsFeedPostEvent.event.nbOfPeople + " people are going"

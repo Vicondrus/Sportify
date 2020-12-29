@@ -26,16 +26,16 @@ class LevelPopupActivity : AppCompatActivity() {
 
         window.setBackgroundDrawable(ColorDrawable(getColor(R.color.dark_tone_sportify)))
         seekBar.progressDrawable.setColorFilter(
-            getColor(R.color.pink_sportify),
-            PorterDuff.Mode.SRC_IN
+                getColor(R.color.pink_sportify),
+                PorterDuff.Mode.SRC_IN
         )
         seekBar.thumb.setColorFilter(getColor(R.color.pink_sportify), PorterDuff.Mode.SRC_IN)
 
         button.setOnClickListener {
             val intent = Intent()
             intent.putExtra(
-                "sportPosition", this.intent.getIntExtra
-                    ("sportPosition", -1)
+                    "sportPosition", this.intent.getIntExtra
+            ("sportPosition", -1)
             )
             intent.putExtra("selectedLevel", seekBar.progress)
             setResult(Activity.RESULT_OK, intent)

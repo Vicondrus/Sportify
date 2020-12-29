@@ -7,7 +7,7 @@ import com.uid.project.sportify.holders.FriendItemViewHolder
 import com.uid.project.sportify.models.Friend
 
 class RecentsListAdapter(
-    private val dataSet: MutableList<Friend>
+        private val dataSet: MutableList<Friend>
 ) : RecyclerView.Adapter<FriendItemViewHolder>() {
 
     lateinit var otherAdapter: FriendListAdapter

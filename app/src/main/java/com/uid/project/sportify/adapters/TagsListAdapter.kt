@@ -20,4 +20,5 @@ class TagsListAdapter(private val dataSet: List<String>) :
 
     override fun getItemCount(): Int {
         return dataSet.size
-    }}
+    }
+}

@@ -35,7 +35,7 @@ class ChatFriendActivity : AppCompatActivity() {
 
         val messagesRecyclerView = findViewById<RecyclerView>(R.id.friendMessagesRecyclerView)
         val layoutManager = LinearLayoutManager(
-            this@ChatFriendActivity,
+                this@ChatFriendActivity,
         )
         layoutManager.stackFromEnd = true
         messagesRecyclerView.layoutManager = layoutManager
@@ -90,7 +90,7 @@ class ChatFriendActivity : AppCompatActivity() {
                 messagesAdapter.addMessage(messagesAdapter.itemCount, message)
                 messagesAdapter.notifyDataSetChanged()
                 findViewById<RecyclerView>(R.id.friendMessagesRecyclerView).smoothScrollToPosition(
-                    messagesAdapter.itemCount - 1
+                        messagesAdapter.itemCount - 1
                 )
             }
         }

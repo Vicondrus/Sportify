@@ -1,4 +1,5 @@
 package com.uid.project.sportify.QR;
+
 import androidx.annotation.NonNull;
 import androidx.camera.core.ImageAnalysis;
 import androidx.camera.core.ImageProxy;
@@ -19,7 +20,7 @@ import static android.graphics.ImageFormat.YUV_422_888;
 import static android.graphics.ImageFormat.YUV_444_888;
 
 public class QRCodeImageAnalyzer implements ImageAnalysis.Analyzer {
-    private QRCodeFoundListener listener;
+    private final QRCodeFoundListener listener;
 
     public QRCodeImageAnalyzer(QRCodeFoundListener listener) {
         this.listener = listener;
@@ -45,7 +46,8 @@ public class QRCodeImageAnalyzer implements ImageAnalysis.Analyzer {
             try {
                 Result result = new QRCodeMultiReader().decode(binaryBitmap);
                 listener.onQRCodeFound(result.getText());
-            } catch (FormatException | ChecksumException | NotFoundException ignored) { }
+            } catch (FormatException | ChecksumException | NotFoundException ignored) {
+            }
         }
 
         image.close();

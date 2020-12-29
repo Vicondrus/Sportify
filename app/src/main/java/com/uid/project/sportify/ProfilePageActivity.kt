@@ -36,8 +36,10 @@ class ProfilePageActivity : AppCompatActivity() {
 
         val selectedUserPosition = intent.getIntExtra("selectedUser", -1)
 
-        if (selectedUserPosition == -1) {
-            user = User(Registry.user1Manager)
+        user = if (selectedUserPosition == -1) {
+            User(Registry.user1Manager)
+        } else {
+            User(Registry.listOfUsers[selectedUserPosition])
         }
 
         val nameLabel = findViewById<TextView>(R.id.nameLabel)
@@ -54,24 +56,24 @@ class ProfilePageActivity : AppCompatActivity() {
         }
 
         val layoutManager1 = LinearLayoutManager(
-            this@ProfilePageActivity,
-            LinearLayoutManager.HORIZONTAL,
-            false
+                this@ProfilePageActivity,
+                LinearLayoutManager.HORIZONTAL,
+                false
         )
         val layoutManager2 = LinearLayoutManager(
-            this@ProfilePageActivity,
-            LinearLayoutManager.HORIZONTAL,
-            false
+                this@ProfilePageActivity,
+                LinearLayoutManager.HORIZONTAL,
+                false
         )
         val layoutManager3 = LinearLayoutManager(
-            this@ProfilePageActivity,
-            LinearLayoutManager.HORIZONTAL,
-            false
+                this@ProfilePageActivity,
+                LinearLayoutManager.HORIZONTAL,
+                false
         )
         val layoutManager4 = LinearLayoutManager(
-            this@ProfilePageActivity,
-            LinearLayoutManager.HORIZONTAL,
-            false
+                this@ProfilePageActivity,
+                LinearLayoutManager.HORIZONTAL,
+                false
         )
         val layoutManager5 = LinearLayoutManager(
                 this@ProfilePageActivity,
@@ -124,7 +126,7 @@ class ProfilePageActivity : AppCompatActivity() {
                 val intent = Intent(this, CustomizeProfileActivity::class.java)
                 startActivityForResult(intent, customizeCode)
             }
-        }else{
+        } else {
             button.visibility = View.GONE
         }
 
@@ -137,7 +139,7 @@ class ProfilePageActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == customizeCode){
+        if (requestCode == customizeCode) {
             recreate()
         }
     }

@@ -25,14 +25,14 @@ class ChatMainActivity : AppCompatActivity() {
 
         val messagesRecyclerView = findViewById<RecyclerView>(R.id.chatMainRecyclerView)
         val layoutManager = LinearLayoutManager(
-            this@ChatMainActivity,
+                this@ChatMainActivity,
         )
 
         chatMessageList = Registry.listOfChatMessages
 
         messagesRecyclerView.layoutManager = layoutManager
         chatMessagesAdapter =
-            ChatMessagesAdapter(chatMessageList, this@ChatMainActivity, messageActivityId)
+                ChatMessagesAdapter(chatMessageList, this@ChatMainActivity, messageActivityId)
         messagesRecyclerView.adapter = chatMessagesAdapter
     }
 

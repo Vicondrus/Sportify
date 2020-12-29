@@ -3,10 +3,10 @@ package com.uid.project.sportify
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
 import com.huawei.hms.maps.HuaweiMap
 import com.huawei.hms.maps.SupportMapFragment
@@ -15,7 +15,7 @@ import com.huawei.hms.maps.model.PolygonOptions
 
 class CreateGroupActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyCallback {
     private lateinit var mMap: HuaweiMap
-    lateinit var location : TextView
+    lateinit var location: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
@@ -30,7 +30,8 @@ class CreateGroupActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyC
 
 
     }
-    fun goToMap(view: View){
+
+    fun goToMap(view: View) {
         val intent = Intent(this, MapViewDemoActivity::class.java)
         startActivityForResult(intent, 1)
     }
@@ -71,8 +72,7 @@ class CreateGroupActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyC
                                     LatLng(46.7613847, 23.5447311)
                             )
             ).tag = "Grigorescu"
-        }
-        else if (location.text == "Centru") {
+        } else if (location.text == "Centru") {
             mMap.addPolygon(
                     PolygonOptions()
                             .clickable(false)

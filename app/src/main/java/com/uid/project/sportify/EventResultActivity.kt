@@ -20,19 +20,22 @@ class EventResultActivity : AppCompatActivity() {
         addDataSet()
 
     }
-    private fun addDataSet(){
-        val eventName=intent.getStringExtra("eventName")
-        val location=intent.getStringExtra("location")
-        Log.v("eventName",eventName.toString())
-        Log.v("locationn",location.toString())
-        val data= EventResultList.createDataSet(eventName.toString(),location.toString())
+
+    private fun addDataSet() {
+        val eventName = intent.getStringExtra("eventName")
+        val location = intent.getStringExtra("location")
+        Log.v("eventName", eventName.toString())
+        Log.v("locationn", location.toString())
+        val data = EventResultList.createDataSet(eventName.toString(), location.toString())
         eventResultAdapter.submitList(data)
 
-    }        private fun initRecyclerView(){
+    }
+
+    private fun initRecyclerView() {
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view3)
-        recyclerView.layoutManager= LinearLayoutManager(this@EventResultActivity)
-        eventResultAdapter= EventResultAdapter()
-        recyclerView.adapter=eventResultAdapter
+        recyclerView.layoutManager = LinearLayoutManager(this@EventResultActivity)
+        eventResultAdapter = EventResultAdapter()
+        recyclerView.adapter = eventResultAdapter
     }
 
 }

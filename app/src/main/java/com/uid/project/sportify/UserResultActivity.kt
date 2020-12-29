@@ -22,34 +22,36 @@ class UserResultActivity : AppCompatActivity() {
     }
 
 
-   /* val button4 = findViewById<ImageButton>(R.id.imageButton4) //bike
-    val button5 = findViewById<ImageButton>(R.id.imageButton5) //baseball
-    val button6 = findViewById<ImageButton>(R.id.imageButton6) //walk
-    val button7 = findViewById<ImageButton>(R.id.imageButton7) //football
-    val button8 = findViewById<ImageButton>(R.id.imageButton8) //yogaplace.jpg
-    val button9 = findViewById<ImageButton>(R.id.imageButton9)//stretching*/
-    private fun addDataSet(){
+    /* val button4 = findViewById<ImageButton>(R.id.imageButton4) //bike
+     val button5 = findViewById<ImageButton>(R.id.imageButton5) //baseball
+     val button6 = findViewById<ImageButton>(R.id.imageButton6) //walk
+     val button7 = findViewById<ImageButton>(R.id.imageButton7) //football
+     val button8 = findViewById<ImageButton>(R.id.imageButton8) //yogaplace.jpg
+     val button9 = findViewById<ImageButton>(R.id.imageButton9)//stretching*/
+    private fun addDataSet() {
 
-       val name=intent.getStringExtra("userSearch")
+        val name = intent.getStringExtra("userSearch")
 
-       val sportsSelected=intent.getStringArrayExtra("sportsSelected")
+        val sportsSelected = intent.getStringArrayListExtra("sportsSelected")
 
-       if (sportsSelected != null) {
-           for(sport in sportsSelected)
+        if (sportsSelected != null) {
+            for (sport in sportsSelected)
 
-            Log.v("sportSelected",sport)
-       }
-       val data= UserResultList.createDataSet(name.toString(),sportsSelected)
+                Log.v("sportSelected", sport)
+        }
+        val data = UserResultList.createDataSet(name.toString(), sportsSelected)
         if (name != null) {
-            Log.v("userresultname",name.toString())
+            Log.v("userresultname", name.toString())
         }
         userResultAdapter.submitList(data)
 
-    }        private fun initRecyclerView(){
+    }
+
+    private fun initRecyclerView() {
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view3)
-        recyclerView.layoutManager= LinearLayoutManager(this@UserResultActivity)
-        userResultAdapter= UserResultAdapter()
-        recyclerView.adapter=userResultAdapter
+        recyclerView.layoutManager = LinearLayoutManager(this@UserResultActivity)
+        userResultAdapter = UserResultAdapter()
+        recyclerView.adapter = userResultAdapter
     }
 
 }

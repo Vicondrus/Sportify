@@ -2,21 +2,18 @@ package com.uid.project.sportify.adapters
 
 
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.uid.project.sportify.*
+import com.uid.project.sportify.EventPageUserActivity
+import com.uid.project.sportify.R
 import com.uid.project.sportify.models.Event
-import com.uid.project.sportify.models.EventResult
-import com.uid.project.sportify.models.NewsFeedPostEvent
 
 
-class EventResultAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class EventResultAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private var items: List<Event> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -31,7 +28,7 @@ class EventResultAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        when(holder){
+        when (holder) {
 
             is EventViewHolder -> {
                 holder.bind(items.get(position))
@@ -44,21 +41,21 @@ class EventResultAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         return items.size
     }
 
-    fun submitList(eventResultList: ArrayList<Event>){
+    fun submitList(eventResultList: ArrayList<Event>) {
 
-        items=eventResultList
+        items = eventResultList
     }
 
     class EventViewHolder constructor(
             itemView: View
-    ): RecyclerView.ViewHolder(itemView){
-        val txtLocation= itemView.findViewById<TextView>(R.id.locationEventTxt)
-        val txtDateEvent= itemView.findViewById<TextView>(R.id.txtDateEvent)
+    ) : RecyclerView.ViewHolder(itemView) {
+        val txtLocation = itemView.findViewById<TextView>(R.id.locationEventTxt)
+        val txtDateEvent = itemView.findViewById<TextView>(R.id.txtDateEvent)
         val txtEventName = itemView.findViewById<TextView>(R.id.txtPlaceName)
-        val txtNbOfPeople= itemView.findViewById<TextView>(R.id.nbOfPeopleTxt)
-        val btnDetailsEvent=itemView.findViewById<TextView>(R.id.btnDetailsEvent)
-        val eventImage=itemView.findViewById<ImageView>(R.id.imgPlace)
-        fun bind(eventResult: Event){
+        val txtNbOfPeople = itemView.findViewById<TextView>(R.id.nbOfPeopleTxt)
+        val btnDetailsEvent = itemView.findViewById<TextView>(R.id.btnDetailsEvent)
+        val eventImage = itemView.findViewById<ImageView>(R.id.imgPlace)
+        fun bind(eventResult: Event) {
             btnDetailsEvent.setOnClickListener(object : View.OnClickListener {
 
                 override fun onClick(v: View?) {
@@ -87,14 +84,13 @@ class EventResultAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 }
             })*/
 
-            txtDateEvent.setText(eventResult.date.toString())
-            txtEventName.setText(eventResult.name)
-            txtNbOfPeople.setText(eventResult.nbOfPeople.toString())
-            txtLocation.setText(eventResult.location.neighborhood.toString())
-                eventImage.setImageResource(eventResult.image)
+            txtDateEvent.text = eventResult.date.toString()
+            txtEventName.text = eventResult.name
+            txtNbOfPeople.text = eventResult.nbOfPeople.toString()
+            txtLocation.text = eventResult.location.neighborhood.toString()
+            eventImage.setImageResource(eventResult.image)
 
         }
-
 
 
     }

@@ -16,7 +16,6 @@ import androidx.core.content.ContextCompat
 import com.huawei.hms.maps.HuaweiMap
 import com.huawei.hms.maps.MapView
 import com.huawei.hms.maps.OnMapReadyCallback
-import com.huawei.hms.maps.model.LatLng
 import com.huawei.hms.maps.model.Marker
 import com.huawei.hms.maps.model.PolygonOptions
 import com.uid.project.sportify.models.Neighborhood
@@ -49,7 +48,7 @@ class MapViewDemoActivity : AppCompatActivity(), OnMapReadyCallback {
         var mapViewBundle: Bundle? = null
         if (savedInstanceState != null) {
             mapViewBundle =
-                savedInstanceState.getBundle(MAPVIEW_BUNDLE_KEY)
+                    savedInstanceState.getBundle(MAPVIEW_BUNDLE_KEY)
         }
         mMapView?.apply {
             onCreate(mapViewBundle)
@@ -126,7 +125,7 @@ class MapViewDemoActivity : AppCompatActivity(), OnMapReadyCallback {
 
         Registry.listOfNeighborhoods.forEach { neighborhood: Neighborhood ->
             var color = ContextCompat.getColor(this@MapViewDemoActivity, R.color.grey_sportify)
-            if (neighborhood.name == selectedLocation){
+            if (neighborhood.name == selectedLocation) {
                 color = ContextCompat.getColor(this@MapViewDemoActivity, R.color.purple_sportify)
             }
             hMap!!.addPolygon(
@@ -143,7 +142,7 @@ class MapViewDemoActivity : AppCompatActivity(), OnMapReadyCallback {
             hMap!!.clear()
             Registry.listOfNeighborhoods.forEach { neighborhood: Neighborhood ->
                 var color = ContextCompat.getColor(this@MapViewDemoActivity, R.color.grey_sportify)
-                if (neighborhood.name == polygon.tag.toString()){
+                if (neighborhood.name == polygon.tag.toString()) {
                     color = ContextCompat.getColor(this@MapViewDemoActivity, R.color.purple_sportify)
                 }
                 hMap!!.addPolygon(
@@ -186,9 +185,9 @@ class MapViewDemoActivity : AppCompatActivity(), OnMapReadyCallback {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             for (permission in permissions) {
                 if (ActivityCompat.checkSelfPermission(
-                        context,
-                        permission
-                    ) != PackageManager.PERMISSION_GRANTED
+                                context,
+                                permission
+                        ) != PackageManager.PERMISSION_GRANTED
                 ) {
                     return false
                 }

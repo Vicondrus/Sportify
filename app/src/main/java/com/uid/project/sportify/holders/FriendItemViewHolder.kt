@@ -11,10 +11,10 @@ import com.uid.project.sportify.models.Friend
 import de.hdodenhof.circleimageview.CircleImageView
 
 class FriendItemViewHolder(
-    inflater: LayoutInflater,
-    parent: ViewGroup
+        inflater: LayoutInflater,
+        parent: ViewGroup
 ) :
-    RecyclerView.ViewHolder(inflater.inflate(R.layout.friend_list_item, parent, false)) {
+        RecyclerView.ViewHolder(inflater.inflate(R.layout.friend_list_item, parent, false)) {
     private var name: TextView? = null
     private var profilePic: CircleImageView? = null
     var sendButton: ImageButton? = null

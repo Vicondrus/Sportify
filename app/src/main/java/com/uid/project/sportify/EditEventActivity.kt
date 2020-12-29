@@ -10,7 +10,6 @@ import android.text.InputType
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.core.widget.doOnTextChanged
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,7 +18,6 @@ import com.huawei.hms.maps.SupportMapFragment
 import com.huawei.hms.maps.model.BitmapDescriptorFactory
 import com.huawei.hms.maps.model.LatLng
 import com.huawei.hms.maps.model.MarkerOptions
-import com.huawei.hms.maps.model.PolygonOptions
 import com.uid.project.sportify.adapters.DeletableRequirementsListAdapter
 import com.uid.project.sportify.adapters.DeletableSportsListAdapter
 import com.uid.project.sportify.adapters.DeletableTagsListAdapter
@@ -431,12 +429,12 @@ class EditEventActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyCal
     override fun onMapReady(map: HuaweiMap) {
         mMap = map
         mMap.clear()
-            mMap.addMarker(
+        mMap.addMarker(
                 MarkerOptions()
-                .position(LatLng(location.coords.latitude, location.coords.longitude))
-                .title(location.location).icon(
-                        BitmapDescriptorFactory
-                    .defaultMarker(BitmapDescriptorFactory.HUE_VIOLET)))
+                        .position(LatLng(location.coords.latitude, location.coords.longitude))
+                        .title(location.location).icon(
+                                BitmapDescriptorFactory
+                                        .defaultMarker(BitmapDescriptorFactory.HUE_VIOLET)))
     }
 
 

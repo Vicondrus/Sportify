@@ -9,14 +9,13 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.uid.project.sportify.BookPlaceActivity
 import com.uid.project.sportify.R
 import com.uid.project.sportify.models.PlaceResult
 
 
-class PlacesResultAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class PlacesResultAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private var items: List<PlaceResult> = ArrayList()
 
 
@@ -32,7 +31,7 @@ class PlacesResultAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        when(holder){
+        when (holder) {
 
             is PlaceViewHolder -> {
                 holder.bind(items.get(position))
@@ -42,29 +41,26 @@ class PlacesResultAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
 
-
-
-
     //how many items inside list
     override fun getItemCount(): Int {
         return items.size
     }
 
-    fun submitList(placeResultList: List<PlaceResult>){
+    fun submitList(placeResultList: List<PlaceResult>) {
 
-        items=placeResultList
+        items = placeResultList
     }
 
     class PlaceViewHolder constructor(
             itemView: View
-    ): RecyclerView.ViewHolder(itemView){
+    ) : RecyclerView.ViewHolder(itemView) {
 
-        val btnBookPlaceResult= itemView.findViewById<Button>(R.id.btnDetailsEvent)
+        val btnBookPlaceResult = itemView.findViewById<Button>(R.id.btnDetailsEvent)
         val place_image = itemView.findViewById<ImageView>(R.id.imgPlace)
-        val place_description= itemView.findViewById<TextView>(R.id.txtDateEvent)
-        val place_location=itemView.findViewById<TextView>(R.id.txtLocation)
-        val place_name=itemView.findViewById<TextView>(R.id.txtPlaceName)
-        val place_rating=itemView.findViewById<TextView>(R.id.txtRating)
+        val place_description = itemView.findViewById<TextView>(R.id.txtDateEvent)
+        val place_location = itemView.findViewById<TextView>(R.id.txtLocation)
+        val place_name = itemView.findViewById<TextView>(R.id.txtPlaceName)
+        val place_rating = itemView.findViewById<TextView>(R.id.txtRating)
 
         fun bind(placeResult: PlaceResult) {
 
@@ -90,10 +86,10 @@ class PlacesResultAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 }
             })
 
-            place_description.setText(placeResult.placeDescription)
-            place_location.setText(placeResult.placeLocation)
-            place_name.setText(placeResult.placeName)
-            place_rating.setText(placeResult.placeRating)
+            place_description.text = placeResult.placeDescription
+            place_location.text = placeResult.placeLocation
+            place_name.text = placeResult.placeName
+            place_rating.text = placeResult.placeRating
             val requestOptions = RequestOptions()
                     .placeholder(R.drawable.ic_launcher_background)
                     .error(R.drawable.ic_launcher_background)

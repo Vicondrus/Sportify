@@ -25,14 +25,14 @@ class FriendListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_friend_list)
 
         val layoutManager1 = LinearLayoutManager(
-            this@FriendListActivity,
-            LinearLayoutManager.VERTICAL,
-            false
+                this@FriendListActivity,
+                LinearLayoutManager.VERTICAL,
+                false
         )
         val layoutManager2 = LinearLayoutManager(
-            this@FriendListActivity,
-            LinearLayoutManager.VERTICAL,
-            false
+                this@FriendListActivity,
+                LinearLayoutManager.VERTICAL,
+                false
         )
 
 
@@ -82,10 +82,10 @@ class FriendListActivity : AppCompatActivity() {
         recentsListAdapter.otherAdapter = friendsListAdapter
 
         val friendsSearchView =
-            findViewById<SearchView>(R.id.searchView2)
+                findViewById<SearchView>(R.id.searchView2)
 
         friendsSearchView.setOnQueryTextListener(object :
-            SearchView.OnQueryTextListener {
+                SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
             }

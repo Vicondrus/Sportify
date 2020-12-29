@@ -1,4 +1,5 @@
 package com.uid.project.sportify
+
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -10,15 +11,12 @@ import androidx.appcompat.app.AppCompatActivity
 
 import com.uid.project.sportify.adapters.UserResultAdapter
 
-class SearchUserActivity: AppCompatActivity() {
-private lateinit var userResultAdapter: UserResultAdapter
-
-
-
+class SearchUserActivity : AppCompatActivity() {
+    private lateinit var userResultAdapter: UserResultAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        var sportsSelected= mutableListOf<String>()
+        var sportsSelected = mutableListOf<String>()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.user_search)
 
@@ -32,11 +30,11 @@ private lateinit var userResultAdapter: UserResultAdapter
         val button7 = findViewById<ImageButton>(R.id.imageButton7) //football
         val button8 = findViewById<ImageButton>(R.id.imageButton8) //yogaplace.jpg
         val button9 = findViewById<ImageButton>(R.id.imageButton9)//stretching
-        val searchUserTxt=findViewById<EditText>(R.id.searchUserTxt)
+        val searchUserTxt = findViewById<EditText>(R.id.searchUserTxt)
 
 
-       //ana maria
-        var isClicked = true; //is clicked(1,2,3).. bool for each button
+        //ana maria
+        var isClicked = true //is clicked(1,2,3).. bool for each button
 
         supportActionBar?.hide()
         button1.setOnClickListener(object : View.OnClickListener {
@@ -46,8 +44,8 @@ private lateinit var userResultAdapter: UserResultAdapter
                     button1.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonroundclicked))
 
                     isClicked = false
-                    val context= v?.context
-                    val intent= Intent(context,LevelPopupActivity::class.java)
+                    val context = v?.context
+                    val intent = Intent(context, LevelPopupActivity::class.java)
                     sportsSelected.add("Basketball")
                     if (context != null) {
                         context.startActivity(intent)
@@ -66,8 +64,8 @@ private lateinit var userResultAdapter: UserResultAdapter
             override fun onClick(v: View?) {
                 if (isClicked) {
                     button2.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonroundclicked))
-                    val context= v?.context
-                    val intent= Intent(context,LevelPopupActivity::class.java)
+                    val context = v?.context
+                    val intent = Intent(context, LevelPopupActivity::class.java)
                     sportsSelected.add("Tennis")
                     if (context != null) {
                         context.startActivity(intent)
@@ -87,8 +85,8 @@ private lateinit var userResultAdapter: UserResultAdapter
             override fun onClick(v: View?) {
                 if (isClicked) {
                     button3.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonroundclicked))
-                    val context= v?.context
-                    val intent= Intent(context,LevelPopupActivity::class.java)
+                    val context = v?.context
+                    val intent = Intent(context, LevelPopupActivity::class.java)
                     if (context != null) {
                         context.startActivity(intent)
                     }
@@ -106,8 +104,8 @@ private lateinit var userResultAdapter: UserResultAdapter
             override fun onClick(v: View?) {
                 if (isClicked) {
                     button4.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonroundclicked))
-                    val context= v?.context
-                    val intent= Intent(context,LevelPopupActivity::class.java)
+                    val context = v?.context
+                    val intent = Intent(context, LevelPopupActivity::class.java)
                     if (context != null) {
                         context.startActivity(intent)
                     }
@@ -126,8 +124,8 @@ private lateinit var userResultAdapter: UserResultAdapter
             override fun onClick(v: View?) {
                 if (isClicked) {
                     button5.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonroundclicked))
-                    val context= v?.context
-                    val intent= Intent(context,LevelPopupActivity::class.java)
+                    val context = v?.context
+                    val intent = Intent(context, LevelPopupActivity::class.java)
                     if (context != null) {
                         context.startActivity(intent)
                     }
@@ -146,8 +144,8 @@ private lateinit var userResultAdapter: UserResultAdapter
             override fun onClick(v: View?) {
                 if (isClicked) {
                     button6.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonroundclicked))
-                    val context= v?.context
-                    val intent= Intent(context,LevelPopupActivity::class.java)
+                    val context = v?.context
+                    val intent = Intent(context, LevelPopupActivity::class.java)
                     if (context != null) {
                         context.startActivity(intent)
                     }
@@ -166,8 +164,8 @@ private lateinit var userResultAdapter: UserResultAdapter
             override fun onClick(v: View?) {
                 if (isClicked) {
                     button8.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonroundclicked))
-                    val context= v?.context
-                    val intent= Intent(context,LevelPopupActivity::class.java)
+                    val context = v?.context
+                    val intent = Intent(context, LevelPopupActivity::class.java)
                     if (context != null) {
                         context.startActivity(intent)
                     }
@@ -186,8 +184,8 @@ private lateinit var userResultAdapter: UserResultAdapter
             override fun onClick(v: View?) {
                 if (isClicked) {
                     button9.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonroundclicked))
-                    val context= v?.context
-                    val intent= Intent(context,LevelPopupActivity::class.java)
+                    val context = v?.context
+                    val intent = Intent(context, LevelPopupActivity::class.java)
                     if (context != null) {
                         context.startActivity(intent)
                     }
@@ -206,8 +204,8 @@ private lateinit var userResultAdapter: UserResultAdapter
             override fun onClick(v: View?) {
                 if (isClicked) {
                     button7.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonroundclicked))
-                    val context= v?.context
-                    val intent= Intent(context,LevelPopupActivity::class.java)
+                    val context = v?.context
+                    val intent = Intent(context, LevelPopupActivity::class.java)
                     if (context != null) {
                         context.startActivity(intent)
                     }
@@ -223,39 +221,38 @@ private lateinit var userResultAdapter: UserResultAdapter
         })
 
         for (sport in sportsSelected)
-            Log.v("ssss",sport.toString())
+            Log.v("ssss", sport.toString())
         //sport level buttons
 
-        val button= findViewById<Button>(R.id.btnDone)
+        val button = findViewById<Button>(R.id.btnDone)
         button.setOnClickListener(object : View.OnClickListener {
 
             override fun onClick(v: View?) {
-                val userName=searchUserTxt.text.toString()
+                val userName = searchUserTxt.text.toString()
                 val intent = Intent(this@SearchUserActivity, UserResultActivity::class.java)
-                intent.putExtra("userSearch",userName)
-                //intent.putStringArrayListExtra("sportsSelected",sportsSelected)
-                Log.v("userSearch",userName)
+                intent.putExtra("userSearch", userName)
+                intent.putStringArrayListExtra("sportsSelected", ArrayList(sportsSelected))
+                Log.v("userSearch", userName)
                 startActivity(intent)
 
             }
         })
-        }
+    }
 
 
+    /* private fun addDataSet(){
 
-       /* private fun addDataSet(){
+         val data= DataSource.createDataSet()
+         userResultAdapter.submitList(data)
 
-            val data= DataSource.createDataSet()
-            userResultAdapter.submitList(data)
+     }        private fun initRecyclerView(){
+         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
+         recyclerView.layoutManager= LinearLayoutManager(this@SearchUserActivity!!)
+         userResultAdapter= UserResultAdapter()
+         recyclerView.adapter=userResultAdapter
+     }*/
 
-        }        private fun initRecyclerView(){
-            val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
-            recyclerView.layoutManager= LinearLayoutManager(this@SearchUserActivity!!)
-            userResultAdapter= UserResultAdapter()
-            recyclerView.adapter=userResultAdapter
-        }*/
-
-        }
+}
 
 
 
