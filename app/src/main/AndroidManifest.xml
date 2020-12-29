@@ -11,7 +11,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
         android:allowBackup="true"
@@ -24,10 +23,6 @@
         <activity android:name=".EventPageUserActivity" />
         <activity android:name=".EditEventActivity" />
         <activity android:name=".MapViewEventActivity" />
-
-        <uses-library
-            android:name="com.google.android.wearable"
-            android:required="false" />
         <!--
                Set to true if your app is Standalone, that is, it does not require the handheld
                app to run.
@@ -40,12 +35,10 @@
         <activity android:name=".AudioVideoCallActivity" />
         <activity android:name=".ButtonsPageAddActivity" />
         <activity android:name=".FriendListActivity" />
-
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBmVBp2jlJg9UCB1d3xaOfKFHVpNQHwwSU" />
-
-        <activity android:name=".NewsFeedActivity" />
+        <activity android:name=".PaymentActivity" />
+        <!--   <activity android:name=".NewsFeedActivity"/>-->
+        <activity android:name=".PlacesResultActivity"/>
+        <activity android:name=".BookPlaceActivity"/>
         <activity android:name=".ProfilePageActivity" />
         <activity android:name=".CreateGroupActivity" />
         <activity android:name=".CreateEventActivity" />
@@ -53,6 +46,41 @@
         <activity android:name=".ChatMainActivity" />
         <activity android:name=".ChatFriendActivity" />
         <activity android:name=".EventPageOrganizerActivity" />
+        <activity android:name=".PlaceBookedActivity" />
+        <activity android:name=".ButtonsPageSearchActivity" />
+        <activity android:name=".SportSelectionEvent" />
+        <activity android:name=".EventResultActivity" />
+        <activity android:name=".TagsEventSearch" />
+        <activity android:name=".SearchEventActivity" />
+
+        <activity android:name=".CalendarActivity" />
+
+        <activity android:name=".NewsFeedActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SportsSelectionActivity" />
+
+        <activity android:name=".UserResultActivity" />
+
+        <activity
+            android:name=".LevelPopupActivity"
+            android:parentActivityName=".SportsSelectionActivity"
+            android:theme="@style/Theme.AppCompat.Dialog.Alert" />
+        <activity
+            android:name=".MapViewDemoActivity"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name=".CustomizeProfileActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+
         <activity android:name=".VerificationCodeActivity"/>
         <activity android:name=".ViewEventCodeActivity"/>
         <activity android:name=".ScanActivity"/>
@@ -63,30 +91,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SportsSelectionActivity" />
+
         <activity android:name=".GroupCreatedActivity" />
         <activity android:name=".LevelsEventActivity"/>
         <activity android:name=".TermsAndConditionsActivity"/>
         <activity android:name=".ActivityRegisterConfirmation"/>
         <activity
-                android:name=".EventRegisterPopupActivity"
-                android:parentActivityName=".EventPageOrganizerActivity"
-                android:theme="@style/Theme.AppCompat.Dialog.Alert" />
-
-        <activity android:name=".UserResultActivity" />
-        <activity
-            android:name=".LevelPopupActivity"
-            android:parentActivityName=".SportsSelectionActivity"
+            android:name=".EventRegisterPopupActivity"
+            android:parentActivityName=".EventPageOrganizerActivity"
             android:theme="@style/Theme.AppCompat.Dialog.Alert" />
-        <activity
-            android:name=".MapViewDemoActivity"
-            android:label="@string/app_name" />
-        <activity
-            android:name=".CustomizeProfileActivity"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize" />
-
 
 
     </application>
