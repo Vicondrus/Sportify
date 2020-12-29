@@ -483,8 +483,25 @@ class Registry private constructor() {
             get() = mutableListOf(Group("'U' Basketball Fanclub", "The official Universitatea Cluj Baskteball Fanclub", "Centru", arrayListOf(), R.drawable.academia_ubt),
                     Group("TennisClub Grigorescu", "Made for tennis lovers in Grigorescu", "Grigorescu", arrayListOf()))
 
-        val listOfOrganizedEvents: ArrayList<Event>
-            get() = arrayListOf()
+        val listOfOrganizedEvents: ArrayList<Event> =
+            arrayListOf(
+                Event(
+                    "Yoga for beginners",
+                    R.drawable.aerobics_presentation,
+                    "Maria James ",
+                    "We welcome all yoga beginners or even those with no experience to participate to this unique event! The surprise instructor will be announced soon!",
+                    LocalDate.parse("20/02/2021", DateTimeFormatter.ofPattern("dd/MM/yyyy")),
+                    LocalTime.parse("16:00", DateTimeFormatter.ofPattern("HH:mm")),
+                    LocalTime.parse("18:30", DateTimeFormatter.ofPattern("HH:mm")),
+                    20,
+                    30,
+                    Registry.listOfLocations[3],
+                    arrayListOf(Sport("Yoga", Level.BEGINNER)),
+                    arrayListOf("appropriate shoes"),
+                    arrayListOf("#Yoga", "#beginner")
+                )
+            )
+
         val listOfEventPhotos: ArrayList<Int>
             get() = arrayListOf(
                     R.drawable.sport_pic_1,
