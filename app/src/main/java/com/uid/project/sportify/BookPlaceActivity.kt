@@ -31,6 +31,9 @@ class BookPlaceActivity : AppCompatActivity() {
         namePlace.text = place.placeName
         val descriptionTextView = findViewById<TextView>(R.id.descriptionDetailsTxt)
         descriptionTextView.text = place.placeDescription
+
+        val placeSportType = findViewById<TextView>(R.id.sportSuitableTxt)
+        placeSportType.text="yoga"
         val ratingBar = findViewById<RatingBar>(R.id.ratingBar)
         ratingBar.rating = place.placeRating.toFloat()
         descriptionDetails.text = place.placeDescription

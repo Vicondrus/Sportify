@@ -8,7 +8,9 @@ data class PlaceResult(var placeName: String,
                        var placeLocation: String,
                        var placeRating: String,
                        var placePrice: String,
-                       var placeUnavailableDates: List<String>) : Serializable
+                       var placeUnavailableDates: List<String>,
+                       // var placeSportType: String
+                        ) : Serializable
 
 
 

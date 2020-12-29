@@ -28,16 +28,27 @@ class SportSelectionEvent : AppCompatActivity() {
         val button9 = findViewById<ImageButton>(R.id.imageButton9)
 
 //1= tennis,2= basketball,3=swimming
-        var isClicked = true //is clicked(1,2,3).. bool for each button
+// is clicked(1,2,3).. bool for each button
+        var isClicked1 = true
+        var isClicked2 = true
+        var isClicked3 = true
+        var isClicked4 = true
+        var isClicked5 = true
+        var isClicked6 = true
+        var isClicked7 = true
+        var isClicked8 = true
+        var isClicked9 = true
+
+
         val list = arrayListOf<Int>()
         supportActionBar?.hide()
         button1.setOnClickListener(object : View.OnClickListener {
 
             override fun onClick(v: View?) {
-                if (isClicked) {
+                if (isClicked1) {
                     button1.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonroundclicked))
 
-                    isClicked = false
+                    isClicked1 = false
                     val context = v?.context
                     val intent = Intent(context, LevelPopupActivity::class.java)
                     list.add(1) //must be distinct
@@ -53,7 +64,7 @@ class SportSelectionEvent : AppCompatActivity() {
                     button1.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonround))
                     list.remove(1)
                     hashMap.remove(1)
-                    isClicked = true
+                    isClicked1 = true
                 }
 
             }
@@ -61,7 +72,7 @@ class SportSelectionEvent : AppCompatActivity() {
         button2.setOnClickListener(object : View.OnClickListener {
 
             override fun onClick(v: View?) {
-                if (isClicked) {
+                if (isClicked2) {
                     button2.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonroundclicked))
                     val context = v?.context
                     val intent = Intent(context, LevelPopupActivity::class.java)
@@ -70,13 +81,13 @@ class SportSelectionEvent : AppCompatActivity() {
                         intent.putExtra("sportPosition", 2)
                         startActivityForResult(intent, levelSelectionId)
                     }
-                    isClicked = false
+                    isClicked2 = false
 
                 } else {
                     button2.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonround))
                     list.remove(2)
                     hashMap.remove(2)
-                    isClicked = true
+                    isClicked2 = true
                 }
 
             }
@@ -85,7 +96,7 @@ class SportSelectionEvent : AppCompatActivity() {
         button3.setOnClickListener(object : View.OnClickListener {
 
             override fun onClick(v: View?) {
-                if (isClicked) {
+                if (isClicked3) {
                     button3.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonroundclicked))
                     val context = v?.context
                     val intent = Intent(context, LevelPopupActivity::class.java)
@@ -94,12 +105,12 @@ class SportSelectionEvent : AppCompatActivity() {
                         intent.putExtra("sportPosition", 3)
                         startActivityForResult(intent, levelSelectionId)
                     }
-                    isClicked = false
+                    isClicked3 = false
                     list.add(3)
                 } else {
                     button3.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonround))
 
-                    isClicked = true
+                    isClicked3 = true
                 }
 
             }
@@ -107,7 +118,7 @@ class SportSelectionEvent : AppCompatActivity() {
         button4.setOnClickListener(object : View.OnClickListener {
 
             override fun onClick(v: View?) {
-                if (isClicked) {
+                if (isClicked4) {
                     button4.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonroundclicked))
                     val context = v?.context
                     val intent = Intent(context, LevelPopupActivity::class.java)
@@ -115,11 +126,11 @@ class SportSelectionEvent : AppCompatActivity() {
                         intent.putExtra("sportPosition", 4)
                         startActivityForResult(intent, levelSelectionId)
                     }
-                    isClicked = false
+                    isClicked4 = false
                 } else {
                     button4.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonround))
 
-                    isClicked = true
+                    isClicked4 = true
                 }
 
             }
@@ -127,7 +138,7 @@ class SportSelectionEvent : AppCompatActivity() {
         button5.setOnClickListener(object : View.OnClickListener {
 
             override fun onClick(v: View?) {
-                if (isClicked) {
+                if (isClicked5) {
                     button5.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonroundclicked))
                     val context = v?.context
                     val intent = Intent(context, LevelPopupActivity::class.java)
@@ -135,11 +146,11 @@ class SportSelectionEvent : AppCompatActivity() {
                         intent.putExtra("sportPosition", 5)
                         startActivityForResult(intent, levelSelectionId)
                     }
-                    isClicked = false
+                    isClicked5 = false
                 } else {
                     button5.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonround))
 
-                    isClicked = true
+                    isClicked5 = true
                 }
 
             }
@@ -147,7 +158,7 @@ class SportSelectionEvent : AppCompatActivity() {
         button6.setOnClickListener(object : View.OnClickListener {
 
             override fun onClick(v: View?) {
-                if (isClicked) {
+                if (isClicked6) {
                     button6.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonroundclicked))
                     val context = v?.context
                     val intent = Intent(context, LevelPopupActivity::class.java)
@@ -155,11 +166,11 @@ class SportSelectionEvent : AppCompatActivity() {
                         intent.putExtra("sportPosition", 6)
                         startActivityForResult(intent, levelSelectionId)
                     }
-                    isClicked = false
+                    isClicked6 = false
                 } else {
                     button6.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonround))
 
-                    isClicked = true
+                    isClicked6 = true
                 }
 
             }
@@ -169,7 +180,7 @@ class SportSelectionEvent : AppCompatActivity() {
         button7.setOnClickListener(object : View.OnClickListener {
 
             override fun onClick(v: View?) {
-                if (isClicked) {
+                if (isClicked7) {
                     button7.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonroundclicked))
                     val context = v?.context
                     val intent = Intent(context, LevelPopupActivity::class.java)
@@ -177,11 +188,11 @@ class SportSelectionEvent : AppCompatActivity() {
                         intent.putExtra("sportPosition", 7)
                         startActivityForResult(intent, levelSelectionId)
                     }
-                    isClicked = false
+                    isClicked7 = false
                 } else {
                     button7.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonround))
 
-                    isClicked = true
+                    isClicked7 = true
                 }
 
             }
@@ -189,7 +200,7 @@ class SportSelectionEvent : AppCompatActivity() {
         button8.setOnClickListener(object : View.OnClickListener {
 
             override fun onClick(v: View?) {
-                if (isClicked) {
+                if (isClicked8) {
                     button8.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonroundclicked))
                     val context = v?.context
                     val intent = Intent(context, LevelPopupActivity::class.java)
@@ -197,11 +208,11 @@ class SportSelectionEvent : AppCompatActivity() {
                         intent.putExtra("sportPosition", 8)
                         startActivityForResult(intent, levelSelectionId)
                     }
-                    isClicked = false
+                    isClicked8 = false
                 } else {
                     button8.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonround))
 
-                    isClicked = true
+                    isClicked8 = true
                 }
 
             }
@@ -209,7 +220,7 @@ class SportSelectionEvent : AppCompatActivity() {
         button9.setOnClickListener(object : View.OnClickListener {
 
             override fun onClick(v: View?) {
-                if (isClicked) {
+                if (isClicked9) {
                     button9.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonroundclicked))
                     val context = v?.context
                     val intent = Intent(context, LevelPopupActivity::class.java)
@@ -217,11 +228,11 @@ class SportSelectionEvent : AppCompatActivity() {
                         intent.putExtra("sportPosition", 9)
                         startActivityForResult(intent, levelSelectionId)
                     }
-                    isClicked = false
+                    isClicked9 = false
                 } else {
                     button9.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonround))
 
-                    isClicked = true
+                    isClicked9 = true
                 }
 
             }

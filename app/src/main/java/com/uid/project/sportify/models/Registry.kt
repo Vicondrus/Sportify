@@ -106,6 +106,7 @@ class Registry private constructor() {
                             "3.3",
                             "100",
                             listOf<String>("2021-09-09", "2021-01-01")
+                          //  "Yoga"
 
                     )
                 }

@@ -61,7 +61,7 @@ class PlacesResultAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         val place_location = itemView.findViewById<TextView>(R.id.txtLocation)
         val place_name = itemView.findViewById<TextView>(R.id.txtPlaceName)
         val place_rating = itemView.findViewById<TextView>(R.id.txtRating)
-
+        val place_sport=itemView.findViewById<TextView>(R.id.sportSuitableTxt)
         fun bind(placeResult: PlaceResult) {
 
 
@@ -90,6 +90,7 @@ class PlacesResultAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             place_location.text = placeResult.placeLocation
             place_name.text = placeResult.placeName
             place_rating.text = placeResult.placeRating
+           // place_sport.text=placeResult.placeSportType.toString()
             val requestOptions = RequestOptions()
                     .placeholder(R.drawable.ic_launcher_background)
                     .error(R.drawable.ic_launcher_background)
