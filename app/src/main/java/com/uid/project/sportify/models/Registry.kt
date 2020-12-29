@@ -101,7 +101,7 @@ class Registry private constructor() {
                             "Yoga Venue Central",
                             R.drawable.yogaplace,
                             // "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.facebook.com%2Ftheyogaplaceskopje%2Fphotos%2F&psig=AOvVaw1STjfrcu0MkG6J2RxZNuw3&ust=1608816607772000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIC--4Wb5O0CFQAAAAAdAAAAABAD",
-                            "Perfect spot for yogaplace.jpg events just in the center of New York.",
+                            "Perfect spot for yoga events just in the center of New York.",
                             "New York",
                             "3.3",
                             "100",
@@ -546,6 +546,6 @@ class Registry private constructor() {
 
                     ),
                     R.drawable.friend6
-            ))
+            ), user1Manager)
     }
 }

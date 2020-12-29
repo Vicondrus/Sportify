@@ -50,20 +50,10 @@
                 android:layout_marginTop="7dp" />
 
             <TextView
-                android:id="@+id/txtSportName"
-                android:layout_width="147dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="142dp"
-                android:layout_marginTop="60dp"
-                android:layout_toRightOf="@+id/imgPlace"
-                android:text="Name here"
-                android:textColor="@color/white" />
-
-            <TextView
                 android:id="@+id/txtSportLevel"
-                android:layout_width="209dp"
+                android:layout_width="181dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="82dp"
+                android:layout_marginLeft="110dp"
                 android:layout_marginTop="80dp"
                 android:layout_toRightOf="@+id/imgPlace"
                 android:text="Name here"

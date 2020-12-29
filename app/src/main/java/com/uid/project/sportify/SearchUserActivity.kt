@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 import com.uid.project.sportify.adapters.UserResultAdapter
@@ -34,27 +35,36 @@ class SearchUserActivity : AppCompatActivity() {
 
 
         //ana maria
-        var isClicked = true //is clicked(1,2,3).. bool for each button
+        var isClicked1 = true //is clicked(1,2,3).. bool for each button
+        var isClicked2 = true
+        var isClicked3 = true
+        var isClicked4 = true
+        var isClicked5 = true
+        var isClicked6 = true
+        var isClicked7 = true
+        var isClicked8 = true
+        var isClicked9 = true
 
         supportActionBar?.hide()
         button1.setOnClickListener(object : View.OnClickListener {
 
             override fun onClick(v: View?) {
-                if (isClicked) {
+                if (isClicked1) {
                     button1.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonroundclicked))
 
-                    isClicked = false
+                    isClicked1 = false
                     val context = v?.context
                     val intent = Intent(context, LevelPopupActivity::class.java)
-                    sportsSelected.add("Basketball")
+                    sportsSelected.add("Tennis")
+                    Log.v("sportSel","Tennis")
                     if (context != null) {
                         context.startActivity(intent)
                     }
 
                 } else {
                     button1.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonround))
-
-                    isClicked = true
+                    sportsSelected.remove("Tennis")
+                    isClicked1 = true
                 }
 
             }
@@ -62,19 +72,20 @@ class SearchUserActivity : AppCompatActivity() {
         button2.setOnClickListener(object : View.OnClickListener {
 
             override fun onClick(v: View?) {
-                if (isClicked) {
+                if (isClicked2) {
                     button2.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonroundclicked))
                     val context = v?.context
                     val intent = Intent(context, LevelPopupActivity::class.java)
-                    sportsSelected.add("Tennis")
+                    sportsSelected.add("Basketball")
+                    Log.v("sportSel","Basketball")
                     if (context != null) {
                         context.startActivity(intent)
                     }
-                    isClicked = false
+                    isClicked2 = false
                 } else {
                     button2.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonround))
-
-                    isClicked = true
+                    sportsSelected.remove("Basketball")
+                    isClicked2 = true
                 }
 
             }
@@ -83,18 +94,18 @@ class SearchUserActivity : AppCompatActivity() {
         button3.setOnClickListener(object : View.OnClickListener {
 
             override fun onClick(v: View?) {
-                if (isClicked) {
+                if (isClicked3) {
                     button3.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonroundclicked))
                     val context = v?.context
                     val intent = Intent(context, LevelPopupActivity::class.java)
                     if (context != null) {
                         context.startActivity(intent)
                     }
-                    isClicked = false
+                    isClicked3 = false
                 } else {
                     button3.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonround))
 
-                    isClicked = true
+                    isClicked3 = true
                 }
 
             }
@@ -102,7 +113,7 @@ class SearchUserActivity : AppCompatActivity() {
         button4.setOnClickListener(object : View.OnClickListener {
 
             override fun onClick(v: View?) {
-                if (isClicked) {
+                if (isClicked4) {
                     button4.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonroundclicked))
                     val context = v?.context
                     val intent = Intent(context, LevelPopupActivity::class.java)
@@ -110,11 +121,11 @@ class SearchUserActivity : AppCompatActivity() {
                         context.startActivity(intent)
                     }
                     sportsSelected.add("Bike")
-                    isClicked = false
+                    isClicked4 = false
                 } else {
                     button4.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonround))
 
-                    isClicked = true
+                    isClicked4 = true
                 }
 
             }
@@ -122,7 +133,7 @@ class SearchUserActivity : AppCompatActivity() {
         button5.setOnClickListener(object : View.OnClickListener {
 
             override fun onClick(v: View?) {
-                if (isClicked) {
+                if (isClicked5) {
                     button5.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonroundclicked))
                     val context = v?.context
                     val intent = Intent(context, LevelPopupActivity::class.java)
@@ -130,11 +141,11 @@ class SearchUserActivity : AppCompatActivity() {
                         context.startActivity(intent)
                     }
                     sportsSelected.add("Baseball")
-                    isClicked = false
+                    isClicked5 = false
                 } else {
                     button5.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonround))
 
-                    isClicked = true
+                    isClicked5 = true
                 }
 
             }
@@ -142,7 +153,7 @@ class SearchUserActivity : AppCompatActivity() {
         button6.setOnClickListener(object : View.OnClickListener {
 
             override fun onClick(v: View?) {
-                if (isClicked) {
+                if (isClicked6) {
                     button6.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonroundclicked))
                     val context = v?.context
                     val intent = Intent(context, LevelPopupActivity::class.java)
@@ -150,11 +161,11 @@ class SearchUserActivity : AppCompatActivity() {
                         context.startActivity(intent)
                     }
                     sportsSelected.add("Walk")
-                    isClicked = false
+                    isClicked6 = false
                 } else {
                     button6.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonround))
 
-                    isClicked = true
+                    isClicked6 = true
                 }
 
             }
@@ -162,7 +173,7 @@ class SearchUserActivity : AppCompatActivity() {
         button8.setOnClickListener(object : View.OnClickListener {
 
             override fun onClick(v: View?) {
-                if (isClicked) {
+                if (isClicked8) {
                     button8.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonroundclicked))
                     val context = v?.context
                     val intent = Intent(context, LevelPopupActivity::class.java)
@@ -170,11 +181,11 @@ class SearchUserActivity : AppCompatActivity() {
                         context.startActivity(intent)
                     }
                     sportsSelected.add("Yoga")
-                    isClicked = false
+                    isClicked8 = false
                 } else {
                     button8.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonround))
 
-                    isClicked = true
+                    isClicked8 = true
                 }
 
             }
@@ -182,7 +193,7 @@ class SearchUserActivity : AppCompatActivity() {
         button9.setOnClickListener(object : View.OnClickListener {
 
             override fun onClick(v: View?) {
-                if (isClicked) {
+                if (isClicked9) {
                     button9.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonroundclicked))
                     val context = v?.context
                     val intent = Intent(context, LevelPopupActivity::class.java)
@@ -190,11 +201,11 @@ class SearchUserActivity : AppCompatActivity() {
                         context.startActivity(intent)
                     }
                     sportsSelected.add("Stretching")
-                    isClicked = false
+                    isClicked9 = false
                 } else {
                     button9.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonround))
 
-                    isClicked = true
+                    isClicked9 = true
                 }
 
             }
@@ -202,7 +213,7 @@ class SearchUserActivity : AppCompatActivity() {
         button7.setOnClickListener(object : View.OnClickListener {
 
             override fun onClick(v: View?) {
-                if (isClicked) {
+                if (isClicked7) {
                     button7.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonroundclicked))
                     val context = v?.context
                     val intent = Intent(context, LevelPopupActivity::class.java)
@@ -210,11 +221,11 @@ class SearchUserActivity : AppCompatActivity() {
                         context.startActivity(intent)
                     }
                     sportsSelected.add("Football")
-                    isClicked = false
+                    isClicked7 = false
                 } else {
                     button7.setBackgroundDrawable(resources.getDrawable(R.drawable.buttonround))
 
-                    isClicked = true
+                    isClicked7 = true
                 }
 
             }
@@ -229,6 +240,11 @@ class SearchUserActivity : AppCompatActivity() {
 
             override fun onClick(v: View?) {
                 val userName = searchUserTxt.text.toString()
+                if(userName.trim().length<0){
+
+                    Toast.makeText(applicationContext, "Please enter the users name! ", Toast.LENGTH_SHORT).show()
+
+                }
                 val intent = Intent(this@SearchUserActivity, UserResultActivity::class.java)
                 intent.putExtra("userSearch", userName)
                 intent.putStringArrayListExtra("sportsSelected", ArrayList(sportsSelected))

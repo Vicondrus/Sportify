@@ -31,13 +31,13 @@
             android:name="com.google.android.wearable.standalone"
             android:value="true" />
 
-        <activity android:name=".SearchUserActivity" />
+       <activity android:name=".SearchUserActivity" />
         <activity android:name=".AudioVideoCallActivity" />
         <activity android:name=".ButtonsPageAddActivity" />
         <activity android:name=".FriendListActivity" />
-        <activity android:name=".PaymentActivity"/>
-        <activity android:name=".NewsFeedActivity"/>
-        <activity android:name=".PlacesResultActivity"/>
+        <activity android:name=".PaymentActivity" />
+     <!--   <activity android:name=".NewsFeedActivity"/>-->
+       <activity android:name=".PlacesResultActivity"/>
         <activity android:name=".BookPlaceActivity"/>
         <activity android:name=".ProfilePageActivity" />
         <activity android:name=".CreateEventActivity" />
@@ -54,7 +54,7 @@
         <activity android:name=".EventPageUserActivity" />
         <activity android:name=".CalendarActivity" />
 
-        <activity android:name=".LoginActivity">
+        <activity android:name=".NewsFeedActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
