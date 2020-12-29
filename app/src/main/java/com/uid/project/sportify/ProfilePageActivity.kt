@@ -36,6 +36,9 @@ class ProfilePageActivity : AppCompatActivity() {
 
         if (selectedUserPosition == -1) {
             user = User(Registry.user1Manager)
+        } else
+        {
+            user=User(Registry.listOfUsers[selectedUserPosition])
         }
 
         val nameLabel = findViewById<TextView>(R.id.nameLabel)
