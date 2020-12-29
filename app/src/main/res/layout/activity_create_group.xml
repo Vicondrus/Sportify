@@ -17,10 +17,43 @@
 
             <ImageView
                     android:layout_width="0dp"
-                    android:layout_height="150dp" tools:srcCompat="@color/dark_tone_sportify"
+                    android:layout_height="150dp" tools:srcCompat="@drawable/layout_style_white"
                     android:id="@+id/imageView" app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
+                    app:layout_constraintEnd_toEndOf="parent" android:scaleType="fitXY"
+                    android:background="@drawable/layout_style_white"/>
+            <androidx.cardview.widget.CardView
+                    android:id="@+id/cardViewGroup"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="32dp"
+                    app:cardCornerRadius="50dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                <ImageButton
+                        android:id="@+id/createGroupImage"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:background="@null"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/event_picture"/>
+
+            </androidx.cardview.widget.CardView>
+            <Button
+                    android:id="@+id/createGroupAddImgBtn"
+                    android:layout_width="32dp"
+                    android:layout_height="40dp"
+                    android:backgroundTint="@color/dark_tone_sportify"
+                    android:minWidth="10dip"
+                    android:paddingHorizontal="0dp"
+                    android:paddingVertical="0dp"
+                    android:text="+"
+                    android:textSize="18sp"
+                    app:cornerRadius="50dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/cardViewGroup"
+                    app:layout_constraintEnd_toEndOf="@+id/cardViewGroup"/>
             <TextView
                     android:text="Give your group a name. Describe who should join and what you'll do."
                     android:layout_width="0dp"
@@ -122,13 +155,13 @@
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="30dp"
-                    android:iconifiedByDefault="false"
                     android:queryHint="Search tags..."
+                    android:orientation="vertical"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/customizeTagsRecyclerViewGroup"
-                    android:background="@color/grey_sportify"
-            />
+                    android:background="@color/dark_grey_sportify"
+                    android:backgroundTint="@color/grey_sportify" android:iconifiedByDefault="false"/>
 
 
 
@@ -203,8 +236,9 @@
                     android:layout_height="wrap_content" android:id="@+id/textView10"
                     app:layout_constraintEnd_toEndOf="@+id/imageView"
                     app:layout_constraintTop_toTopOf="@+id/imageView"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView" android:textSize="36sp"
-                    android:textStyle="bold" android:layout_marginEnd="20dp" android:textColor="@color/white"/>
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView" android:textSize="30sp"
+                    android:textStyle="bold" android:layout_marginEnd="20dp"
+                    android:textColor="@color/dark_tone_sportify"/>
             <TextView
                     android:text="Find people and do your thing - together"
                     android:layout_width="wrap_content"

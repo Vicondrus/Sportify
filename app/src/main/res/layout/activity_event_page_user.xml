@@ -52,7 +52,7 @@
                 android:layout_marginStart="30dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/eventPageUserEventDescription"
-                app:srcCompat="@drawable/ic_description_" />
+                app:srcCompat="@drawable/ic_description" />
 
             <ImageView
                 android:id="@+id/imageView10"
@@ -100,8 +100,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="25dp"
+                android:layout_marginEnd="30dp"
                 android:textColor="@color/white"
                 android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView13"
                 app:layout_constraintTop_toBottomOf="@+id/eventPageUserEventAttendanceFee"
                 tools:text="Location" />
@@ -110,26 +112,14 @@
                 android:id="@+id/eventPageUserEventNeighborhood"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginEnd="30dp"
                 android:textColor="@color/white"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="@+id/commaLabel"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/commaLabel"
-                app:layout_constraintTop_toTopOf="@+id/commaLabel"
+                app:layout_constraintStart_toStartOf="@+id/eventPageUserEventLocation"
+                app:layout_constraintTop_toBottomOf="@+id/eventPageUserEventLocation"
                 tools:text="Neighborhood" />
-
-            <TextView
-                android:id="@+id/commaLabel"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text=","
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="@+id/eventPageUserEventLocation"
-                app:layout_constraintStart_toEndOf="@+id/eventPageUserEventLocation"
-                app:layout_constraintTop_toTopOf="@+id/eventPageUserEventLocation" />
 
             <ImageView
                 android:id="@+id/imageView"
@@ -154,7 +144,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView"
-                app:layout_constraintTop_toBottomOf="@+id/eventPageUserEventLocation" />
+                app:layout_constraintTop_toBottomOf="@+id/eventPageUserEventNeighborhood" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/eventPageUserEventSports"
@@ -387,18 +377,31 @@
             android:layout_height="match_parent"
             android:background="@drawable/layout_style_pink">
 
+            <ImageButton
+                android:id="@+id/eventPageOrganizerBackBtn2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="15dp"
+                android:background="@null"
+                android:rotation="180"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_arrow" />
+
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/eventPageUserEventImage"
                 android:layout_width="59dp"
                 android:layout_height="59dp"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:src="@drawable/event_picture"
                 app:civ_border_color="@color/white"
                 app:civ_border_width="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/eventPageOrganizerBackBtn2"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -510,6 +513,25 @@
                             app:cornerRadius="50dp" />
                     </androidx.cardview.widget.CardView>
 
+                    <androidx.cardview.widget.CardView
+                            android:id="@+id/qrCardView"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            app:cardBackgroundColor="@color/light_tone_sportify"
+                            app:cardCornerRadius="50dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/cardView11"
+                            app:layout_constraintTop_toTopOf="parent" android:layout_marginEnd="8dp">
+
+                        <ImageButton
+                                android:id="@+id/qrBtn"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="2dp"
+                                android:background="@null"
+                                android:src="@drawable/ic_qr_code"
+                                app:cornerRadius="50dp" android:tint="@color/purple_sportify"/>
+                    </androidx.cardview.widget.CardView>
                     <TextView
                         android:id="@+id/textView19"
                         android:layout_width="wrap_content"

@@ -14,6 +14,7 @@ import com.huawei.hms.maps.HuaweiMap
 import com.uid.project.sportify.adapters.RequirementsListAdapter
 import com.uid.project.sportify.adapters.SportsListAdapter
 import com.uid.project.sportify.adapters.TagsListAdapter
+import com.uid.project.sportify.models.Event
 import com.uid.project.sportify.models.Registry
 import de.hdodenhof.circleimageview.CircleImageView
 import java.time.format.DateTimeFormatter
@@ -24,6 +25,8 @@ class EventPageOrganizerActivity : AppCompatActivity() {
     private lateinit var sportsListAdapter: SportsListAdapter
     private lateinit var tagsListAdapter: TagsListAdapter
     private lateinit var requirementsListAdapter: RequirementsListAdapter
+    private lateinit var eventImage : CircleImageView
+    private lateinit var event: Event
     private val editEventId = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,7 +35,7 @@ class EventPageOrganizerActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-        val event = Registry.event1Manager
+        event = intent.getSerializableExtra("event") as Event
 
         val eventName = findViewById<TextView>(R.id.eventPageOrganizerEventName)
         eventName.text = event.name
@@ -95,6 +98,7 @@ class EventPageOrganizerActivity : AppCompatActivity() {
         val editEventButton = findViewById<ImageButton>(R.id.editEventButton)
         editEventButton.setOnClickListener {
             val intent = Intent(this, EditEventActivity::class.java)
+            intent.putExtra("event", event)
             startActivityForResult(intent, editEventId)
         }
 
@@ -108,10 +112,25 @@ class EventPageOrganizerActivity : AppCompatActivity() {
 
         val scanQRCodeButton = findViewById<Button>(R.id.eventScanQRCodeBtn)
         scanQRCodeButton.setOnClickListener {
-//            val intent = Intent(this, FriendListActivity::class.java)
-//            intent.putExtra("activityName", "Delegate friend")
-//            intent.putExtra("eventName", event.name)
-//            startActivity(intent)
+            val intent1 = Intent(this, ScanActivity::class.java)
+            intent1.putExtra("eventName", event.name)
+            intent1.putExtra("eventDate", event.date.toString())
+            intent1.putExtra("timeStart", event.timeStart.toString())
+            intent1.putExtra("timeEnd", event.timeEnd.toString())
+            intent1.putExtra("eventLocation", event.location.location)
+            if (event.imageUri == null) {
+                intent1.putExtra("image", event.image)
+            } else {
+                intent1.putExtra("image", event.imageUri)
+            }
+            startActivity(intent1)
+        }
+
+        val backButton = findViewById<ImageButton>(R.id.eventPageOrganizerBackBtn)
+        backButton.setOnClickListener {
+            val intent = Intent(this, NewsFeedActivity::class.java)
+            startActivity(intent)
+            this.finish()
         }
     }
 
@@ -120,12 +139,16 @@ class EventPageOrganizerActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == editEventId) {
             if (resultCode == Activity.RESULT_OK) {
+                // Remove the event from the registry
+                Registry.listOfOrganizedEvents.removeIf { ev -> ev.name == event.name }
+                // Get the edited event
+                event = data?.getSerializableExtra("eventEdited") as Event
+                // Add the edited event to registry
+                Registry.listOfOrganizedEvents.add(event)
                 // Update fields
-                val event = Registry.event1Manager
-
                 val eventName = findViewById<TextView>(R.id.eventPageOrganizerEventName)
                 eventName.text = event.name
-                val eventImage = findViewById<CircleImageView>(R.id.eventPageOrganizerEventImage)
+                eventImage = findViewById(R.id.eventPageOrganizerEventImage)
                 if (event.imageUri == null) {
                     eventImage.setImageResource(event.image)
                 } else {
@@ -167,5 +190,11 @@ class EventPageOrganizerActivity : AppCompatActivity() {
 
             }
         }
+    }
+
+    override fun onBackPressed() {
+        val intent = Intent(this, NewsFeedActivity::class.java)
+        startActivity(intent)
+        this.finish()
     }
 }

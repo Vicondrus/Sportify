@@ -275,7 +275,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/editEventDescriptionTextView"
                 app:layout_constraintStart_toStartOf="@+id/imageView3"
                 app:layout_constraintTop_toTopOf="@+id/editEventDescriptionTextView"
-                app:srcCompat="@drawable/ic_description_" />
+                app:srcCompat="@drawable/ic_description" />
 
             <EditText
                 android:id="@+id/editEventDateDate"

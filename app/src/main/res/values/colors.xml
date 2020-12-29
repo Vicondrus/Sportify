@@ -11,8 +11,9 @@
     <color name="grey_sportify">#9599B3</color>
     <color name="light_tone_sportify">#ECC9F4</color>
     <color name="dark_grey_sportify">#5F6171</color>
-    <color name="icon_color_create_event">#FFFFFF</color>
+    <color name="icon_color_create_event">#C3FFFFFF</color>
     <color name="green">#228B22</color>
     <color name="error">#A00618</color>
     <color name="error_light">#E34658</color>
+    <color name="grey_transparent">#335F6171</color>
 </resources>

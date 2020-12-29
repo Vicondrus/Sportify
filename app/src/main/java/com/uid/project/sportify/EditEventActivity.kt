@@ -10,7 +10,6 @@ import android.text.InputType
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.core.widget.doOnTextChanged
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -19,12 +18,14 @@ import com.huawei.hms.maps.SupportMapFragment
 import com.huawei.hms.maps.model.BitmapDescriptorFactory
 import com.huawei.hms.maps.model.LatLng
 import com.huawei.hms.maps.model.MarkerOptions
-import com.huawei.hms.maps.model.PolygonOptions
 import com.uid.project.sportify.adapters.DeletableRequirementsListAdapter
 import com.uid.project.sportify.adapters.DeletableSportsListAdapter
 import com.uid.project.sportify.adapters.DeletableTagsListAdapter
 import com.uid.project.sportify.adapters.TagsSearchListAdapter
-import com.uid.project.sportify.models.*
+import com.uid.project.sportify.models.Event
+import com.uid.project.sportify.models.Location
+import com.uid.project.sportify.models.Registry
+import com.uid.project.sportify.models.Sport
 import java.time.LocalDate
 import java.time.LocalTime
 import java.time.format.DateTimeFormatter
@@ -52,7 +53,8 @@ class EditEventActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyCal
 
         supportActionBar?.hide()
 
-        event = Registry.event1Manager
+//        event = Registry.event1Manager
+        event = intent.getSerializableExtra("event") as Event
 
         val editEventButton = findViewById<Button>(R.id.confirmEditEventButton)
         editEventButton.isEnabled = true
@@ -341,6 +343,7 @@ class EditEventActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyCal
                 event.attendanceFee = eventAttendanceFee.text.toString().toInt()
                 event.location = location
                 val intent = Intent()
+                intent.putExtra("eventEdited", event)
                 setResult(Activity.RESULT_OK, intent)
                 finish()
             }

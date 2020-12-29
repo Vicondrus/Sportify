@@ -2,7 +2,6 @@ package com.uid.project.sportify.adapters
 
 import android.content.Context
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -40,7 +39,6 @@ class NewsFeedPostAdapter(private val dataSet: List<NewsFeedPost>, private val c
             holder.eventDetailsBtn?.setOnClickListener {
                 val intent = Intent(context, EventPageUserActivity::class.java)
                 val postEvent = post as NewsFeedPostEvent
-                Log.d("EVENT", postEvent.event.toString())
                 intent.putExtra("event", postEvent.event)
                 context.startActivity(intent)
             }

@@ -23,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         val loginButton = findViewById<Button>(R.id.loginButton)
-        loginButton.isEnabled = false
+        loginButton.isEnabled = true
 
         val emailError = findViewById<TextView>(R.id.invalidEmailTextView)
         emailError.visibility = View.GONE
@@ -31,9 +31,10 @@ class LoginActivity : AppCompatActivity() {
         val loginError = findViewById<TextView>(R.id.invalidCredentialsLabel)
         loginError.visibility = View.GONE
 
-        val passwordText = findViewById<EditText>(R.id.loginPasswordEditText)
+        var passwordText = findViewById<EditText>(R.id.loginPasswordEditText)
+        passwordText.setText("password")
 
-        val emailText = findViewById<EditText>(R.id.loginEmailEditText)
+        var emailText = findViewById<EditText>(R.id.loginEmailEditText)
         emailText.setOnFocusChangeListener { v, hasFocus ->
             if (!hasFocus){
                 if(!isEmailValid(emailText.text.toString())){
@@ -43,7 +44,7 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
         }
-
+        emailText.setText("ana.maria@yahoo.com")
         val loginProgressBar = findViewById<ProgressBar>(R.id.loginProgressBar)
         loginProgressBar.visibility = View.GONE
 

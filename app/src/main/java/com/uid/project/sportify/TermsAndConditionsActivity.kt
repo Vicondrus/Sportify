@@ -14,14 +14,28 @@ class TermsAndConditionsActivity : AppCompatActivity() {
 
 
     fun continueEvent(view: View){
-        val intent = Intent(this, LevelsEventActivity::class.java)
-        startActivityForResult(intent, 1)
-
+        if (intent.getStringExtra("type") == "spectator"){
+            val intent1 = Intent(this, ActivityRegisterConfirmation::class.java)
+            intent1.putExtra("eventName", intent.getStringExtra("eventName"))
+            intent1.putExtra("eventDateTime", intent.getStringExtra("eventDateTime"))
+            intent1.putExtra("eventLocation", intent.getStringExtra("eventLocation"))
+            intent1.putExtra("image", intent.getIntExtra("image", R.drawable.running))
+            startActivityForResult(intent1, 1)
+        }else {
+            val intent1 = Intent(this, LevelsEventActivity::class.java)
+            intent1.putExtra("eventName", intent.getStringExtra("eventName"))
+            intent1.putExtra("eventDateTime", intent.getStringExtra("eventDateTime"))
+            intent1.putExtra("eventLocation", intent.getStringExtra("eventLocation"))
+            intent1.putExtra("image", intent.getIntExtra("image", R.drawable.running))
+            intent1.putExtra("event", intent.getSerializableExtra("event"))
+            startActivityForResult(intent1, 1)
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {
         if (requestCode == 1) {
             if (resultCode == 1) {
+                setResult(2)
                 finish()
 
             }
