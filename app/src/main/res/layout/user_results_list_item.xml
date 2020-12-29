@@ -22,7 +22,7 @@
 
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/imgProfile"
+                android:id="@+id/imgPlace"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_alignParentTop="true"
@@ -30,12 +30,12 @@
                 android:layout_marginTop="2dp" />
 
             <TextView
-                android:id="@+id/txtName"
+                android:id="@+id/txtPlaceName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="30dp"
-                android:layout_toRightOf="@+id/imgProfile"
+                android:layout_toRightOf="@+id/imgPlace"
                 android:text="Name here"
                 android:textColor="@color/white"/>
 
@@ -43,27 +43,19 @@
                 android:id="@+id/imgUserSport"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
+                android:layout_marginStart="276dp"
                 android:layout_marginLeft="300dp"
-                android:layout_marginTop="10dp" />
-
-            <TextView
-                android:id="@+id/txtSportName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="183dp"
-                android:layout_marginTop="60dp"
-                android:layout_toRightOf="@+id/imgProfile"
-                android:text="Name here"
-                android:textColor="@color/white" />
+                android:layout_marginTop="7dp" />
 
             <TextView
                 android:id="@+id/txtSportLevel"
-                android:layout_width="wrap_content"
+                android:layout_width="181dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="181dp"
+                android:layout_marginLeft="110dp"
                 android:layout_marginTop="80dp"
-                android:layout_toRightOf="@+id/imgProfile"
+                android:layout_toRightOf="@+id/imgPlace"
                 android:text="Name here"
                 android:textColor="@color/white" />
 
