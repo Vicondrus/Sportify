@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -19,6 +20,7 @@ import com.uid.project.sportify.models.Registry
 
 class SearchEventActivity: AppCompatActivity(),com.huawei.hms.maps.OnMapReadyCallback  {
     private lateinit var location: TextView
+    private  var finalLocation: String =""
     var hashMapFinal : HashMap<String, String>
             = HashMap<String, String> ()
 
@@ -47,17 +49,24 @@ class SearchEventActivity: AppCompatActivity(),com.huawei.hms.maps.OnMapReadyCal
         val sportSelection=findViewById<ImageButton>(R.id.imageButton4)
         val textViewSportSelection=findViewById<TextView>(R.id.textViewSportSelection)
         val btnContinue=findViewById<Button>(R.id.button4)
+
+
+
         sportSelection.setOnClickListener {
 
             val intent = Intent(this@SearchEventActivity, SportSelectionEvent::class.java)
+
             startActivityForResult(intent, 1)
         }
 
 
 
         btnContinue.setOnClickListener{
-
+            val eventNameEditText=findViewById<EditText>(R.id.editTextEventName)
+            val eventName=eventNameEditText.text.toString()
             val intent = Intent(this@SearchEventActivity, EventResultActivity::class.java)
+            intent.putExtra("location",finalLocation)
+            intent.putExtra("eventName",eventName)
             startActivity(intent)
         }
 
@@ -125,7 +134,7 @@ class SearchEventActivity: AppCompatActivity(),com.huawei.hms.maps.OnMapReadyCal
                     }
                     else if (k == 8) {
 
-                        hashMapFinal.put("yoga", Level.values()[v].toString())
+                        hashMapFinal.put("yogaplace.jpg", Level.values()[v].toString())
                     }
                     else if (k == 9) {
 
@@ -163,6 +172,7 @@ class SearchEventActivity: AppCompatActivity(),com.huawei.hms.maps.OnMapReadyCal
                         Registry.user1Manager.location = result
                         onMapReady(mMap)
                         location.text = result.toString()
+                        finalLocation=result.toString()
                     }
                 }
             }

@@ -3,9 +3,12 @@ package com.uid.project.sportify.models
 import com.huawei.hms.maps.model.LatLng
 import com.uid.project.sportify.R
 import java.time.LocalDate
+import java.time.LocalTime
 import java.time.ZoneId
+import java.time.format.DateTimeFormatter
 import java.util.*
-
+import kotlin.collections.ArrayList
+import kotlin.random.Random.Default.nextInt
 class Registry private constructor() {
 
     companion object {
@@ -79,7 +82,7 @@ class Registry private constructor() {
                                     )
 
                             ),
-                            R.drawable.ana_profile_picture
+                        R.drawable.ana_profile_picture
                     )
                 }
 
@@ -88,15 +91,106 @@ class Registry private constructor() {
             set(u: User) {
                 user1 = u
             }
+        private var place1: PlaceResult?=null
+        var place1Manager: PlaceResult
+            get() {
+
+            if (place1 == null) {
+                place1 =  PlaceResult(
+                        "Yoga Venue Central",
+                        R.drawable.yogaplace ,
+                        // "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.facebook.com%2Ftheyogaplaceskopje%2Fphotos%2F&psig=AOvVaw1STjfrcu0MkG6J2RxZNuw3&ust=1608816607772000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIC--4Wb5O0CFQAAAAAdAAAAABAD",
+                        "Perfect spot for yogaplace.jpg events just in the center of New York.",
+                        "New York",
+                        "3.3",
+                        "100",
+                        listOf<String>("2021-09-09","2021-01-01")
+
+                )
+            }
+            return place1 as PlaceResult
+
+        }
+
+            set(u: PlaceResult) {
+                place1 = u
+            }
+
+        private var event1: Event? = null
+        var event1Manager: Event
+            get() {
+                if (event1 == null) {
+                    event1 = Event(
+                            "", R.drawable.event_picture, "", "",
+                            LocalDate.MIN, LocalTime.MIN, LocalTime.MAX, 0, 0,
+                            Location("", "Centru", Coordinates(46.766667, 23.583333)),
+                            arrayListOf(), ArrayList(), ArrayList()
+                    )
+                }
+                return event1 as Event
+            }
+            set(e: Event) {
+                event1 = e
+            }
+
+        private var event2: Event? = null
+        var event2Manager: Event
+            get() {
+                if (event2 == null) {
+                    event2 = Event(
+                            "Volleyball game for beginners",
+                            R.drawable.event_picture,
+                            "Alex Ion",
+                            "This event targets all amateur volleyball players or even those inexperienced! Cantec, joc, si voie buna la noi!",
+                            LocalDate.parse("05/01/2021", DateTimeFormatter.ofPattern("dd/MM/yyyy")),
+                            LocalTime.parse("12:00", DateTimeFormatter.ofPattern("HH:mm")),
+                            LocalTime.parse("14:30", DateTimeFormatter.ofPattern("HH:mm")),
+                            12,
+                            10,
+                            Location("Sala sporturilor", "Centru", Coordinates(46.766667, 23.583333)),
+                            arrayListOf(Sport("Volleyball", Level.BEGINNER)),
+                            arrayListOf("appropriate sport shoes"),
+                            arrayListOf("Volleyball", "beginner")
+                    )
+                }
+                return event2 as Event
+            }
+            set(e: Event) {
+                event2 = e
+            }
+
+        private var event3: Event? = null
+        var event3Manager: Event
+            get() {
+                if (event3 == null) {
+                    event3 = Event(
+                        "Monthly school football competition",
+                        R.drawable.sport_pic_2,
+                        "Maria Pop",
+                        "We welcome all schools from Cluj-Napoca to participate to this football and basketball event!",
+                        LocalDate.parse("12/02/2021", DateTimeFormatter.ofPattern("dd/MM/yyyy")),
+                        LocalTime.parse("10:00", DateTimeFormatter.ofPattern("HH:mm")),
+                        LocalTime.parse("15:00", DateTimeFormatter.ofPattern("HH:mm")),
+                        20,
+                        0,
+                        Location("", "Centru", Coordinates(46.766667, 23.583333)),
+                        ArrayList(), ArrayList(), ArrayList()
+                    )
+                }
+                return event3 as Event
+            }
+            set(e: Event) {
+                event3 = e
+            }
 
         val setOfTags: MutableSet<String>
             get() = mutableSetOf(
-                    "#Rozelor",
-                    "#ParculMare",
-                    "#Politehnica",
-                    "#Babes",
-                    "#ProfessionalBasketball",
-                    "#ChildFriendly"
+                "#Rozelor",
+                "#ParculMare",
+                "#Politehnica",
+                "#Babes",
+                "#ProfessionalBasketball",
+                "#ChildFriendly"
             )
 
         val setOfAvailableSports: Set<Sport>
@@ -188,7 +282,7 @@ class Registry private constructor() {
                     Sport(
                             "Yoga",
                             Level.FAN,
-                            notSelectedImage = R.drawable.yoga,
+                            notSelectedImage = R.drawable.yogaplace,
                             selectedImage = R.drawable.yoga_selected
                     ),
             )
@@ -274,15 +368,114 @@ class Registry private constructor() {
                             LatLng(46.7576804, 23.5752937),
                             LatLng(46.7561809, 23.5724163))),
                     Neighborhood("Marasti", mutableListOf(
-                            LatLng(46.7859564, 23.5971155),
-                            LatLng(46.7837818, 23.6367119),
-                            LatLng(46.7822537, 23.6403194),
-                            LatLng(46.7789622, 23.6194475),
-                            LatLng(46.777434, 23.6202206),
-                            LatLng(46.7735544, 23.6061922),
-                            LatLng(46.7767286, 23.6027547),
-                            LatLng(46.7793149, 23.5937658),
-                            LatLng(46.7859564, 23.5971155))),
+                        LatLng(46.7859564, 23.5971155),
+                        LatLng(46.7837818, 23.6367119),
+                        LatLng(46.7822537, 23.6403194),
+                        LatLng(46.7789622, 23.6194475),
+                        LatLng(46.777434, 23.6202206),
+                        LatLng(46.7735544, 23.6061922),
+                        LatLng(46.7767286, 23.6027547),
+                        LatLng(46.7793149, 23.5937658),
+                        LatLng(46.7859564, 23.5971155)
+                    )
+                    ),
             )
+
+        val listOfEvents: ArrayList<Event?>
+            get() = arrayListOf(event1, event2, event3)
+
+        val listofNewsFeedPosts: ArrayList<NewsFeedPost>
+            get() = arrayListOf(
+                    NewsFeedPostEvent(R.drawable.boy_pic_3, Registry.event2Manager),
+                    NewsFeedPostPhotos(
+                            R.drawable.girl_pic_2,
+                            "1 hour ago",
+                            "The boys from Colegiul National Vasile Lucaciu won the cup" +
+                                    "once again this month! Congrats to everyone!!",
+                            R.drawable.sport_pic_1,
+                            event3Manager
+                    )
+            )
+
+        val listOfRandomMessages: ArrayList<String>
+            get() = arrayListOf(
+                    "Can't wait!", "Ok!", "Cool!", "See you there!", "Have a nice day!", "Good evening!",
+                    "TTY later!", "Bye byee", "That's right, I cannot miss this", "I'll be waiting for u!"
+            )
+
+        val listOfMessages: ArrayList<Message>
+            get() = arrayListOf(
+                    Message("Hello, Ana!", MessageType.MSG_RECEIVED),
+                    Message("I haven't heard from u in a while", MessageType.MSG_RECEIVED),
+                    Message("Hello dear friend!", MessageType.MSG_SENT),
+                    Message("Yeah I know...", MessageType.MSG_SENT),
+                    Message("Been busy with the final exams", MessageType.MSG_SENT),
+                    Message("But now I'm free as a bird!", MessageType.MSG_SENT),
+                    Message("That's great news!", MessageType.MSG_RECEIVED),
+                    Message("How are u?", MessageType.MSG_RECEIVED),
+                    Message(
+                            "Super fine! Gettin ready for the monthly student volleyball game!",
+                            MessageType.MSG_SENT
+                    ),
+                    Message("Are u coming too?", MessageType.MSG_SENT),
+                    Message("Yes, just arrived at the place", MessageType.MSG_RECEIVED),
+                    Message("Great! See u there then!", MessageType.MSG_SENT),
+                    Message(listOfRandomMessages[nextInt(0, 9)], MessageType.MSG_RECEIVED)
+            )
+
+        val listOfChatMessages: ArrayList<ChatMessage>
+            get() = arrayListOf(
+                ChatMessage(
+                    Friend("Dina Meyer", R.drawable.girl_pic_1),
+                    "2 hrs",
+                    "",
+                    false,
+                    listOfMessages
+                ),
+                ChatMessage(
+                    Friend("Stephane Moreau", R.drawable.boy_pic_1),
+                    "3 hrs",
+                    "",
+                    false,
+                    listOfMessages
+                ),
+                ChatMessage(
+                    Friend("Andrew James", R.drawable.boy_pic_2),
+                    "9 hrs",
+                    "",
+                    true,
+                    listOfMessages
+                ),
+                ChatMessage(
+                    Friend("Andreea Pop", R.drawable.girl_pic_2),
+                    "Aug 19",
+                    "",
+                    true,
+                    listOfMessages
+                ),
+                ChatMessage(
+                    Friend("John Smith", R.drawable.boy_pic_3),
+                    "Jul 24",
+                    "",
+                    true,
+                    listOfMessages
+                ),
+                ChatMessage(
+                    Friend("Jane Doe", R.drawable.girl_pic_3),
+                    "Jun 12",
+                    "",
+                    true,
+                    listOfMessages
+                )
+            )
+
+        val listOfLocations: ArrayList<Location>
+        get() = arrayListOf(Location("Sala Sporturilor", "Manastur", Coordinates(46.76564585071395, 23.564550507738485)),
+                Location("Complex Sportiv Gheorgheni", "Gheorgheni", Coordinates(46.76849513345118, 23.63299188574465)),
+                Location("Bazinul Olimpic UTCN", "Manastur", Coordinates(46.76604429284985, 23.564366284392985)),
+        Location("Bazin Olimpic Grigorescu", "Grigorescu", Coordinates(46.7643645231033, 23.54537124323578)),
+                Location("Sala Sport CNER", "Centru", Coordinates(46.76816046323552, 23.59388245841115)),
+                Location("Teren Tenis Camin UTCN", "Zorilor", Coordinates(46.755703425581494, 23.588802265143215))
+        )
     }
 }

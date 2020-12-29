@@ -23,15 +23,17 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imgPlace"
-                android:layout_width="75dp"
-                android:layout_height="69dp"
+                android:layout_width="107dp"
+                android:layout_height="86dp"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
+                android:layout_marginStart="49dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="110dp"
-                android:layout_marginEnd="301dp"
-                android:layout_marginBottom="21dp" />
+                android:layout_marginTop="96dp"
+                android:layout_marginEnd="246dp"
+                android:layout_marginBottom="18dp" />
 
             <TextView
                 android:id="@+id/txtPlaceName"
@@ -93,6 +95,22 @@
                 android:textColor="#FFFFFF"
                 android:textStyle="italic"
                 android:text="Nb Of People" />
+
+            <TextView
+                android:id="@+id/locationEventTxt"
+                android:layout_width="104dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="257dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="128dp"
+                android:text="Location"
+                android:textColor="#FFFFFF"
+                android:textStyle="italic" />
 
             <TextView
                 android:id="@+id/nbOfPeopleTxt2"

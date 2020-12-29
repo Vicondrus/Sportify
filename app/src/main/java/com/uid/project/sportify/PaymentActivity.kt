@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.wear.activity.ConfirmationActivity
+import com.uid.project.sportify.models.PlaceResult
 
 class PaymentActivity: AppCompatActivity()  {
 
@@ -19,10 +20,13 @@ class PaymentActivity: AppCompatActivity()  {
         builder.setTitle("Please Confirm")
         builder.setMessage("Are you sure you want to continue?")
 //builder.setPositiveButton("OK", DialogInterface.OnClickListener(function = x))
-        val place = this.intent.getSerializableExtra("placeName") as String
+        val place = intent.getStringExtra("placeName") as String
+
+        val placeObj = intent.getSerializableExtra("place") as PlaceResult
         builder.setPositiveButton(android.R.string.yes) { dialog, which ->
             val intent = Intent(this@PaymentActivity, PlaceBookedActivity::class.java)
-            intent.putExtra("placeName",place)
+            intent.putExtra("placeName",place.toString())
+            intent.putExtra("placeObj",placeObj)
             startActivity(intent)
         }
 

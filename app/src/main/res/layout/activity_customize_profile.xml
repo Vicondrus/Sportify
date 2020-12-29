@@ -148,19 +148,19 @@
                 app:srcCompat="@drawable/calendar_vector" />
 
             <EditText
-                    android:id="@+id/profileBirthdateTextView"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginEnd="30dp"
-                    android:ems="10"
-                    android:inputType="date"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toEndOf="@+id/imageView7"
-                    app:layout_constraintTop_toBottomOf="@+id/profilePasswordTextView"
-                    tools:text="4 Nov 1997"/>
+                android:id="@+id/profileBirthdateTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                android:ems="10"
+                android:inputType="date"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/imageView7"
+                app:layout_constraintTop_toBottomOf="@+id/profilePasswordTextView"
+                tools:text="4 Nov 1997"/>
 
             <ImageView
                 android:id="@+id/imageView8"
@@ -197,7 +197,7 @@
                 tools:text="Grigorescu" />
 
             <fragment xmlns:map="http://schemas.android.com/apk/res-auto"
-                      android:id="@+id/customizeProfileMapView"
+                android:id="@+id/customizeProfileMapView"
                 class="com.huawei.hms.maps.SupportMapFragment"
                 android:layout_width="340dp"
                 android:layout_height="150dp"
@@ -205,10 +205,10 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="40dp"
                 map:mapType="normal"
-                      map:cameraTargetLat="46.76667"
-                      map:cameraTargetLng="23.6"
-                      map:cameraZoom="11"
-                      map:uiZoomControls="false"
+                map:cameraTargetLat="46.76667"
+                map:cameraTargetLng="23.6"
+                map:cameraZoom="11"
+                map:uiZoomControls="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/customizeProfileLocationValue"
@@ -304,14 +304,14 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/enterTagsTextView" />
             <Button
-                    android:text="Change location"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/button3"
-                    android:layout_marginTop="20dp"
-                    app:layout_constraintTop_toBottomOf="@+id/profileBirthdateTextView"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:onClick="goToMap"
-                    android:layout_marginEnd="30dp" app:cornerRadius="20dp"/>
+                android:text="Change location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/button3"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@+id/profileBirthdateTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:onClick="goToMap"
+                android:layout_marginEnd="30dp" app:cornerRadius="20dp"/>
 
             <ImageButton
                 android:id="@+id/addTagButton"

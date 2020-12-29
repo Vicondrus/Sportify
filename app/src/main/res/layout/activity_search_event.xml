@@ -338,12 +338,10 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/editTextEventName"
                 android:layout_width="314dp"
                 android:layout_height="43dp"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="MNSFDCLAJERVFSD"
                 android:textColor="#FFFFFF"
                 android:textColorHighlight="#FFFFFF"
                 android:textColorHint="#FFFFFF"

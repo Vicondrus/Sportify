@@ -26,7 +26,7 @@ class UserResultActivity : AppCompatActivity() {
     val button5 = findViewById<ImageButton>(R.id.imageButton5) //baseball
     val button6 = findViewById<ImageButton>(R.id.imageButton6) //walk
     val button7 = findViewById<ImageButton>(R.id.imageButton7) //football
-    val button8 = findViewById<ImageButton>(R.id.imageButton8) //yoga
+    val button8 = findViewById<ImageButton>(R.id.imageButton8) //yogaplace.jpg
     val button9 = findViewById<ImageButton>(R.id.imageButton9)//stretching*/
     private fun addDataSet(){
 

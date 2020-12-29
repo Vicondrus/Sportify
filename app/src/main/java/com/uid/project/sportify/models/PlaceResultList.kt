@@ -1,6 +1,7 @@
 package com.uid.project.sportify.models
 
 
+import android.util.Log
 import com.uid.project.sportify.models.UserResult
 
 class PlaceResultList {
@@ -8,20 +9,20 @@ class PlaceResultList {
     companion object{
 
         //hardcoded data
-        fun createDataSet(): ArrayList<PlaceResult>{
+        fun createDataSet(date:String): ArrayList<PlaceResult>{
             val list = ArrayList<PlaceResult>()
-            list.add(
-                    PlaceResult(
-                            "Yoga Venue Central",
-                           "https://raw.githubusercontent.com/mitchtabian/Blog-Images/master/digital_ocean.png" ,
-                            // "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.facebook.com%2Ftheyogaplaceskopje%2Fphotos%2F&psig=AOvVaw1STjfrcu0MkG6J2RxZNuw3&ust=1608816607772000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIC--4Wb5O0CFQAAAAAdAAAAABAD",
-                            "Perfect spot for yoga events just in the center of New York.",
-                    "New York",
-                            "3.3",
-                            "100"
+            var ok=true
+            for(dateUnavailable in Registry.place1Manager.placeUnavailableDates){
 
-                    )
-            )
+                if(date.equals(dateUnavailable))
+                    ok=false
+                Log.v("unav",dateUnavailable)
+                Log.v("abaa",date)
+            }
+
+
+            if(ok==true)
+                list.add(Registry.place1Manager)
            /* list.add(
                     PlaceResult(
                             "Alexandra Bianca",

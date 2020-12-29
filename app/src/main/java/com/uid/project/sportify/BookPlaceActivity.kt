@@ -49,7 +49,8 @@ class BookPlaceActivity : AppCompatActivity() {
         locationTextView.setTextColor(Color.parseColor("#FFFFFF"))
         btnBookPlace.setOnClickListener {
             val intent = Intent(this@BookPlaceActivity, PaymentActivity::class.java)
-            intent.putExtra("placeName",place.placeName)
+            intent.putExtra("placeName",place.placeName.toString())
+            intent.putExtra("place",place)
             startActivity(intent)
         }
 

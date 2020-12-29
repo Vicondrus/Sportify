@@ -19,9 +19,11 @@ class PlacesResultActivity: AppCompatActivity() {
 
     }
     private fun addDataSet(){
-
-        val data= PlaceResultList.createDataSet()
-        placesResultAdapter.submitList(data)
+       val date= intent.getStringExtra("date")
+        val data= date?.let { PlaceResultList.createDataSet(it) }
+        if (data != null) {
+            placesResultAdapter.submitList(data)
+        }
 
     }        private fun initRecyclerView(){
         val recyclerView = findViewById<RecyclerView>(R.id.recycler_view3)

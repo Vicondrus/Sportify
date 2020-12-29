@@ -6,9 +6,9 @@ import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.calatour.model.NewsFeedPostList
 import com.uid.project.sportify.adapters.NewsFeedPostAdapter
 import com.uid.project.sportify.models.NewsFeedPost
+import com.uid.project.sportify.models.Registry
 
 class NewsFeedActivity : AppCompatActivity() {
 
@@ -26,8 +26,7 @@ class NewsFeedActivity : AppCompatActivity() {
             this@NewsFeedActivity,
         )
         newsFeedRecyclerView.layoutManager = layoutManager
-        newsFeedPosts = NewsFeedPostList().getNewsFeedPosts()
-        print("---------------POSTS$newsFeedPosts")
+        newsFeedPosts = Registry.listofNewsFeedPosts
         newsFeedPostAdapter = NewsFeedPostAdapter(newsFeedPosts, this@NewsFeedActivity)
         newsFeedRecyclerView.adapter = newsFeedPostAdapter
 

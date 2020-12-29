@@ -52,7 +52,7 @@ class CustomizeProfileActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapR
         val formatter = SimpleDateFormat("dd.MM.yyyy")
 
         val mapFragment = supportFragmentManager
-            .findFragmentById(R.id.customizeProfileMapView) as? SupportMapFragment
+                .findFragmentById(R.id.customizeProfileMapView) as? SupportMapFragment
         mapFragment?.getMapAsync(this)
 
         user = Registry.user1Manager
@@ -105,27 +105,27 @@ class CustomizeProfileActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapR
                 val formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy", Locale.ENGLISH)
                 val date = LocalDate.parse(birthdate.text.toString(), formatter)
                 user.birthdate = Date.from(
-                    date.atStartOfDay()
-                        .atZone(ZoneId.systemDefault())
-                        .toInstant()
+                        date.atStartOfDay()
+                                .atZone(ZoneId.systemDefault())
+                                .toInstant()
                 )
             }
         }
 
         val layoutManager1 = LinearLayoutManager(
-            this@CustomizeProfileActivity,
-            LinearLayoutManager.HORIZONTAL,
-            false
+                this@CustomizeProfileActivity,
+                LinearLayoutManager.HORIZONTAL,
+                false
         )
         val layoutManager2 = LinearLayoutManager(
-            this@CustomizeProfileActivity,
-            LinearLayoutManager.HORIZONTAL,
-            false
+                this@CustomizeProfileActivity,
+                LinearLayoutManager.HORIZONTAL,
+                false
         )
         val layoutManager3 = LinearLayoutManager(
-            this@CustomizeProfileActivity,
-            LinearLayoutManager.VERTICAL,
-            false
+                this@CustomizeProfileActivity,
+                LinearLayoutManager.VERTICAL,
+                false
         )
 
         val sportsRecyclerView = findViewById<RecyclerView>(R.id.customizeSportsRecyclerView)
@@ -137,24 +137,24 @@ class CustomizeProfileActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapR
         val tagsRecyclerView = findViewById<RecyclerView>(R.id.customizeTagsRecyclerView)
         tagsRecyclerView.layoutManager = layoutManager2
 
-        tagsListAdapter = DeletableTagsListAdapter(user.tags, this@CustomizeProfileActivity)
-        tagsRecyclerView.adapter = tagsListAdapter
+        //tagsListAdapter = DeletableTagsListAdapter(user.tags, this@CustomizeProfileActivity)
+        //tagsRecyclerView.adapter = tagsListAdapter
 
         val customizeProfileTagsSearchView =
-            findViewById<SearchView>(R.id.enterTagsTextView)
+                findViewById<SearchView>(R.id.enterTagsTextView)
         val searchTagsRecyclerView = findViewById<RecyclerView>(R.id.searchTagsRecyclerView)
         searchTagsRecyclerView.layoutManager = layoutManager3
 
         tagsSearchListAdapter = TagsSearchListAdapter(
-            Registry.setOfTags.toMutableList(),
-            tagsListAdapter,
-            customizeProfileTagsSearchView,
-            this@CustomizeProfileActivity
+                Registry.setOfTags.toMutableList(),
+                tagsListAdapter,
+                customizeProfileTagsSearchView,
+                this@CustomizeProfileActivity
         )
         searchTagsRecyclerView.adapter = tagsSearchListAdapter
 
         customizeProfileTagsSearchView.setOnQueryTextListener(object :
-            SearchView.OnQueryTextListener {
+                SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
             }
@@ -175,9 +175,9 @@ class CustomizeProfileActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapR
             val formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy", Locale.ENGLISH)
             val date = LocalDate.parse(birthdate.text.toString(), formatter)
             user.birthdate = Date.from(
-                date.atStartOfDay()
-                    .atZone(ZoneId.systemDefault())
-                    .toInstant()
+                    date.atStartOfDay()
+                            .atZone(ZoneId.systemDefault())
+                            .toInstant()
             )
             Registry.user1Manager = user
             finish()
@@ -191,9 +191,9 @@ class CustomizeProfileActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapR
             val formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy", Locale.ENGLISH)
             val date = LocalDate.parse(birthdate.text.toString(), formatter)
             user.birthdate = Date.from(
-                date.atStartOfDay()
-                    .atZone(ZoneId.systemDefault())
-                    .toInstant()
+                    date.atStartOfDay()
+                            .atZone(ZoneId.systemDefault())
+                            .toInstant()
             )
 
             val intent = Intent(this, SportsSelectionActivity::class.java)
@@ -201,11 +201,11 @@ class CustomizeProfileActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapR
         }
 
         val changeProfilePictureButton =
-            findViewById<ImageButton>(R.id.changeProfilePictureImageButton)
+                findViewById<ImageButton>(R.id.changeProfilePictureImageButton)
         changeProfilePictureButton.setOnClickListener {
             val pickPhoto = Intent(
-                Intent.ACTION_PICK,
-                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI
+                    Intent.ACTION_PICK,
+                    android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI
             )
             startActivityForResult(pickPhoto, pictureSelectionId)
         }
@@ -275,7 +275,7 @@ class CustomizeProfileActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapR
                 .strokeColor(ContextCompat.getColor(this@CustomizeProfileActivity, R.color.purple_sportify))
                 .addAll(neighborhood!!.coords))
                 .tag = neighborhood.name
-        }
+    }
 
 
     override fun onBackPressed() {
@@ -283,9 +283,9 @@ class CustomizeProfileActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapR
     }
 
     override fun onActivityResult(
-        requestCode: Int,
-        resultCode: Int,
-        data: Intent?
+            requestCode: Int,
+            resultCode: Int,
+            data: Intent?
     ) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == sportsSelectionId) {

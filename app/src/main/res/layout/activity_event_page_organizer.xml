@@ -3,53 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/dark_tone_sportify"
+    android:backgroundTint="@color/dark_tone_sportify"
     tools:context=".EventPageOrganizerActivity">
-
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar2"
-        android:layout_width="0dp"
-        android:layout_height="109dp"
-        android:background="@color/pink_sportify"
-        android:isScrollContainer="false"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/eventPageOrganizerEventImage"
-        android:layout_width="59dp"
-        android:layout_height="59dp"
-        android:layout_marginStart="10dp"
-        android:src="@drawable/event_picture"
-        app:civ_border_color="@color/white"
-        app:civ_border_width="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/eventPageOrganizerEventName"
-        app:layout_constraintStart_toEndOf="@+id/editEventButton"
-        app:layout_constraintTop_toTopOf="@+id/eventPageOrganizerEventName"
-        app:layout_constraintVertical_bias="0.481" />
-
-    <TextView
-        android:id="@+id/eventPageOrganizerEventName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="30dp"
-        android:editable="false"
-        android:textColor="@color/white"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-        app:layout_constraintHorizontal_bias="0.569"
-        app:layout_constraintStart_toEndOf="@+id/eventPageOrganizerEventImage"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.382"
-        tools:text="Event name" />
 
 
     <ScrollView
@@ -58,7 +15,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonsToolBar">
+        app:layout_constraintTop_toBottomOf="@+id/cardView9">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -67,7 +24,7 @@
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar4"
                 android:layout_width="0dp"
-                android:layout_height="1600dp"
+                android:layout_height="1126dp"
                 android:background="@color/dark_tone_sportify"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
@@ -91,7 +48,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
-                app:layout_constraintBottom_toBottomOf="@+id/eventPageOrganizerEventDescription"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/eventPageOrganizerEventDescription"
                 app:srcCompat="@drawable/ic_description_" />
@@ -142,15 +98,36 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="25dp"
-                android:layout_marginEnd="30dp"
-                android:text="Location"
+                tools:text="Location"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/imageView13"
                 app:layout_constraintTop_toBottomOf="@+id/eventPageOrganizerEventAttendanceFee" />
+
+            <TextView
+                android:id="@+id/eventPageOrganizerEventNeighborhood"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="30dp"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/commaLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/commaLabel"
+                app:layout_constraintTop_toTopOf="@+id/commaLabel"
+                tools:text="Neighborhood" />
+
+            <TextView
+                android:id="@+id/commaLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=","
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/eventPageOrganizerEventLocation"
+                app:layout_constraintStart_toEndOf="@+id/eventPageOrganizerEventLocation"
+                app:layout_constraintTop_toTopOf="@+id/eventPageOrganizerEventLocation" />
 
             <ImageView
                 android:id="@+id/imageView"
@@ -179,8 +156,8 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/eventPageOrganizerEventSports"
-                android:layout_width="62dp"
-                android:layout_height="191dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -214,8 +191,8 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/eventPageOrganizerEventRequirements"
-                android:layout_width="62dp"
-                android:layout_height="191dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -249,8 +226,8 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/eventPageOrganizerEventTags"
-                android:layout_width="62dp"
-                android:layout_height="191dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -267,7 +244,6 @@
                 android:text="@string/hosted_by_you_label"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView3"
                 app:layout_constraintTop_toTopOf="@+id/toolbar4" />
@@ -281,7 +257,6 @@
                 android:layout_marginEnd="30dp"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView9"
                 app:layout_constraintTop_toBottomOf="@+id/textView11"
@@ -293,14 +268,23 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="25dp"
-                android:layout_marginEnd="30dp"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView11"
-                app:layout_constraintTop_toBottomOf="@+id/eventPageOrganizerEventTime"
+                app:layout_constraintTop_toBottomOf="@+id/eventPageOrganizerEventTimeStart"
                 tools:text="Number of people" />
+
+            <TextView
+                android:id="@+id/peopleLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="people"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/eventPageOrganizerEventNbOfPeople"
+                app:layout_constraintStart_toEndOf="@+id/eventPageOrganizerEventNbOfPeople"
+                app:layout_constraintTop_toTopOf="@+id/eventPageOrganizerEventNbOfPeople" />
 
             <TextView
                 android:id="@+id/eventPageOrganizerEventAttendanceFee"
@@ -308,14 +292,23 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="25dp"
-                android:layout_marginEnd="30dp"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView12"
                 app:layout_constraintTop_toBottomOf="@+id/eventPageOrganizerEventNbOfPeople"
                 tools:text="Attendance fee" />
+
+            <TextView
+                android:id="@+id/labelRON"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="RON"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/eventPageOrganizerEventAttendanceFee"
+                app:layout_constraintStart_toEndOf="@+id/eventPageOrganizerEventAttendanceFee"
+                app:layout_constraintTop_toTopOf="@+id/eventPageOrganizerEventAttendanceFee" />
 
             <TextView
                 android:id="@+id/eventPageOrganizerEventDate"
@@ -326,73 +319,141 @@
                 android:layout_marginEnd="30dp"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView10"
                 app:layout_constraintTop_toBottomOf="@+id/eventPageOrganizerEventDescription"
                 tools:text="Event date" />
 
             <TextView
-                android:id="@+id/eventPageOrganizerEventTime"
+                android:id="@+id/eventPageOrganizerEventTimeStart"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="15dp"
-                android:layout_marginEnd="30dp"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView10"
                 app:layout_constraintTop_toBottomOf="@+id/eventPageOrganizerEventDate"
                 tools:text="Event time" />
 
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dashLabel"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/eventPageOrganizerEventTimeStart"
+                app:layout_constraintStart_toEndOf="@+id/eventPageOrganizerEventTimeStart"
+                app:layout_constraintTop_toTopOf="@+id/eventPageOrganizerEventTimeStart" />
+
+            <TextView
+                android:id="@+id/eventPageOrganizerEventTimeEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Event time"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/eventPageOrganizerEventTimeStart"
+                app:layout_constraintStart_toEndOf="@+id/textView2"
+                app:layout_constraintTop_toTopOf="@+id/eventPageOrganizerEventTimeStart" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
-    <Button
-        android:id="@+id/button5"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView8"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="50dp"
-        android:layout_marginTop="15dp"
-        android:text="@string/scan_qr_code_button"
+        android:background="@drawable/layout_style_pink"
+        app:cardBackgroundColor="@color/light_tone_sportify"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="0dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/layout_style_pink">
+
+            <ImageButton
+                android:id="@+id/editEventButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:background="@null"
+                android:backgroundTint="@color/pink_sportify"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_edit" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/eventPageOrganizerEventImage"
+                android:layout_width="59dp"
+                android:layout_height="59dp"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/event_picture"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/editEventButton"
+                app:layout_constraintStart_toEndOf="@+id/editEventButton"
+                app:layout_constraintTop_toTopOf="@+id/editEventButton" />
+
+            <TextView
+                android:id="@+id/eventPageOrganizerEventName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:editable="false"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintBottom_toBottomOf="@+id/eventPageOrganizerEventImage"
+                app:layout_constraintStart_toEndOf="@+id/eventPageOrganizerEventImage"
+                app:layout_constraintTop_toTopOf="@+id/eventPageOrganizerEventImage"
+                tools:text="Event name" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView9"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="50dp"
-        android:text="@string/delegate_a_friend_button"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView4"
+        app:cardBackgroundColor="@color/dark_tone_sportify"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button5"
-        app:layout_constraintVertical_bias="0.478" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView8">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/buttonsToolBar"
-        android:layout_width="0dp"
-        android:layout_height="131dp"
-        android:background="@color/white"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/layout_style_light_tone">
 
-    <ImageButton
-        android:id="@+id/editEventButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:backgroundTint="@color/pink_sportify"
-        app:layout_constraintBottom_toBottomOf="@+id/eventPageOrganizerEventImage"
-        app:layout_constraintStart_toStartOf="@+id/toolbar2"
-        app:layout_constraintTop_toTopOf="@+id/eventPageOrganizerEventImage"
-        app:srcCompat="@drawable/ic_edit" />
+            <Button
+                android:id="@+id/eventDelegateFriendBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="50dp"
+                android:text="@string/delegate_a_friend_button"
+                app:cornerRadius="50dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/eventScanQRCodeBtn" />
+
+            <Button
+                android:id="@+id/eventScanQRCodeBtn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="50dp"
+                android:text="@string/scan_qr_code_button"
+                app:cornerRadius="50dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,14 +9,14 @@ import com.uid.project.sportify.R
 import com.uid.project.sportify.holders.DeletableItemViewHolder
 
 class DeletableTagsListAdapter(
-        private val dataSet: MutableList<String>,
+        val dataSet: MutableList<String>,
         private val context: Context
 ) : RecyclerView.Adapter<DeletableItemViewHolder>() {
     var listener: ((String) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DeletableItemViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        return DeletableItemViewHolder(inflater, parent, R.color.dark_tone_sportify)
+        return DeletableItemViewHolder(inflater, parent, R.color.purple_sportify)
     }
 
     override fun onBindViewHolder(holder: DeletableItemViewHolder, position: Int) {

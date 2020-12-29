@@ -2,21 +2,22 @@ package com.uid.project.sportify.adapters
 
 
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
-import com.uid.project.sportify.ProfilePageActivity
-import com.uid.project.sportify.R
+import com.uid.project.sportify.*
+import com.uid.project.sportify.models.Event
 import com.uid.project.sportify.models.EventResult
+import com.uid.project.sportify.models.NewsFeedPostEvent
 
 
 class EventResultAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-    private var items: List<EventResult> = ArrayList()
+    private var items: List<Event> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
@@ -43,7 +44,7 @@ class EventResultAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         return items.size
     }
 
-    fun submitList(eventResultList: List<EventResult>){
+    fun submitList(eventResultList: ArrayList<Event>){
 
         items=eventResultList
     }
@@ -51,31 +52,46 @@ class EventResultAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     class EventViewHolder constructor(
             itemView: View
     ): RecyclerView.ViewHolder(itemView){
-
+        val txtLocation= itemView.findViewById<TextView>(R.id.locationEventTxt)
         val txtDateEvent= itemView.findViewById<TextView>(R.id.txtDateEvent)
         val txtEventName = itemView.findViewById<TextView>(R.id.txtPlaceName)
         val txtNbOfPeople= itemView.findViewById<TextView>(R.id.nbOfPeopleTxt)
         val btnDetailsEvent=itemView.findViewById<TextView>(R.id.btnDetailsEvent)
-
-        fun bind(eventResult: EventResult){
-
-
+        val eventImage=itemView.findViewById<ImageView>(R.id.imgPlace)
+        fun bind(eventResult: Event){
             btnDetailsEvent.setOnClickListener(object : View.OnClickListener {
 
                 override fun onClick(v: View?) {
                     //call here the intent for user profile
-                  //  val context= v?.context
-                   // val intent= Intent(context,ProfilePageActivity::class.java)
-                    //if (context != null) {
-                      //  context.startActivity(intent)
-                    //}
+                    val context = v?.context
+                    val intent = Intent(context, EventPageUserActivity::class.java)
+                    intent.putExtra("event", eventResult)
+                    if (context != null) {
+                        context.startActivity(intent)
+                    }
 
-                //TODO:event detail page here
+
                 }
             })
-            txtDateEvent.setText(eventResult.date)
+
+            /*btnDetailsEvent.setOnClickListener(object : View.OnClickListener {
+
+                override fun onClick(v: View?) {
+
+                    val intent = Intent(this@, EventResultActivity::class.java)
+                    intent.putExtra("event", eventResult)
+
+                  /*  val intent = Intent(this, EventPageUserActivity::class.java)
+
+                   */
+                }
+            })*/
+
+            txtDateEvent.setText(eventResult.date.toString())
             txtEventName.setText(eventResult.name)
-            txtNbOfPeople.setText(eventResult.nbOfPeople)
+            txtNbOfPeople.setText(eventResult.nbOfPeople.toString())
+            txtLocation.setText(eventResult.location.neighborhood.toString())
+                eventImage.setImageResource(eventResult.image)
 
         }
 

@@ -1,14 +1,13 @@
 package com.uid.project.sportify
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.uid.project.sportify.adapters.EventResultAdapter
 
-import com.uid.project.sportify.adapters.UserResultAdapter
 import com.uid.project.sportify.models.EventResultList
-import com.uid.project.sportify.models.UserResultList
 
 class EventResultActivity : AppCompatActivity() {
 
@@ -22,8 +21,11 @@ class EventResultActivity : AppCompatActivity() {
 
     }
     private fun addDataSet(){
-
-        val data= EventResultList.createDataSet()
+        val eventName=intent.getStringExtra("eventName")
+        val location=intent.getStringExtra("location")
+        Log.v("eventName",eventName.toString())
+        Log.v("locationn",location.toString())
+        val data= EventResultList.createDataSet(eventName.toString(),location.toString())
         eventResultAdapter.submitList(data)
 
     }        private fun initRecyclerView(){

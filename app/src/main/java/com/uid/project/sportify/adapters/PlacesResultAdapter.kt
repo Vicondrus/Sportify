@@ -66,22 +66,22 @@ class PlacesResultAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         val place_name=itemView.findViewById<TextView>(R.id.txtPlaceName)
         val place_rating=itemView.findViewById<TextView>(R.id.txtRating)
 
-        fun bind(placeResult: PlaceResult){
+        fun bind(placeResult: PlaceResult) {
 
 
             btnBookPlaceResult.setOnClickListener(object : View.OnClickListener {
 
                 override fun onClick(v: View?) {
                     //call here the intent for user profile
-                    val place = PlaceResult(placeResult.placeName, placeResult.placeImage, placeResult.placeDescription, placeResult.placeLocation, placeResult.placeRating,placeResult.placePrice)
+                    val place = PlaceResult(placeResult.placeName, placeResult.placeImage, placeResult.placeDescription, placeResult.placeLocation, placeResult.placeRating, placeResult.placePrice, placeResult.placeUnavailableDates)
 
 
-                    val context= v?.context
-                    val intent= Intent(context, BookPlaceActivity::class.java)
+                    val context = v?.context
+                    val intent = Intent(context, BookPlaceActivity::class.java)
                     intent.putExtra("place", place)
 
-                   // intent.putExtras(toPass)
-                   // intent.putExtra("description",placeResult.placeDescription)
+                    // intent.putExtras(toPass)
+                    // intent.putExtra("description",placeResult.placeDescription)
                     if (context != null) {
                         context.startActivity(intent)
                     }
@@ -89,21 +89,19 @@ class PlacesResultAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
                 }
             })
+
             place_description.setText(placeResult.placeDescription)
             place_location.setText(placeResult.placeLocation)
             place_name.setText(placeResult.placeName)
             place_rating.setText(placeResult.placeRating)
-            val requestOptions=RequestOptions()
+            val requestOptions = RequestOptions()
                     .placeholder(R.drawable.ic_launcher_background)
                     .error(R.drawable.ic_launcher_background)
-            Glide.with(itemView.context)
-                    .applyDefaultRequestOptions(requestOptions)
-                    .load(placeResult.placeImage)
-                    .into(place_image)
+
+            place_image.setImageResource(placeResult.placeImage)
+
 
         }
-
-
 
     }
 }

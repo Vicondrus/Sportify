@@ -22,10 +22,10 @@ class CreateEventActivity : AppCompatActivity() {
         button.setOnClickListener {
 
             val eventName = findViewById<EditText>(R.id.eventNameTextView).text.toString()
-            val eventImage = R.id.eventImage
+           // val eventImage = R.id.eventImage
             val eventHostName = Registry.user1Manager.name
             val eventDescription =
-                findViewById<EditText>(R.id.eventDescriptionTextView).text.toString()
+                    findViewById<EditText>(R.id.eventDescriptionTextView).text.toString()
 //            val eventDate= LocalDate.parse(findViewById<EditText>(R.id.eventDateDate).text.toString())
             val eventDate = LocalDate.now()
 //            val eventTime=LocalTime.parse(findViewById<EditText>(R.id.eventTimeTime).text.toString())
@@ -41,12 +41,12 @@ class CreateEventActivity : AppCompatActivity() {
 //            val eventSports=findViewById<RecyclerView>(R.id.eventSportsReciclerView)
 //            val eventRequirements=findViewById<RecyclerView>(R.id.eventRequirementsReciclerView)
 //            val eventTags=findViewById<RecyclerView>(R.id.eventSportsReciclerView)
-            val event = Event(eventName, eventImage, eventHostName, eventDescription, eventDate, eventTime, eventNbOfPeople, eventAttendanceFee, eventLocation, eventSports, eventRequirements, eventTags)
+           // val event = Event(eventName, eventImage, eventHostName, eventDescription, eventDate, eventTime, eventNbOfPeople, eventAttendanceFee, eventLocation, eventSports, eventRequirements, eventTags)
             val intent = Intent(this, EventCreatedActivity::class.java)
             intent.putExtra("host", eventHostName)
             intent.putExtra("date", eventDate)
             intent.putExtra("sports", eventSports)
-            intent.putExtra("event", event)
+           // intent.putExtra("event", event)
             startActivity(intent)
         }
     }

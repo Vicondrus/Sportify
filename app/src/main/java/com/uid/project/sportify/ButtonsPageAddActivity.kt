@@ -20,7 +20,7 @@ class ButtonsPageAddActivity : AppCompatActivity() {
         }
 
         bookPlaceButton.setOnClickListener {
-           val intent = Intent(this, PlacesResultActivity::class.java)
+            val intent = Intent(this, CalendarActivity::class.java)
             startActivity(intent)
         }
     }
