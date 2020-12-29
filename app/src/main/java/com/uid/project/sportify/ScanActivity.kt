@@ -73,7 +73,13 @@ class ScanActivity : AppCompatActivity() {
                 getString(R.string.dashLabel) +
                 intent.getStringExtra("timeEnd")
         dateEvent.text = dateTime
-        image.setImageURI(Uri.parse(intent.getStringExtra("image")))
+
+
+        if (intent.getStringExtra("image") == null){
+            image.setImageResource(intent.getIntExtra("image", R.drawable.event_picture))
+        }else{
+            image.setImageURI(Uri.parse(intent.getStringExtra("image")))
+        }
 
 
     }

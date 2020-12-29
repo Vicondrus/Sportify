@@ -6,12 +6,11 @@
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="15dp">
 
-    <ImageView
+    <FrameLayout
         android:id="@+id/listItemEventImage"
         android:layout_width="300dp"
         android:layout_height="100dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/tennis_presentation">
+        android:background="@drawable/tennis_presentation">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -42,6 +41,6 @@
                 app:layout_constraintTop_toTopOf="@+id/listItemEventName"
                 tools:text="TextView" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </ImageView>
+    </FrameLayout>
 
 </FrameLayout>

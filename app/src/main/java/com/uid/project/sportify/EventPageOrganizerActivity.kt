@@ -112,20 +112,25 @@ class EventPageOrganizerActivity : AppCompatActivity() {
 
         val scanQRCodeButton = findViewById<Button>(R.id.eventScanQRCodeBtn)
         scanQRCodeButton.setOnClickListener {
-            val intent = Intent(this, ScanActivity::class.java)
-            intent.putExtra("eventName", event.name)
-            intent.putExtra("eventDate", event.date.toString())
-            intent.putExtra("timeStart", event.timeStart.toString())
-            intent.putExtra("timeEnd", event.timeEnd.toString())
-            intent.putExtra("eventLocation", event.location.location)
-            intent.putExtra("image", event.imageUri)
-            startActivity(intent)
+            val intent1 = Intent(this, ScanActivity::class.java)
+            intent1.putExtra("eventName", event.name)
+            intent1.putExtra("eventDate", event.date.toString())
+            intent1.putExtra("timeStart", event.timeStart.toString())
+            intent1.putExtra("timeEnd", event.timeEnd.toString())
+            intent1.putExtra("eventLocation", event.location.location)
+            if (event.imageUri == null) {
+                intent1.putExtra("image", event.image)
+            } else {
+                intent1.putExtra("image", event.imageUri)
+            }
+            startActivity(intent1)
         }
 
         val backButton = findViewById<ImageButton>(R.id.eventPageOrganizerBackBtn)
         backButton.setOnClickListener {
             val intent = Intent(this, NewsFeedActivity::class.java)
             startActivity(intent)
+            this.finish()
         }
     }
 
@@ -190,5 +195,6 @@ class EventPageOrganizerActivity : AppCompatActivity() {
     override fun onBackPressed() {
         val intent = Intent(this, NewsFeedActivity::class.java)
         startActivity(intent)
+        this.finish()
     }
 }

@@ -120,6 +120,7 @@ class ProfilePageActivity : AppCompatActivity() {
         upcomingListAdapter = ParticipationListAdapter(futureParticipations)
         upcomingRecyclerView.adapter = upcomingListAdapter
 
+        val groups = Registry.listOfGroups
         groupsListAdapter = GroupsListAdapter(Registry.listOfGroups)
         groupsRecyclerView.adapter = groupsListAdapter
 

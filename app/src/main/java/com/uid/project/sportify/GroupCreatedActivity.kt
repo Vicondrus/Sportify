@@ -2,6 +2,8 @@ package com.uid.project.sportify
 
 import android.net.Uri
 import android.os.Bundle
+import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -47,9 +49,10 @@ class GroupCreatedActivity : AppCompatActivity() {
         tagsRecyclerView.layoutManager = layoutManager2
         tagsListAdapter = TagsListAdapter(group.tags)
         tagsRecyclerView.adapter = tagsListAdapter
-    }
 
-    override fun onBackPressed() {
-       finish()
+        val button = findViewById<Button>(R.id.button10)
+        button.setOnClickListener {
+            finish()
+        }
     }
 }

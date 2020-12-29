@@ -461,7 +461,7 @@ class Registry private constructor() {
                     R.drawable.sport_pic_3)
 
         val listOfGroups: MutableList<Group>
-            get() = mutableListOf(Group("'U' Basketball Fanclub", "The official Universitatea Cluj Baskteball Fanclub", "Centru", arrayListOf(), R.drawable.academia_ubt),
+            = mutableListOf(Group("'U' Basketball Fanclub", "The official Universitatea Cluj Baskteball Fanclub", "Centru", arrayListOf(), R.drawable.academia_ubt),
                     Group("TennisClub Grigorescu", "Made for tennis lovers in Grigorescu", "Grigorescu", arrayListOf()))
 
         val listOfOrganizedEvents: ArrayList<Event> =
