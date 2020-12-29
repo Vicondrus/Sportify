@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/purple_sportify"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="60dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        app:cardPreventCornerOverlap="false">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@color/dark_tone_sportify">
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgPlace"
+                android:layout_width="107dp"
+                android:layout_height="86dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="49dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="96dp"
+                android:layout_marginEnd="246dp"
+                android:layout_marginBottom="18dp" />
+
+            <TextView
+                android:id="@+id/txtPlaceName"
+                android:layout_width="230dp"
+                android:layout_height="62dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+
+                android:layout_marginStart="13dp"
+                android:layout_marginLeft="-72dp"
+                android:layout_marginTop="51dp"
+                android:layout_marginEnd="160dp"
+                android:layout_toRightOf="@+id/imgPlace"
+                android:text="Name here"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtDateEvent"
+                android:layout_width="142dp"
+                android:layout_height="94dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="-70dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="246dp"
+                android:layout_marginRight="-4dp"
+                android:layout_marginBottom="103dp"
+
+                android:text="Date Of Event"
+                android:textColor="#FFFFFF"
+                android:textStyle="italic" />
+
+            <Button
+                android:id="@+id/btnDetailsEvent"
+                android:layout_width="168dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="222dp"
+                android:layout_marginEnd="11dp"
+                android:layout_marginBottom="17dp"
+                android:text="Details" />
+
+            <TextView
+                android:id="@+id/nbOfPeopleTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="74dp"
+                android:textColor="#FFFFFF"
+                android:textStyle="italic"
+                android:text="Nb Of People" />
+
+            <TextView
+                android:id="@+id/locationEventTxt"
+                android:layout_width="104dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="257dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="128dp"
+                android:text="Location"
+                android:textColor="#FFFFFF"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/nbOfPeopleTxt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="96dp"
+                android:text="Nb Of People Attending:"
+                android:textColor="#FFFFFF"
+                android:textStyle="italic" />
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
