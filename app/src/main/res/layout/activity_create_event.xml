@@ -240,7 +240,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/eventDescriptionTextView"
                 app:layout_constraintStart_toStartOf="@+id/imageView3"
                 app:layout_constraintTop_toTopOf="@+id/eventDescriptionTextView"
-                app:srcCompat="@drawable/ic_description_" />
+                app:srcCompat="@drawable/ic_description" />
 
             <EditText
                 android:id="@+id/eventDateDate"
@@ -250,9 +250,10 @@
                 android:layout_marginTop="15dp"
                 android:backgroundTint="@color/dark_grey_sportify"
                 android:ems="10"
+                android:hint="Date"
                 android:inputType="date"
                 android:textColor="@color/white"
-                android:textColorHint="@color/dark_grey_sportify"
+                android:textColorHint="@color/grey_sportify"
                 app:layout_constraintStart_toEndOf="@+id/imageView10"
                 app:layout_constraintTop_toBottomOf="@+id/eventDescriptionTextView" />
 
@@ -267,25 +268,29 @@
 
             <EditText
                 android:id="@+id/eventTimeStart"
-                android:layout_width="50dp"
+                android:layout_width="100dp"
                 android:layout_height="43dp"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="5dp"
                 android:backgroundTint="@color/dark_grey_sportify"
                 android:ems="10"
+                android:hint="Time start"
                 android:inputType="time"
                 android:textColor="@color/white"
+                android:textColorHint="@color/grey_sportify"
                 app:layout_constraintStart_toEndOf="@+id/imageView10"
                 app:layout_constraintTop_toBottomOf="@+id/createEventDateError" />
 
             <EditText
                 android:id="@+id/eventTimeEnd"
-                android:layout_width="50dp"
+                android:layout_width="100dp"
                 android:layout_height="43dp"
                 android:backgroundTint="@color/dark_grey_sportify"
                 android:ems="10"
+                android:hint="Time end"
                 android:inputType="time"
                 android:textColor="@color/white"
+                android:textColorHint="@color/grey_sportify"
                 app:layout_constraintBottom_toBottomOf="@+id/eventTimeStart"
                 app:layout_constraintStart_toEndOf="@+id/textView"
                 app:layout_constraintTop_toTopOf="@+id/eventTimeStart" />

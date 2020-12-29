@@ -14,6 +14,7 @@ import com.huawei.hms.maps.HuaweiMap
 import com.uid.project.sportify.adapters.RequirementsListAdapter
 import com.uid.project.sportify.adapters.SportsListAdapter
 import com.uid.project.sportify.adapters.TagsListAdapter
+import com.uid.project.sportify.models.Event
 import com.uid.project.sportify.models.Registry
 import de.hdodenhof.circleimageview.CircleImageView
 import java.time.format.DateTimeFormatter
@@ -25,6 +26,7 @@ class EventPageOrganizerActivity : AppCompatActivity() {
     private lateinit var tagsListAdapter: TagsListAdapter
     private lateinit var requirementsListAdapter: RequirementsListAdapter
     private lateinit var eventImage : CircleImageView
+    private lateinit var event: Event
     private val editEventId = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +35,7 @@ class EventPageOrganizerActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-        val event = Registry.event1Manager
+        event = intent.getSerializableExtra("event") as Event
 
         val eventName = findViewById<TextView>(R.id.eventPageOrganizerEventName)
         eventName.text = event.name
@@ -96,6 +98,7 @@ class EventPageOrganizerActivity : AppCompatActivity() {
         val editEventButton = findViewById<ImageButton>(R.id.editEventButton)
         editEventButton.setOnClickListener {
             val intent = Intent(this, EditEventActivity::class.java)
+            intent.putExtra("event", event)
             startActivityForResult(intent, editEventId)
         }
 
@@ -118,6 +121,12 @@ class EventPageOrganizerActivity : AppCompatActivity() {
             intent.putExtra("image", event.imageUri)
             startActivity(intent)
         }
+
+        val backButton = findViewById<ImageButton>(R.id.eventPageOrganizerBackBtn)
+        backButton.setOnClickListener {
+            val intent = Intent(this, NewsFeedActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 
@@ -125,9 +134,13 @@ class EventPageOrganizerActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == editEventId) {
             if (resultCode == Activity.RESULT_OK) {
+                // Remove the event from the registry
+                Registry.listOfOrganizedEvents.removeIf { ev -> ev.name == event.name }
+                // Get the edited event
+                event = data?.getSerializableExtra("eventEdited") as Event
+                // Add the edited event to registry
+                Registry.listOfOrganizedEvents.add(event)
                 // Update fields
-                val event = Registry.event1Manager
-
                 val eventName = findViewById<TextView>(R.id.eventPageOrganizerEventName)
                 eventName.text = event.name
                 eventImage = findViewById(R.id.eventPageOrganizerEventImage)
@@ -171,8 +184,11 @@ class EventPageOrganizerActivity : AppCompatActivity() {
                 tagsRecyclerView.adapter = tagsListAdapter
 
             }
-        }else{
-
         }
+    }
+
+    override fun onBackPressed() {
+        val intent = Intent(this, NewsFeedActivity::class.java)
+        startActivity(intent)
     }
 }

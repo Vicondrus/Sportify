@@ -50,7 +50,7 @@
                 android:layout_marginStart="30dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/eventPageOrganizerEventDescription"
-                app:srcCompat="@drawable/ic_description_" />
+                app:srcCompat="@drawable/ic_description" />
 
             <ImageView
                 android:id="@+id/imageView10"
@@ -98,36 +98,26 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="25dp"
-                tools:text="Location"
+                android:layout_marginEnd="30dp"
                 android:textColor="@color/white"
                 android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView13"
-                app:layout_constraintTop_toBottomOf="@+id/eventPageOrganizerEventAttendanceFee" />
+                app:layout_constraintTop_toBottomOf="@+id/eventPageOrganizerEventAttendanceFee"
+                tools:text="Location" />
 
             <TextView
                 android:id="@+id/eventPageOrganizerEventNeighborhood"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
                 android:layout_marginEnd="30dp"
                 android:textColor="@color/white"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="@+id/commaLabel"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/commaLabel"
-                app:layout_constraintTop_toTopOf="@+id/commaLabel"
+                app:layout_constraintStart_toStartOf="@+id/eventPageOrganizerEventLocation"
+                app:layout_constraintTop_toBottomOf="@+id/eventPageOrganizerEventLocation"
                 tools:text="Neighborhood" />
-
-            <TextView
-                android:id="@+id/commaLabel"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text=","
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="@+id/eventPageOrganizerEventLocation"
-                app:layout_constraintStart_toEndOf="@+id/eventPageOrganizerEventLocation"
-                app:layout_constraintTop_toTopOf="@+id/eventPageOrganizerEventLocation" />
 
             <ImageView
                 android:id="@+id/imageView"
@@ -152,7 +142,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageView"
-                app:layout_constraintTop_toBottomOf="@+id/eventPageOrganizerEventLocation" />
+                app:layout_constraintTop_toBottomOf="@+id/eventPageOrganizerEventNeighborhood" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/eventPageOrganizerEventSports"
@@ -380,13 +370,13 @@
                 android:id="@+id/editEventButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
                 android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
                 android:layout_marginBottom="30dp"
                 android:background="@null"
                 android:backgroundTint="@color/pink_sportify"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_edit" />
 
@@ -398,9 +388,9 @@
                 android:src="@drawable/event_picture"
                 app:civ_border_color="@color/white"
                 app:civ_border_width="0dp"
-                app:layout_constraintBottom_toBottomOf="@+id/editEventButton"
-                app:layout_constraintStart_toEndOf="@+id/editEventButton"
-                app:layout_constraintTop_toTopOf="@+id/editEventButton" />
+                app:layout_constraintBottom_toBottomOf="@+id/eventPageOrganizerBackBtn"
+                app:layout_constraintStart_toEndOf="@+id/eventPageOrganizerBackBtn"
+                app:layout_constraintTop_toTopOf="@+id/eventPageOrganizerBackBtn" />
 
             <TextView
                 android:id="@+id/eventPageOrganizerEventName"
@@ -415,6 +405,20 @@
                 app:layout_constraintStart_toEndOf="@+id/eventPageOrganizerEventImage"
                 app:layout_constraintTop_toTopOf="@+id/eventPageOrganizerEventImage"
                 tools:text="Event name" />
+
+            <ImageButton
+                android:id="@+id/eventPageOrganizerBackBtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="15dp"
+                android:background="@null"
+                android:rotation="180"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_arrow" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
