@@ -205,7 +205,7 @@
                 android:backgroundTint="@color/dark_grey_sportify"
                 android:ems="10"
                 android:hint="(yyyy-MM-DD)Start Date for Booking the Event"
-                android:inputType="date"
+
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
                 app:layout_constraintEnd_toEndOf="@+id/toolbar4"
@@ -231,7 +231,7 @@
                 android:backgroundTint="@color/dark_grey_sportify"
                 android:ems="10"
                 android:hint="(yyyy-MM-DD)End Date for Booking the Event"
-                android:inputType="time"
+
                 android:textColor="@color/white"
                 android:textColorHint="#FFFFFF"
                 app:layout_constraintEnd_toEndOf="@+id/toolbar4"

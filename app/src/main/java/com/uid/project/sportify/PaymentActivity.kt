@@ -11,9 +11,10 @@ import com.uid.project.sportify.models.PlaceResult
 import java.text.DateFormat
 import java.text.ParseException
 import java.text.SimpleDateFormat
+import java.util.*
 
 class PaymentActivity : AppCompatActivity() {
-    val DATE_FORMAT = "yyyy-MM-DD"
+    val DATE_FORMAT = "yyyy-mm-dd"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_payment_2)
@@ -44,12 +45,12 @@ class PaymentActivity : AppCompatActivity() {
 
         val btnContinue = findViewById<Button>(R.id.btnContinue)
         btnContinue.setOnClickListener {
-            if(!(isDateValid(placeDate.text.toString()))){
+            if(isDateValid(placeDate.text.toString())==false){
                 Toast.makeText(applicationContext, "Begin date is not valid. Please enter in format yyyy-mm-dd ", Toast.LENGTH_SHORT).show()
 
             }
             else
-            if(!(isDateValid(eventTimeTime.text.toString()))){
+            if((isDateValid(eventTimeTime.text.toString()))==false){
                 Toast.makeText(applicationContext, "End date is not valid. Please enter in format yyyy-mm-dd ", Toast.LENGTH_SHORT).show()
 
 
@@ -67,13 +68,18 @@ class PaymentActivity : AppCompatActivity() {
 
 
     fun isDateValid(date: String?): Boolean {
-        return try {
+        /*return try {
             val df: DateFormat = SimpleDateFormat(DATE_FORMAT)
             df.setLenient(false)
             df.parse(date)
             true
         } catch (e: ParseException) {
             false
+        }*/
+        try {var formatter = SimpleDateFormat("yyyy-mm-dd", Locale.getDefault())
+        val date = formatter.parse(date)
+        return true}catch (e: ParseException) {
+           return false
         }
     }
 }
