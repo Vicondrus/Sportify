@@ -2,7 +2,7 @@ package com.uid.project.sportify
 
 import android.app.Activity
 import android.content.Intent
-import android.graphics.BlendMode
+//import android.graphics.BlendMode
 import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -73,13 +73,13 @@ class CreateGroupActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyC
         var tagList : MutableList<String> = ArrayList()
         tagsListAdapter = DeletableTagsListAdapter(tagList, this@CreateGroupActivity)
         tagsRecyclerView.adapter = tagsListAdapter
-        tagsRecyclerView.backgroundTintBlendMode = BlendMode.CLEAR
+        //tagsRecyclerView.backgroundTintBlendMode = BlendMode.CLEAR
 
         val customizeGroupTagsSearchView =
             findViewById<SearchView>(R.id.customizeGroupTagsSearchView)
         val searchTagsRecyclerView = findViewById<RecyclerView>(R.id.searchTagsRecyclerView1)
         searchTagsRecyclerView.layoutManager = layoutManager3
-        searchTagsRecyclerView.backgroundTintBlendMode = BlendMode.LIGHTEN
+        //searchTagsRecyclerView.backgroundTintBlendMode = BlendMode.LIGHTEN
 
         tagsSearchListAdapter = TagsSearchListAdapter(
             Registry.setOfTags.toMutableList(),
