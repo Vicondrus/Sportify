@@ -2,6 +2,7 @@ package com.uid.project.sportify
 
 import android.app.Activity
 import android.app.Activity.RESULT_OK
+import android.app.DatePickerDialog
 import android.content.Intent
 import android.graphics.Color
 import android.net.Uri
@@ -114,6 +115,30 @@ class CustomizeProfileActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapR
                         .toInstant()
                 )
             }
+        }
+        birthdate.setOnClickListener {
+            val calendar: Calendar = Calendar.getInstance()
+            val day = calendar.get(Calendar.DAY_OF_MONTH)
+            val month = calendar.get(Calendar.MONTH)
+            val year = calendar.get(Calendar.YEAR)
+            val datePicker = DatePickerDialog(
+                    this@CustomizeProfileActivity,
+                    { view, year, monthOfYear, dayOfMonth ->
+                        var dayOfMonthString = dayOfMonth.toString()
+                        var monthOfYearString = (monthOfYear + 1).toString()
+                        if (dayOfMonth < 10) {
+                            dayOfMonthString = "0$dayOfMonthString"
+                        }
+                        if (monthOfYear < 9) {
+                            monthOfYearString = "0$monthOfYearString"
+                        }
+                        birthdate.text = "$dayOfMonthString.$monthOfYearString.$year"
+                    },
+                    year,
+                    month,
+                    day
+            )
+            datePicker.show()
         }
 
         val layoutManager1 = LinearLayoutManager(
