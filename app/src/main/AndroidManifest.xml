@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.uid.project.sportify">
 
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
     <uses-feature android:name="android.hardware.camera.any" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -37,7 +39,7 @@
         <activity android:name=".ButtonsPageAddActivity" />
         <activity android:name=".FriendListActivity" />
         <activity android:name=".PaymentActivity" />
-        <!--   <activity android:name=".NewsFeedActivity"/>-->
+        <activity android:name=".NewsFeedActivity"/>
         <activity android:name=".PlacesResultActivity"/>
         <activity android:name=".BookPlaceActivity"/>
         <activity android:name=".ProfilePageActivity" />
@@ -55,14 +57,6 @@
         <activity android:name=".SearchEventActivity" />
 
         <activity android:name=".CalendarActivity" />
-
-        <activity android:name=".NewsFeedActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity android:name=".SportsSelectionActivity" />
 
         <activity android:name=".UserResultActivity" />

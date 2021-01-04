@@ -162,6 +162,7 @@
                 android:textColor="@color/error_light"
                 android:textSize="16sp"
                 android:textStyle="italic"
+                android:focusableInTouchMode="false"
                 app:layout_constraintStart_toStartOf="@+id/editEventDateDate"
                 app:layout_constraintTop_toBottomOf="@+id/editEventDateDate" />
 
@@ -309,6 +310,7 @@
                 android:backgroundTint="@color/dark_grey_sportify"
                 android:ems="10"
                 android:inputType="time"
+                android:focusableInTouchMode="false"
                 android:textColor="@color/white"
                 app:layout_constraintStart_toEndOf="@+id/imageView10"
                 app:layout_constraintTop_toBottomOf="@+id/editEventDateError" />
@@ -320,6 +322,7 @@
                 android:backgroundTint="@color/dark_grey_sportify"
                 android:ems="10"
                 android:inputType="time"
+                android:focusableInTouchMode="false"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="@+id/editEventTimeStart"
                 app:layout_constraintStart_toEndOf="@+id/textView"
