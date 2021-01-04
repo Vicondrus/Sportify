@@ -70,12 +70,12 @@
                 app:layout_constraintTop_toTopOf="@+id/feedAddButton">
 
                 <ImageButton
-                    android:id="@+id/feedProfileButton"
-                    android:layout_width="48dp"
-                    android:layout_height="47dp"
-                    android:background="@null"
-                    android:scaleType="fitXY"
-                    app:srcCompat="@drawable/ana_profile_picture" />
+                        android:id="@+id/feedProfileButton"
+                        android:layout_width="48dp"
+                        android:layout_height="47dp"
+                        android:background="@null"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/ana_profile_picture"/>
             </androidx.cardview.widget.CardView>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
