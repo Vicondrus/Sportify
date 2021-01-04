@@ -40,7 +40,11 @@ class EventItemViewHolder(inflater: LayoutInflater, private var parent: ViewGrou
             val file = File(path)
             if (file.exists()) {
                 val d = Drawable.createFromPath(file.absolutePath)
-                eventImage?.background = d
+                if (d != null){
+                    eventImage?.background = d
+                } else {
+                    eventImage?.background = ResourcesCompat.getDrawable(parent.resources, R.drawable.event_picture, null)
+                }
             }
             cursor.close()
         } else

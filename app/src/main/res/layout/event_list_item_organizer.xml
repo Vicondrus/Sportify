@@ -7,39 +7,40 @@
     android:layout_marginHorizontal="15dp">
 
     <FrameLayout
-        android:id="@+id/listItemEventImage"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:background="@drawable/tennis_presentation">
+            android:id="@+id/listItemEventImage"
+            android:layout_width="270dp"
+            android:layout_height="100dp"
+            android:background="@drawable/tennis_presentation">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#59000000">
 
             <TextView
-                android:id="@+id/listItemEventName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginTop="28dp"
-                android:textColor="@color/white"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="TextView" />
+                    android:id="@+id/listItemEventName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="28dp"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="TextView"/>
 
             <TextView
-                android:id="@+id/listItemEventDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="28dp"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/listItemEventName"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/listItemEventName"
-                tools:text="TextView" />
+                    android:id="@+id/listItemEventDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="28dp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/listItemEventName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/listItemEventName"
+                    tools:text="TextView"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
 

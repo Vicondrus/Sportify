@@ -1,19 +1,16 @@
 package com.uid.project.sportify.holders
 
-import android.Manifest
 import android.content.Context
-import android.content.pm.PackageManager
 import android.database.Cursor
+import android.graphics.BitmapFactory
+import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.net.Uri
-import android.os.Build
 import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.TextView
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.uid.project.sportify.R
@@ -38,6 +35,7 @@ class GroupItemViewHolder(inflater: LayoutInflater, private var parent: ViewGrou
 
     fun bind(group: Group) {
         if(group.imageUri != null){
+
             val cursor: Cursor? = context.contentResolver.query(Uri.parse(group.imageUri!!), null, null, null, null)
             cursor!!.moveToFirst()
             val idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA)
@@ -45,7 +43,12 @@ class GroupItemViewHolder(inflater: LayoutInflater, private var parent: ViewGrou
             val file = File(path)
             if (file.exists()) {
                 val d = Drawable.createFromPath(file.absolutePath)
-                whole?.background = d
+                if (d != null){
+                    whole?.background = d
+                } else {
+                    whole?.background = ResourcesCompat.getDrawable(parent.resources, R.drawable.generic_group, null)
+                }
+
             }
             cursor.close()
         }else {
