@@ -172,7 +172,7 @@ class ScanActivity : AppCompatActivity() {
     fun verifyCode(receivedCode :String ){
         if (receivedCode == "1574"){
             textStatus.text = getString(R.string.check_in_success)
-            textStatus.setTextColor(getColor(R.color.green))
+            textStatus.setTextColor(getColor(R.color.quantum_googgreen))
             buttonScan.text = getString(R.string.scan_new)
         } else {
             textStatus.text = getString(R.string.check_in_fail)
