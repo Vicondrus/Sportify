@@ -13,7 +13,7 @@ class EventItemListAdapter(private val dataSet: List<Event>, private val context
         RecyclerView.Adapter<EventItemViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventItemViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        return EventItemViewHolder(inflater, parent)
+        return EventItemViewHolder(inflater, parent, context)
     }
 
     override fun onBindViewHolder(holder: EventItemViewHolder, position: Int) {
