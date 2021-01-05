@@ -20,8 +20,9 @@
 
     <TextView
         android:id="@+id/textView9"
-        android:layout_width="0dp"
-        android:layout_height="68dp"
+        android:layout_width="269dp"
+        android:layout_height="93dp"
+
         android:layout_marginStart="20dp"
         android:layout_marginTop="144dp"
         android:layout_marginEnd="20dp"
@@ -63,20 +64,23 @@
 
     <Button
         android:id="@+id/btnEventCreatedDone"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="345dp"
+        android:layout_height="59dp"
         android:layout_marginHorizontal="30dp"
         android:layout_marginBottom="50dp"
         android:text="@string/done_label"
         android:textSize="16sp"
+        app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btnTellFriends"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
+        app:cornerRadius="20dp"
+        android:id="@+id/btnTellFriends"
+
         android:layout_marginHorizontal="30dp"
         android:layout_marginBottom="20dp"
         android:text="@string/tell_friends_label"

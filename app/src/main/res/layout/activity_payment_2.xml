@@ -10,7 +10,7 @@
 
     android:isScrollContainer="true"
     tools:context=".CreateEventActivity">
-    <ImageView
+  <!--  <ImageView
         android:id="@+id/imgPayment"
         android:layout_width="481dp"
         android:layout_height="164dp"
@@ -21,13 +21,30 @@
         android:isScrollContainer="false"
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/top"
-        />
+        />-->
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:id="@+id/imgPayment" android:textColor="@color/white"
+        android:textStyle="bold" android:textAlignment="textEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:isScrollContainer="false"
+        app:layout_constraintVertical_bias="1.0"
+        android:background="@drawable/layout_style_white"
+        android:textSize="20sp"
+        android:paddingTop="20dp"
+
+        android:paddingEnd="16dp"
+        android:paddingStart="70dp"/>
 
 
 
 
     <TextView
-        android:id="@+id/txtPaymentHeader"
+        android:id="@+id/txtUsersHeader"
         android:layout_width="244dp"
         android:layout_height="79dp"
         android:background="#FFFBFB"
@@ -43,20 +60,7 @@
         app:layout_constraintVertical_bias="0.764" />
 
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/create_event_label"
-        android:textColor="@color/white"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imgPayment"
-        app:layout_constraintEnd_toEndOf="@+id/imgPayment"
-        app:layout_constraintHorizontal_bias="0.569"
-        app:layout_constraintStart_toStartOf="@+id/imgPayment"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.34" />
+
 
     <ScrollView
         android:layout_width="0dp"
@@ -412,6 +416,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/eventTagsReciclerView" />
 
             <Button
+                app:cornerRadius="20dp"
                 android:id="@+id/btnContinue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

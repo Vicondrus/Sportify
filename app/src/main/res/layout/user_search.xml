@@ -169,14 +169,16 @@
         android:background="@android:color/transparent"></EditText>
 
     <Button
+
         android:id="@+id/btnDone"
-        android:background="@drawable/done_button_background"
-        android:layout_width="232dp"
+        android:layout_width="376dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="91dp"
+        android:layout_marginEnd="13dp"
         android:layout_marginBottom="14dp"
-        android:text="DONE" />
+        android:background="@drawable/done_button_background"
+        android:text="DONE"
+        app:cornerRadius="20dp" />
 
 </RelativeLayout>

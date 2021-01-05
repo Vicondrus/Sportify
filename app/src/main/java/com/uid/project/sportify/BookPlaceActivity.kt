@@ -20,7 +20,7 @@ class BookPlaceActivity : AppCompatActivity() {
 
 
         val place = this.intent.getSerializableExtra("place") as PlaceResult
-        val namePlace = findViewById<TextView>(R.id.txtPaymentHeader)
+        val namePlace = findViewById<TextView>(R.id.txtUsersHeader)
         val btnBookPlace = findViewById<Button>(R.id.btnBookDetails)
         val locationTextView = findViewById<TextView>(R.id.locationTxt)
         val priceTxt = findViewById<TextView>(R.id.priceTxt)
