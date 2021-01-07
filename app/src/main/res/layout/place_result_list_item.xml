@@ -31,7 +31,7 @@
 
             <TextView
                 android:id="@+id/txtPlaceName"
-                android:layout_width="wrap_content"
+                android:layout_width="204dp"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
@@ -39,6 +39,9 @@
 
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+
+                android:layout_toStartOf="@+id/txtRating"
                 android:layout_toRightOf="@+id/imgPlace"
                 android:text="Name here"
                 android:textColor="@color/white"
@@ -47,34 +50,37 @@
 
             <TextView
                 android:id="@+id/txtDateEvent"
-                android:layout_width="142dp"
-                android:layout_height="94dp"
+                android:layout_width="wrap_content"
+                android:layout_height="108dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="128dp"
-                android:layout_marginLeft="18dp"
+                android:layout_marginStart="124dp"
+                android:layout_marginLeft="14dp"
                 android:layout_marginTop="59dp"
-                android:layout_marginEnd="133dp"
-                android:layout_marginRight="-4dp"
-                android:layout_marginBottom="36dp"
+                android:layout_marginEnd="129dp"
+                android:layout_marginRight="-8dp"
+                android:layout_marginBottom="-16dp"
                 android:layout_toLeftOf="@+id/imageView15"
                 android:layout_toRightOf="@+id/imgPlace"
+
+
                 android:text="Description"
                 android:textColor="#FFFFFF"
                 android:textStyle="italic" />
 
             <TextView
                 android:id="@+id/txtLocation"
-                android:layout_width="117dp"
-                android:layout_height="161dp"
+                android:layout_width="137dp"
+                android:layout_height="27dp"
                 android:layout_below="@+id/txtPlaceName"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="129dp"
-                android:layout_marginTop="-1dp"
-                android:layout_marginEnd="156dp"
+                android:layout_marginStart="127dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="139dp"
+                android:layout_marginBottom="114dp"
                 android:text="Location"
                 android:textColor="#FFFFFF"
                 android:textStyle="bold" />
@@ -112,8 +118,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginEnd="30dp"
-                android:layout_marginBottom="121dp"
+                android:layout_marginEnd="37dp"
+                android:layout_marginBottom="117dp"
                 android:text="9,8"
                 android:textColor="#FFFFFF" />
 

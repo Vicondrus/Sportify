@@ -2,6 +2,8 @@ package com.uid.project.sportify
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.TextUtils
+import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -19,8 +21,7 @@ class PaymentActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_payment_2)
         supportActionBar?.hide()
-        val placeDate=findViewById<EditText>(R.id.placeDate)
-        val eventTimeTime=findViewById<EditText>(R.id.eventTimeTime)
+
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Please Confirm")
         builder.setMessage("Are you sure you want to continue?")
@@ -45,37 +46,77 @@ class PaymentActivity : AppCompatActivity() {
 
         val btnContinue = findViewById<Button>(R.id.btnContinue)
         btnContinue.setOnClickListener {
-            if(isDateValid(placeDate.text.toString())==false){
-                Toast.makeText(applicationContext, "Begin date is not valid. Please enter in format yyyy-mm-dd ", Toast.LENGTH_SHORT).show()
 
-            }
-            else
-                if((isDateValid(eventTimeTime.text.toString()))==false){
-                    Toast.makeText(applicationContext, "End date is not valid. Please enter in format yyyy-mm-dd ", Toast.LENGTH_SHORT).show()
-
-
-                }
-                else if(isDateValid(placeDate.text.toString()) && isDateValid(eventTimeTime.text.toString())){
+            if(validateDetails()){
 
                     builder.show()
                 }
+            else
+            {
+                btnContinue.isEnabled = false
+                btnContinue.isClickable = false
+            //  Toast.makeText(applicationContext, "Please enter valid details! ", Toast.LENGTH_SHORT).show()
+            }
 
         }
 
     }
 
 
+        fun validateDetails():Boolean{
+            val addressTextView = findViewById(R.id.addressTextView) as EditText
+            val addressText: String = addressTextView.text.toString()
+            val emailAddressTextView = findViewById(R.id.emailAddressTextView) as EditText
+            val emailText: String = emailAddressTextView.text.toString()
+            val phoneNumberTextView= findViewById(R.id.phoneNumberTextView) as EditText
+            val numberParticipantsTextView= findViewById(R.id.numberParticipantsTextView) as EditText
+            val phoneNumberText: String = phoneNumberTextView.text.toString()
+            val numberParticipantsText: String = numberParticipantsTextView.text.toString()
+            val placeDate=findViewById<EditText>(R.id.placeDate)
+            val eventTimeTime=findViewById<EditText>(R.id.eventTimeTime)
+            //check if the EditText have values or not
+            if(addressText.trim().length==0) {
+                Toast.makeText(applicationContext, "Please enter an address! ", Toast.LENGTH_SHORT).show()
+                    return false;
+            }
+            else   if(emailText.trim().length==0){
 
+                Toast.makeText(applicationContext, "Please enter an email! ", Toast.LENGTH_SHORT).show()
+                return false;
+            }else   if(phoneNumberText.trim().length==0){
+
+                Toast.makeText(applicationContext, "Please enter a phone number! ", Toast.LENGTH_SHORT).show()
+                return false;
+            }
+            else   if(numberParticipantsText.trim().length==0){
+
+                Toast.makeText(applicationContext, "Please enter a number of participants! ", Toast.LENGTH_SHORT).show()
+                return false;
+            }
+            else if (isValidEmail(emailText)==false){
+                Toast.makeText(applicationContext, "Please enter a valid email! ", Toast.LENGTH_SHORT).show()
+                return false;
+            }
+            else if(isDateValid(placeDate.text.toString())==false){
+                Toast.makeText(applicationContext, "Begin date is not valid. Please enter in format yyyy-mm-dd ", Toast.LENGTH_SHORT).show()
+                return false;
+            }
+            else
+                if((isDateValid(eventTimeTime.text.toString()))==false){
+                    Toast.makeText(applicationContext, "End date is not valid. Please enter in format yyyy-mm-dd ", Toast.LENGTH_SHORT).show()
+                    return false;
+
+                }
+
+            return true;
+        }
+
+    private fun isValidEmail(email: String): Boolean {
+        return !TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    }
 
     fun isDateValid(date: String?): Boolean {
-        /*return try {
-            val df: DateFormat = SimpleDateFormat(DATE_FORMAT)
-            df.setLenient(false)
-            df.parse(date)
-            true
-        } catch (e: ParseException) {
-            false
-        }*/
+
         try {var formatter = SimpleDateFormat("yyyy-mm-dd", Locale.getDefault())
             val date = formatter.parse(date)
             return true}catch (e: ParseException) {
