@@ -55,7 +55,6 @@ class UserResultAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         val user_image = itemView.findViewById<ImageView>(R.id.imgPlace)
         val user_name = itemView.findViewById<TextView>(R.id.txtPlaceName)
         val user_sport_image = itemView.findViewById<ImageView>(R.id.imgUserSport)
-
         val user_sport_level = itemView.findViewById<TextView>(R.id.txtSportLevel)
 
         fun bind(userResult: User) {
@@ -94,14 +93,7 @@ class UserResultAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             } else {
                 user_image.setImageURI(userResult.secondaryPictureURI)
             }
-            /*    Glide.with(itemView.context)
-                    .applyDefaultRequestOptions(requestOptions)
-                    .load(userResult.userImage)
-                    .into(user_image)
-                Glide.with(itemView.context)
-                    .applyDefaultRequestOptions(requestOptions)
-                    .load(userResult.userSportImage)
-                    .into(user_sport_image)*/
+
         }
 
 

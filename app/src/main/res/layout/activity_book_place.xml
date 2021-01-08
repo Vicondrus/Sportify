@@ -8,8 +8,16 @@
     android:background="@color/dark_tone_sportify"
     tools:context=".PlacesResultActivity">
 
-
-    <ImageView
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:id="@+id/textViewTitle4" android:textColor="@color/white"
+        android:textStyle="bold" android:textAlignment="textEnd" app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/layout_style_white" android:textSize="20sp"
+        android:paddingTop="20dp" android:text="The required fitness levels for this event:"
+        android:paddingEnd="16dp" android:paddingStart="70dp"/>
+  <!--  <ImageView
         android:id="@+id/imageView3"
         android:layout_width="595dp"
         android:layout_height="170dp"
@@ -17,10 +25,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/top" />
+        app:srcCompat="@drawable/top" />-->
 
     <TextView
-        android:id="@+id/txtPaymentHeader"
+        android:id="@+id/txtUsersHeader"
         android:layout_width="244dp"
         android:layout_height="79dp"
         android:background="#FFFBFB"
@@ -238,6 +246,7 @@
         app:layout_constraintVertical_bias="0.528" />
 
     <Button
+        app:cornerRadius="20dp"
         android:id="@+id/btnBookDetails"
         android:layout_width="361dp"
         android:layout_height="42dp"

@@ -18,11 +18,13 @@ class PlacesResultActivity: AppCompatActivity() {
         addDataSet()
 
     }
+
     private fun addDataSet(){
         val date= intent.getStringExtra("date")
         val data= date?.let { PlaceResultList.createDataSet(it) }
         if (data != null) {
             placesResultAdapter.submitList(data)
+
         }
 
     }        private fun initRecyclerView(){
