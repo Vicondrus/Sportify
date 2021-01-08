@@ -145,7 +145,7 @@ class Registry private constructor() {
                             R.drawable.event_picture,
                             "Alex Ion",
                             "This event targets all amateur volleyball players or even those inexperienced! Cantec, joc, si voie buna la noi!",
-                            LocalDate.parse("05/01/2021", DateTimeFormatter.ofPattern("dd/MM/yyyy")),
+                            LocalDate.parse("20/01/2021", DateTimeFormatter.ofPattern("dd/MM/yyyy")),
                             LocalTime.parse("12:00", DateTimeFormatter.ofPattern("HH:mm")),
                             LocalTime.parse("14:30", DateTimeFormatter.ofPattern("HH:mm")),
                             12,
