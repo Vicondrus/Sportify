@@ -25,7 +25,7 @@
     <string name="say_something_hint">Say something...</string>
 
     <string name="hosted_by_you_label">Hosted by you</string>
-    <string name="scan_qr_code_button">Scan QR code</string>
+    <string name="scan_qr_code_button">Check people in</string>
     <string name="delegate_a_friend_button">Delegate a friend</string>
     <string name="your_friend_label">Your friend</string>
     <string name="added_a_new_event_label">added a new event!</string>

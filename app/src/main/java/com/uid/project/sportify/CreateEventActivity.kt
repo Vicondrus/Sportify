@@ -338,12 +338,17 @@ class CreateEventActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyC
                 event.attendanceFee = eventAttendanceFee.text.toString().toInt()
                 event.location = location
                 Registry.listOfOrganizedEvents.add(event)
+
                 val calIntent = Intent(Intent.ACTION_INSERT)
-                    .setData(CalendarContract.Events.CONTENT_URI)
-                    .putExtra(CalendarContract.Events.TITLE, event.name)
-                    .putExtra(CalendarContract.Events.EVENT_LOCATION, event.location)
-                    .putExtra(CalendarContract.Events.DESCRIPTION, event.description)
-                startActivity(calIntent)
+                calIntent.data = CalendarContract.CONTENT_URI
+                calIntent.putExtra(CalendarContract.Events.TITLE, event.name)
+                calIntent.putExtra(CalendarContract.Events.EVENT_LOCATION, event.location)
+                calIntent.putExtra(CalendarContract.Events.DESCRIPTION, event.description)
+                if(calIntent.resolveActivity(packageManager) != null){
+                    startActivity(calIntent)
+                }
+
+
                 val intent = Intent(this, EventCreatedActivity::class.java)
                 intent.putExtra("event", event)
                 startActivity(intent)
