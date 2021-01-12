@@ -123,8 +123,7 @@ class ProfilePageActivity : AppCompatActivity() {
         upcomingListAdapter = ParticipationListAdapter(futureParticipations)
         upcomingRecyclerView.adapter = upcomingListAdapter
 
-        val groups = Registry.listOfGroups
-        groupsListAdapter = GroupsListAdapter(Registry.listOfGroups)
+        groupsListAdapter = GroupsListAdapter(Registry.listOfGroups, this@ProfilePageActivity)
         groupsRecyclerView.adapter = groupsListAdapter
 
         ownListAdapter = EventItemListAdapter(Registry.listOfOrganizedEvents, this@ProfilePageActivity)

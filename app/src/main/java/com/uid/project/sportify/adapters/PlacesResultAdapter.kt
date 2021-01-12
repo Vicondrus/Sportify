@@ -61,7 +61,8 @@ class PlacesResultAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         val place_location = itemView.findViewById<TextView>(R.id.txtLocation)
         val place_name = itemView.findViewById<TextView>(R.id.txtPlaceName)
         val place_rating = itemView.findViewById<TextView>(R.id.txtRating)
-        val place_sport=itemView.findViewById<TextView>(R.id.sportSuitableTxt)
+       // val place_sport=itemView.findViewById<TextView>(R.id.sportSuitableTxt)
+       // val nrParticipants=itemView.findViewById<TextView>(R.id.participantsTxt)
         fun bind(placeResult: PlaceResult) {
 
 
@@ -69,7 +70,7 @@ class PlacesResultAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
                 override fun onClick(v: View?) {
                     //call here the intent for user profile
-                    val place = PlaceResult(placeResult.placeName, placeResult.placeImage, placeResult.placeDescription, placeResult.placeLocation, placeResult.placeRating, placeResult.placePrice, placeResult.placeUnavailableDates)
+                    val place = PlaceResult(placeResult.placeName, placeResult.placeImage, placeResult.placeDescription, placeResult.placeLocation, placeResult.placeRating, placeResult.placePrice, placeResult.placeUnavailableDates,placeResult.nrParticipants,placeResult.suitableSport)
 
 
                     val context = v?.context
@@ -90,6 +91,9 @@ class PlacesResultAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             place_location.text = placeResult.placeLocation
             place_name.text = placeResult.placeName
             place_rating.text = placeResult.placeRating
+          //  if (placeResult.suitableSport!=null)
+         //   place_sport.text=placeResult.suitableSport
+         //   nrParticipants.text=placeResult.nrParticipants.toString()
             // place_sport.text=placeResult.placeSportType.toString()
             val requestOptions = RequestOptions()
                     .placeholder(R.drawable.ic_launcher_background)

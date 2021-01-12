@@ -2,6 +2,7 @@ package com.uid.project.sportify
 
 import android.app.Activity
 import android.app.Activity.RESULT_OK
+import android.app.DatePickerDialog
 import android.content.Intent
 import android.graphics.Color
 import android.net.Uri
@@ -11,6 +12,7 @@ import android.widget.*
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.provider.FontsContractCompat.FontRequestCallback.RESULT_OK
@@ -23,11 +25,8 @@ import com.huawei.hms.maps.model.PolygonOptions
 import com.uid.project.sportify.adapters.DeletableSportsListAdapter
 import com.uid.project.sportify.adapters.DeletableTagsListAdapter
 import com.uid.project.sportify.adapters.TagsSearchListAdapter
-import com.uid.project.sportify.models.Neighborhood
+import com.uid.project.sportify.models.*
 
-import com.uid.project.sportify.models.Registry
-import com.uid.project.sportify.models.Sport
-import com.uid.project.sportify.models.User
 import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.time.ZoneId
@@ -59,7 +58,7 @@ class CustomizeProfileActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapR
             .findFragmentById(R.id.customizeProfileMapView) as? SupportMapFragment
         mapFragment?.getMapAsync(this)
 
-        user = Registry.user1Manager
+        user = User(Registry.user1Manager)
 
         profileImage = findViewById(R.id.profilePictureImageView)
         if (user.secondaryPictureURI == null) {
@@ -114,6 +113,30 @@ class CustomizeProfileActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapR
                         .toInstant()
                 )
             }
+        }
+        birthdate.setOnClickListener {
+            val calendar: Calendar = Calendar.getInstance()
+            val day = calendar.get(Calendar.DAY_OF_MONTH)
+            val month = calendar.get(Calendar.MONTH)
+            val year = calendar.get(Calendar.YEAR)
+            val datePicker = DatePickerDialog(
+                    this@CustomizeProfileActivity,
+                    { view, year, monthOfYear, dayOfMonth ->
+                        var dayOfMonthString = dayOfMonth.toString()
+                        var monthOfYearString = (monthOfYear + 1).toString()
+                        if (dayOfMonth < 10) {
+                            dayOfMonthString = "0$dayOfMonthString"
+                        }
+                        if (monthOfYear < 9) {
+                            monthOfYearString = "0$monthOfYearString"
+                        }
+                        birthdate.text = "$dayOfMonthString.$monthOfYearString.$year"
+                    },
+                    year,
+                    month,
+                    day
+            )
+            datePicker.show()
         }
 
         val layoutManager1 = LinearLayoutManager(
@@ -283,7 +306,20 @@ class CustomizeProfileActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapR
 
 
     override fun onBackPressed() {
-        finish()
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Discard changes")
+        builder.setMessage("Are you sure you want to leave this page? Your changes will not be saved.")
+
+
+        builder.setPositiveButton(android.R.string.yes) { dialog, which ->
+            finish()
+        }
+
+        builder.setNegativeButton(android.R.string.no) { dialog, which ->
+
+        }
+        builder.show()
+
     }
 
     override fun onActivityResult(

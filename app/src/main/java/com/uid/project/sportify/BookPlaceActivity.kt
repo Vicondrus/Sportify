@@ -20,7 +20,7 @@ class BookPlaceActivity : AppCompatActivity() {
 
 
         val place = this.intent.getSerializableExtra("place") as PlaceResult
-        val namePlace = findViewById<TextView>(R.id.txtPaymentHeader)
+        val namePlace = findViewById<TextView>(R.id.txtUsersHeader)
         val btnBookPlace = findViewById<Button>(R.id.btnBookDetails)
         val locationTextView = findViewById<TextView>(R.id.locationTxt)
         val priceTxt = findViewById<TextView>(R.id.priceTxt)
@@ -33,17 +33,12 @@ class BookPlaceActivity : AppCompatActivity() {
         descriptionTextView.text = place.placeDescription
 
         val placeSportType = findViewById<TextView>(R.id.sportSuitableTxt)
-        placeSportType.text="yoga"
+        placeSportType.text=place.suitableSport
         val ratingBar = findViewById<RatingBar>(R.id.ratingBar)
         ratingBar.rating = place.placeRating.toFloat()
         descriptionDetails.text = place.placeDescription
-        /*val requestOptions= RequestOptions()
-                .placeholder(R.drawable.ic_launcher_background)
-                .error(R.drawable.ic_launcher_background)
-        Glide.with(itemView.context)
-                .applyDefaultRequestOptions(requestOptions)
-                .load(placeResult.placeImage)
-                .into(place_image)*/
+        val participantsTxt=findViewById<TextView>(R.id.participantsTxt)
+        participantsTxt.text= place.nrParticipants.toString()
         Glide.with(this).load(place.placeImage).into(placeDetailsImage)
         Log.v("incercare", place.placeName)
         locationTextView.setTextColor(Color.parseColor("#FFFFFF"))

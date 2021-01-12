@@ -73,6 +73,7 @@
                 android:textStyle="italic" />
 
             <Button
+                app:cornerRadius="20dp"
                 android:id="@+id/btnDetailsEvent"
                 android:layout_width="168dp"
                 android:layout_height="wrap_content"

@@ -6,6 +6,7 @@ import android.app.TimePickerDialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.provider.CalendarContract
 import android.text.InputType
 import android.view.View
 import android.widget.*
@@ -337,6 +338,17 @@ class CreateEventActivity : AppCompatActivity(), com.huawei.hms.maps.OnMapReadyC
                 event.attendanceFee = eventAttendanceFee.text.toString().toInt()
                 event.location = location
                 Registry.listOfOrganizedEvents.add(event)
+
+                val calIntent = Intent(Intent.ACTION_INSERT)
+                calIntent.data = CalendarContract.CONTENT_URI
+                calIntent.putExtra(CalendarContract.Events.TITLE, event.name)
+                calIntent.putExtra(CalendarContract.Events.EVENT_LOCATION, event.location)
+                calIntent.putExtra(CalendarContract.Events.DESCRIPTION, event.description)
+                if(calIntent.resolveActivity(packageManager) != null){
+                    startActivity(calIntent)
+                }
+
+
                 val intent = Intent(this, EventCreatedActivity::class.java)
                 intent.putExtra("event", event)
                 startActivity(intent)

@@ -26,10 +26,16 @@ class PlaceBookedActivity : AppCompatActivity() {
         imgPlace.setImageResource(placeObj.placeImage)
         val btnDone = findViewById<Button>(R.id.btnEventCreatedDone)
         btnDone.setOnClickListener {
-            val intent = Intent(this, PlacesResultActivity::class.java)
+            val intent = Intent(this@PlaceBookedActivity, NewsFeedActivity::class.java)
             startActivity(intent)
         }
 
-
+        val tellFriendsButton = findViewById<Button>(R.id.btnTellFriends)
+        tellFriendsButton.setOnClickListener {
+            val intent = Intent(this, FriendListActivity::class.java)
+            intent.putExtra("activityName", "Invite friends")
+            intent.putExtra("eventName", place.toString())
+            startActivity(intent)
+        }
     }
 }

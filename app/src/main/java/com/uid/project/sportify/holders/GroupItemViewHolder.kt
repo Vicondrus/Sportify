@@ -1,5 +1,12 @@
 package com.uid.project.sportify.holders
 
+import android.content.Context
+import android.database.Cursor
+import android.graphics.BitmapFactory
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
+import android.net.Uri
+import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.FrameLayout
@@ -8,10 +15,10 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.uid.project.sportify.R
 import com.uid.project.sportify.models.Group
-import com.uid.project.sportify.models.Participation
-import java.text.SimpleDateFormat
+import java.io.File
 
-class GroupItemViewHolder(inflater: LayoutInflater, private var parent: ViewGroup) :
+
+class GroupItemViewHolder(inflater: LayoutInflater, private var parent: ViewGroup, private var context: Context) :
         RecyclerView.ViewHolder(inflater.inflate(R.layout.event_list_item, parent, false)) {
     private var eventName: TextView? = null
     private var participationType: TextView? = null
@@ -27,12 +34,31 @@ class GroupItemViewHolder(inflater: LayoutInflater, private var parent: ViewGrou
     }
 
     fun bind(group: Group) {
-        if(group.image !=-1) {
-            whole?.background =
-                    ResourcesCompat.getDrawable(parent.resources, group.image, null)
-        }else{
-            whole?.background =
-                    ResourcesCompat.getDrawable(parent.resources, R.drawable.generic_group, null)
+        if(group.imageUri != null){
+
+            val cursor: Cursor? = context.contentResolver.query(Uri.parse(group.imageUri!!), null, null, null, null)
+            cursor!!.moveToFirst()
+            val idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA)
+            val path = cursor.getString(idx)
+            val file = File(path)
+            if (file.exists()) {
+                val d = Drawable.createFromPath(file.absolutePath)
+                if (d != null){
+                    whole?.background = d
+                } else {
+                    whole?.background = ResourcesCompat.getDrawable(parent.resources, R.drawable.generic_group, null)
+                }
+
+            }
+            cursor.close()
+        }else {
+            if (group.image != -1) {
+                whole?.background =
+                        ResourcesCompat.getDrawable(parent.resources, group.image, null)
+            } else {
+                whole?.background =
+                        ResourcesCompat.getDrawable(parent.resources, R.drawable.generic_group, null)
+            }
         }
         eventName?.text = group.name
         participationType?.text = group.description

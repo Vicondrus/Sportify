@@ -31,11 +31,10 @@ class UserResultList {
                     if (ok) {
                         list.add(
                                 user
-                                //Registry.user1Manager
+
                         )
                     }
-//                list.add(
-//                        Registry.user1Manager)
+
                 }
             }
 

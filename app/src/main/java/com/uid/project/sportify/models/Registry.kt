@@ -101,11 +101,13 @@ class Registry private constructor() {
                             "Yoga Venue Central",
                             R.drawable.yogaplace,
                             // "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.facebook.com%2Ftheyogaplaceskopje%2Fphotos%2F&psig=AOvVaw1STjfrcu0MkG6J2RxZNuw3&ust=1608816607772000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIC--4Wb5O0CFQAAAAAdAAAAABAD",
-                            "Perfect spot for yoga events just in the center of New York.",
-                            "New York",
+                            "Perfect spot for yoga events just in the center of Cluj.",
+                            "Centru",
                             "3.3",
                             "100",
-                            listOf<String>("2021-09-09", "2021-01-01")
+                            listOf<String>("2021-09-09", "2021-01-01"),
+                            10,
+                            "Yoga"
                             //  "Yoga"
 
                     )
@@ -143,7 +145,7 @@ class Registry private constructor() {
                             R.drawable.event_picture,
                             "Alex Ion",
                             "This event targets all amateur volleyball players or even those inexperienced! Cantec, joc, si voie buna la noi!",
-                            LocalDate.parse("05/01/2021", DateTimeFormatter.ofPattern("dd/MM/yyyy")),
+                            LocalDate.parse("20/01/2021", DateTimeFormatter.ofPattern("dd/MM/yyyy")),
                             LocalTime.parse("12:00", DateTimeFormatter.ofPattern("HH:mm")),
                             LocalTime.parse("14:30", DateTimeFormatter.ofPattern("HH:mm")),
                             12,
@@ -404,6 +406,7 @@ class Registry private constructor() {
                     "TTY later!", "Bye byee", "That's right, I cannot miss this", "I'll be waiting for u!"
             )
 
+
         val listOfMessages: ArrayList<Message>
             get() = arrayListOf(
                     Message("Hello, Ana!", MessageType.MSG_RECEIVED),
@@ -480,7 +483,7 @@ class Registry private constructor() {
             )
 
         val listOfGroups: MutableList<Group>
-            get() = mutableListOf(Group("'U' Basketball Fanclub", "The official Universitatea Cluj Baskteball Fanclub", "Centru", arrayListOf(), R.drawable.academia_ubt),
+            = mutableListOf(Group("'U' Basketball Fanclub", "The official Universitatea Cluj Baskteball Fanclub", "Centru", arrayListOf(), R.drawable.academia_ubt),
                     Group("TennisClub Grigorescu", "Made for tennis lovers in Grigorescu", "Grigorescu", arrayListOf()))
 
         val listOfOrganizedEvents: ArrayList<Event> =
@@ -569,5 +572,37 @@ class Registry private constructor() {
                     ),
                     R.drawable.friend6
             ), user1Manager)
+
+
+        val listOfPlaceResults: ArrayList<PlaceResult>
+            get() = arrayListOf(place1Manager,PlaceResult(
+                    "Gheorgheni Basketball Court",
+                    R.drawable.basketballplace,
+                    // "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.facebook.com%2Ftheyogaplaceskopje%2Fphotos%2F&psig=AOvVaw1STjfrcu0MkG6J2RxZNuw3&ust=1608816607772000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIC--4Wb5O0CFQAAAAAdAAAAABAD",
+                    "Amazing Basketball Court in Gheorgheni.",
+                    "Gheorgheni",
+                    "5",
+                    "300",
+                    listOf<String>("2021-10-10", "2021-11-11"),
+                    30,
+                    "Basketball"//dates when the place is occupied
+                    //  "Yoga"
+
+            ),
+                    PlaceResult(
+                            "Central Fitness Place",
+                            R.drawable.fitnessplace,
+                            // "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.facebook.com%2Ftheyogaplaceskopje%2Fphotos%2F&psig=AOvVaw1STjfrcu0MkG6J2RxZNuw3&ust=1608816607772000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIC--4Wb5O0CFQAAAAAdAAAAABAD",
+                            "Join us in this big fitness place.",
+                            "Centru",
+                            "2",
+                            "500",
+                            listOf<String>("2021-12-12", "2021-08-08"),
+                            20,
+                            "Fitness"//dates when the place is occupied
+                            //  "Yoga"
+
+                    ))
+
     }
 }

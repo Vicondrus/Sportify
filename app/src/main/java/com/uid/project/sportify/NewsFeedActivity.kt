@@ -49,10 +49,20 @@ class NewsFeedActivity : AppCompatActivity() {
         }
 
         val profileButton = findViewById<ImageButton>(R.id.feedProfileButton)
+        if (Registry.user1Manager.secondaryPictureURI == null) {
+            profileButton.setImageResource(Registry.user1Manager.profilePictureId)
+        }else {
+            profileButton.setImageURI(Registry.user1Manager.secondaryPictureURI)
+        }
         profileButton.setOnClickListener {
             val intent = Intent(this, ProfilePageActivity::class.java)
-            startActivity(intent)
+            startActivityForResult(intent, 1)
         }
-
+    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode==1){
+            this.recreate()
+        }
     }
 }
