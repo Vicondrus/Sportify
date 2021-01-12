@@ -54,18 +54,9 @@ class PaymentActivity : AppCompatActivity() {
 
         val btnContinue = findViewById<Button>(R.id.btnContinue)
         btnContinue.setOnClickListener {
-
             if(validateDetails()){
-
                     builder.show()
                 }
-            else
-            {
-                btnContinue.isEnabled = false
-                btnContinue.isClickable = false
-            //  Toast.makeText(applicationContext, "Please enter valid details! ", Toast.LENGTH_SHORT).show()
-            }
-
         }
         placeDate=findViewById(R.id.placeDate)
         placeDate.inputType = InputType.TYPE_NULL
